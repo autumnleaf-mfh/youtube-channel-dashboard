@@ -242,6 +242,7 @@ function dailyUploadRows(catalog, channel, start, end) {
       channel: channel.channel,
       publishedAt: new Date(day).toISOString(),
       uploadCount: updates.length,
+      updates,
       thumbnail: updates[0]?.thumbnail || channel.thumbnail,
       title: updates.length ? `${updates.length} 条更新${updates[0]?.title ? ` · ${updates[0].title}` : ""}` : "当日无更新",
     });
@@ -347,10 +348,20 @@ function renderTrend(videos, catalog, channels, generatedAt) {
     crosshair.setAttribute("x2", svgX);
     pointNodes.forEach((point) => point.classList.remove("is-nearest"));
     nearest.forEach(({ seriesIndex, rowIndex }) => chart.querySelector(`.trend-point[data-series="${seriesIndex}"][data-row="${rowIndex}"]`)?.classList.add("is-nearest"));
-    tooltip.innerHTML = `<strong>${metricInfo.label}</strong>${nearest.map(({ item, row }) => `<div class="nearest-series"><img src="${esc(row.thumbnail)}" alt=""><div><span><i style="background:${item.color}"></i>${esc(row.channel)}</span><b>${metricInfo.format(row[metric])}</b><small>${ymdh(row.publishedAt)}</small><em>${esc(row.title)}</em></div></div>`).join("")}`;
+    tooltip.classList.toggle("is-upload-detail", metric === "uploadCount");
+    tooltip.innerHTML = metric === "uploadCount"
+      ? `<strong>${metricInfo.label}</strong>${nearest.map(({ item, row }) => `<section class="upload-day-series" data-update-count="${row.uploadCount}"><div class="upload-day-header"><span><i style="background:${item.color}"></i>${esc(row.channel)}</span><b>${metricInfo.format(row.uploadCount)}</b><small>${ymd(row.publishedAt)}</small></div>${row.updates.length ? `<div class="upload-video-list">${row.updates.map((video) => `<div class="upload-video-item"><img src="${esc(video.thumbnail)}" alt="" loading="lazy"><span class="upload-video-copy"><strong>${esc(video.title)}</strong><span class="upload-video-stats"><span>播放 ${video.viewCount == null ? "—" : exact(video.viewCount)}</span><span>点赞 ${video.likeCount == null ? "—" : exact(video.likeCount)}</span><span>评论 ${video.commentCount == null ? "—" : exact(video.commentCount)}</span></span></span></div>`).join("")}</div>` : `<div class="upload-zero">当日无更新</div>`}</section>`).join("")}`
+      : `<strong>${metricInfo.label}</strong>${nearest.map(({ item, row }) => `<div class="nearest-series"><img src="${esc(row.thumbnail)}" alt=""><div><span><i style="background:${item.color}"></i>${esc(row.channel)}</span><b>${metricInfo.format(row[metric])}</b><small>${ymdh(row.publishedAt)}</small><em>${esc(row.title)}</em></div></div>`).join("")}`;
     tooltip.hidden = false;
-    tooltip.style.left = `${Math.max(12, Math.min(event.clientX - rect.left + 14, Math.max(12, canvas.clientWidth - 292)))}px`;
-    tooltip.style.top = `${Math.max(12, Math.min(event.clientY - rect.top - (series.length > 1 ? 205 : 132), Math.max(12, canvas.clientHeight - (series.length > 1 ? 218 : 145))))}px`;
+    const localX = event.clientX - rect.left;
+    const localY = event.clientY - rect.top;
+    const tooltipWidth = tooltip.offsetWidth;
+    const tooltipHeight = tooltip.offsetHeight;
+    const maxLeft = Math.max(12, canvas.clientWidth - tooltipWidth - 12);
+    const maxTop = Math.max(12, canvas.clientHeight - tooltipHeight - 12);
+    const preferredTop = localY - tooltipHeight - 14;
+    tooltip.style.left = `${Math.max(12, Math.min(localX + 14, maxLeft))}px`;
+    tooltip.style.top = `${Math.max(12, Math.min(preferredTop >= 12 ? preferredTop : localY + 14, maxTop))}px`;
   };
   canvas.addEventListener("pointermove", showNearest);
   canvas.addEventListener("pointerleave", () => {
@@ -440,10 +451,10 @@ async function init() {
       .slice()
       .sort((a, b) => toTime(a.observedAt ?? 0) - toTime(b.observedAt ?? 0))
       .forEach((video) => latestVideoById.set(video.videoId, video));
-    const trendVideos = catalog
-      .map((video) => ({ ...video, ...(latestVideoById.get(video.videoId) ?? {}) }))
+    const catalogWithMetrics = catalog.map((video) => ({ ...video, ...(latestVideoById.get(video.videoId) ?? {}) }));
+    const trendVideos = catalogWithMetrics
       .filter((video) => video.viewCount != null || video.durationSeconds != null || video.likeCount != null || video.commentCount != null);
-    const updateTrend = () => renderTrend(trendVideos, catalog, rows, data.generatedAt);
+    const updateTrend = () => renderTrend(trendVideos, catalogWithMetrics, rows, data.generatedAt);
     bindChoiceButtons("primaryChannel", updateTrend);
     bindChoiceButtons("comparisonChannel", updateTrend);
     bindChoiceButtons("trendMetric", updateTrend);

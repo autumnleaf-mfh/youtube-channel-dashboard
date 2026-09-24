@@ -9,7 +9,7 @@ const path = require("path");
   page.on("console", (message) => {
     if (message.type() === "error") errors.push(message.text());
   });
-  await page.goto("http://127.0.0.1:8787/index.html?v=15", { waitUntil: "networkidle" });
+  await page.goto("http://127.0.0.1:8787/index.html?v=16", { waitUntil: "networkidle" });
   const updateButton = page.locator('#trendMetric button[data-value="uploadCount"]');
   await page.locator('#comparisonChannel button[data-value="UCZNlDT4tKgZS8R6sDuJWwMA"]').click();
   await updateButton.click();
@@ -29,15 +29,24 @@ const path = require("path");
   }
   await updateButton.click();
   await page.locator('#trendPeriod button[data-value="30"]').click();
+  const multiUpdatePoint = page.locator('.trend-point[aria-label*="更新数量 2 条"]').first();
+  if (!await multiUpdatePoint.count()) throw new Error("没有找到含 2 条更新的日期节点");
+  const pointX = Number(await multiUpdatePoint.getAttribute("cx"));
   const canvas = page.locator(".trend-canvas");
-  await canvas.evaluate((element) => {
+  await canvas.evaluate((element, svgPointX) => {
     const box = element.getBoundingClientRect();
+    const svg = element.querySelector("svg");
+    const svgBox = svg.getBoundingClientRect();
     element.dispatchEvent(new PointerEvent("pointermove", {
       bubbles: true,
-      clientX: box.left + box.width * 0.62,
+      clientX: svgBox.left + svgPointX / 1000 * svgBox.width,
       clientY: box.top + box.height * 0.5,
     }));
-  });
+  }, pointX);
+  const tooltipSeries = await page.locator(".upload-day-series").evaluateAll((sections) => sections.map((section) => ({
+    expected: Number(section.dataset.updateCount),
+    rendered: section.querySelectorAll(".upload-video-item").length,
+  })));
   const result = {
     uploadButtonPressed: await updateButton.getAttribute("aria-pressed"),
     selectedPeriod: await page.locator('#trendPeriod button[aria-pressed="true"]').getAttribute("data-value"),
@@ -48,14 +57,27 @@ const path = require("path");
     tooltipVisible: await page.locator(".trend-tooltip").isVisible(),
     tooltip: await page.locator(".trend-tooltip").innerText(),
     tooltipImages: await page.locator(".trend-tooltip img").count(),
+    tooltipVideoItems: await page.locator(".upload-video-item").count(),
+    tooltipSeries,
     loadErrorVisible: await page.locator("#loadError").isVisible(),
     errors,
   };
-  await page.screenshot({ path: path.resolve("logs/dashboard-v15.png"), fullPage: true });
+  await page.screenshot({ path: path.resolve("logs/dashboard-v16.png"), fullPage: true });
+  const mobile = await browser.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1 });
+  const mobileErrors = [];
+  mobile.on("pageerror", (error) => mobileErrors.push(error.message));
+  await mobile.goto("http://127.0.0.1:8787/index.html?v=16", { waitUntil: "networkidle" });
+  await mobile.locator('#trendMetric button[data-value="uploadCount"]').click();
+  const mobileLayout = await mobile.evaluate(() => ({ scrollWidth: document.documentElement.scrollWidth, clientWidth: document.documentElement.clientWidth }));
+  await mobile.screenshot({ path: path.resolve("logs/dashboard-v16-mobile.png"), fullPage: true });
+  await mobile.close();
+  result.mobileLayout = mobileLayout;
+  result.mobileErrors = mobileErrors;
   console.log(JSON.stringify(result));
   await browser.close();
   const metricWindowsGrow = Object.values(metricPointCounts).every((counts) => counts["7"] <= counts["30"] && counts["30"] <= counts["90"] && counts["90"] <= counts.all);
-  if (result.uploadButtonPressed !== "true" || result.selectedPeriod !== "30" || result.pointCount !== 60 || uploadPointCounts["7"] !== 14 || uploadPointCounts["30"] !== 60 || uploadPointCounts["90"] !== 180 || uploadPointCounts.all < 180 || !metricWindowsGrow || !result.tooltipVisible || !result.tooltip.includes("更新数量") || result.tooltipImages !== 2 || result.loadErrorVisible || errors.length) {
+  const tooltipCountsMatch = tooltipSeries.length === 2 && tooltipSeries.every((item) => item.expected === item.rendered);
+  if (result.uploadButtonPressed !== "true" || result.selectedPeriod !== "30" || result.pointCount !== 60 || uploadPointCounts["7"] !== 14 || uploadPointCounts["30"] !== 60 || uploadPointCounts["90"] !== 180 || uploadPointCounts.all < 180 || !metricWindowsGrow || !result.tooltipVisible || !result.tooltip.includes("更新数量") || !result.tooltip.includes("播放") || !result.tooltip.includes("点赞") || !result.tooltip.includes("评论") || result.tooltipVideoItems < 2 || result.tooltipImages !== result.tooltipVideoItems || !tooltipCountsMatch || result.loadErrorVisible || errors.length || mobileErrors.length || mobileLayout.scrollWidth !== mobileLayout.clientWidth) {
     process.exitCode = 1;
   }
 })().catch((error) => {
