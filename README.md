@@ -14,11 +14,11 @@
 
 ## 自动更新
 
-`.github/workflows/pages.yml` 每小时运行一次：
+GitHub Pages 从 `main` 分支根目录直接发布；本机计划任务每小时运行一次：
 
-1. 使用仓库 Secret `YOUTUBE_API_KEY` 调用 YouTube Data API v3；
-2. 更新 `src/data.json` 并提交快照；
-3. 将 `site/` 静态站点部署到 GitHub Pages。
+1. 从 Windows DPAPI 凭据读取 YouTube API Key；
+2. 调用 YouTube Data API v3 并更新 `site/data.json`；
+3. 只把新的公开快照写入 GitHub 的 `data.json`，密钥不会进入仓库。
 
 首次部署后，24 小时和 7 日变化需要分别积累足够时间才会显示；缺失历史不会被当作 0。
 
