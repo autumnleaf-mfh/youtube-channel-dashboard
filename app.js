@@ -151,10 +151,27 @@ function renderUpdates(videos, generatedAt) {
   </li>`).join("") : `<li class="empty">近 7 日暂无更新</li>`;
 }
 
+function selectedChoice(targetId) {
+  return $(targetId).querySelector('[aria-pressed="true"]')?.dataset.value ?? "";
+}
+
+function setChoiceButtons(targetId, choices, selectedValue) {
+  $(targetId).innerHTML = choices.map((choice) => `<button type="button" data-value="${esc(choice.value)}" aria-pressed="${choice.value === selectedValue}">${esc(choice.label)}</button>`).join("");
+}
+
+function bindChoiceButtons(targetId, render) {
+  $(targetId).addEventListener("click", (event) => {
+    const button = event.target.closest("button[data-value]");
+    if (!button) return;
+    $(targetId).querySelectorAll("button").forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+    render();
+  });
+}
+
 function renderTrend(videos) {
-  const primaryId = $("primaryChannel").value;
-  const comparisonId = $("comparisonChannel").value;
-  const metric = $("trendMetric").value;
+  const primaryId = selectedChoice("primaryChannel");
+  const comparisonId = selectedChoice("comparisonChannel");
+  const metric = selectedChoice("trendMetric");
   const metricInfo = {
     viewCount: { label: "播放量", format: exact, tick: (value) => compact.format(value) },
     durationSeconds: { label: "播放时长", format: durationText, tick: (value) => `${Math.round(value / 60)} 分` },
@@ -197,35 +214,50 @@ function renderTrend(videos) {
     return `<line x1="${left}" y1="${yPos}" x2="${width - right}" y2="${yPos}"></line><text x="${left - 12}" y="${yPos + 4}" text-anchor="end">${esc(metricInfo.tick(yMax * ratio))}</text>`;
   }).join("");
   const dateLabel = new Intl.DateTimeFormat("zh-HK", { timeZone: "Asia/Hong_Kong", month: "2-digit", day: "2-digit" });
-  const lines = series.map((item) => {
+  const lines = series.map((item, seriesIndex) => {
     const channel = item.rows[0].channel;
     const points = item.rows.map((row) => `${x(row)},${y(row)}`).join(" ");
-    const circles = item.rows.map((row) => `<circle class="trend-point" cx="${x(row)}" cy="${y(row)}" r="5" fill="${item.color}" data-channel="${esc(channel)}" data-title="${esc(row.title)}" data-date="${esc(row.publishedAt)}" data-value="${Number(row[metric])}" tabindex="0" role="img" aria-label="${esc(channel)}，${dateLabel.format(new Date(row.publishedAt))}，${metricInfo.label} ${metricInfo.format(row[metric])}"></circle>`).join("");
+    const circles = item.rows.map((row, rowIndex) => `<circle class="trend-point" cx="${x(row)}" cy="${y(row)}" r="5" fill="${item.color}" data-series="${seriesIndex}" data-row="${rowIndex}" tabindex="0" role="img" aria-label="${esc(channel)}，${dateLabel.format(new Date(row.publishedAt))}，${metricInfo.label} ${metricInfo.format(row[metric])}"></circle>`).join("");
     return `<polyline points="${points}" fill="none" stroke="${item.color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></polyline>${circles}`;
   }).join("");
 
   $("trendLegend").innerHTML = series.map((item) => `<span><i style="background:${item.color}"></i>${esc(item.rows[0].channel)}<b>${item.rows.length} 条视频</b></span>`).join("");
-  $("trendChart").innerHTML = `<div class="trend-canvas"><svg viewBox="0 0 ${width} ${height}" role="img" aria-label="频道${metricInfo.label}趋势对比"><g class="trend-grid">${grid}</g>${lines}<text class="axis-date" x="${left}" y="${height - 10}">${dateLabel.format(new Date(xMin))}</text><text class="axis-date" x="${width - right}" y="${height - 10}" text-anchor="end">${dateLabel.format(new Date(xMax))}</text></svg><div class="trend-tooltip" role="status" hidden></div></div>`;
+  $("trendChart").innerHTML = `<div class="trend-canvas"><svg viewBox="0 0 ${width} ${height}" role="img" aria-label="频道${metricInfo.label}趋势对比"><g class="trend-grid">${grid}</g>${lines}<line class="trend-crosshair" x1="${left}" y1="${top}" x2="${left}" y2="${top + plotHeight}" hidden></line><rect class="trend-hitbox" x="${left}" y="${top}" width="${plotWidth}" height="${plotHeight}"></rect><text class="axis-date" x="${left}" y="${height - 10}">${dateLabel.format(new Date(xMin))}</text><text class="axis-date" x="${width - right}" y="${height - 10}" text-anchor="end">${dateLabel.format(new Date(xMax))}</text></svg><div class="trend-tooltip" role="status" hidden></div></div>`;
 
   const chart = $("trendChart");
   const canvas = chart.querySelector(".trend-canvas");
+  const svg = chart.querySelector("svg");
   const tooltip = chart.querySelector(".trend-tooltip");
-  const showPoint = (point, clientX, clientY) => {
+  const crosshair = chart.querySelector(".trend-crosshair");
+  const pointNodes = [...chart.querySelectorAll(".trend-point")];
+  const nearestRows = (targetTime) => series.map((item, seriesIndex) => {
+    let rowIndex = 0;
+    for (let index = 1; index < item.rows.length; index += 1) {
+      if (Math.abs(toTime(item.rows[index].publishedAt) - targetTime) < Math.abs(toTime(item.rows[rowIndex].publishedAt) - targetTime)) rowIndex = index;
+    }
+    return { item, seriesIndex, rowIndex, row: item.rows[rowIndex] };
+  });
+  const showNearest = (event) => {
     const rect = canvas.getBoundingClientRect();
-    tooltip.innerHTML = `<strong>${esc(point.dataset.channel)}</strong><span>${esc(point.dataset.title)}</span><b>${metricInfo.label}：${metricInfo.format(Number(point.dataset.value))}</b><small>${dateTime.format(new Date(point.dataset.date))}</small>`;
+    const svgRect = svg.getBoundingClientRect();
+    const svgX = Math.min(width - right, Math.max(left, (event.clientX - svgRect.left) / svgRect.width * width));
+    const targetTime = xMin + (svgX - left) / plotWidth * xRange;
+    const nearest = nearestRows(targetTime);
+    crosshair.hidden = false;
+    crosshair.setAttribute("x1", svgX);
+    crosshair.setAttribute("x2", svgX);
+    pointNodes.forEach((point) => point.classList.remove("is-nearest"));
+    nearest.forEach(({ seriesIndex, rowIndex }) => chart.querySelector(`.trend-point[data-series="${seriesIndex}"][data-row="${rowIndex}"]`)?.classList.add("is-nearest"));
+    tooltip.innerHTML = `<strong>${metricInfo.label}</strong>${nearest.map(({ item, row }) => `<div class="nearest-series"><span><i style="background:${item.color}"></i>${esc(row.channel)}</span><b>${metricInfo.format(row[metric])}</b><small>${dateTime.format(new Date(row.publishedAt))}</small><em>${esc(row.title)}</em></div>`).join("")}`;
     tooltip.hidden = false;
-    tooltip.style.left = `${Math.min(Math.max(12, clientX - rect.left + 12), canvas.clientWidth - 260)}px`;
-    tooltip.style.top = `${Math.min(Math.max(12, clientY - rect.top - 116), canvas.clientHeight - 126)}px`;
+    tooltip.style.left = `${Math.max(12, Math.min(event.clientX - rect.left + 14, Math.max(12, canvas.clientWidth - 292)))}px`;
+    tooltip.style.top = `${Math.max(12, Math.min(event.clientY - rect.top - (series.length > 1 ? 205 : 132), Math.max(12, canvas.clientHeight - (series.length > 1 ? 218 : 145))))}px`;
   };
-  chart.querySelectorAll(".trend-point").forEach((point) => {
-    point.addEventListener("mouseenter", (event) => showPoint(point, event.clientX, event.clientY));
-    point.addEventListener("mousemove", (event) => showPoint(point, event.clientX, event.clientY));
-    point.addEventListener("mouseleave", () => { tooltip.hidden = true; });
-    point.addEventListener("focus", () => {
-      const svgRect = point.ownerSVGElement.getBoundingClientRect();
-      showPoint(point, svgRect.left + Number(point.getAttribute("cx")) / 1000 * svgRect.width, svgRect.top + Number(point.getAttribute("cy")) / 390 * svgRect.height);
-    });
-    point.addEventListener("blur", () => { tooltip.hidden = true; });
+  canvas.addEventListener("pointermove", showNearest);
+  canvas.addEventListener("pointerleave", () => {
+    tooltip.hidden = true;
+    crosshair.hidden = true;
+    pointNodes.forEach((point) => point.classList.remove("is-nearest"));
   });
 }
 
@@ -264,14 +296,13 @@ async function init() {
     renderSubscribers("7");
     renderViews("7");
     renderUpdates(data.queries.recent_videos.rows, data.generatedAt);
-    const options = rows.map((row) => `<option value="${esc(row.channelId)}">${esc(row.channel)}</option>`).join("");
-    $("primaryChannel").innerHTML = options;
-    $("comparisonChannel").innerHTML = `<option value="">不对比</option>${options}`;
-    if (rows[2]) $("comparisonChannel").value = rows[2].channelId;
+    const channelChoices = rows.map((row) => ({ value: row.channelId, label: row.channel }));
+    setChoiceButtons("primaryChannel", channelChoices, rows[0]?.channelId ?? "");
+    setChoiceButtons("comparisonChannel", [{ value: "", label: "不对比" }, ...channelChoices], "");
     const updateTrend = () => renderTrend(data.queries.recent_videos.rows);
-    $("primaryChannel").addEventListener("change", updateTrend);
-    $("comparisonChannel").addEventListener("change", updateTrend);
-    $("trendMetric").addEventListener("change", updateTrend);
+    bindChoiceButtons("primaryChannel", updateTrend);
+    bindChoiceButtons("comparisonChannel", updateTrend);
+    bindChoiceButtons("trendMetric", updateTrend);
     updateTrend();
   } catch (error) {
     $("loadError").hidden = false;
