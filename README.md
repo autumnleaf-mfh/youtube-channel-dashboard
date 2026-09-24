@@ -18,7 +18,7 @@
 
 1. 使用仓库 Secret `YOUTUBE_API_KEY` 调用 YouTube Data API v3；
 2. 更新 `src/data.json` 并提交快照；
-3. 构建静态站点并部署到 GitHub Pages。
+3. 将 `site/` 静态站点部署到 GitHub Pages。
 
 首次部署后，24 小时和 7 日变化需要分别积累足够时间才会显示；缺失历史不会被当作 0。
 
@@ -26,9 +26,9 @@
 
 ```powershell
 $env:YOUTUBE_API_KEY = "your-api-key"
+$env:DASHBOARD_DATA_PATH = "site/data.json"
 python scripts/collect_youtube.py
-npm ci
-npm run build
+python -m http.server 8787 --directory site
 ```
 
 ## 数据口径
@@ -38,4 +38,3 @@ npm run build
 - `(点赞 + 评论) / 播放` 仅为本站的公开互动率定义，不等于 YouTube Studio 指标。
 - 视频时长只用于“短视频候选”提示，不能单靠时长准确判定 Shorts。
 - 展示次数、点击率、观看时长、留存、独立观众、流量来源和收入等数据需要频道主 OAuth 授权与 YouTube Analytics API。
-
