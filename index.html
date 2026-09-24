@@ -3,65 +3,51 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#08110e">
-  <meta name="description" content="13 个财经 YouTube 频道的更新、播放、订阅与变化看板">
-  <title>YouTube 频道增长雷达</title>
+  <meta name="theme-color" content="#07100d">
+  <meta name="description" content="13 个财经 YouTube 频道的订阅、播放与近 7 日更新">
+  <title>YouTube 频道数据</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
-  <header class="topbar">
-    <a class="brand" href="#top"><span class="brand-mark">財</span><span>频道增长雷达</span></a>
-    <nav><a href="#channels">频道</a><a href="#trends">趋势</a><a href="#videos">视频</a><a href="#api">API 能力</a></nav>
-    <button id="themeToggle" class="icon-button" type="button" aria-label="切换主题">◐</button>
-  </header>
+  <main class="dashboard">
+    <h1 class="sr-only">YouTube 频道数据</h1>
 
-  <main id="top">
-    <section class="hero">
-      <div>
-        <p class="eyebrow">FAAT CHOI · CHANNEL INTELLIGENCE</p>
-        <h1>看清每个频道<br><em>正在发生的变化</em></h1>
-        <p class="lede">每小时记录 13 个财经 YouTube 频道的公开数据。先看更新节奏和近期内容效率，再下钻订阅与播放变化。</p>
-      </div>
-      <div id="health" class="health"><span class="pulse"></span><div><strong>读取中</strong><small>正在加载最新快照</small></div></div>
-    </section>
+    <section class="chart-grid" aria-label="频道汇总">
+      <article class="panel chart-panel">
+        <header class="panel-heading">
+          <div>
+            <p class="eyebrow">SUBSCRIBERS</p>
+            <h2>公开订阅合计</h2>
+          </div>
+          <span id="subscriberNote" class="note"></span>
+        </header>
+        <div id="subscriberChart" class="donut" aria-live="polite"></div>
+      </article>
 
-    <section id="kpis" class="kpi-grid" aria-label="核心指标"></section>
-
-    <section class="section decision-section">
-      <div class="section-heading"><div><p class="kicker">TODAY</p><h2>今天要先看什么</h2></div><p>用相对指标判断内容效率，不让大频道的体量掩盖小频道的变化。</p></div>
-      <div id="decisions" class="decision-grid"></div>
-      <div id="alerts" class="alert-row"></div>
-    </section>
-
-    <section id="channels" class="section">
-      <div class="section-heading"><div><p class="kicker">BENCHMARK</p><h2>频道对比</h2></div><p>近期效率与更新密度并排看，找到“发得多”和“发得有效”的差别。</p></div>
-      <div class="chart-grid">
-        <article class="panel"><div class="panel-title"><h3>近 5 条平均播放</h3><span>近期内容效率</span></div><div id="viewsRanking" class="bar-chart"></div></article>
-        <article class="panel"><div class="panel-title"><h3>30 日更新数</h3><span>内容供给节奏</span></div><div id="cadenceRanking" class="bar-chart"></div></article>
-      </div>
-      <article class="panel table-panel">
-        <div class="panel-title"><div><h3>13 个频道完整对比</h3><span>变化来自本站逐小时快照；首次采集后逐步出现</span></div><input id="channelSearch" type="search" placeholder="搜索频道…" aria-label="搜索频道"></div>
-        <div class="table-wrap"><table><thead><tr><th>频道</th><th>订阅</th><th>订阅 24h</th><th>总播放</th><th>播放 24h</th><th>30 日更新</th><th>平均间隔</th><th>近 5 平均播放</th><th>近 5 平均赞</th><th>停更</th></tr></thead><tbody id="channelRows"></tbody></table></div>
+      <article class="panel chart-panel">
+        <header class="panel-heading">
+          <div>
+            <p class="eyebrow">CHANNEL VIEWS</p>
+            <h2>频道总播放合计</h2>
+          </div>
+          <span class="note">当前公开值</span>
+        </header>
+        <div id="viewsChart" class="donut" aria-live="polite"></div>
       </article>
     </section>
 
-    <section id="trends" class="section">
-      <div class="section-heading trend-heading"><div><p class="kicker">MOMENTUM</p><h2>单频道变化趋势</h2></div><div class="controls"><select id="channelSelect" aria-label="选择频道"></select><select id="metricSelect" aria-label="选择指标"><option value="subscriberCount">订阅数</option><option value="channelViewCount">频道总播放</option><option value="videoCount">公开视频数</option></select></div></div>
-      <article class="panel trend-panel"><div id="trendSummary" class="trend-summary"></div><div id="trendChart" class="trend-chart"></div></article>
+    <section class="panel updates-panel" aria-labelledby="updatesTitle">
+      <header class="panel-heading updates-heading">
+        <div>
+          <p class="eyebrow">LAST 7 DAYS</p>
+          <h2 id="updatesTitle">近 7 日更新</h2>
+        </div>
+        <span id="updateCount" class="note"></span>
+      </header>
+      <ol id="updatesList" class="updates-list"></ol>
     </section>
 
-    <section id="videos" class="section">
-      <div class="section-heading"><div><p class="kicker">RECENT OUTPUT</p><h2>近期视频</h2></div><p>按发布时间倒序，直接查看公开视频的播放、点赞与评论。</p></div>
-      <article class="panel table-panel"><div class="panel-title"><h3>最新上传</h3><span id="videoCountLabel"></span></div><div class="table-wrap"><table><thead><tr><th>视频</th><th>频道</th><th>发布</th><th>播放</th><th>点赞</th><th>评论</th><th>时长提示</th></tr></thead><tbody id="videoRows"></tbody></table></div><button id="moreVideos" class="load-more" type="button">显示更多</button></article>
-    </section>
-
-    <section id="api" class="section">
-      <div class="section-heading"><div><p class="kicker">DATA BOUNDARY</p><h2>分别能通过 API 获取什么</h2></div><p>公开竞品数据和频道主授权数据是两套边界；不可获取的字段不会用估算冒充。</p></div>
-      <div id="capabilityCards" class="capability-grid"></div>
-    </section>
-
-    <footer><strong>YouTube 频道增长雷达</strong><p>公开订阅数可能隐藏或按三位有效数字取整。频道总播放及视频播放以 YouTube 当前统计口径为准；视频时长不能单独准确判定 Shorts。</p><a href="https://github.com/autumnleaf-mfh/youtube-channel-dashboard" target="_blank" rel="noreferrer">查看 GitHub 数据与更新逻辑 ↗</a></footer>
+    <div id="loadError" class="load-error" hidden></div>
   </main>
   <script src="app.js" defer></script>
 </body>
