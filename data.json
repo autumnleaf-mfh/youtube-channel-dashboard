@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-09-24T06:33:00Z",
+  "generatedAt": "2026-09-24T06:38:16Z",
   "filters": [],
   "queries": {
     "channel_current": {
@@ -26,10 +26,10 @@
           "uploads30d": 17,
           "uploads90d": 30,
           "averageUploadGapDays": 1.7,
-          "recent5AverageViews": 4988,
+          "recent5AverageViews": 4990,
           "recent5MedianViews": 5192,
-          "recent5AverageLikes": 175,
-          "recent5EngagementRate": 0.037649
+          "recent5AverageLikes": 176,
+          "recent5EngagementRate": 0.037675
         },
         {
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
@@ -92,10 +92,10 @@
           "uploads30d": 7,
           "uploads90d": 7,
           "averageUploadGapDays": 0.7,
-          "recent5AverageViews": 1197,
+          "recent5AverageViews": 1199,
           "recent5MedianViews": 945,
           "recent5AverageLikes": 22,
-          "recent5EngagementRate": 0.018209
+          "recent5EngagementRate": 0.018179
         },
         {
           "channelId": "UCNX9-jzOH4KMbIeuWK8LZaw",
@@ -299,7 +299,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-09-24T06:33:06+00:00",
+        "retrievedAt": "2026-09-24T06:38:25+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -466,7 +466,7 @@
       "source": {
         "label": "Repository snapshots · one observation per channel per collection hour",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-09-24T06:33:06+00:00",
+        "retrievedAt": "2026-09-24T06:38:25+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -496,7 +496,7 @@
           "title": "5天70億，創紀錄流入！比特幣黃金暴漲背後，是美元護城河快撐不住了？美國正在大規模收編加密產業！#比特幣 #加密貨幣 #穩定幣 #美元 #美聯儲 #美國財政 #特朗普 #黃金 #財經",
           "publishedAt": "2026-09-23T10:19:06Z",
           "publishedDate": "2026-09-23",
-          "viewCount": 3210,
+          "viewCount": 3218,
           "likeCount": 112,
           "commentCount": 16,
           "durationSeconds": 950,
@@ -513,8 +513,8 @@
           "title": "三個KPI全落空！做空市場的貝森特，為什麼突然反過來救美債？索羅斯高徒也扛不住了？ #貝森特 #美債 #聯準會 #美國財政 #美元 #日圓 #美股 #總經 #財經",
           "publishedAt": "2026-09-18T13:00:28Z",
           "publishedDate": "2026-09-18",
-          "viewCount": 2749,
-          "likeCount": 130,
+          "viewCount": 2750,
+          "likeCount": 131,
           "commentCount": 7,
           "durationSeconds": 172,
           "formatHint": "短视频候选",
@@ -1652,7 +1652,7 @@
           "title": "美債撐不住了？貝森特G20逼日本加息，40年前劇本重演！",
           "publishedAt": "2026-09-20T01:56:09Z",
           "publishedDate": "2026-09-20",
-          "viewCount": 2395,
+          "viewCount": 2405,
           "likeCount": 55,
           "commentCount": 1,
           "durationSeconds": 141,
@@ -3230,7 +3230,7 @@
       "source": {
         "label": "YouTube Data API v3 · playlistItems.list + videos.list",
         "endpoint": "playlistItems.list, videos.list",
-        "retrievedAt": "2026-09-24T06:33:06+00:00",
+        "retrievedAt": "2026-09-24T06:38:25+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -3304,7 +3304,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-09-24T06:33:06+00:00",
+        "retrievedAt": "2026-09-24T06:38:25+00:00",
         "metricDefinitions": []
       }
     },
@@ -3322,7 +3322,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-09-24T06:33:06+00:00",
+        "retrievedAt": "2026-09-24T06:38:25+00:00",
         "metricDefinitions": []
       }
     }
