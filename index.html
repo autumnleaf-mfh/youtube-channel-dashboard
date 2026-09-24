@@ -34,17 +34,34 @@
         </header>
         <div id="viewsChart" class="donut" aria-live="polite"></div>
       </article>
+
+      <article class="panel updates-panel" aria-labelledby="updatesTitle">
+        <header class="panel-heading updates-heading">
+          <div>
+            <p class="eyebrow">LAST 7 DAYS</p>
+            <h2 id="updatesTitle">近 7 日更新</h2>
+          </div>
+          <span id="updateCount" class="note"></span>
+        </header>
+        <ol id="updatesList" class="updates-list"></ol>
+      </article>
     </section>
 
-    <section class="panel updates-panel" aria-labelledby="updatesTitle">
-      <header class="panel-heading updates-heading">
+    <section class="panel trend-panel" aria-labelledby="trendTitle">
+      <header class="trend-header">
         <div>
-          <p class="eyebrow">LAST 7 DAYS</p>
-          <h2 id="updatesTitle">近 7 日更新</h2>
+          <p class="eyebrow">VIDEO TREND</p>
+          <h2 id="trendTitle">频道内容趋势对比</h2>
+          <p>按视频发布时间排列；播放、点赞及评论为当前累计值。</p>
         </div>
-        <span id="updateCount" class="note"></span>
+        <div class="trend-controls">
+          <label>频道<select id="primaryChannel" aria-label="选择频道"></select></label>
+          <label>对比<select id="comparisonChannel" aria-label="选择对比频道"></select></label>
+          <label>指标<select id="trendMetric" aria-label="选择趋势指标"><option value="viewCount">播放量</option><option value="durationSeconds">播放时长</option><option value="likeCount">点赞数量</option><option value="commentCount">评论数量</option></select></label>
+        </div>
       </header>
-      <ol id="updatesList" class="updates-list"></ol>
+      <div id="trendLegend" class="trend-legend"></div>
+      <div id="trendChart" class="trend-chart" aria-live="polite"></div>
     </section>
 
     <div id="loadError" class="load-error" hidden></div>
