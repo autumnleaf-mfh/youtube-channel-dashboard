@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-09-24T06:39:54Z",
+  "generatedAt": "2026-09-24T07:38:58Z",
   "filters": [],
   "queries": {
     "channel_current": {
@@ -21,15 +21,15 @@
           "channelViewCount": 1404126,
           "videoCount": 84,
           "lastPublishedAt": "2026-09-23T10:19:06Z",
-          "daysSinceUpload": 0.8,
+          "daysSinceUpload": 0.9,
           "uploads7d": 2,
           "uploads30d": 17,
           "uploads90d": 30,
           "averageUploadGapDays": 1.7,
-          "recent5AverageViews": 4990,
+          "recent5AverageViews": 5010,
           "recent5MedianViews": 5192,
           "recent5AverageLikes": 176,
-          "recent5EngagementRate": 0.037715
+          "recent5EngagementRate": 0.037605
         },
         {
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
@@ -48,10 +48,10 @@
           "uploads30d": 4,
           "uploads90d": 4,
           "averageUploadGapDays": 1.7,
-          "recent5AverageViews": 782,
-          "recent5MedianViews": 876,
+          "recent5AverageViews": 790,
+          "recent5MedianViews": 878,
           "recent5AverageLikes": 18,
-          "recent5EngagementRate": 0.025559
+          "recent5EngagementRate": 0.025617
         },
         {
           "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ",
@@ -70,10 +70,10 @@
           "uploads30d": 17,
           "uploads90d": 30,
           "averageUploadGapDays": 1.4,
-          "recent5AverageViews": 1319,
+          "recent5AverageViews": 1320,
           "recent5MedianViews": 1152,
           "recent5AverageLikes": 66,
-          "recent5EngagementRate": 0.057022
+          "recent5EngagementRate": 0.05697
         },
         {
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
@@ -87,15 +87,15 @@
           "channelViewCount": 7052,
           "videoCount": 7,
           "lastPublishedAt": "2026-09-23T01:00:14Z",
-          "daysSinceUpload": 1.2,
+          "daysSinceUpload": 1.3,
           "uploads7d": 7,
           "uploads30d": 7,
           "uploads90d": 7,
           "averageUploadGapDays": 0.7,
-          "recent5AverageViews": 1199,
+          "recent5AverageViews": 1208,
           "recent5MedianViews": 945,
           "recent5AverageLikes": 22,
-          "recent5EngagementRate": 0.018179
+          "recent5EngagementRate": 0.018218
         },
         {
           "channelId": "UCNX9-jzOH4KMbIeuWK8LZaw",
@@ -131,15 +131,15 @@
           "channelViewCount": 922,
           "videoCount": 4,
           "lastPublishedAt": "2026-09-22T12:54:48Z",
-          "daysSinceUpload": 1.7,
+          "daysSinceUpload": 1.8,
           "uploads7d": 4,
           "uploads30d": 4,
           "uploads90d": 4,
           "averageUploadGapDays": 1.3,
-          "recent5AverageViews": 316,
-          "recent5MedianViews": 198,
+          "recent5AverageViews": 346,
+          "recent5MedianViews": 200,
           "recent5AverageLikes": 12,
-          "recent5EngagementRate": 0.038766
+          "recent5EngagementRate": 0.036101
         },
         {
           "channelId": "UC9veOeKEZhexYxmMXF_RwCQ",
@@ -153,7 +153,7 @@
           "channelViewCount": 7906,
           "videoCount": 4,
           "lastPublishedAt": "2026-09-24T05:47:51Z",
-          "daysSinceUpload": 0.0,
+          "daysSinceUpload": 0.1,
           "uploads7d": 4,
           "uploads30d": 4,
           "uploads90d": 4,
@@ -197,8 +197,8 @@
           "channelViewCount": 495,
           "videoCount": 7,
           "lastPublishedAt": "2026-09-23T08:15:32Z",
-          "daysSinceUpload": 0.9,
-          "uploads7d": 7,
+          "daysSinceUpload": 1.0,
+          "uploads7d": 6,
           "uploads30d": 7,
           "uploads90d": 7,
           "averageUploadGapDays": 1.0,
@@ -283,23 +283,23 @@
           "subscriberCount": 162,
           "hiddenSubscriberCount": false,
           "channelViewCount": 48787,
-          "videoCount": 54,
-          "lastPublishedAt": "2026-09-20T07:00:12Z",
-          "daysSinceUpload": 4.0,
-          "uploads7d": 2,
-          "uploads30d": 6,
-          "uploads90d": 23,
-          "averageUploadGapDays": 4.4,
-          "recent5AverageViews": 450,
+          "videoCount": 55,
+          "lastPublishedAt": "2026-09-24T06:51:08Z",
+          "daysSinceUpload": 0.0,
+          "uploads7d": 3,
+          "uploads30d": 7,
+          "uploads90d": 24,
+          "averageUploadGapDays": 4.3,
+          "recent5AverageViews": 431,
           "recent5MedianViews": 196,
           "recent5AverageLikes": 1,
-          "recent5EngagementRate": 0.004002
+          "recent5EngagementRate": 0.004174
         }
       ],
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-09-24T06:40:02+00:00",
+        "retrievedAt": "2026-09-24T07:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -461,12 +461,129 @@
           "subscriberCount": 71,
           "channelViewCount": 922,
           "videoCount": 4
+        },
+        {
+          "observedAt": "2026-09-24T07:00:00Z",
+          "date": "2026-09-24",
+          "channelId": "UC5lCKye2u8Q0BoE5ggY9myw",
+          "channel": "Maple的理财森林",
+          "subscriberCount": 8,
+          "channelViewCount": 627,
+          "videoCount": 2
+        },
+        {
+          "observedAt": "2026-09-24T07:00:00Z",
+          "date": "2026-09-24",
+          "channelId": "UC8RxFK0DNEz8Ad2DPIt3Bog",
+          "channel": "熱股追蹤",
+          "subscriberCount": 162,
+          "channelViewCount": 48787,
+          "videoCount": 55
+        },
+        {
+          "observedAt": "2026-09-24T07:00:00Z",
+          "date": "2026-09-24",
+          "channelId": "UC9veOeKEZhexYxmMXF_RwCQ",
+          "channel": "艾莉说",
+          "subscriberCount": 40,
+          "channelViewCount": 7906,
+          "videoCount": 4
+        },
+        {
+          "observedAt": "2026-09-24T07:00:00Z",
+          "date": "2026-09-24",
+          "channelId": "UCIj1v-XeGVGaR8rOkipW4gQ",
+          "channel": "Alec財有意思",
+          "subscriberCount": 816,
+          "channelViewCount": 61036,
+          "videoCount": 42
+        },
+        {
+          "observedAt": "2026-09-24T07:00:00Z",
+          "date": "2026-09-24",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw",
+          "channel": "Amber聊财",
+          "subscriberCount": 13500,
+          "channelViewCount": 1404126,
+          "videoCount": 84
+        },
+        {
+          "observedAt": "2026-09-24T07:00:00Z",
+          "date": "2026-09-24",
+          "channelId": "UCNX9-jzOH4KMbIeuWK8LZaw",
+          "channel": "Leo财经",
+          "subscriberCount": 10,
+          "channelViewCount": 79,
+          "videoCount": 7
+        },
+        {
+          "observedAt": "2026-09-24T07:00:00Z",
+          "date": "2026-09-24",
+          "channelId": "UCQAo0ws95p-uN7gr0OOHoXg",
+          "channel": "财经有一套",
+          "subscriberCount": 4,
+          "channelViewCount": 52,
+          "videoCount": 3
+        },
+        {
+          "observedAt": "2026-09-24T07:00:00Z",
+          "date": "2026-09-24",
+          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA",
+          "channel": "阿诚聊焦点",
+          "subscriberCount": 5,
+          "channelViewCount": 495,
+          "videoCount": 7
+        },
+        {
+          "observedAt": "2026-09-24T07:00:00Z",
+          "date": "2026-09-24",
+          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
+          "channel": "财经小鹿 Finance Deer",
+          "subscriberCount": 46,
+          "channelViewCount": 7052,
+          "videoCount": 7
+        },
+        {
+          "observedAt": "2026-09-24T07:00:00Z",
+          "date": "2026-09-24",
+          "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
+          "channel": "Amber放大镜",
+          "subscriberCount": 42,
+          "channelViewCount": 1789,
+          "videoCount": 4
+        },
+        {
+          "observedAt": "2026-09-24T07:00:00Z",
+          "date": "2026-09-24",
+          "channelId": "UCmhqWEDoPgrg9J129nGuQkQ",
+          "channel": "文叔聊财",
+          "subscriberCount": 4,
+          "channelViewCount": 13,
+          "videoCount": 3
+        },
+        {
+          "observedAt": "2026-09-24T07:00:00Z",
+          "date": "2026-09-24",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ",
+          "channel": "小鹿财经 Deer Finance",
+          "subscriberCount": 14200,
+          "channelViewCount": 644604,
+          "videoCount": 69
+        },
+        {
+          "observedAt": "2026-09-24T07:00:00Z",
+          "date": "2026-09-24",
+          "channelId": "UCsXJXZI4J_N9r8H9TsORmlA",
+          "channel": "羅拉财富观",
+          "subscriberCount": 71,
+          "channelViewCount": 922,
+          "videoCount": 4
         }
       ],
       "source": {
         "label": "Repository snapshots · one observation per channel per collection hour",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-09-24T06:40:02+00:00",
+        "retrievedAt": "2026-09-24T07:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -496,8 +613,8 @@
           "title": "5天70億，創紀錄流入！比特幣黃金暴漲背後，是美元護城河快撐不住了？美國正在大規模收編加密產業！#比特幣 #加密貨幣 #穩定幣 #美元 #美聯儲 #美國財政 #特朗普 #黃金 #財經",
           "publishedAt": "2026-09-23T10:19:06Z",
           "publishedDate": "2026-09-23",
-          "viewCount": 3218,
-          "likeCount": 113,
+          "viewCount": 3294,
+          "likeCount": 114,
           "commentCount": 16,
           "durationSeconds": 950,
           "formatHint": "长视频/直播候选",
@@ -513,7 +630,7 @@
           "title": "三個KPI全落空！做空市場的貝森特，為什麼突然反過來救美債？索羅斯高徒也扛不住了？ #貝森特 #美債 #聯準會 #美國財政 #美元 #日圓 #美股 #總經 #財經",
           "publishedAt": "2026-09-18T13:00:28Z",
           "publishedDate": "2026-09-18",
-          "viewCount": 2750,
+          "viewCount": 2771,
           "likeCount": 131,
           "commentCount": 7,
           "durationSeconds": 172,
@@ -547,7 +664,7 @@
           "title": "三星26兆遺產稅剛繳清，SK海力士就要赴美募資290億！韓國財閥為何集體出走？ #韓國 #財閥 #三星 #SK海力士 #遺產稅 #美股 #財經",
           "publishedAt": "2026-09-13T13:30:22Z",
           "publishedDate": "2026-09-13",
-          "viewCount": 5297,
+          "viewCount": 5300,
           "likeCount": 233,
           "commentCount": 8,
           "durationSeconds": 179,
@@ -649,7 +766,7 @@
           "title": "還在死等降息牛？白嫖了十幾年的便宜錢，現在開始強制買單！40年一週期的全球大清算已經開始……「美日利率博弈 EP3」 #美聯儲 #降息 #高利率 #全球大清算 #美債 #資產配置 #財經分析",
           "publishedAt": "2026-08-30T12:00:01Z",
           "publishedDate": "2026-08-30",
-          "viewCount": 78257,
+          "viewCount": 78259,
           "likeCount": 736,
           "commentCount": 78,
           "durationSeconds": 827,
@@ -1006,7 +1123,7 @@
           "title": "AI泡沫2027年7月破滅？ 一條預言背後，我逐條查了這些數字 #AI泡沫 #高志凱 #投資 #財經",
           "publishedAt": "2026-09-23T12:00:06Z",
           "publishedDate": "2026-09-23",
-          "viewCount": 1319,
+          "viewCount": 1347,
           "likeCount": 45,
           "commentCount": 1,
           "durationSeconds": 176,
@@ -1023,8 +1140,8 @@
           "title": "超強厄爾尼諾或將來襲！日本會是下一個印尼嗎？#厄爾尼諾 #日本 #印尼  #投資 #財經",
           "publishedAt": "2026-09-21T12:00:09Z",
           "publishedDate": "2026-09-21",
-          "viewCount": 863,
-          "likeCount": 9,
+          "viewCount": 867,
+          "likeCount": 10,
           "commentCount": 2,
           "durationSeconds": 176,
           "formatHint": "短视频候选",
@@ -1074,7 +1191,7 @@
           "title": "2.3兆挪威主權基金瘋狂拋美債！華爾街21巨頭秘密打造新美元！ 86噸+129噸+300噸黃金正在出逃！新美元要來了！",
           "publishedAt": "2026-09-16T09:34:54Z",
           "publishedDate": "2026-09-16",
-          "viewCount": 1441,
+          "viewCount": 1446,
           "likeCount": 73,
           "commentCount": 13,
           "durationSeconds": 580,
@@ -1108,7 +1225,7 @@
           "title": "印度200人代表團到日本招商！開口就要10兆！印度2A寡占卻壟斷港口、機場、零售等全產業鏈！嚇跑1500家日企？美資加速撤出！日企還敢接嗎？#日圓#日債#美元#美債#金融",
           "publishedAt": "2026-09-10T06:01:23Z",
           "publishedDate": "2026-09-10",
-          "viewCount": 1150,
+          "viewCount": 1151,
           "likeCount": 56,
           "commentCount": 18,
           "durationSeconds": 707,
@@ -1635,8 +1752,8 @@
           "title": "全球金融體系正在悄悄重置？黃金撤離美國、美債買家開始退場，21家華爾街巨頭聯手打造「新美元」！",
           "publishedAt": "2026-09-20T02:38:11Z",
           "publishedDate": "2026-09-20",
-          "viewCount": 797,
-          "likeCount": 5,
+          "viewCount": 839,
+          "likeCount": 6,
           "commentCount": 0,
           "durationSeconds": 580,
           "formatHint": "长视频/直播候选",
@@ -1686,7 +1803,7 @@
           "title": "英國被掏空了？300年帝國，最後竟成了華爾街獵物！300年日不落帝國如何被掏空：工業消失、金融失控、脫歐反噬，普通人正在買單！",
           "publishedAt": "2026-09-19T01:00:27Z",
           "publishedDate": "2026-09-19",
-          "viewCount": 335,
+          "viewCount": 353,
           "likeCount": 5,
           "commentCount": 2,
           "durationSeconds": 831,
@@ -1822,8 +1939,8 @@
           "title": "美國這次真的危險了！40 萬億美債撞上 5% 高利率！全球資金正在尋找第二出口，黃金、比特幣瘋狂吸金！美元霸權最危險的裂縫出現了？普通人的財富大洗牌才剛開始！",
           "publishedAt": "2026-09-22T12:54:48Z",
           "publishedDate": "2026-09-22",
-          "viewCount": 141,
-          "likeCount": 21,
+          "viewCount": 143,
+          "likeCount": 22,
           "commentCount": 0,
           "durationSeconds": 897,
           "formatHint": "长视频/直播候选",
@@ -1856,7 +1973,7 @@
           "title": "比特币跌破8万是陷阱？大资金提前3周进场狂扫5万筹码，趋势反转信号早亮起！比特币黄金走势神同步，传统股债对冲失效，三大指标帶你锁定下一波大趋势！",
           "publishedAt": "2026-09-20T12:00:00Z",
           "publishedDate": "2026-09-20",
-          "viewCount": 742,
+          "viewCount": 861,
           "likeCount": 18,
           "commentCount": 0,
           "durationSeconds": 576,
@@ -2719,6 +2836,23 @@
         {
           "channelId": "UC8RxFK0DNEz8Ad2DPIt3Bog",
           "channel": "熱股追蹤",
+          "videoId": "QP3jO_OmPsQ",
+          "title": "川普才剛賣出亞馬遜股票，貝佐斯反手砸下680億美元！一個急著套現，一個瘋狂押注——這場資本對決，究竟藏著什麼驚天反轉？",
+          "publishedAt": "2026-09-24T06:51:08Z",
+          "publishedDate": "2026-09-24",
+          "viewCount": 1,
+          "likeCount": 0,
+          "commentCount": 1,
+          "durationSeconds": 1784,
+          "formatHint": "长视频/直播候选",
+          "thumbnail": "https://i.ytimg.com/vi/QP3jO_OmPsQ/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=QP3jO_OmPsQ",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "channelId": "UC8RxFK0DNEz8Ad2DPIt3Bog",
+          "channel": "熱股追蹤",
           "videoId": "VaPSOiToODw",
           "title": "被踢出道瓊的它 漲贏輝達 #港股 #恒指 #英特爾 #聯準會 #道瓊斯 #輝達 #半導體 #晶片股 #升息 #搶跑 #科技股 #投資理財",
           "publishedAt": "2026-09-20T07:00:12Z",
@@ -2737,10 +2871,10 @@
           "channelId": "UC8RxFK0DNEz8Ad2DPIt3Bog",
           "channel": "熱股追蹤",
           "videoId": "4BpfJ7a2voE",
-          "title": "英特爾被道瓊斯掃地出門，加息後反而暴漲7.67%：搶跑的錢在賭什麼？",
+          "title": "搶台積電最貴大單？SK海力士爆合資英特爾！HBM4E 雙供應商洗牌，俄亥俄廠迎轉機？【熱股追蹤】",
           "publishedAt": "2026-09-20T06:13:38Z",
           "publishedDate": "2026-09-20",
-          "viewCount": 1038,
+          "viewCount": 1057,
           "likeCount": 0,
           "commentCount": 2,
           "durationSeconds": 1037,
@@ -3208,29 +3342,12 @@
           "url": "https://www.youtube.com/watch?v=muuANvBXi7s",
           "isLive": false,
           "concurrentViewers": null
-        },
-        {
-          "channelId": "UC8RxFK0DNEz8Ad2DPIt3Bog",
-          "channel": "熱股追蹤",
-          "videoId": "Fo_M5AZErWM",
-          "title": "美聯儲炸了！沃什首秀砍掉點陣圖，全球市場一夜變天 #港股 #香港 #投資 #美股 #恒指",
-          "publishedAt": "2026-06-18T16:00:09Z",
-          "publishedDate": "2026-06-18",
-          "viewCount": 969,
-          "likeCount": 3,
-          "commentCount": 0,
-          "durationSeconds": 8,
-          "formatHint": "短视频候选",
-          "thumbnail": "https://i.ytimg.com/vi/Fo_M5AZErWM/mqdefault.jpg",
-          "url": "https://www.youtube.com/watch?v=Fo_M5AZErWM",
-          "isLive": false,
-          "concurrentViewers": null
         }
       ],
       "source": {
         "label": "YouTube Data API v3 · playlistItems.list + videos.list",
         "endpoint": "playlistItems.list, videos.list",
-        "retrievedAt": "2026-09-24T06:40:02+00:00",
+        "retrievedAt": "2026-09-24T07:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -3304,14 +3421,14 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-09-24T06:40:02+00:00",
+        "retrievedAt": "2026-09-24T07:39:06+00:00",
         "metricDefinitions": []
       }
     },
     "collection_health": {
       "rows": [
         {
-          "observedAt": "2026-09-24T06:00:00Z",
+          "observedAt": "2026-09-24T07:00:00Z",
           "channelsExpected": 13,
           "channelsCollected": 13,
           "videosCollected": 161,
@@ -3322,7 +3439,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-09-24T06:40:02+00:00",
+        "retrievedAt": "2026-09-24T07:39:06+00:00",
         "metricDefinitions": []
       }
     }
