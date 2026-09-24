@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-09-24T06:38:16Z",
+  "generatedAt": "2026-09-24T06:39:54Z",
   "filters": [],
   "queries": {
     "channel_current": {
@@ -29,7 +29,7 @@
           "recent5AverageViews": 4990,
           "recent5MedianViews": 5192,
           "recent5AverageLikes": 176,
-          "recent5EngagementRate": 0.037675
+          "recent5EngagementRate": 0.037715
         },
         {
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
@@ -299,7 +299,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-09-24T06:38:25+00:00",
+        "retrievedAt": "2026-09-24T06:40:02+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -466,7 +466,7 @@
       "source": {
         "label": "Repository snapshots · one observation per channel per collection hour",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-09-24T06:38:25+00:00",
+        "retrievedAt": "2026-09-24T06:40:02+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -497,7 +497,7 @@
           "publishedAt": "2026-09-23T10:19:06Z",
           "publishedDate": "2026-09-23",
           "viewCount": 3218,
-          "likeCount": 112,
+          "likeCount": 113,
           "commentCount": 16,
           "durationSeconds": 950,
           "formatHint": "长视频/直播候选",
@@ -3230,7 +3230,7 @@
       "source": {
         "label": "YouTube Data API v3 · playlistItems.list + videos.list",
         "endpoint": "playlistItems.list, videos.list",
-        "retrievedAt": "2026-09-24T06:38:25+00:00",
+        "retrievedAt": "2026-09-24T06:40:02+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -3304,7 +3304,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-09-24T06:38:25+00:00",
+        "retrievedAt": "2026-09-24T06:40:02+00:00",
         "metricDefinitions": []
       }
     },
@@ -3322,7 +3322,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-09-24T06:38:25+00:00",
+        "retrievedAt": "2026-09-24T06:40:02+00:00",
         "metricDefinitions": []
       }
     }
