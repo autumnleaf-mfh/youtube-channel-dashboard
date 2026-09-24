@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#07100d">
   <meta name="description" content="13 个财经 YouTube 频道的订阅、播放与近 7 日更新">
   <title>YouTube 频道数据</title>
-  <link rel="stylesheet" href="styles.css?v=9">
+  <link rel="stylesheet" href="styles.css?v=12">
 </head>
 <body>
   <main class="dashboard">
@@ -22,8 +22,8 @@
           <div class="metric-actions">
             <span id="subscriberNote" class="note"></span>
             <div id="subscriberPeriod" class="period-switch" aria-label="公开订阅比较区间">
-              <button type="button" data-period="7" aria-pressed="false" disabled>7D</button>
-              <button type="button" data-period="30" aria-pressed="false" disabled>30D</button>
+              <button type="button" data-period="7" aria-pressed="false" aria-disabled="true">7D</button>
+              <button type="button" data-period="30" aria-pressed="false" aria-disabled="true">30D</button>
               <button type="button" data-period="all" aria-pressed="true">ALL</button>
             </div>
           </div>
@@ -80,6 +80,6 @@
 
     <div id="loadError" class="load-error" hidden></div>
   </main>
-  <script src="app.js?v=11" defer></script>
+  <script src="app.js?v=12" defer></script>
 </body>
 </html>
