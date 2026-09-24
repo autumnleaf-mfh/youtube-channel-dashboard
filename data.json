@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-09-24T10:11:31Z",
+  "generatedAt": "2026-09-24T10:38:59Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-09-24T08:35:04Z",
     "videoSamplingPolicy": {
@@ -75,7 +75,7 @@
           "lastPublishedAt": "2026-09-16T09:34:54Z",
           "daysSinceUpload": 8.0,
           "uploads7d": 0,
-          "uploads30d": 16,
+          "uploads30d": 15,
           "uploads90d": 48,
           "averageUploadGapDays": 1.4,
           "recent5AverageViews": 1320,
@@ -134,7 +134,7 @@
           "customUrl": "@lorafinancialworld",
           "channelUrl": "https://www.youtube.com/channel/UCsXJXZI4J_N9r8H9TsORmlA",
           "thumbnail": "https://yt3.ggpht.com/f8Upq2a2CtKPaGkcJDG609eXDHKSvG6cl218-v1CFEcEaAgzFA7PdxyiGZvWQqb_jRJtrS6_lg=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 72,
+          "subscriberCount": 73,
           "hiddenSubscriberCount": false,
           "channelViewCount": 922,
           "videoCount": 4,
@@ -293,7 +293,7 @@
           "channelViewCount": 48787,
           "videoCount": 56,
           "lastPublishedAt": "2026-09-24T09:00:26Z",
-          "daysSinceUpload": 0.0,
+          "daysSinceUpload": 0.1,
           "uploads7d": 4,
           "uploads30d": 8,
           "uploads90d": 25,
@@ -307,7 +307,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-09-24T10:11:38+00:00",
+        "retrievedAt": "2026-09-24T10:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -691,7 +691,7 @@
           "date": "2026-09-24",
           "channelId": "UCsXJXZI4J_N9r8H9TsORmlA",
           "channel": "羅拉财富观",
-          "subscriberCount": 72,
+          "subscriberCount": 73,
           "channelViewCount": 922,
           "videoCount": 4
         }
@@ -699,7 +699,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-09-24T10:11:38+00:00",
+        "retrievedAt": "2026-09-24T10:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -3646,7 +3646,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-09-24T10:11:38+00:00",
+        "retrievedAt": "2026-09-24T10:39:06+00:00",
         "metricDefinitions": []
       }
     },
@@ -9758,7 +9758,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-09-24T10:11:38+00:00",
+        "retrievedAt": "2026-09-24T10:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -12699,7 +12699,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-09-24T10:11:38+00:00",
+        "retrievedAt": "2026-09-24T10:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -12773,7 +12773,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-09-24T10:11:38+00:00",
+        "retrievedAt": "2026-09-24T10:39:06+00:00",
         "metricDefinitions": []
       }
     },
@@ -12784,7 +12784,7 @@
           "channelsExpected": 13,
           "channelsCollected": 13,
           "videoCatalogCount": 292,
-          "videosRefreshed": 48,
+          "videosRefreshed": 0,
           "videosDisplayed": 162,
           "fullInventoryScan": false,
           "failureCount": 0,
@@ -12794,7 +12794,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-09-24T10:11:38+00:00",
+        "retrievedAt": "2026-09-24T10:39:06+00:00",
         "metricDefinitions": []
       }
     }
