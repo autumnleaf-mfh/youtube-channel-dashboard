@@ -61,6 +61,15 @@ function durationText(value) {
   return `${minutes}:${remainder}`;
 }
 
+function countdownText(targetTime) {
+  const remainingHours = Math.max(0, Math.ceil((targetTime - Date.now()) / (60 * 60 * 1000)));
+  if (!remainingHours) return `预计 ${ymdh(targetTime)}（香港时间）完成，等待下一次整点采集`;
+  const days = Math.floor(remainingHours / 24);
+  const hours = remainingHours % 24;
+  const remaining = [days ? `${days} 天` : "", hours ? `${hours} 小时` : ""].filter(Boolean).join(" ");
+  return `完整数据预计 ${ymdh(targetTime)}（香港时间），还需 ${remaining}`;
+}
+
 function renderDonut(targetId, rows, field, label, periodLabel, options = {}) {
   const target = $(targetId);
   const values = rows
@@ -147,6 +156,7 @@ function bindPeriodSwitch(targetId, render) {
   const target = $(targetId);
   target.querySelectorAll("button").forEach((button) => {
     button.addEventListener("click", () => {
+      if (button.getAttribute("aria-disabled") === "true") return;
       target.querySelectorAll("button").forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
       render(button.dataset.period);
     });
@@ -300,9 +310,22 @@ async function init() {
     const publicSubscriberRows = rows.filter((row) => !row.hiddenSubscriberCount && row.subscriberCount != null);
     const subscriberAvailable = (period) => publicSubscriberRows.every((row) => previousSnapshot(history, row.channelId, data.generatedAt, period));
     const availability = { "7": subscriberAvailable("7"), "30": subscriberAvailable("30"), all: true };
+    const coverageStart = Math.max(...publicSubscriberRows.map((row) => {
+      const channelTimes = history.filter((item) => item.channelId === row.channelId).map((item) => toTime(item.observedAt)).filter(Number.isFinite);
+      return channelTimes.length ? Math.min(...channelTimes) : toTime(data.generatedAt);
+    }));
     $("subscriberPeriod").querySelectorAll("button").forEach((button) => {
-      button.disabled = !availability[button.dataset.period];
-      button.setAttribute("aria-disabled", String(button.disabled));
+      const unavailable = !availability[button.dataset.period];
+      button.setAttribute("aria-disabled", String(unavailable));
+      if (unavailable) {
+        const targetTime = coverageStart + Number(button.dataset.period) * 24 * 60 * 60 * 1000;
+        const message = countdownText(targetTime);
+        button.dataset.countdown = message;
+        button.title = message;
+      } else {
+        delete button.dataset.countdown;
+        button.removeAttribute("title");
+      }
     });
     const defaultSubscriberPeriod = availability["7"] ? "7" : "all";
     $("subscriberPeriod").querySelectorAll("button").forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.period === defaultSubscriberPeriod)));
