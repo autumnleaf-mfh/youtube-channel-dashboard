@@ -30,7 +30,7 @@ const ymdh = (value) => {
   return `${parts.year}-${parts.month}-${parts.day} ${parts.hour}:00`;
 };
 
-function previousSnapshot(history, channelId, generatedAt, period) {
+function completeWindowSnapshot(history, channelId, generatedAt, period) {
   const channelHistory = history.filter((row) => row.channelId === channelId);
   if (period === "all") {
     return channelHistory.sort((a, b) => toTime(a.observedAt) - toTime(b.observedAt))[0];
@@ -39,6 +39,14 @@ function previousSnapshot(history, channelId, generatedAt, period) {
   return channelHistory
     .filter((row) => toTime(row.observedAt) <= cutoff)
     .sort((a, b) => toTime(b.observedAt) - toTime(a.observedAt))[0];
+}
+
+function previousSnapshot(history, channelId, generatedAt, period) {
+  const complete = completeWindowSnapshot(history, channelId, generatedAt, period);
+  if (complete) return complete;
+  return history
+    .filter((row) => row.channelId === channelId)
+    .sort((a, b) => toTime(a.observedAt) - toTime(b.observedAt))[0];
 }
 
 function growthRate(current, baseline, field) {
@@ -61,13 +69,22 @@ function durationText(value) {
   return `${minutes}:${remainder}`;
 }
 
-function countdownText(targetTime) {
+function elapsedText(startTime, endTime) {
+  const elapsedHours = Math.max(0, Math.floor((endTime - startTime) / (60 * 60 * 1000)));
+  if (!elapsedHours) return "不足 1 小时";
+  const days = Math.floor(elapsedHours / 24);
+  const hours = elapsedHours % 24;
+  return [days ? `${days} 天` : "", hours ? `${hours} 小时` : ""].filter(Boolean).join(" ");
+}
+
+function countdownText(targetTime, coverageStart, generatedAt) {
   const remainingHours = Math.max(0, Math.ceil((targetTime - Date.now()) / (60 * 60 * 1000)));
-  if (!remainingHours) return `预计 ${ymdh(targetTime)}（香港时间）完成，等待下一次整点采集`;
+  const covered = elapsedText(coverageStart, toTime(generatedAt));
+  if (!remainingHours) return `当前先显示已积累 ${covered} 的数据；预计 ${ymdh(targetTime)}（香港时间）完整，等待下一次整点采集`;
   const days = Math.floor(remainingHours / 24);
   const hours = remainingHours % 24;
   const remaining = [days ? `${days} 天` : "", hours ? `${hours} 小时` : ""].filter(Boolean).join(" ");
-  return `完整数据预计 ${ymdh(targetTime)}（香港时间），还需 ${remaining}`;
+  return `当前先显示已积累 ${covered} 的数据；完整窗口预计 ${ymdh(targetTime)}（香港时间），还需 ${remaining}`;
 }
 
 function renderDonut(targetId, rows, field, label, periodLabel, options = {}) {
@@ -308,18 +325,18 @@ async function init() {
     }));
     const hiddenCount = rows.filter((row) => row.hiddenSubscriberCount).length;
     const publicSubscriberRows = rows.filter((row) => !row.hiddenSubscriberCount && row.subscriberCount != null);
-    const subscriberAvailable = (period) => publicSubscriberRows.every((row) => previousSnapshot(history, row.channelId, data.generatedAt, period));
+    const subscriberAvailable = (period) => publicSubscriberRows.every((row) => completeWindowSnapshot(history, row.channelId, data.generatedAt, period));
     const availability = { "7": subscriberAvailable("7"), "30": subscriberAvailable("30"), all: true };
     const coverageStart = Math.max(...publicSubscriberRows.map((row) => {
       const channelTimes = history.filter((item) => item.channelId === row.channelId).map((item) => toTime(item.observedAt)).filter(Number.isFinite);
       return channelTimes.length ? Math.min(...channelTimes) : toTime(data.generatedAt);
     }));
     $("subscriberPeriod").querySelectorAll("button").forEach((button) => {
-      const unavailable = !availability[button.dataset.period];
-      button.setAttribute("aria-disabled", String(unavailable));
-      if (unavailable) {
+      const incomplete = !availability[button.dataset.period];
+      button.setAttribute("aria-disabled", "false");
+      if (incomplete) {
         const targetTime = coverageStart + Number(button.dataset.period) * 24 * 60 * 60 * 1000;
-        const message = countdownText(targetTime);
+        const message = countdownText(targetTime, coverageStart, data.generatedAt);
         button.dataset.countdown = message;
         button.title = message;
       } else {
@@ -327,14 +344,17 @@ async function init() {
         button.removeAttribute("title");
       }
     });
-    const defaultSubscriberPeriod = availability["7"] ? "7" : "all";
+    const defaultSubscriberPeriod = "7";
     $("subscriberPeriod").querySelectorAll("button").forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.period === defaultSubscriberPeriod)));
 
-    $("subscriberNote").textContent = hiddenCount ? `${hiddenCount} 个隐藏订阅频道未计入` : `${rows.length} 个频道公开值`;
+    const subscriberBaseNote = hiddenCount ? `${hiddenCount} 个隐藏订阅频道未计入` : `${rows.length} 个频道公开值`;
     const renderSubscribers = (period) => {
       const periodRows = rowsForPeriod(period, "subscriberCount").filter((row) => !row.hiddenSubscriberCount && row.subscriberCount != null);
       const isAll = period === "all";
       const displayRows = isAll ? periodRows : periodRows.map((row) => ({ ...row, subscriberDelta: row.subscriberCount - row.periodBaseline.subscriberCount }));
+      $("subscriberNote").textContent = !isAll && !availability[period]
+        ? `${subscriberBaseNote} · 部分数据 ${elapsedText(coverageStart, toTime(data.generatedAt))}`
+        : subscriberBaseNote;
       renderDonut("subscriberChart", displayRows, isAll ? "subscriberCount" : "subscriberDelta", isAll ? "公开订阅" : "订阅净增长", periodLabels[period]);
     };
     const renderViews = (period) => {
