@@ -16,10 +16,14 @@ const esc = (value) => String(value ?? "").replace(/[&<>'"]/g, (char) => ({ "&":
 const toTime = (value) => new Date(value).getTime();
 const exact = (value) => Number.isFinite(Number(value)) ? integer.format(Number(value)) : "—";
 
-function previousWeek(history, channelId, generatedAt) {
-  const cutoff = toTime(generatedAt) - 7 * 24 * 60 * 60 * 1000;
-  return history
-    .filter((row) => row.channelId === channelId && toTime(row.observedAt) <= cutoff)
+function previousSnapshot(history, channelId, generatedAt, period) {
+  const channelHistory = history.filter((row) => row.channelId === channelId);
+  if (period === "all") {
+    return channelHistory.sort((a, b) => toTime(a.observedAt) - toTime(b.observedAt))[0];
+  }
+  const cutoff = toTime(generatedAt) - Number(period) * 24 * 60 * 60 * 1000;
+  return channelHistory
+    .filter((row) => toTime(row.observedAt) <= cutoff)
     .sort((a, b) => toTime(b.observedAt) - toTime(a.observedAt))[0];
 }
 
@@ -30,8 +34,8 @@ function growthRate(current, baseline, field) {
   return (now - before) / before;
 }
 
-function growthText(value) {
-  if (value == null) return "等待 7 日基线";
+function growthText(value, periodLabel) {
+  if (value == null) return periodLabel === "全部记录" ? "等待历史基线" : `等待${periodLabel.replace("近", "")}基线`;
   const sign = value > 0 ? "+" : "";
   return `${sign}${(value * 100).toFixed(2)}%`;
 }
@@ -43,7 +47,7 @@ function durationText(value) {
   return `${minutes}:${remainder}`;
 }
 
-function renderDonut(targetId, rows, field, label) {
+function renderDonut(targetId, rows, field, label, periodLabel) {
   const target = $(targetId);
   const values = rows
     .filter((row) => Number.isFinite(Number(row[field])) && Number(row[field]) >= 0)
@@ -57,7 +61,7 @@ function renderDonut(targetId, rows, field, label) {
     const length = total > 0 ? row.value / total * circumference : 0;
     const dashOffset = -used;
     used += length;
-    return `<circle class="donut-segment" cx="120" cy="120" r="${radius}" fill="none" stroke="${row.color}" stroke-width="28" stroke-dasharray="${length} ${circumference - length}" stroke-dashoffset="${dashOffset}" data-channel="${esc(row.channel)}" data-value="${row.value}" data-growth="${row.weekGrowth == null ? "" : row.weekGrowth}" tabindex="0" role="img" aria-label="${esc(row.channel)}，${label} ${exact(row.value)}，相比上周 ${growthText(row.weekGrowth)}"></circle>`;
+    return `<circle class="donut-segment" cx="120" cy="120" r="${radius}" fill="none" stroke="${row.color}" stroke-width="28" stroke-dasharray="${length} ${circumference - length}" stroke-dashoffset="${dashOffset}" data-channel="${esc(row.channel)}" data-value="${row.value}" data-growth="${row.periodGrowth == null ? "" : row.periodGrowth}" tabindex="0" role="img" aria-label="${esc(row.channel)}，${label} ${exact(row.value)}，${periodLabel}增长率 ${growthText(row.periodGrowth, periodLabel)}"></circle>`;
   }).join("");
 
   target.innerHTML = `
@@ -66,7 +70,7 @@ function renderDonut(targetId, rows, field, label) {
         <circle class="donut-track" cx="120" cy="120" r="${radius}" fill="none" stroke-width="28"></circle>
         <g transform="rotate(-90 120 120)">${segments}</g>
       </svg>
-      <div class="donut-total"><strong>${compact.format(total)}</strong><span>${label}</span></div>
+      <div class="donut-total"><strong>${compact.format(total)}</strong><span>${label} · ${periodLabel}</span></div>
       <div class="tooltip" role="status" hidden></div>
     </div>
     <div class="legend">${values.map((row) => `<button type="button" class="legend-item" data-channel="${esc(row.channel)}"><i style="background:${row.color}"></i><span>${esc(row.channel)}</span><b>${compact.format(row.value)}</b></button>`).join("")}</div>`;
@@ -76,7 +80,7 @@ function renderDonut(targetId, rows, field, label) {
   const show = (channel, x, y) => {
     const row = values.find((item) => item.channel === channel);
     if (!row) return;
-    tooltip.innerHTML = `<strong>${esc(row.channel)}</strong><span>${label}：${exact(row.value)}</span><span>相比上周：${growthText(row.weekGrowth)}</span>`;
+    tooltip.innerHTML = `<strong>${esc(row.channel)}</strong><span>${label}：${exact(row.value)}</span><span>${periodLabel}增长率：${growthText(row.periodGrowth, periodLabel)}</span>`;
     tooltip.hidden = false;
     tooltip.style.left = `${Math.min(Math.max(12, x), wrap.clientWidth - 210)}px`;
     tooltip.style.top = `${Math.min(Math.max(12, y), wrap.clientHeight - 96)}px`;
@@ -114,6 +118,16 @@ function renderDonut(targetId, rows, field, label) {
     item.addEventListener("mouseleave", deactivate);
     item.addEventListener("focus", () => { activate(item.dataset.channel); show(item.dataset.channel, wrap.clientWidth / 2 + 32, wrap.clientHeight / 2 - 48); });
     item.addEventListener("blur", deactivate);
+  });
+}
+
+function bindPeriodSwitch(targetId, render) {
+  const target = $(targetId);
+  target.querySelectorAll("button").forEach((button) => {
+    button.addEventListener("click", () => {
+      target.querySelectorAll("button").forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+      render(button.dataset.period);
+    });
   });
 }
 
@@ -222,26 +236,33 @@ async function init() {
     const data = await response.json();
     const current = data.queries.channel_current.rows;
     const history = data.queries.channel_history.rows;
-    const rows = current.map((row) => {
-      const baseline = previousWeek(history, row.channelId, data.generatedAt);
-      return {
-        ...row,
-        subscriberGrowth: growthRate(row, baseline, "subscriberCount"),
-        viewsGrowth: growthRate(row, baseline, "channelViewCount"),
-      };
-    });
-
-    const subscriberRows = rows
-      .filter((row) => !row.hiddenSubscriberCount && row.subscriberCount != null)
-      .map((row) => ({ ...row, weekGrowth: row.subscriberGrowth }));
-    const viewRows = rows
-      .filter((row) => row.channelViewCount != null)
-      .map((row) => ({ ...row, weekGrowth: row.viewsGrowth }));
+    const rows = current;
+    const periodLabels = { "7": "近 7 日", "30": "近 30 日", all: "全部记录" };
+    const rowsForPeriod = (period, field) => rows.map((row) => ({
+      ...row,
+      periodGrowth: growthRate(row, previousSnapshot(history, row.channelId, data.generatedAt, period), field),
+    }));
     const hiddenCount = rows.filter((row) => row.hiddenSubscriberCount).length;
 
-    $("subscriberNote").textContent = hiddenCount ? `${hiddenCount} 个隐藏订阅频道未计入` : `${subscriberRows.length} 个频道公开值`;
-    renderDonut("subscriberChart", subscriberRows, "subscriberCount", "公开订阅");
-    renderDonut("viewsChart", viewRows, "channelViewCount", "频道总播放");
+    $("subscriberNote").textContent = hiddenCount ? `${hiddenCount} 个隐藏订阅频道未计入` : `${rows.length} 个频道公开值`;
+    const renderSubscribers = (period) => renderDonut(
+      "subscriberChart",
+      rowsForPeriod(period, "subscriberCount").filter((row) => !row.hiddenSubscriberCount && row.subscriberCount != null),
+      "subscriberCount",
+      "公开订阅",
+      periodLabels[period],
+    );
+    const renderViews = (period) => renderDonut(
+      "viewsChart",
+      rowsForPeriod(period, "channelViewCount").filter((row) => row.channelViewCount != null),
+      "channelViewCount",
+      "频道总播放",
+      periodLabels[period],
+    );
+    bindPeriodSwitch("subscriberPeriod", renderSubscribers);
+    bindPeriodSwitch("viewsPeriod", renderViews);
+    renderSubscribers("7");
+    renderViews("7");
     renderUpdates(data.queries.recent_videos.rows, data.generatedAt);
     const options = rows.map((row) => `<option value="${esc(row.channelId)}">${esc(row.channel)}</option>`).join("");
     $("primaryChannel").innerHTML = options;
