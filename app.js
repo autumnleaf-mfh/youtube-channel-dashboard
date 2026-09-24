@@ -65,7 +65,8 @@ function renderDonut(targetId, rows, field, label, periodLabel, options = {}) {
   const target = $(targetId);
   const values = rows
     .filter((row) => Number.isFinite(Number(row[field])))
-    .map((row, index) => ({ ...row, value: Number(row[field]), chartValue: Math.max(0, Number(row[field])), color: colors[index % colors.length] }));
+    .map((row, index) => ({ ...row, value: Number(row[field]), chartValue: Math.max(0, Number(row[field])), color: colors[index % colors.length] }))
+    .sort((a, b) => b.value - a.value || a.channel.localeCompare(b.channel, "zh-HK"));
   const total = values.reduce((sum, row) => sum + row.value, 0);
   const pieTotal = values.reduce((sum, row) => sum + row.chartValue, 0);
   const radius = 86;
