@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-09-24T08:35:04Z",
+  "generatedAt": "2026-09-24T09:11:30Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-09-24T08:35:04Z",
     "videoSamplingPolicy": {
@@ -29,7 +29,7 @@
           "channelViewCount": 1404126,
           "videoCount": 84,
           "lastPublishedAt": "2026-09-23T10:19:06Z",
-          "daysSinceUpload": 0.9,
+          "daysSinceUpload": 1.0,
           "uploads7d": 2,
           "uploads30d": 17,
           "uploads90d": 63,
@@ -117,7 +117,7 @@
           "channelViewCount": 79,
           "videoCount": 7,
           "lastPublishedAt": "2026-09-23T12:30:27Z",
-          "daysSinceUpload": 0.8,
+          "daysSinceUpload": 0.9,
           "uploads7d": 7,
           "uploads30d": 7,
           "uploads90d": 7,
@@ -134,7 +134,7 @@
           "customUrl": "@lorafinancialworld",
           "channelUrl": "https://www.youtube.com/channel/UCsXJXZI4J_N9r8H9TsORmlA",
           "thumbnail": "https://yt3.ggpht.com/f8Upq2a2CtKPaGkcJDG609eXDHKSvG6cl218-v1CFEcEaAgzFA7PdxyiGZvWQqb_jRJtrS6_lg=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 71,
+          "subscriberCount": 72,
           "hiddenSubscriberCount": false,
           "channelViewCount": 922,
           "videoCount": 4,
@@ -183,7 +183,7 @@
           "channelViewCount": 13,
           "videoCount": 3,
           "lastPublishedAt": "2026-09-23T10:07:36Z",
-          "daysSinceUpload": 0.9,
+          "daysSinceUpload": 1.0,
           "uploads7d": 3,
           "uploads30d": 3,
           "uploads90d": 3,
@@ -271,7 +271,7 @@
           "channelViewCount": 61036,
           "videoCount": 42,
           "lastPublishedAt": "2026-09-17T12:26:39Z",
-          "daysSinceUpload": 6.8,
+          "daysSinceUpload": 6.9,
           "uploads7d": 1,
           "uploads30d": 8,
           "uploads90d": 23,
@@ -291,23 +291,23 @@
           "subscriberCount": 162,
           "hiddenSubscriberCount": false,
           "channelViewCount": 48787,
-          "videoCount": 55,
-          "lastPublishedAt": "2026-09-24T06:51:08Z",
-          "daysSinceUpload": 0.1,
-          "uploads7d": 3,
-          "uploads30d": 7,
-          "uploads90d": 24,
-          "averageUploadGapDays": 4.3,
-          "recent5AverageViews": 431,
-          "recent5MedianViews": 196,
-          "recent5AverageLikes": 1,
-          "recent5EngagementRate": 0.004174
+          "videoCount": 56,
+          "lastPublishedAt": "2026-09-24T09:00:26Z",
+          "daysSinceUpload": 0.0,
+          "uploads7d": 4,
+          "uploads30d": 8,
+          "uploads90d": 25,
+          "averageUploadGapDays": 4.2,
+          "recent5AverageViews": 269,
+          "recent5MedianViews": 92,
+          "recent5AverageLikes": 0,
+          "recent5EngagementRate": 0.003715
         }
       ],
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-09-24T08:35:17+00:00",
+        "retrievedAt": "2026-09-24T09:11:37+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -582,7 +582,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-09-24T08:35:17+00:00",
+        "retrievedAt": "2026-09-24T09:11:37+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -605,6 +605,16 @@
     },
     "video_catalog": {
       "rows": [
+        {
+          "channelId": "UC8RxFK0DNEz8Ad2DPIt3Bog",
+          "channel": "熱股追蹤",
+          "videoId": "jgISgCU-SJM",
+          "title": "剛簽數十億，轉頭就封殺AI新對手！亞馬遜為什麼出手？680億美元廣告生意，真的要變天了？",
+          "publishedAt": "2026-09-24T09:00:26Z",
+          "publishedDate": "2026-09-24",
+          "thumbnail": "https://i.ytimg.com/vi/jgISgCU-SJM/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=jgISgCU-SJM"
+        },
         {
           "channelId": "UC8RxFK0DNEz8Ad2DPIt3Bog",
           "channel": "熱股追蹤",
@@ -3509,7 +3519,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-09-24T08:35:17+00:00",
+        "retrievedAt": "2026-09-24T09:11:37+00:00",
         "metricDefinitions": []
       }
     },
@@ -7315,6 +7325,24 @@
         },
         {
           "observedAt": "2026-09-24T07:00:00Z",
+          "channelId": "UC8RxFK0DNEz8Ad2DPIt3Bog",
+          "channel": "熱股追蹤",
+          "videoId": "jgISgCU-SJM",
+          "title": "剛簽數十億，轉頭就封殺AI新對手！亞馬遜為什麼出手？680億美元廣告生意，真的要變天了？",
+          "publishedAt": "2026-09-24T09:00:26Z",
+          "publishedDate": "2026-09-24",
+          "viewCount": 0,
+          "likeCount": 0,
+          "commentCount": 0,
+          "durationSeconds": 72,
+          "formatHint": "短视频候选",
+          "thumbnail": "https://i.ytimg.com/vi/jgISgCU-SJM/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=jgISgCU-SJM",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "observedAt": "2026-09-24T07:00:00Z",
           "channelId": "UCMM38YQdOaUiXMFlWzbRlXw",
           "channel": "Amber聊财",
           "videoId": "jnbred-tMeI",
@@ -8739,7 +8767,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-09-24T08:35:17+00:00",
+        "retrievedAt": "2026-09-24T09:11:37+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -11121,6 +11149,24 @@
         {
           "channelId": "UC8RxFK0DNEz8Ad2DPIt3Bog",
           "channel": "熱股追蹤",
+          "videoId": "jgISgCU-SJM",
+          "title": "剛簽數十億，轉頭就封殺AI新對手！亞馬遜為什麼出手？680億美元廣告生意，真的要變天了？",
+          "publishedAt": "2026-09-24T09:00:26Z",
+          "publishedDate": "2026-09-24",
+          "thumbnail": "https://i.ytimg.com/vi/jgISgCU-SJM/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=jgISgCU-SJM",
+          "observedAt": "2026-09-24T07:00:00Z",
+          "viewCount": 0,
+          "likeCount": 0,
+          "commentCount": 0,
+          "durationSeconds": 72,
+          "formatHint": "短视频候选",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "channelId": "UC8RxFK0DNEz8Ad2DPIt3Bog",
+          "channel": "熱股追蹤",
           "videoId": "QP3jO_OmPsQ",
           "title": "川普才剛賣出亞馬遜股票，貝佐斯反手砸下680億美元！一個急著套現，一個瘋狂押注——這場資本對決，究竟藏著什麼驚天反轉？",
           "publishedAt": "2026-09-24T06:51:08Z",
@@ -11639,30 +11685,12 @@
           "formatHint": "短视频候选",
           "isLive": false,
           "concurrentViewers": null
-        },
-        {
-          "channelId": "UC8RxFK0DNEz8Ad2DPIt3Bog",
-          "channel": "熱股追蹤",
-          "videoId": "muuANvBXi7s",
-          "title": "全鹰了？美股要崩了？别急，真正的大戏可能才刚刚开始",
-          "publishedAt": "2026-06-19T23:00:07Z",
-          "publishedDate": "2026-06-19",
-          "thumbnail": "https://i.ytimg.com/vi/muuANvBXi7s/mqdefault.jpg",
-          "url": "https://www.youtube.com/watch?v=muuANvBXi7s",
-          "observedAt": "2026-09-24T07:00:00Z",
-          "viewCount": 174,
-          "likeCount": 3,
-          "commentCount": 2,
-          "durationSeconds": 873,
-          "formatHint": "长视频/直播候选",
-          "isLive": false,
-          "concurrentViewers": null
         }
       ],
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-09-24T08:35:17+00:00",
+        "retrievedAt": "2026-09-24T09:11:37+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -11736,7 +11764,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-09-24T08:35:17+00:00",
+        "retrievedAt": "2026-09-24T09:11:37+00:00",
         "metricDefinitions": []
       }
     },
@@ -11746,10 +11774,10 @@
           "observedAt": "2026-09-24T07:00:00Z",
           "channelsExpected": 13,
           "channelsCollected": 13,
-          "videoCatalogCount": 290,
-          "videosRefreshed": 290,
+          "videoCatalogCount": 291,
+          "videosRefreshed": 1,
           "videosDisplayed": 161,
-          "fullInventoryScan": true,
+          "fullInventoryScan": false,
           "failureCount": 0,
           "failures": []
         }
@@ -11757,7 +11785,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-09-24T08:35:17+00:00",
+        "retrievedAt": "2026-09-24T09:11:37+00:00",
         "metricDefinitions": []
       }
     }
