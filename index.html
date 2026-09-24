@@ -69,9 +69,9 @@
           <p>按视频发布时间排列；播放、点赞及评论为当前累计值。</p>
         </div>
         <div class="trend-controls">
-          <label>频道<select id="primaryChannel" aria-label="选择频道"></select></label>
-          <label>对比<select id="comparisonChannel" aria-label="选择对比频道"></select></label>
-          <label>指标<select id="trendMetric" aria-label="选择趋势指标"><option value="viewCount">播放量</option><option value="durationSeconds">播放时长</option><option value="likeCount">点赞数量</option><option value="commentCount">评论数量</option></select></label>
+          <div class="selector-row"><span>频道</span><div id="primaryChannel" class="choice-buttons" aria-label="选择频道"></div></div>
+          <div class="selector-row"><span>对比</span><div id="comparisonChannel" class="choice-buttons" aria-label="选择对比频道"></div></div>
+          <div class="selector-row"><span>指标</span><div id="trendMetric" class="choice-buttons compact-choices" aria-label="选择趋势指标"><button type="button" data-value="viewCount" aria-pressed="true">播放量</button><button type="button" data-value="durationSeconds" aria-pressed="false">播放时长</button><button type="button" data-value="likeCount" aria-pressed="false">点赞数量</button><button type="button" data-value="commentCount" aria-pressed="false">评论数量</button></div></div>
         </div>
       </header>
       <div id="trendLegend" class="trend-legend"></div>
