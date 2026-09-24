@@ -36,6 +36,13 @@ function growthText(value) {
   return `${sign}${(value * 100).toFixed(2)}%`;
 }
 
+function durationText(value) {
+  const seconds = Math.max(0, Math.round(Number(value) || 0));
+  const minutes = Math.floor(seconds / 60);
+  const remainder = String(seconds % 60).padStart(2, "0");
+  return `${minutes}:${remainder}`;
+}
+
 function renderDonut(targetId, rows, field, label) {
   const target = $(targetId);
   const values = rows
@@ -76,25 +83,37 @@ function renderDonut(targetId, rows, field, label) {
   };
   const hide = () => { tooltip.hidden = true; };
 
-  target.querySelectorAll(".donut-segment").forEach((segment) => {
+  const segmentNodes = [...target.querySelectorAll(".donut-segment")];
+  const activate = (channel) => {
+    target.classList.add("has-active");
+    segmentNodes.forEach((segment) => segment.classList.toggle("is-active", segment.dataset.channel === channel));
+  };
+  const deactivate = () => {
+    target.classList.remove("has-active");
+    segmentNodes.forEach((segment) => segment.classList.remove("is-active"));
+    hide();
+  };
+
+  segmentNodes.forEach((segment) => {
     segment.addEventListener("mouseenter", (event) => {
       const rect = wrap.getBoundingClientRect();
+      activate(segment.dataset.channel);
       show(segment.dataset.channel, event.clientX - rect.left + 12, event.clientY - rect.top + 12);
     });
     segment.addEventListener("mousemove", (event) => {
       const rect = wrap.getBoundingClientRect();
       show(segment.dataset.channel, event.clientX - rect.left + 12, event.clientY - rect.top + 12);
     });
-    segment.addEventListener("mouseleave", hide);
-    segment.addEventListener("focus", () => show(segment.dataset.channel, wrap.clientWidth / 2 + 32, wrap.clientHeight / 2 - 48));
-    segment.addEventListener("blur", hide);
+    segment.addEventListener("mouseleave", deactivate);
+    segment.addEventListener("focus", () => { activate(segment.dataset.channel); show(segment.dataset.channel, wrap.clientWidth / 2 + 32, wrap.clientHeight / 2 - 48); });
+    segment.addEventListener("blur", deactivate);
   });
 
   target.querySelectorAll(".legend-item").forEach((item) => {
-    item.addEventListener("mouseenter", () => show(item.dataset.channel, wrap.clientWidth / 2 + 32, wrap.clientHeight / 2 - 48));
-    item.addEventListener("mouseleave", hide);
-    item.addEventListener("focus", () => show(item.dataset.channel, wrap.clientWidth / 2 + 32, wrap.clientHeight / 2 - 48));
-    item.addEventListener("blur", hide);
+    item.addEventListener("mouseenter", () => { activate(item.dataset.channel); show(item.dataset.channel, wrap.clientWidth / 2 + 32, wrap.clientHeight / 2 - 48); });
+    item.addEventListener("mouseleave", deactivate);
+    item.addEventListener("focus", () => { activate(item.dataset.channel); show(item.dataset.channel, wrap.clientWidth / 2 + 32, wrap.clientHeight / 2 - 48); });
+    item.addEventListener("blur", deactivate);
   });
 }
 
@@ -115,7 +134,85 @@ function renderUpdates(videos, generatedAt) {
         </span>
         <span class="open-mark" aria-hidden="true">↗</span>
       </a>
-    </li>`).join("") : `<li class="empty">近 7 日暂无更新</li>`;
+  </li>`).join("") : `<li class="empty">近 7 日暂无更新</li>`;
+}
+
+function renderTrend(videos) {
+  const primaryId = $("primaryChannel").value;
+  const comparisonId = $("comparisonChannel").value;
+  const metric = $("trendMetric").value;
+  const metricInfo = {
+    viewCount: { label: "播放量", format: exact, tick: (value) => compact.format(value) },
+    durationSeconds: { label: "播放时长", format: durationText, tick: (value) => `${Math.round(value / 60)} 分` },
+    likeCount: { label: "点赞数量", format: exact, tick: (value) => compact.format(value) },
+    commentCount: { label: "评论数量", format: exact, tick: (value) => compact.format(value) },
+  }[metric];
+  const ids = [primaryId, comparisonId].filter((id, index, list) => id && list.indexOf(id) === index);
+  const series = ids.map((id, index) => ({
+    id,
+    color: index === 0 ? "#e5bd57" : "#65a8ff",
+    rows: videos
+      .filter((row) => row.channelId === id && row[metric] != null && Number.isFinite(Number(row[metric])))
+      .sort((a, b) => toTime(a.publishedAt) - toTime(b.publishedAt)),
+  })).filter((item) => item.rows.length);
+
+  if (!series.length) {
+    $("trendLegend").innerHTML = "";
+    $("trendChart").innerHTML = `<div class="trend-empty">所选频道暂无可用数据</div>`;
+    return;
+  }
+
+  const allRows = series.flatMap((item) => item.rows);
+  const xValues = allRows.map((row) => toTime(row.publishedAt));
+  const xMin = Math.min(...xValues);
+  const xMax = Math.max(...xValues);
+  const xRange = Math.max(1, xMax - xMin);
+  const yMax = Math.max(1, ...allRows.map((row) => Number(row[metric])));
+  const width = 1000;
+  const height = 390;
+  const left = 72;
+  const right = 24;
+  const top = 22;
+  const bottom = 48;
+  const plotWidth = width - left - right;
+  const plotHeight = height - top - bottom;
+  const x = (row) => left + (toTime(row.publishedAt) - xMin) / xRange * plotWidth;
+  const y = (row) => top + plotHeight - Number(row[metric]) / yMax * plotHeight;
+  const grid = [0, .25, .5, .75, 1].map((ratio) => {
+    const yPos = top + plotHeight * (1 - ratio);
+    return `<line x1="${left}" y1="${yPos}" x2="${width - right}" y2="${yPos}"></line><text x="${left - 12}" y="${yPos + 4}" text-anchor="end">${esc(metricInfo.tick(yMax * ratio))}</text>`;
+  }).join("");
+  const dateLabel = new Intl.DateTimeFormat("zh-HK", { timeZone: "Asia/Hong_Kong", month: "2-digit", day: "2-digit" });
+  const lines = series.map((item) => {
+    const channel = item.rows[0].channel;
+    const points = item.rows.map((row) => `${x(row)},${y(row)}`).join(" ");
+    const circles = item.rows.map((row) => `<circle class="trend-point" cx="${x(row)}" cy="${y(row)}" r="5" fill="${item.color}" data-channel="${esc(channel)}" data-title="${esc(row.title)}" data-date="${esc(row.publishedAt)}" data-value="${Number(row[metric])}" tabindex="0" role="img" aria-label="${esc(channel)}，${dateLabel.format(new Date(row.publishedAt))}，${metricInfo.label} ${metricInfo.format(row[metric])}"></circle>`).join("");
+    return `<polyline points="${points}" fill="none" stroke="${item.color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></polyline>${circles}`;
+  }).join("");
+
+  $("trendLegend").innerHTML = series.map((item) => `<span><i style="background:${item.color}"></i>${esc(item.rows[0].channel)}<b>${item.rows.length} 条视频</b></span>`).join("");
+  $("trendChart").innerHTML = `<div class="trend-canvas"><svg viewBox="0 0 ${width} ${height}" role="img" aria-label="频道${metricInfo.label}趋势对比"><g class="trend-grid">${grid}</g>${lines}<text class="axis-date" x="${left}" y="${height - 10}">${dateLabel.format(new Date(xMin))}</text><text class="axis-date" x="${width - right}" y="${height - 10}" text-anchor="end">${dateLabel.format(new Date(xMax))}</text></svg><div class="trend-tooltip" role="status" hidden></div></div>`;
+
+  const chart = $("trendChart");
+  const canvas = chart.querySelector(".trend-canvas");
+  const tooltip = chart.querySelector(".trend-tooltip");
+  const showPoint = (point, clientX, clientY) => {
+    const rect = canvas.getBoundingClientRect();
+    tooltip.innerHTML = `<strong>${esc(point.dataset.channel)}</strong><span>${esc(point.dataset.title)}</span><b>${metricInfo.label}：${metricInfo.format(Number(point.dataset.value))}</b><small>${dateTime.format(new Date(point.dataset.date))}</small>`;
+    tooltip.hidden = false;
+    tooltip.style.left = `${Math.min(Math.max(12, clientX - rect.left + 12), canvas.clientWidth - 260)}px`;
+    tooltip.style.top = `${Math.min(Math.max(12, clientY - rect.top - 116), canvas.clientHeight - 126)}px`;
+  };
+  chart.querySelectorAll(".trend-point").forEach((point) => {
+    point.addEventListener("mouseenter", (event) => showPoint(point, event.clientX, event.clientY));
+    point.addEventListener("mousemove", (event) => showPoint(point, event.clientX, event.clientY));
+    point.addEventListener("mouseleave", () => { tooltip.hidden = true; });
+    point.addEventListener("focus", () => {
+      const svgRect = point.ownerSVGElement.getBoundingClientRect();
+      showPoint(point, svgRect.left + Number(point.getAttribute("cx")) / 1000 * svgRect.width, svgRect.top + Number(point.getAttribute("cy")) / 390 * svgRect.height);
+    });
+    point.addEventListener("blur", () => { tooltip.hidden = true; });
+  });
 }
 
 async function init() {
@@ -146,6 +243,15 @@ async function init() {
     renderDonut("subscriberChart", subscriberRows, "subscriberCount", "公开订阅");
     renderDonut("viewsChart", viewRows, "channelViewCount", "频道总播放");
     renderUpdates(data.queries.recent_videos.rows, data.generatedAt);
+    const options = rows.map((row) => `<option value="${esc(row.channelId)}">${esc(row.channel)}</option>`).join("");
+    $("primaryChannel").innerHTML = options;
+    $("comparisonChannel").innerHTML = `<option value="">不对比</option>${options}`;
+    if (rows[2]) $("comparisonChannel").value = rows[2].channelId;
+    const updateTrend = () => renderTrend(data.queries.recent_videos.rows);
+    $("primaryChannel").addEventListener("change", updateTrend);
+    $("comparisonChannel").addEventListener("change", updateTrend);
+    $("trendMetric").addEventListener("change", updateTrend);
+    updateTrend();
   } catch (error) {
     $("loadError").hidden = false;
     $("loadError").textContent = `数据加载失败：${error.message}`;
