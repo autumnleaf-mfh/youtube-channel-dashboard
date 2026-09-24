@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#07100d">
   <meta name="description" content="13 个财经 YouTube 频道的订阅、播放与近 7 日更新">
   <title>YouTube 频道数据</title>
-  <link rel="stylesheet" href="styles.css?v=14">
+  <link rel="stylesheet" href="styles.css?v=15">
 </head>
 <body>
   <main class="dashboard">
@@ -80,6 +80,7 @@
           <div class="selector-row"><span>频道</span><div id="primaryChannel" class="choice-buttons" aria-label="选择频道"></div></div>
           <div class="selector-row"><span>对比</span><div id="comparisonChannel" class="choice-buttons" aria-label="选择对比频道"></div></div>
           <div class="selector-row"><span>指标</span><div id="trendMetric" class="choice-buttons compact-choices" aria-label="选择趋势指标"><button type="button" data-value="viewCount" aria-pressed="true"><i aria-hidden="true">▶</i>播放量</button><button type="button" data-value="durationSeconds" aria-pressed="false"><i aria-hidden="true">◷</i>播放时长</button><button type="button" data-value="likeCount" aria-pressed="false"><i aria-hidden="true">♥</i>点赞数量</button><button type="button" data-value="commentCount" aria-pressed="false"><i aria-hidden="true">▰</i>评论数量</button><button type="button" data-value="uploadCount" aria-pressed="false"><i aria-hidden="true">↻</i>更新数量</button></div></div>
+          <div id="comparisonMetricRow" class="selector-row comparison-metric-row" hidden><span>对比指标</span><div id="comparisonMetric" class="choice-buttons compact-choices" aria-label="选择对比频道指标"><button type="button" data-value="viewCount" aria-pressed="true"><i aria-hidden="true">▶</i>播放量</button><button type="button" data-value="durationSeconds" aria-pressed="false"><i aria-hidden="true">◷</i>播放时长</button><button type="button" data-value="likeCount" aria-pressed="false"><i aria-hidden="true">♥</i>点赞数量</button><button type="button" data-value="commentCount" aria-pressed="false"><i aria-hidden="true">▰</i>评论数量</button><button type="button" data-value="uploadCount" aria-pressed="false"><i aria-hidden="true">↻</i>更新数量</button></div></div>
         </div>
       </header>
       <div id="trendLegend" class="trend-legend"></div>
@@ -88,6 +89,6 @@
 
     <div id="loadError" class="load-error" hidden></div>
   </main>
-  <script src="app.js?v=16" defer></script>
+  <script src="app.js?v=17" defer></script>
 </body>
 </html>

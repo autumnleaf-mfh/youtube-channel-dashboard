@@ -217,6 +217,23 @@ function bindChoiceButtons(targetId, render) {
   });
 }
 
+function selectChoice(targetId, value) {
+  $(targetId).querySelectorAll("button[data-value]").forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.value === value)));
+}
+
+function bindComparisonButtons(render) {
+  $("comparisonChannel").addEventListener("click", (event) => {
+    const button = event.target.closest("button[data-value]");
+    if (!button) return;
+    const hadComparison = Boolean(selectedChoice("comparisonChannel"));
+    $("comparisonChannel").querySelectorAll("button").forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+    const hasComparison = Boolean(button.dataset.value);
+    $("comparisonMetricRow").hidden = !hasComparison;
+    if (hasComparison && !hadComparison) selectChoice("comparisonMetric", selectedChoice("trendMetric"));
+    render();
+  });
+}
+
 function hongKongDayTimestamp(value) {
   const parts = Object.fromEntries(dateOnly.formatToParts(new Date(value)).map((part) => [part.type, part.value]));
   return Date.parse(`${parts.year}-${parts.month}-${parts.day}T00:00:00+08:00`);
@@ -253,17 +270,20 @@ function dailyUploadRows(catalog, channel, start, end) {
 function renderTrend(videos, catalog, channels, generatedAt) {
   const primaryId = selectedChoice("primaryChannel");
   const comparisonId = selectedChoice("comparisonChannel");
-  const metric = selectedChoice("trendMetric");
+  const primaryMetric = selectedChoice("trendMetric");
+  const comparisonMetric = comparisonId ? selectedChoice("comparisonMetric") || primaryMetric : primaryMetric;
   const period = selectedChoice("trendPeriod");
   const periodLabels = { "7": "近 7 日", "30": "近 30 日", "90": "近 90 日", all: "全部记录" };
   const periodDays = { "7": 7, "30": 30, "90": 90 };
-  const metricInfo = {
+  const metricDefinitions = {
     viewCount: { label: "播放量", format: exact, tick: (value) => compact.format(value) },
     durationSeconds: { label: "播放时长", format: durationText, tick: (value) => `${Math.round(value / 60)} 分` },
     likeCount: { label: "点赞数量", format: exact, tick: (value) => compact.format(value) },
     commentCount: { label: "评论数量", format: exact, tick: (value) => compact.format(value) },
     uploadCount: { label: "更新数量", format: (value) => `${exact(value)} 条`, tick: (value) => exact(Math.round(value)) },
-  }[metric];
+  };
+  const primaryMetricInfo = metricDefinitions[primaryMetric];
+  const comparisonMetricInfo = metricDefinitions[comparisonMetric];
   const ids = [primaryId, comparisonId].filter((id, index, list) => id && list.indexOf(id) === index);
   const dayMs = 24 * 60 * 60 * 1000;
   const endDay = hongKongDayTimestamp(generatedAt);
@@ -272,17 +292,22 @@ function renderTrend(videos, catalog, channels, generatedAt) {
   const allStart = selectedCatalog.length ? Math.min(...selectedCatalog.map((row) => hongKongDayTimestamp(row.publishedAt))) : endDay;
   const startDay = finiteStart ?? allStart;
   const cutoff = period === "all" ? -Infinity : toTime(generatedAt) - periodDays[period] * dayMs;
-  $("trendDescription").textContent = metric === "uploadCount"
-    ? `${periodLabels[period]}按香港日期统计发布数量。`
-    : `${periodLabels[period]}发布视频；${metricInfo.label}为最近一次采集的公开累计值。`;
+  const selectedMetrics = [...new Set([primaryMetric, ...(comparisonId ? [comparisonMetric] : [])])];
+  $("trendDescription").textContent = comparisonId && comparisonMetric !== primaryMetric
+    ? `${periodLabels[period]}；主频道${primaryMetricInfo.label}，对比频道${comparisonMetricInfo.label}。累计型指标取最近一次公开值，更新数量按香港日期统计。`
+    : selectedMetrics[0] === "uploadCount"
+      ? `${periodLabels[period]}按香港日期统计发布数量。`
+      : `${periodLabels[period]}发布视频；${primaryMetricInfo.label}为最近一次采集的公开累计值。`;
   const series = ids.map((id, index) => {
     const channel = channels.find((row) => row.channelId === id);
+    const metric = index === 0 ? primaryMetric : comparisonMetric;
+    const metricInfo = metricDefinitions[metric];
     const rows = metric === "uploadCount"
       ? dailyUploadRows(catalog, channel, startDay, endDay)
       : videos
         .filter((row) => row.channelId === id && toTime(row.publishedAt) >= cutoff && row[metric] != null && Number.isFinite(Number(row[metric])))
         .sort((a, b) => toTime(a.publishedAt) - toTime(b.publishedAt));
-    return { id, color: index === 0 ? "#e5bd57" : "#65a8ff", rows };
+    return { id, color: index === 0 ? "#e5bd57" : "#65a8ff", metric, metricInfo, rows };
   }).filter((item) => item.rows.length);
 
   if (!series.length) {
@@ -296,33 +321,38 @@ function renderTrend(videos, catalog, channels, generatedAt) {
   const xMin = Math.min(...xValues);
   const xMax = Math.max(...xValues);
   const xRange = Math.max(1, xMax - xMin);
-  const yMax = metric === "uploadCount" ? Math.max(4, ...allRows.map((row) => Number(row[metric]))) : Math.max(1, ...allRows.map((row) => Number(row[metric])));
+  const hasDualAxis = series.length > 1 && series[0].metric !== series[1].metric;
+  const maxForSeries = (item) => item.metric === "uploadCount" ? Math.max(4, ...item.rows.map((row) => Number(row[item.metric]))) : Math.max(1, ...item.rows.map((row) => Number(row[item.metric])));
+  const sharedYMax = hasDualAxis ? null : series[0].metric === "uploadCount" ? Math.max(4, ...allRows.map((row) => Number(row[series[0].metric]))) : Math.max(1, ...allRows.map((row) => Number(row[series[0].metric])));
+  series.forEach((item) => { item.yMax = hasDualAxis ? maxForSeries(item) : sharedYMax; });
   const width = 1000;
   const height = 390;
   const left = 72;
-  const right = 24;
+  const right = hasDualAxis ? 72 : 24;
   const top = 22;
   const bottom = 48;
   const plotWidth = width - left - right;
   const plotHeight = height - top - bottom;
   const x = (row) => left + (toTime(row.publishedAt) - xMin) / xRange * plotWidth;
-  const y = (row) => top + plotHeight - Number(row[metric]) / yMax * plotHeight;
+  const y = (item, row) => top + plotHeight - Number(row[item.metric]) / item.yMax * plotHeight;
   const grid = [0, .25, .5, .75, 1].map((ratio) => {
     const yPos = top + plotHeight * (1 - ratio);
-    return `<line x1="${left}" y1="${yPos}" x2="${width - right}" y2="${yPos}"></line><text x="${left - 12}" y="${yPos + 4}" text-anchor="end">${esc(metricInfo.tick(yMax * ratio))}</text>`;
+    const secondaryTick = hasDualAxis ? `<text class="axis-secondary" x="${width - right + 12}" y="${yPos + 4}">${esc(series[1].metricInfo.tick(series[1].yMax * ratio))}</text>` : "";
+    return `<line x1="${left}" y1="${yPos}" x2="${width - right}" y2="${yPos}"></line><text class="${hasDualAxis ? "axis-primary" : ""}" x="${left - 12}" y="${yPos + 4}" text-anchor="end">${esc(series[0].metricInfo.tick(series[0].yMax * ratio))}</text>${secondaryTick}`;
   }).join("");
   const lines = series.map((item, seriesIndex) => {
     const channel = item.rows[0].channel;
-    const points = item.rows.map((row) => `${x(row)},${y(row)}`).join(" ");
-    const circles = item.rows.map((row, rowIndex) => `<circle class="trend-point" cx="${x(row)}" cy="${y(row)}" r="5" fill="${item.color}" data-series="${seriesIndex}" data-row="${rowIndex}" tabindex="0" role="img" aria-label="${esc(channel)}，${ymdh(row.publishedAt)}，${metricInfo.label} ${metricInfo.format(row[metric])}"></circle>`).join("");
+    const points = item.rows.map((row) => `${x(row)},${y(item, row)}`).join(" ");
+    const circles = item.rows.map((row, rowIndex) => `<circle class="trend-point" cx="${x(row)}" cy="${y(item, row)}" r="5" fill="${item.color}" data-series="${seriesIndex}" data-row="${rowIndex}" tabindex="0" role="img" aria-label="${esc(channel)}，${ymdh(row.publishedAt)}，${item.metricInfo.label} ${item.metricInfo.format(row[item.metric])}"></circle>`).join("");
     return `<polyline points="${points}" fill="none" stroke="${item.color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></polyline>${circles}`;
   }).join("");
 
   $("trendLegend").innerHTML = series.map((item) => {
-    const detail = metric === "uploadCount" ? `${item.rows.reduce((sum, row) => sum + row.uploadCount, 0)} 条更新 · ${periodLabels[period]}` : `${item.rows.length} 条视频 · ${periodLabels[period]}`;
-    return `<span><i style="background:${item.color}"></i>${esc(item.rows[0].channel)}<b>${detail}</b></span>`;
+    const detail = item.metric === "uploadCount" ? `${item.rows.reduce((sum, row) => sum + row.uploadCount, 0)} 条更新 · ${periodLabels[period]}` : `${item.rows.length} 条视频 · ${periodLabels[period]}`;
+    return `<span><i style="background:${item.color}"></i>${esc(item.rows[0].channel)}<b>${item.metricInfo.label} · ${detail}</b></span>`;
   }).join("");
-  $("trendChart").innerHTML = `<div class="trend-canvas"><svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${periodLabels[period]}频道${metricInfo.label}趋势对比"><g class="trend-grid">${grid}</g>${lines}<line class="trend-crosshair" x1="${left}" y1="${top}" x2="${left}" y2="${top + plotHeight}" hidden></line><rect class="trend-hitbox" x="${left}" y="${top}" width="${plotWidth}" height="${plotHeight}"></rect><text class="axis-date" x="${left}" y="${height - 10}">${ymd(xMin)}</text><text class="axis-date" x="${width - right}" y="${height - 10}" text-anchor="end">${ymd(xMax)}</text></svg><div class="trend-tooltip" role="status" hidden></div></div>`;
+  const ariaMetrics = series.map((item) => `${item.rows[0].channel}${item.metricInfo.label}`).join("与");
+  $("trendChart").innerHTML = `<div class="trend-canvas"><svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${periodLabels[period]}${esc(ariaMetrics)}趋势对比"><g class="trend-grid">${grid}</g>${lines}<line class="trend-crosshair" x1="${left}" y1="${top}" x2="${left}" y2="${top + plotHeight}" hidden></line><rect class="trend-hitbox" x="${left}" y="${top}" width="${plotWidth}" height="${plotHeight}"></rect><text class="axis-date" x="${left}" y="${height - 10}">${ymd(xMin)}</text><text class="axis-date" x="${width - right}" y="${height - 10}" text-anchor="end">${ymd(xMax)}</text></svg><div class="trend-tooltip" role="status" hidden></div></div>`;
 
   const chart = $("trendChart");
   const canvas = chart.querySelector(".trend-canvas");
@@ -348,10 +378,11 @@ function renderTrend(videos, catalog, channels, generatedAt) {
     crosshair.setAttribute("x2", svgX);
     pointNodes.forEach((point) => point.classList.remove("is-nearest"));
     nearest.forEach(({ seriesIndex, rowIndex }) => chart.querySelector(`.trend-point[data-series="${seriesIndex}"][data-row="${rowIndex}"]`)?.classList.add("is-nearest"));
-    tooltip.classList.toggle("is-upload-detail", metric === "uploadCount");
-    tooltip.innerHTML = metric === "uploadCount"
-      ? `<strong>${metricInfo.label}</strong>${nearest.map(({ item, row }) => `<section class="upload-day-series" data-update-count="${row.uploadCount}"><div class="upload-day-header"><span><i style="background:${item.color}"></i>${esc(row.channel)}</span><b>${metricInfo.format(row.uploadCount)}</b><small>${ymd(row.publishedAt)}</small></div>${row.updates.length ? `<div class="upload-video-list">${row.updates.map((video) => `<div class="upload-video-item"><img src="${esc(video.thumbnail)}" alt="" loading="lazy"><span class="upload-video-copy"><strong>${esc(video.title)}</strong><span class="upload-video-stats"><span>播放 ${video.viewCount == null ? "—" : exact(video.viewCount)}</span><span>点赞 ${video.likeCount == null ? "—" : exact(video.likeCount)}</span><span>评论 ${video.commentCount == null ? "—" : exact(video.commentCount)}</span></span></span></div>`).join("")}</div>` : `<div class="upload-zero">当日无更新</div>`}</section>`).join("")}`
-      : `<strong>${metricInfo.label}</strong>${nearest.map(({ item, row }) => `<div class="nearest-series"><img src="${esc(row.thumbnail)}" alt=""><div><span><i style="background:${item.color}"></i>${esc(row.channel)}</span><b>${metricInfo.format(row[metric])}</b><small>${ymdh(row.publishedAt)}</small><em>${esc(row.title)}</em></div></div>`).join("")}`;
+    tooltip.classList.toggle("is-upload-detail", nearest.some(({ item }) => item.metric === "uploadCount"));
+    const tooltipLabel = hasDualAxis ? `${series[0].metricInfo.label} / ${series[1].metricInfo.label}` : series[0].metricInfo.label;
+    tooltip.innerHTML = `<strong>${tooltipLabel}</strong>${nearest.map(({ item, row }) => item.metric === "uploadCount"
+      ? `<section class="upload-day-series" data-update-count="${row.uploadCount}"><div class="upload-day-header"><span><i style="background:${item.color}"></i>${esc(row.channel)}</span><b>${item.metricInfo.label} ${item.metricInfo.format(row.uploadCount)}</b><small>${ymd(row.publishedAt)}</small></div>${row.updates.length ? `<div class="upload-video-list">${row.updates.map((video) => `<div class="upload-video-item"><img src="${esc(video.thumbnail)}" alt="" loading="lazy"><span class="upload-video-copy"><strong>${esc(video.title)}</strong><span class="upload-video-stats"><span>播放 ${video.viewCount == null ? "—" : exact(video.viewCount)}</span><span>点赞 ${video.likeCount == null ? "—" : exact(video.likeCount)}</span><span>评论 ${video.commentCount == null ? "—" : exact(video.commentCount)}</span></span></span></div>`).join("")}</div>` : `<div class="upload-zero">当日无更新</div>`}</section>`
+      : `<div class="nearest-series"><img src="${esc(row.thumbnail)}" alt=""><div><span><i style="background:${item.color}"></i>${esc(row.channel)}</span><b>${item.metricInfo.label} ${item.metricInfo.format(row[item.metric])}</b><small>${ymdh(row.publishedAt)}</small><em>${esc(row.title)}</em></div></div>`).join("")}`;
     tooltip.hidden = false;
     const localX = event.clientX - rect.left;
     const localY = event.clientY - rect.top;
@@ -456,8 +487,9 @@ async function init() {
       .filter((video) => video.viewCount != null || video.durationSeconds != null || video.likeCount != null || video.commentCount != null);
     const updateTrend = () => renderTrend(trendVideos, catalogWithMetrics, rows, data.generatedAt);
     bindChoiceButtons("primaryChannel", updateTrend);
-    bindChoiceButtons("comparisonChannel", updateTrend);
+    bindComparisonButtons(updateTrend);
     bindChoiceButtons("trendMetric", updateTrend);
+    bindChoiceButtons("comparisonMetric", updateTrend);
     bindChoiceButtons("trendPeriod", updateTrend);
     updateTrend();
   } catch (error) {

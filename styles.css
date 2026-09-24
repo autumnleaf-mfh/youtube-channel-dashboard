@@ -76,6 +76,7 @@ button, a { font: inherit; }
 .trend-header p:not(.eyebrow) { margin: 9px 0 0; color: var(--muted); font-size: 12px; }
 .trend-controls { display: grid; min-width: 0; gap: 9px; }
 .selector-row { display: grid; grid-template-columns: 54px minmax(0, 1fr); align-items: start; min-width: 0; gap: 12px; }
+.comparison-metric-row[hidden] { display: none; }
 .selector-row > span { padding-top: 7px; color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: .1em; }
 .choice-buttons { display: flex; width: 100%; min-width: 0; flex-wrap: nowrap; gap: 6px; overflow-x: auto; padding-bottom: 3px; scrollbar-color: var(--line) transparent; }
 .choice-buttons button { display: inline-flex; align-items: center; gap: 6px; min-height: 30px; padding: 5px 10px; border: 1px solid var(--line); border-radius: 9px; background: rgba(4, 11, 8, .38); color: var(--muted); cursor: pointer; font-size: 11px; white-space: nowrap; }
@@ -93,6 +94,8 @@ button, a { font: inherit; }
 .trend-canvas svg { display: block; width: 100%; min-width: 760px; height: auto; }
 .trend-grid line { stroke: var(--line); stroke-width: 1; }
 .trend-grid text, .axis-date { fill: var(--muted); font-size: 11px; }
+.trend-grid .axis-primary { fill: #e5bd57; }
+.trend-grid .axis-secondary { fill: #65a8ff; }
 .trend-point { stroke: var(--surface); stroke-width: 2; transition: r .15s ease, opacity .15s ease; }
 .trend-point.is-nearest { r: 9; stroke: var(--text); stroke-width: 3; }
 .trend-hitbox { fill: transparent; cursor: crosshair; }
