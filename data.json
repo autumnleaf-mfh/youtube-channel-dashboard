@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-09-24T12:21:30Z",
+  "generatedAt": "2026-09-24T12:51:31Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-09-24T08:35:04Z",
     "videoSamplingPolicy": {
@@ -31,7 +31,7 @@
           "lastPublishedAt": "2026-09-23T10:19:06Z",
           "daysSinceUpload": 1.1,
           "uploads7d": 2,
-          "uploads30d": 16,
+          "uploads30d": 15,
           "uploads90d": 63,
           "averageUploadGapDays": 1.7,
           "recent5AverageViews": 5043,
@@ -203,17 +203,17 @@
           "subscriberCount": 5,
           "hiddenSubscriberCount": false,
           "channelViewCount": 495,
-          "videoCount": 7,
-          "lastPublishedAt": "2026-09-23T08:15:32Z",
-          "daysSinceUpload": 1.2,
-          "uploads7d": 6,
-          "uploads30d": 7,
-          "uploads90d": 7,
+          "videoCount": 8,
+          "lastPublishedAt": "2026-09-24T12:45:04Z",
+          "daysSinceUpload": 0.0,
+          "uploads7d": 7,
+          "uploads30d": 8,
+          "uploads90d": 8,
           "averageUploadGapDays": 1.0,
-          "recent5AverageViews": 116,
-          "recent5MedianViews": 23,
+          "recent5AverageViews": 93,
+          "recent5MedianViews": 2,
           "recent5AverageLikes": 1,
-          "recent5EngagementRate": 0.015544
+          "recent5EngagementRate": 0.019355
         },
         {
           "channelId": "UCQAo0ws95p-uN7gr0OOHoXg",
@@ -222,7 +222,7 @@
           "customUrl": "@喬安說財經",
           "channelUrl": "https://www.youtube.com/channel/UCQAo0ws95p-uN7gr0OOHoXg",
           "thumbnail": "https://yt3.ggpht.com/oWevvT9BSKRYqGAkafvq4fUMKeEwmzqtFJqTWsE4Hc93JAyB3WEB9Mn5NlVhAXpvOuWMnD950A=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 4,
+          "subscriberCount": 6,
           "hiddenSubscriberCount": false,
           "channelViewCount": 52,
           "videoCount": 4,
@@ -272,7 +272,7 @@
           "videoCount": 42,
           "lastPublishedAt": "2026-09-17T12:26:39Z",
           "daysSinceUpload": 7.0,
-          "uploads7d": 1,
+          "uploads7d": 0,
           "uploads30d": 8,
           "uploads90d": 23,
           "averageUploadGapDays": 4.2,
@@ -293,7 +293,7 @@
           "channelViewCount": 48787,
           "videoCount": 56,
           "lastPublishedAt": "2026-09-24T09:00:26Z",
-          "daysSinceUpload": 0.1,
+          "daysSinceUpload": 0.2,
           "uploads7d": 4,
           "uploads30d": 8,
           "uploads90d": 25,
@@ -307,7 +307,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-09-24T12:21:38+00:00",
+        "retrievedAt": "2026-09-24T12:51:44+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -637,7 +637,7 @@
           "date": "2026-09-24",
           "channelId": "UCQAo0ws95p-uN7gr0OOHoXg",
           "channel": "财经有一套",
-          "subscriberCount": 4,
+          "subscriberCount": 6,
           "channelViewCount": 52,
           "videoCount": 4
         },
@@ -648,7 +648,7 @@
           "channel": "阿诚聊焦点",
           "subscriberCount": 5,
           "channelViewCount": 495,
-          "videoCount": 7
+          "videoCount": 8
         },
         {
           "observedAt": "2026-09-24T10:00:00Z",
@@ -699,7 +699,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-09-24T12:21:38+00:00",
+        "retrievedAt": "2026-09-24T12:51:44+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -722,6 +722,16 @@
     },
     "video_catalog": {
       "rows": [
+        {
+          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA",
+          "channel": "阿诚聊焦点",
+          "videoId": "TxKQteZ_tMg",
+          "title": "微軟、Google、Meta瘋狂燒錢，誰真的賺得到？1兆美元資本開支，哪些AI股最危險？【阿誠聊焦點】",
+          "publishedAt": "2026-09-24T12:45:04Z",
+          "publishedDate": "2026-09-24",
+          "thumbnail": "https://i.ytimg.com/vi/TxKQteZ_tMg/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=TxKQteZ_tMg"
+        },
         {
           "channelId": "UCsXJXZI4J_N9r8H9TsORmlA",
           "channel": "羅拉财富观",
@@ -3666,7 +3676,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-09-24T12:21:38+00:00",
+        "retrievedAt": "2026-09-24T12:51:44+00:00",
         "metricDefinitions": []
       }
     },
@@ -9362,6 +9372,24 @@
         },
         {
           "observedAt": "2026-09-24T10:00:00Z",
+          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA",
+          "channel": "阿诚聊焦点",
+          "videoId": "TxKQteZ_tMg",
+          "title": "微軟、Google、Meta瘋狂燒錢，誰真的賺得到？1兆美元資本開支，哪些AI股最危險？【阿誠聊焦點】",
+          "publishedAt": "2026-09-24T12:45:04Z",
+          "publishedDate": "2026-09-24",
+          "viewCount": 0,
+          "likeCount": 0,
+          "commentCount": 1,
+          "durationSeconds": 1408,
+          "formatHint": "长视频/直播候选",
+          "thumbnail": "https://i.ytimg.com/vi/TxKQteZ_tMg/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=TxKQteZ_tMg",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "observedAt": "2026-09-24T10:00:00Z",
           "channelId": "UC5lCKye2u8Q0BoE5ggY9myw",
           "channel": "Maple的理财森林",
           "videoId": "UbZuyfp_QtE",
@@ -9814,7 +9842,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-09-24T12:21:38+00:00",
+        "retrievedAt": "2026-09-24T12:51:44+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -11458,6 +11486,24 @@
         {
           "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA",
           "channel": "阿诚聊焦点",
+          "videoId": "TxKQteZ_tMg",
+          "title": "微軟、Google、Meta瘋狂燒錢，誰真的賺得到？1兆美元資本開支，哪些AI股最危險？【阿誠聊焦點】",
+          "publishedAt": "2026-09-24T12:45:04Z",
+          "publishedDate": "2026-09-24",
+          "thumbnail": "https://i.ytimg.com/vi/TxKQteZ_tMg/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=TxKQteZ_tMg",
+          "observedAt": "2026-09-24T10:00:00Z",
+          "viewCount": 0,
+          "likeCount": 0,
+          "commentCount": 1,
+          "durationSeconds": 1408,
+          "formatHint": "长视频/直播候选",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA",
+          "channel": "阿诚聊焦点",
           "videoId": "8FEOLZ664ro",
           "title": "特朗普宴請習近平 科技巨頭全到 #港股 #台股 #恒指 #台积电  #輝達 #美股 #交易心理學 #散戶心理 #ai概念股 #交易系統#特朗普#習近平#白宮國宴#中美峰會#特斯拉#蘋果#半導體#AI",
           "publishedAt": "2026-09-23T08:15:32Z",
@@ -12791,7 +12837,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-09-24T12:21:38+00:00",
+        "retrievedAt": "2026-09-24T12:51:44+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -12865,7 +12911,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-09-24T12:21:38+00:00",
+        "retrievedAt": "2026-09-24T12:51:44+00:00",
         "metricDefinitions": []
       }
     },
@@ -12875,9 +12921,9 @@
           "observedAt": "2026-09-24T10:00:00Z",
           "channelsExpected": 13,
           "channelsCollected": 13,
-          "videoCatalogCount": 294,
-          "videosRefreshed": 0,
-          "videosDisplayed": 164,
+          "videoCatalogCount": 295,
+          "videosRefreshed": 1,
+          "videosDisplayed": 165,
           "fullInventoryScan": false,
           "failureCount": 0,
           "failures": []
@@ -12886,7 +12932,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-09-24T12:21:38+00:00",
+        "retrievedAt": "2026-09-24T12:51:44+00:00",
         "metricDefinitions": []
       }
     }
