@@ -19,7 +19,14 @@
             <p class="eyebrow">SUBSCRIBERS</p>
             <h2>公开订阅合计</h2>
           </div>
-          <span id="subscriberNote" class="note"></span>
+          <div class="metric-actions">
+            <span id="subscriberNote" class="note"></span>
+            <div id="subscriberPeriod" class="period-switch" aria-label="公开订阅比较区间">
+              <button type="button" data-period="7" aria-pressed="true">7D</button>
+              <button type="button" data-period="30" aria-pressed="false">30D</button>
+              <button type="button" data-period="all" aria-pressed="false">ALL</button>
+            </div>
+          </div>
         </header>
         <div id="subscriberChart" class="donut" aria-live="polite"></div>
       </article>
@@ -30,7 +37,14 @@
             <p class="eyebrow">CHANNEL VIEWS</p>
             <h2>频道总播放合计</h2>
           </div>
-          <span class="note">当前公开值</span>
+          <div class="metric-actions">
+            <span class="note">当前公开值</span>
+            <div id="viewsPeriod" class="period-switch" aria-label="频道播放比较区间">
+              <button type="button" data-period="7" aria-pressed="true">7D</button>
+              <button type="button" data-period="30" aria-pressed="false">30D</button>
+              <button type="button" data-period="all" aria-pressed="false">ALL</button>
+            </div>
+          </div>
         </header>
         <div id="viewsChart" class="donut" aria-live="polite"></div>
       </article>
