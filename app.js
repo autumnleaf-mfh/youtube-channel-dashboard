@@ -222,10 +222,8 @@ function hongKongDayTimestamp(value) {
   return Date.parse(`${parts.year}-${parts.month}-${parts.day}T00:00:00+08:00`);
 }
 
-function dailyUploadRows(catalog, channel, generatedAt) {
+function dailyUploadRows(catalog, channel, start, end) {
   const dayMs = 24 * 60 * 60 * 1000;
-  const end = hongKongDayTimestamp(generatedAt);
-  const start = end - 29 * dayMs;
   const videosByDay = new Map();
   catalog
     .filter((row) => row.channelId === channel.channelId && Number.isFinite(toTime(row.publishedAt)))
@@ -255,6 +253,9 @@ function renderTrend(videos, catalog, channels, generatedAt) {
   const primaryId = selectedChoice("primaryChannel");
   const comparisonId = selectedChoice("comparisonChannel");
   const metric = selectedChoice("trendMetric");
+  const period = selectedChoice("trendPeriod");
+  const periodLabels = { "7": "近 7 日", "30": "近 30 日", "90": "近 90 日", all: "全部记录" };
+  const periodDays = { "7": 7, "30": 30, "90": 90 };
   const metricInfo = {
     viewCount: { label: "播放量", format: exact, tick: (value) => compact.format(value) },
     durationSeconds: { label: "播放时长", format: durationText, tick: (value) => `${Math.round(value / 60)} 分` },
@@ -263,12 +264,22 @@ function renderTrend(videos, catalog, channels, generatedAt) {
     uploadCount: { label: "更新数量", format: (value) => `${exact(value)} 条`, tick: (value) => exact(Math.round(value)) },
   }[metric];
   const ids = [primaryId, comparisonId].filter((id, index, list) => id && list.indexOf(id) === index);
+  const dayMs = 24 * 60 * 60 * 1000;
+  const endDay = hongKongDayTimestamp(generatedAt);
+  const selectedCatalog = catalog.filter((row) => ids.includes(row.channelId) && Number.isFinite(toTime(row.publishedAt)));
+  const finiteStart = period === "all" ? null : endDay - (periodDays[period] - 1) * dayMs;
+  const allStart = selectedCatalog.length ? Math.min(...selectedCatalog.map((row) => hongKongDayTimestamp(row.publishedAt))) : endDay;
+  const startDay = finiteStart ?? allStart;
+  const cutoff = period === "all" ? -Infinity : toTime(generatedAt) - periodDays[period] * dayMs;
+  $("trendDescription").textContent = metric === "uploadCount"
+    ? `${periodLabels[period]}按香港日期统计发布数量。`
+    : `${periodLabels[period]}发布视频；${metricInfo.label}为最近一次采集的公开累计值。`;
   const series = ids.map((id, index) => {
     const channel = channels.find((row) => row.channelId === id);
     const rows = metric === "uploadCount"
-      ? dailyUploadRows(catalog, channel, generatedAt)
+      ? dailyUploadRows(catalog, channel, startDay, endDay)
       : videos
-        .filter((row) => row.channelId === id && row[metric] != null && Number.isFinite(Number(row[metric])))
+        .filter((row) => row.channelId === id && toTime(row.publishedAt) >= cutoff && row[metric] != null && Number.isFinite(Number(row[metric])))
         .sort((a, b) => toTime(a.publishedAt) - toTime(b.publishedAt));
     return { id, color: index === 0 ? "#e5bd57" : "#65a8ff", rows };
   }).filter((item) => item.rows.length);
@@ -307,10 +318,10 @@ function renderTrend(videos, catalog, channels, generatedAt) {
   }).join("");
 
   $("trendLegend").innerHTML = series.map((item) => {
-    const detail = metric === "uploadCount" ? `${item.rows.reduce((sum, row) => sum + row.uploadCount, 0)} 条更新 · 近 30 日` : `${item.rows.length} 条视频`;
+    const detail = metric === "uploadCount" ? `${item.rows.reduce((sum, row) => sum + row.uploadCount, 0)} 条更新 · ${periodLabels[period]}` : `${item.rows.length} 条视频 · ${periodLabels[period]}`;
     return `<span><i style="background:${item.color}"></i>${esc(item.rows[0].channel)}<b>${detail}</b></span>`;
   }).join("");
-  $("trendChart").innerHTML = `<div class="trend-canvas"><svg viewBox="0 0 ${width} ${height}" role="img" aria-label="频道${metricInfo.label}趋势对比"><g class="trend-grid">${grid}</g>${lines}<line class="trend-crosshair" x1="${left}" y1="${top}" x2="${left}" y2="${top + plotHeight}" hidden></line><rect class="trend-hitbox" x="${left}" y="${top}" width="${plotWidth}" height="${plotHeight}"></rect><text class="axis-date" x="${left}" y="${height - 10}">${ymd(xMin)}</text><text class="axis-date" x="${width - right}" y="${height - 10}" text-anchor="end">${ymd(xMax)}</text></svg><div class="trend-tooltip" role="status" hidden></div></div>`;
+  $("trendChart").innerHTML = `<div class="trend-canvas"><svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${periodLabels[period]}频道${metricInfo.label}趋势对比"><g class="trend-grid">${grid}</g>${lines}<line class="trend-crosshair" x1="${left}" y1="${top}" x2="${left}" y2="${top + plotHeight}" hidden></line><rect class="trend-hitbox" x="${left}" y="${top}" width="${plotWidth}" height="${plotHeight}"></rect><text class="axis-date" x="${left}" y="${height - 10}">${ymd(xMin)}</text><text class="axis-date" x="${width - right}" y="${height - 10}" text-anchor="end">${ymd(xMax)}</text></svg><div class="trend-tooltip" role="status" hidden></div></div>`;
 
   const chart = $("trendChart");
   const canvas = chart.querySelector(".trend-canvas");
@@ -423,10 +434,20 @@ async function init() {
     const channelChoices = rows.map((row) => ({ value: row.channelId, label: row.channel, avatar: row.thumbnail }));
     setChoiceButtons("primaryChannel", channelChoices, rows[0]?.channelId ?? "");
     setChoiceButtons("comparisonChannel", [{ value: "", label: "不对比" }, ...channelChoices.map(({ value, label }) => ({ value, label }))], "");
-    const updateTrend = () => renderTrend(data.queries.recent_videos.rows, data.queries.video_catalog?.rows ?? data.queries.recent_videos.rows, rows, data.generatedAt);
+    const catalog = data.queries.video_catalog?.rows ?? data.queries.recent_videos.rows;
+    const latestVideoById = new Map();
+    (data.queries.video_history?.rows ?? data.queries.recent_videos.rows)
+      .slice()
+      .sort((a, b) => toTime(a.observedAt ?? 0) - toTime(b.observedAt ?? 0))
+      .forEach((video) => latestVideoById.set(video.videoId, video));
+    const trendVideos = catalog
+      .map((video) => ({ ...video, ...(latestVideoById.get(video.videoId) ?? {}) }))
+      .filter((video) => video.viewCount != null || video.durationSeconds != null || video.likeCount != null || video.commentCount != null);
+    const updateTrend = () => renderTrend(trendVideos, catalog, rows, data.generatedAt);
     bindChoiceButtons("primaryChannel", updateTrend);
     bindChoiceButtons("comparisonChannel", updateTrend);
     bindChoiceButtons("trendMetric", updateTrend);
+    bindChoiceButtons("trendPeriod", updateTrend);
     updateTrend();
   } catch (error) {
     $("loadError").hidden = false;

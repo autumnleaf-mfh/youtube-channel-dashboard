@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#07100d">
   <meta name="description" content="13 个财经 YouTube 频道的订阅、播放与近 7 日更新">
   <title>YouTube 频道数据</title>
-  <link rel="stylesheet" href="styles.css?v=12">
+  <link rel="stylesheet" href="styles.css?v=13">
 </head>
 <body>
   <main class="dashboard">
@@ -63,10 +63,18 @@
 
     <section class="panel trend-panel" aria-labelledby="trendTitle">
       <header class="trend-header">
-        <div>
-          <p class="eyebrow">VIDEO TREND</p>
-          <h2 id="trendTitle">频道内容趋势对比</h2>
-          <p>播放、时长、点赞及评论按视频发布时间排列；更新数量按香港日期统计近 30 日发布数。</p>
+        <div class="trend-title-row">
+          <div>
+            <p class="eyebrow">VIDEO TREND</p>
+            <h2 id="trendTitle">频道内容趋势对比</h2>
+            <p id="trendDescription">近 7 日发布视频；播放、时长、点赞及评论为当前累计值。</p>
+          </div>
+          <div id="trendPeriod" class="period-switch trend-period-switch" aria-label="频道内容趋势时间窗口">
+            <button type="button" data-value="7" aria-pressed="true">7D</button>
+            <button type="button" data-value="30" aria-pressed="false">30D</button>
+            <button type="button" data-value="90" aria-pressed="false">90D</button>
+            <button type="button" data-value="all" aria-pressed="false">ALL</button>
+          </div>
         </div>
         <div class="trend-controls">
           <div class="selector-row"><span>频道</span><div id="primaryChannel" class="choice-buttons" aria-label="选择频道"></div></div>
@@ -80,6 +88,6 @@
 
     <div id="loadError" class="load-error" hidden></div>
   </main>
-  <script src="app.js?v=14" defer></script>
+  <script src="app.js?v=15" defer></script>
 </body>
 </html>
