@@ -1,13 +1,10 @@
 const compact = new Intl.NumberFormat("zh-HK", { notation: "compact", maximumFractionDigits: 1 });
 const integer = new Intl.NumberFormat("zh-HK", { maximumFractionDigits: 0 });
-const dateTime = new Intl.DateTimeFormat("zh-HK", {
+const dateOnly = new Intl.DateTimeFormat("en-CA", {
   timeZone: "Asia/Hong_Kong",
   year: "numeric",
   month: "2-digit",
   day: "2-digit",
-  hour: "2-digit",
-  minute: "2-digit",
-  hour12: false,
 });
 const colors = ["#e5bd57", "#4ed5a0", "#65a8ff", "#f17f7f", "#a78bfa", "#ff9f43", "#43c6db", "#f36eb5", "#97c95c", "#8e9aad", "#f4d35e", "#5dc0a6", "#c884ff"];
 
@@ -15,6 +12,10 @@ const $ = (id) => document.getElementById(id);
 const esc = (value) => String(value ?? "").replace(/[&<>'"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[char]);
 const toTime = (value) => new Date(value).getTime();
 const exact = (value) => Number.isFinite(Number(value)) ? integer.format(Number(value)) : "—";
+const ymd = (value) => {
+  const parts = Object.fromEntries(dateOnly.formatToParts(new Date(value)).map((part) => [part.type, part.value]));
+  return `${parts.year}-${parts.month}-${parts.day}`;
+};
 
 function previousSnapshot(history, channelId, generatedAt, period) {
   const channelHistory = history.filter((row) => row.channelId === channelId);
@@ -144,7 +145,7 @@ function renderUpdates(videos, generatedAt) {
         <img src="${esc(row.thumbnail)}" alt="" loading="lazy">
         <span class="update-body">
           <strong>${esc(row.title)}</strong>
-          <span class="update-meta"><b>${esc(row.channel)}</b><time datetime="${esc(row.publishedAt)}">${dateTime.format(new Date(row.publishedAt))}</time><span>${exact(row.viewCount)} 次播放</span></span>
+          <span class="update-meta"><b>${esc(row.channel)}</b><time datetime="${esc(row.publishedAt)}">${ymd(row.publishedAt)}</time><span>${exact(row.viewCount)} 次播放</span></span>
         </span>
         <span class="open-mark" aria-hidden="true">↗</span>
       </a>
@@ -213,16 +214,15 @@ function renderTrend(videos) {
     const yPos = top + plotHeight * (1 - ratio);
     return `<line x1="${left}" y1="${yPos}" x2="${width - right}" y2="${yPos}"></line><text x="${left - 12}" y="${yPos + 4}" text-anchor="end">${esc(metricInfo.tick(yMax * ratio))}</text>`;
   }).join("");
-  const dateLabel = new Intl.DateTimeFormat("zh-HK", { timeZone: "Asia/Hong_Kong", month: "2-digit", day: "2-digit" });
   const lines = series.map((item, seriesIndex) => {
     const channel = item.rows[0].channel;
     const points = item.rows.map((row) => `${x(row)},${y(row)}`).join(" ");
-    const circles = item.rows.map((row, rowIndex) => `<circle class="trend-point" cx="${x(row)}" cy="${y(row)}" r="5" fill="${item.color}" data-series="${seriesIndex}" data-row="${rowIndex}" tabindex="0" role="img" aria-label="${esc(channel)}，${dateLabel.format(new Date(row.publishedAt))}，${metricInfo.label} ${metricInfo.format(row[metric])}"></circle>`).join("");
+    const circles = item.rows.map((row, rowIndex) => `<circle class="trend-point" cx="${x(row)}" cy="${y(row)}" r="5" fill="${item.color}" data-series="${seriesIndex}" data-row="${rowIndex}" tabindex="0" role="img" aria-label="${esc(channel)}，${ymd(row.publishedAt)}，${metricInfo.label} ${metricInfo.format(row[metric])}"></circle>`).join("");
     return `<polyline points="${points}" fill="none" stroke="${item.color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></polyline>${circles}`;
   }).join("");
 
   $("trendLegend").innerHTML = series.map((item) => `<span><i style="background:${item.color}"></i>${esc(item.rows[0].channel)}<b>${item.rows.length} 条视频</b></span>`).join("");
-  $("trendChart").innerHTML = `<div class="trend-canvas"><svg viewBox="0 0 ${width} ${height}" role="img" aria-label="频道${metricInfo.label}趋势对比"><g class="trend-grid">${grid}</g>${lines}<line class="trend-crosshair" x1="${left}" y1="${top}" x2="${left}" y2="${top + plotHeight}" hidden></line><rect class="trend-hitbox" x="${left}" y="${top}" width="${plotWidth}" height="${plotHeight}"></rect><text class="axis-date" x="${left}" y="${height - 10}">${dateLabel.format(new Date(xMin))}</text><text class="axis-date" x="${width - right}" y="${height - 10}" text-anchor="end">${dateLabel.format(new Date(xMax))}</text></svg><div class="trend-tooltip" role="status" hidden></div></div>`;
+  $("trendChart").innerHTML = `<div class="trend-canvas"><svg viewBox="0 0 ${width} ${height}" role="img" aria-label="频道${metricInfo.label}趋势对比"><g class="trend-grid">${grid}</g>${lines}<line class="trend-crosshair" x1="${left}" y1="${top}" x2="${left}" y2="${top + plotHeight}" hidden></line><rect class="trend-hitbox" x="${left}" y="${top}" width="${plotWidth}" height="${plotHeight}"></rect><text class="axis-date" x="${left}" y="${height - 10}">${ymd(xMin)}</text><text class="axis-date" x="${width - right}" y="${height - 10}" text-anchor="end">${ymd(xMax)}</text></svg><div class="trend-tooltip" role="status" hidden></div></div>`;
 
   const chart = $("trendChart");
   const canvas = chart.querySelector(".trend-canvas");
@@ -248,7 +248,7 @@ function renderTrend(videos) {
     crosshair.setAttribute("x2", svgX);
     pointNodes.forEach((point) => point.classList.remove("is-nearest"));
     nearest.forEach(({ seriesIndex, rowIndex }) => chart.querySelector(`.trend-point[data-series="${seriesIndex}"][data-row="${rowIndex}"]`)?.classList.add("is-nearest"));
-    tooltip.innerHTML = `<strong>${metricInfo.label}</strong>${nearest.map(({ item, row }) => `<div class="nearest-series"><span><i style="background:${item.color}"></i>${esc(row.channel)}</span><b>${metricInfo.format(row[metric])}</b><small>${dateTime.format(new Date(row.publishedAt))}</small><em>${esc(row.title)}</em></div>`).join("")}`;
+    tooltip.innerHTML = `<strong>${metricInfo.label}</strong>${nearest.map(({ item, row }) => `<div class="nearest-series"><span><i style="background:${item.color}"></i>${esc(row.channel)}</span><b>${metricInfo.format(row[metric])}</b><small>${ymd(row.publishedAt)}</small><em>${esc(row.title)}</em></div>`).join("")}`;
     tooltip.hidden = false;
     tooltip.style.left = `${Math.max(12, Math.min(event.clientX - rect.left + 14, Math.max(12, canvas.clientWidth - 292)))}px`;
     tooltip.style.top = `${Math.max(12, Math.min(event.clientY - rect.top - (series.length > 1 ? 205 : 132), Math.max(12, canvas.clientHeight - (series.length > 1 ? 218 : 145))))}px`;
