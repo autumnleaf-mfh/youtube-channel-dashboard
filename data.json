@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-09-25T01:00:02Z",
+  "generatedAt": "2026-09-25T01:10:01Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-09-24T08:35:04Z",
     "videoSamplingPolicy": {
@@ -46,7 +46,7 @@
           "customUrl": "@amberwithfinance",
           "channelUrl": "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA",
           "thumbnail": "https://yt3.ggpht.com/czuSSl1-7trtlN5BP5n7hPS_Pm7cKTX_chp1lqgVggP5apIJkB1CsmVXt0F7WpD4mGg4PIdj=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 52,
+          "subscriberCount": 53,
           "hiddenSubscriberCount": false,
           "channelViewCount": 3107,
           "videoCount": 4,
@@ -71,17 +71,17 @@
           "subscriberCount": 14200,
           "hiddenSubscriberCount": false,
           "channelViewCount": 644636,
-          "videoCount": 69,
-          "lastPublishedAt": "2026-09-16T09:34:54Z",
-          "daysSinceUpload": 8.6,
-          "uploads7d": 0,
-          "uploads30d": 15,
-          "uploads90d": 48,
-          "averageUploadGapDays": 1.4,
-          "recent5AverageViews": 1323,
+          "videoCount": 70,
+          "lastPublishedAt": "2026-09-25T01:00:08Z",
+          "daysSinceUpload": 0.0,
+          "uploads7d": 1,
+          "uploads30d": 16,
+          "uploads90d": 49,
+          "averageUploadGapDays": 1.9,
+          "recent5AverageViews": 1095,
           "recent5MedianViews": 1157,
-          "recent5AverageLikes": 67,
-          "recent5EngagementRate": 0.056974
+          "recent5AverageLikes": 56,
+          "recent5EngagementRate": 0.058286
         },
         {
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
@@ -93,17 +93,17 @@
           "subscriberCount": 50,
           "hiddenSubscriberCount": false,
           "channelViewCount": 7622,
-          "videoCount": 7,
-          "lastPublishedAt": "2026-09-23T01:00:14Z",
-          "daysSinceUpload": 2.0,
-          "uploads7d": 7,
-          "uploads30d": 7,
-          "uploads90d": 7,
-          "averageUploadGapDays": 0.7,
-          "recent5AverageViews": 1295,
-          "recent5MedianViews": 1091,
-          "recent5AverageLikes": 23,
-          "recent5EngagementRate": 0.01823
+          "videoCount": 8,
+          "lastPublishedAt": "2026-09-25T01:00:10Z",
+          "daysSinceUpload": 0.0,
+          "uploads7d": 8,
+          "uploads30d": 8,
+          "uploads90d": 8,
+          "averageUploadGapDays": 0.9,
+          "recent5AverageViews": 813,
+          "recent5MedianViews": 1078,
+          "recent5AverageLikes": 12,
+          "recent5EngagementRate": 0.01526
         },
         {
           "channelId": "UCNX9-jzOH4KMbIeuWK8LZaw",
@@ -180,7 +180,7 @@
           "thumbnail": "https://yt3.ggpht.com/WQBN9NFS6FNVYm4_bQtAfL-o5FXZgh3RYK3uVDe8d7WjW95CsE4_iYvxVK8sZ3W0jBCmdfIM=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 4,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 18,
+          "channelViewCount": 13,
           "videoCount": 3,
           "lastPublishedAt": "2026-09-23T10:07:36Z",
           "daysSinceUpload": 1.6,
@@ -227,7 +227,7 @@
           "channelViewCount": 81,
           "videoCount": 5,
           "lastPublishedAt": "2026-09-24T21:30:28Z",
-          "daysSinceUpload": 0.1,
+          "daysSinceUpload": 0.2,
           "uploads7d": 5,
           "uploads30d": 5,
           "uploads90d": 5,
@@ -307,7 +307,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-09-25T01:00:08+00:00",
+        "retrievedAt": "2026-09-25T01:10:08+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -1242,14 +1242,14 @@
           "channel": "财经小鹿 Finance Deer",
           "subscriberCount": 50,
           "channelViewCount": 7622,
-          "videoCount": 7
+          "videoCount": 8
         },
         {
           "observedAt": "2026-09-25T01:00:00Z",
           "date": "2026-09-25",
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大镜",
-          "subscriberCount": 52,
+          "subscriberCount": 53,
           "channelViewCount": 3107,
           "videoCount": 4
         },
@@ -1259,7 +1259,7 @@
           "channelId": "UCmhqWEDoPgrg9J129nGuQkQ",
           "channel": "文叔聊财",
           "subscriberCount": 4,
-          "channelViewCount": 18,
+          "channelViewCount": 13,
           "videoCount": 3
         },
         {
@@ -1269,7 +1269,7 @@
           "channel": "小鹿财经 Deer Finance",
           "subscriberCount": 14200,
           "channelViewCount": 644636,
-          "videoCount": 69
+          "videoCount": 70
         },
         {
           "observedAt": "2026-09-25T01:00:00Z",
@@ -1284,7 +1284,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-09-25T01:00:08+00:00",
+        "retrievedAt": "2026-09-25T01:10:08+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -1307,6 +1307,26 @@
     },
     "video_catalog": {
       "rows": [
+        {
+          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
+          "channel": "财经小鹿 Finance Deer",
+          "videoId": "ZwtMr5Qtv_8",
+          "title": "泰國突然封殺黃金？泰銖被金價綁架，1997危機會重演嗎？黃金正在拖垮泰國？#gold #stock #股票 ",
+          "publishedAt": "2026-09-25T01:00:10Z",
+          "publishedDate": "2026-09-25",
+          "thumbnail": "https://i.ytimg.com/vi/ZwtMr5Qtv_8/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=ZwtMr5Qtv_8"
+        },
+        {
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ",
+          "channel": "小鹿财经 Deer Finance",
+          "videoId": "xZmZX3PJqVc",
+          "title": "353萬億美元超級債務炸彈！全球都在借新還舊，最後誰來埋單？#stockmarket #美元",
+          "publishedAt": "2026-09-25T01:00:08Z",
+          "publishedDate": "2026-09-25",
+          "thumbnail": "https://i.ytimg.com/vi/xZmZX3PJqVc/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=xZmZX3PJqVc"
+        },
         {
           "channelId": "UCQAo0ws95p-uN7gr0OOHoXg",
           "channel": "财经有一套",
@@ -4281,7 +4301,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-09-25T01:00:08+00:00",
+        "retrievedAt": "2026-09-25T01:10:08+00:00",
         "metricDefinitions": []
       }
     },
@@ -15377,6 +15397,24 @@
         },
         {
           "observedAt": "2026-09-25T01:00:00Z",
+          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
+          "channel": "财经小鹿 Finance Deer",
+          "videoId": "ZwtMr5Qtv_8",
+          "title": "泰國突然封殺黃金？泰銖被金價綁架，1997危機會重演嗎？黃金正在拖垮泰國？#gold #stock #股票 ",
+          "publishedAt": "2026-09-25T01:00:10Z",
+          "publishedDate": "2026-09-25",
+          "viewCount": 1,
+          "likeCount": 0,
+          "commentCount": 0,
+          "durationSeconds": 789,
+          "formatHint": "长视频/直播候选",
+          "thumbnail": "https://i.ytimg.com/vi/ZwtMr5Qtv_8/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=ZwtMr5Qtv_8",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "observedAt": "2026-09-25T01:00:00Z",
           "channelId": "UCMM38YQdOaUiXMFlWzbRlXw",
           "channel": "Amber聊财",
           "videoId": "_lTVcdfA37w",
@@ -15683,6 +15721,24 @@
         },
         {
           "observedAt": "2026-09-25T01:00:00Z",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ",
+          "channel": "小鹿财经 Deer Finance",
+          "videoId": "xZmZX3PJqVc",
+          "title": "353萬億美元超級債務炸彈！全球都在借新還舊，最後誰來埋單？#stockmarket #美元",
+          "publishedAt": "2026-09-25T01:00:08Z",
+          "publishedDate": "2026-09-25",
+          "viewCount": 8,
+          "likeCount": 0,
+          "commentCount": 0,
+          "durationSeconds": 688,
+          "formatHint": "长视频/直播候选",
+          "thumbnail": "https://i.ytimg.com/vi/xZmZX3PJqVc/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=xZmZX3PJqVc",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "observedAt": "2026-09-25T01:00:00Z",
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大镜",
           "videoId": "xqxO7oysX3Q",
@@ -15757,7 +15813,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-09-25T01:00:08+00:00",
+        "retrievedAt": "2026-09-25T01:10:08+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -16393,6 +16449,24 @@
         {
           "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ",
           "channel": "小鹿财经 Deer Finance",
+          "videoId": "xZmZX3PJqVc",
+          "title": "353萬億美元超級債務炸彈！全球都在借新還舊，最後誰來埋單？#stockmarket #美元",
+          "publishedAt": "2026-09-25T01:00:08Z",
+          "publishedDate": "2026-09-25",
+          "thumbnail": "https://i.ytimg.com/vi/xZmZX3PJqVc/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=xZmZX3PJqVc",
+          "observedAt": "2026-09-25T01:00:00Z",
+          "viewCount": 8,
+          "likeCount": 0,
+          "commentCount": 0,
+          "durationSeconds": 688,
+          "formatHint": "长视频/直播候选",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ",
+          "channel": "小鹿财经 Deer Finance",
           "videoId": "pzu0jONf2C0",
           "title": "2.3兆挪威主權基金瘋狂拋美債！華爾街21巨頭秘密打造新美元！ 86噸+129噸+300噸黃金正在出逃！新美元要來了！",
           "publishedAt": "2026-09-16T09:34:54Z",
@@ -16913,19 +16987,19 @@
           "concurrentViewers": null
         },
         {
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ",
-          "channel": "小鹿财经 Deer Finance",
-          "videoId": "7Py4XU-L_zI",
-          "title": "日本強行撤資！1.11兆美債準備連夜跑路！ 20兆套息交易集體爆倉！全球資產面臨重新洗牌！金融海嘯又來了？深度解析日圓美債危機！",
-          "publishedAt": "2026-08-11T08:34:07Z",
-          "publishedDate": "2026-08-11",
-          "thumbnail": "https://i.ytimg.com/vi/7Py4XU-L_zI/mqdefault.jpg",
-          "url": "https://www.youtube.com/watch?v=7Py4XU-L_zI",
-          "observedAt": "2026-09-24T07:00:00Z",
-          "viewCount": 34175,
-          "likeCount": 648,
-          "commentCount": 60,
-          "durationSeconds": 743,
+          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
+          "channel": "财经小鹿 Finance Deer",
+          "videoId": "ZwtMr5Qtv_8",
+          "title": "泰國突然封殺黃金？泰銖被金價綁架，1997危機會重演嗎？黃金正在拖垮泰國？#gold #stock #股票 ",
+          "publishedAt": "2026-09-25T01:00:10Z",
+          "publishedDate": "2026-09-25",
+          "thumbnail": "https://i.ytimg.com/vi/ZwtMr5Qtv_8/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=ZwtMr5Qtv_8",
+          "observedAt": "2026-09-25T01:00:00Z",
+          "viewCount": 1,
+          "likeCount": 0,
+          "commentCount": 0,
+          "durationSeconds": 789,
           "formatHint": "长视频/直播候选",
           "isLive": false,
           "concurrentViewers": null
@@ -18788,7 +18862,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-09-25T01:00:08+00:00",
+        "retrievedAt": "2026-09-25T01:10:08+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -18862,7 +18936,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-09-25T01:00:08+00:00",
+        "retrievedAt": "2026-09-25T01:10:08+00:00",
         "metricDefinitions": []
       }
     },
@@ -18872,9 +18946,9 @@
           "observedAt": "2026-09-25T01:00:00Z",
           "channelsExpected": 13,
           "channelsCollected": 13,
-          "videoCatalogCount": 297,
-          "videosRefreshed": 52,
-          "videosDisplayed": 167,
+          "videoCatalogCount": 299,
+          "videosRefreshed": 2,
+          "videosDisplayed": 168,
           "fullInventoryScan": false,
           "failureCount": 0,
           "failures": []
@@ -18883,7 +18957,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-09-25T01:00:08+00:00",
+        "retrievedAt": "2026-09-25T01:10:08+00:00",
         "metricDefinitions": []
       }
     }
