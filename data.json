@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-09-26T01:20:02Z",
+  "generatedAt": "2026-09-26T01:39:00Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-09-24T08:35:04Z",
     "videoSamplingPolicy": {
@@ -46,7 +46,7 @@
           "customUrl": "@amberwithfinance",
           "channelUrl": "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA",
           "thumbnail": "https://yt3.ggpht.com/czuSSl1-7trtlN5BP5n7hPS_Pm7cKTX_chp1lqgVggP5apIJkB1CsmVXt0F7WpD4mGg4PIdj=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 218,
+          "subscriberCount": 222,
           "hiddenSubscriberCount": false,
           "channelViewCount": 4156,
           "videoCount": 5,
@@ -90,7 +90,7 @@
           "customUrl": "@財經小鹿financedeer",
           "channelUrl": "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ",
           "thumbnail": "https://yt3.ggpht.com/b0OPo5YQsfzCR6jLZTs6H-4EO-EFrqvFHMANy587DDAJGZ6wK_jwjnCr8Es9Z-6E7J01GRtg=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 216,
+          "subscriberCount": 217,
           "hiddenSubscriberCount": false,
           "channelViewCount": 8521,
           "videoCount": 9,
@@ -247,16 +247,16 @@
           "subscriberCount": 9,
           "hiddenSubscriberCount": false,
           "channelViewCount": 732,
-          "videoCount": 3,
-          "lastPublishedAt": "2026-09-24T12:00:00Z",
-          "daysSinceUpload": 1.6,
+          "videoCount": 4,
+          "lastPublishedAt": "2026-09-26T01:30:23Z",
+          "daysSinceUpload": 0.0,
           "uploads7d": 3,
-          "uploads30d": 3,
-          "uploads90d": 3,
-          "averageUploadGapDays": 2.7,
-          "recent5AverageViews": 259,
-          "recent5MedianViews": 81,
-          "recent5AverageLikes": 2,
+          "uploads30d": 4,
+          "uploads90d": 4,
+          "averageUploadGapDays": 2.3,
+          "recent5AverageViews": 194,
+          "recent5MedianViews": 60,
+          "recent5AverageLikes": 1,
           "recent5EngagementRate": 0.014157
         },
         {
@@ -271,7 +271,7 @@
           "channelViewCount": 61050,
           "videoCount": 42,
           "lastPublishedAt": "2026-09-17T12:26:39Z",
-          "daysSinceUpload": 8.5,
+          "daysSinceUpload": 8.6,
           "uploads7d": 0,
           "uploads30d": 7,
           "uploads90d": 22,
@@ -307,7 +307,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-09-26T01:20:09+00:00",
+        "retrievedAt": "2026-09-26T01:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -2106,7 +2106,7 @@
           "channel": "Maple的理财森林",
           "subscriberCount": 9,
           "channelViewCount": 732,
-          "videoCount": 3
+          "videoCount": 4
         },
         {
           "observedAt": "2026-09-26T01:00:00Z",
@@ -2176,7 +2176,7 @@
           "date": "2026-09-26",
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "财经小鹿 Finance Deer",
-          "subscriberCount": 216,
+          "subscriberCount": 217,
           "channelViewCount": 8521,
           "videoCount": 9
         },
@@ -2185,7 +2185,7 @@
           "date": "2026-09-26",
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大镜",
-          "subscriberCount": 218,
+          "subscriberCount": 222,
           "channelViewCount": 4156,
           "videoCount": 5
         },
@@ -2220,7 +2220,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-09-26T01:20:09+00:00",
+        "retrievedAt": "2026-09-26T01:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -2243,6 +2243,16 @@
     },
     "video_catalog": {
       "rows": [
+        {
+          "channelId": "UC5lCKye2u8Q0BoE5ggY9myw",
+          "channel": "Maple的理财森林",
+          "videoId": "cme1luk-CPw",
+          "title": "高達16厘息係咪伏？8種收息工具大拆解！定期/債券/高息ETF/Covered Call點樣揀？｜理財新手必睇｜廣東話",
+          "publishedAt": "2026-09-26T01:30:23Z",
+          "publishedDate": "2026-09-26",
+          "thumbnail": "https://i.ytimg.com/vi/cme1luk-CPw/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=cme1luk-CPw"
+        },
         {
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "财经小鹿 Finance Deer",
@@ -2297,7 +2307,7 @@
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "财经小鹿 Finance Deer",
           "videoId": "ZwtMr5Qtv_8",
-          "title": "泰國突然封殺黃金？泰銖被金價綁架，1997危機會重演嗎？黃金正在拖垮泰國？#gold #stock #股票 ",
+          "title": "泰國突然封殺黃金？泰銖被金價綁架，1997危機會重演嗎？黃金正在拖垮泰國？#gold #stock #股票",
           "publishedAt": "2026-09-25T01:00:10Z",
           "publishedDate": "2026-09-25",
           "thumbnail": "https://i.ytimg.com/vi/ZwtMr5Qtv_8/mqdefault.jpg",
@@ -5287,7 +5297,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-09-26T01:20:09+00:00",
+        "retrievedAt": "2026-09-26T01:39:06+00:00",
         "metricDefinitions": []
       }
     },
@@ -24843,6 +24853,24 @@
         },
         {
           "observedAt": "2026-09-26T01:00:00Z",
+          "channelId": "UC5lCKye2u8Q0BoE5ggY9myw",
+          "channel": "Maple的理财森林",
+          "videoId": "cme1luk-CPw",
+          "title": "高達16厘息係咪伏？8種收息工具大拆解！定期/債券/高息ETF/Covered Call點樣揀？｜理財新手必睇｜廣東話",
+          "publishedAt": "2026-09-26T01:30:23Z",
+          "publishedDate": "2026-09-26",
+          "viewCount": 0,
+          "likeCount": 0,
+          "commentCount": 0,
+          "durationSeconds": 1119,
+          "formatHint": "长视频/直播候选",
+          "thumbnail": "https://i.ytimg.com/vi/cme1luk-CPw/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=cme1luk-CPw",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "observedAt": "2026-09-26T01:00:00Z",
           "channelId": "UCmhqWEDoPgrg9J129nGuQkQ",
           "channel": "文叔聊财",
           "videoId": "fGzUs32mjmo",
@@ -25169,7 +25197,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-09-26T01:20:09+00:00",
+        "retrievedAt": "2026-09-26T01:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -27155,6 +27183,24 @@
         {
           "channelId": "UC5lCKye2u8Q0BoE5ggY9myw",
           "channel": "Maple的理财森林",
+          "videoId": "cme1luk-CPw",
+          "title": "高達16厘息係咪伏？8種收息工具大拆解！定期/債券/高息ETF/Covered Call點樣揀？｜理財新手必睇｜廣東話",
+          "publishedAt": "2026-09-26T01:30:23Z",
+          "publishedDate": "2026-09-26",
+          "thumbnail": "https://i.ytimg.com/vi/cme1luk-CPw/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=cme1luk-CPw",
+          "observedAt": "2026-09-26T01:00:00Z",
+          "viewCount": 0,
+          "likeCount": 0,
+          "commentCount": 0,
+          "durationSeconds": 1119,
+          "formatHint": "长视频/直播候选",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "channelId": "UC5lCKye2u8Q0BoE5ggY9myw",
+          "channel": "Maple的理财森林",
           "videoId": "hZITRcnMZ1k",
           "title": "你明明唔笨，點解成日做錯財務決定？其實大腦一直控制你｜行為經濟學拆解4個財富陷阱｜廣東話",
           "publishedAt": "2026-09-24T12:00:00Z",
@@ -28290,7 +28336,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-09-26T01:20:09+00:00",
+        "retrievedAt": "2026-09-26T01:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -28364,7 +28410,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-09-26T01:20:09+00:00",
+        "retrievedAt": "2026-09-26T01:39:06+00:00",
         "metricDefinitions": []
       }
     },
@@ -28374,9 +28420,9 @@
           "observedAt": "2026-09-26T01:00:00Z",
           "channelsExpected": 13,
           "channelsCollected": 13,
-          "videoCatalogCount": 304,
-          "videosRefreshed": 51,
-          "videosDisplayed": 172,
+          "videoCatalogCount": 305,
+          "videosRefreshed": 1,
+          "videosDisplayed": 173,
           "fullInventoryScan": false,
           "failureCount": 0,
           "failures": []
@@ -28385,7 +28431,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-09-26T01:20:09+00:00",
+        "retrievedAt": "2026-09-26T01:39:06+00:00",
         "metricDefinitions": []
       }
     }
