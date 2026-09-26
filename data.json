@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-09-26T04:39:00Z",
+  "generatedAt": "2026-09-26T05:30:04Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-09-24T08:35:04Z",
     "videoSamplingPolicy": {
@@ -46,7 +46,7 @@
           "customUrl": "@amberwithfinance",
           "channelUrl": "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA",
           "thumbnail": "https://yt3.ggpht.com/czuSSl1-7trtlN5BP5n7hPS_Pm7cKTX_chp1lqgVggP5apIJkB1CsmVXt0F7WpD4mGg4PIdj=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 252,
+          "subscriberCount": 266,
           "hiddenSubscriberCount": false,
           "channelViewCount": 10622,
           "videoCount": 5,
@@ -90,7 +90,7 @@
           "customUrl": "@財經小鹿financedeer",
           "channelUrl": "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ",
           "thumbnail": "https://yt3.ggpht.com/b0OPo5YQsfzCR6jLZTs6H-4EO-EFrqvFHMANy587DDAJGZ6wK_jwjnCr8Es9Z-6E7J01GRtg=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 227,
+          "subscriberCount": 232,
           "hiddenSubscriberCount": false,
           "channelViewCount": 22773,
           "videoCount": 9,
@@ -180,15 +180,15 @@
           "thumbnail": "https://yt3.ggpht.com/WQBN9NFS6FNVYm4_bQtAfL-o5FXZgh3RYK3uVDe8d7WjW95CsE4_iYvxVK8sZ3W0jBCmdfIM=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 4,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 25,
-          "videoCount": 3,
-          "lastPublishedAt": "2026-09-23T10:07:36Z",
-          "daysSinceUpload": 2.8,
-          "uploads7d": 3,
-          "uploads30d": 3,
-          "uploads90d": 3,
-          "averageUploadGapDays": 1.2,
-          "recent5AverageViews": 9,
+          "channelViewCount": 26,
+          "videoCount": 4,
+          "lastPublishedAt": "2026-09-26T05:25:33Z",
+          "daysSinceUpload": 0.0,
+          "uploads7d": 4,
+          "uploads30d": 4,
+          "uploads90d": 4,
+          "averageUploadGapDays": 1.7,
+          "recent5AverageViews": 6,
           "recent5MedianViews": 8,
           "recent5AverageLikes": 0,
           "recent5EngagementRate": 0.038462
@@ -205,7 +205,7 @@
           "channelViewCount": 652,
           "videoCount": 9,
           "lastPublishedAt": "2026-09-24T20:30:08Z",
-          "daysSinceUpload": 1.3,
+          "daysSinceUpload": 1.4,
           "uploads7d": 8,
           "uploads30d": 9,
           "uploads90d": 9,
@@ -249,7 +249,7 @@
           "channelViewCount": 732,
           "videoCount": 4,
           "lastPublishedAt": "2026-09-26T01:30:23Z",
-          "daysSinceUpload": 0.1,
+          "daysSinceUpload": 0.2,
           "uploads7d": 3,
           "uploads30d": 4,
           "uploads90d": 4,
@@ -268,7 +268,7 @@
           "thumbnail": "https://yt3.ggpht.com/p0qrfPBE0LJ7pYWLSKQRMPuU4MjLN1aWmL7JOSqQul2aC9eo0yhEMzk2bIrpMgQ5gnir0noP=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 816,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 61050,
+          "channelViewCount": 61057,
           "videoCount": 42,
           "lastPublishedAt": "2026-09-17T12:26:39Z",
           "daysSinceUpload": 8.7,
@@ -293,7 +293,7 @@
           "channelViewCount": 48938,
           "videoCount": 56,
           "lastPublishedAt": "2026-09-24T09:00:26Z",
-          "daysSinceUpload": 1.8,
+          "daysSinceUpload": 1.9,
           "uploads7d": 4,
           "uploads30d": 8,
           "uploads90d": 25,
@@ -307,7 +307,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-09-26T04:39:08+00:00",
+        "retrievedAt": "2026-09-26T05:30:13+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -2249,7 +2249,7 @@
           "channelId": "UCIj1v-XeGVGaR8rOkipW4gQ",
           "channel": "Alec財有意思",
           "subscriberCount": 816,
-          "channelViewCount": 61050,
+          "channelViewCount": 61057,
           "videoCount": 42
         },
         {
@@ -2293,7 +2293,7 @@
           "date": "2026-09-26",
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "财经小鹿 Finance Deer",
-          "subscriberCount": 227,
+          "subscriberCount": 232,
           "channelViewCount": 22773,
           "videoCount": 9
         },
@@ -2302,7 +2302,7 @@
           "date": "2026-09-26",
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大镜",
-          "subscriberCount": 252,
+          "subscriberCount": 266,
           "channelViewCount": 10622,
           "videoCount": 5
         },
@@ -2312,8 +2312,8 @@
           "channelId": "UCmhqWEDoPgrg9J129nGuQkQ",
           "channel": "文叔聊财",
           "subscriberCount": 4,
-          "channelViewCount": 25,
-          "videoCount": 3
+          "channelViewCount": 26,
+          "videoCount": 4
         },
         {
           "observedAt": "2026-09-26T04:00:00Z",
@@ -2337,7 +2337,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-09-26T04:39:08+00:00",
+        "retrievedAt": "2026-09-26T05:30:13+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -2360,6 +2360,16 @@
     },
     "video_catalog": {
       "rows": [
+        {
+          "channelId": "UCmhqWEDoPgrg9J129nGuQkQ",
+          "channel": "文叔聊财",
+          "videoId": "H4Wtkaggbbg",
+          "title": "加息不一定跌！黃金歷史六次暴跌，真正致命的是這五個警報 #加息 #黄金",
+          "publishedAt": "2026-09-26T05:25:33Z",
+          "publishedDate": "2026-09-26",
+          "thumbnail": "https://i.ytimg.com/vi/H4Wtkaggbbg/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=H4Wtkaggbbg"
+        },
         {
           "channelId": "UC5lCKye2u8Q0BoE5ggY9myw",
           "channel": "Maple的理财森林",
@@ -2424,7 +2434,7 @@
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "财经小鹿 Finance Deer",
           "videoId": "ZwtMr5Qtv_8",
-          "title": "泰國突然封殺黃金？泰銖被金價綁架，1997危機會重演嗎？黃金正在拖垮泰國？#gold #stock #股票 ",
+          "title": "泰國突然封殺黃金？泰銖被金價綁架，1997危機會重演嗎？黃金正在拖垮泰國？#gold #stock #股票",
           "publishedAt": "2026-09-25T01:00:10Z",
           "publishedDate": "2026-09-25",
           "thumbnail": "https://i.ytimg.com/vi/ZwtMr5Qtv_8/mqdefault.jpg",
@@ -5414,7 +5424,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-09-26T04:39:08+00:00",
+        "retrievedAt": "2026-09-26T05:30:13+00:00",
         "metricDefinitions": []
       }
     },
@@ -25564,6 +25574,24 @@
         },
         {
           "observedAt": "2026-09-26T04:00:00Z",
+          "channelId": "UCmhqWEDoPgrg9J129nGuQkQ",
+          "channel": "文叔聊财",
+          "videoId": "H4Wtkaggbbg",
+          "title": "加息不一定跌！黃金歷史六次暴跌，真正致命的是這五個警報 #加息 #黄金",
+          "publishedAt": "2026-09-26T05:25:33Z",
+          "publishedDate": "2026-09-26",
+          "viewCount": 0,
+          "likeCount": 0,
+          "commentCount": 0,
+          "durationSeconds": 620,
+          "formatHint": "长视频/直播候选",
+          "thumbnail": "https://i.ytimg.com/vi/H4Wtkaggbbg/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=H4Wtkaggbbg",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "observedAt": "2026-09-26T04:00:00Z",
           "channelId": "UCNX9-jzOH4KMbIeuWK8LZaw",
           "channel": "Leo财经",
           "videoId": "IU-D3KFogR0",
@@ -26214,7 +26242,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-09-26T04:39:08+00:00",
+        "retrievedAt": "2026-09-26T05:30:13+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -27894,6 +27922,24 @@
         {
           "channelId": "UCmhqWEDoPgrg9J129nGuQkQ",
           "channel": "文叔聊财",
+          "videoId": "H4Wtkaggbbg",
+          "title": "加息不一定跌！黃金歷史六次暴跌，真正致命的是這五個警報 #加息 #黄金",
+          "publishedAt": "2026-09-26T05:25:33Z",
+          "publishedDate": "2026-09-26",
+          "thumbnail": "https://i.ytimg.com/vi/H4Wtkaggbbg/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=H4Wtkaggbbg",
+          "observedAt": "2026-09-26T04:00:00Z",
+          "viewCount": 0,
+          "likeCount": 0,
+          "commentCount": 0,
+          "durationSeconds": 620,
+          "formatHint": "长视频/直播候选",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "channelId": "UCmhqWEDoPgrg9J129nGuQkQ",
+          "channel": "文叔聊财",
           "videoId": "yj_xOmVjxgQ",
           "title": "金價4300是底還是頂？華爾街在拋、東方在搶，黃金定價權正在搬家！摩根大通喊 6000、高盛喊 4900、富國喊到 6300——真正的大買家卻從來不看新聞，看懂這三條線，你才知道該加碼還是收手！",
           "publishedAt": "2026-09-23T10:07:36Z",
@@ -29353,7 +29399,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-09-26T04:39:08+00:00",
+        "retrievedAt": "2026-09-26T05:30:13+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -29427,7 +29473,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-09-26T04:39:08+00:00",
+        "retrievedAt": "2026-09-26T05:30:13+00:00",
         "metricDefinitions": []
       }
     },
@@ -29437,9 +29483,9 @@
           "observedAt": "2026-09-26T04:00:00Z",
           "channelsExpected": 13,
           "channelsCollected": 13,
-          "videoCatalogCount": 305,
-          "videosRefreshed": 50,
-          "videosDisplayed": 173,
+          "videoCatalogCount": 306,
+          "videosRefreshed": 1,
+          "videosDisplayed": 174,
           "fullInventoryScan": false,
           "failureCount": 0,
           "failures": []
@@ -29448,7 +29494,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-09-26T04:39:08+00:00",
+        "retrievedAt": "2026-09-26T05:30:13+00:00",
         "metricDefinitions": []
       }
     }
