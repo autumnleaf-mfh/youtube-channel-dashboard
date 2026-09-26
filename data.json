@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-09-26T10:39:00Z",
+  "generatedAt": "2026-09-26T12:20:03Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-09-24T08:35:04Z",
     "videoSamplingPolicy": {
@@ -29,7 +29,7 @@
           "channelViewCount": 1409368,
           "videoCount": 84,
           "lastPublishedAt": "2026-09-23T10:19:06Z",
-          "daysSinceUpload": 3.0,
+          "daysSinceUpload": 3.1,
           "uploads7d": 1,
           "uploads30d": 14,
           "uploads90d": 63,
@@ -46,20 +46,20 @@
           "customUrl": "@amberwithfinance",
           "channelUrl": "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA",
           "thumbnail": "https://yt3.ggpht.com/czuSSl1-7trtlN5BP5n7hPS_Pm7cKTX_chp1lqgVggP5apIJkB1CsmVXt0F7WpD4mGg4PIdj=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 327,
+          "subscriberCount": 339,
           "hiddenSubscriberCount": false,
           "channelViewCount": 10622,
-          "videoCount": 6,
-          "lastPublishedAt": "2026-09-26T10:00:27Z",
+          "videoCount": 7,
+          "lastPublishedAt": "2026-09-26T12:00:16Z",
           "daysSinceUpload": 0.0,
           "uploads7d": 5,
-          "uploads30d": 6,
-          "uploads90d": 6,
-          "averageUploadGapDays": 1.6,
-          "recent5AverageViews": 4935,
-          "recent5MedianViews": 1044,
-          "recent5AverageLikes": 113,
-          "recent5EngagementRate": 0.023467
+          "uploads30d": 7,
+          "uploads90d": 7,
+          "averageUploadGapDays": 1.3,
+          "recent5AverageViews": 4727,
+          "recent5MedianViews": 957,
+          "recent5AverageLikes": 108,
+          "recent5EngagementRate": 0.023438
         },
         {
           "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ",
@@ -73,7 +73,7 @@
           "channelViewCount": 645377,
           "videoCount": 71,
           "lastPublishedAt": "2026-09-26T01:00:01Z",
-          "daysSinceUpload": 0.4,
+          "daysSinceUpload": 0.5,
           "uploads7d": 2,
           "uploads30d": 13,
           "uploads90d": 50,
@@ -90,12 +90,12 @@
           "customUrl": "@財經小鹿financedeer",
           "channelUrl": "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ",
           "thumbnail": "https://yt3.ggpht.com/b0OPo5YQsfzCR6jLZTs6H-4EO-EFrqvFHMANy587DDAJGZ6wK_jwjnCr8Es9Z-6E7J01GRtg=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 250,
+          "subscriberCount": 253,
           "hiddenSubscriberCount": false,
           "channelViewCount": 22773,
           "videoCount": 9,
           "lastPublishedAt": "2026-09-26T01:00:02Z",
-          "daysSinceUpload": 0.4,
+          "daysSinceUpload": 0.5,
           "uploads7d": 8,
           "uploads30d": 10,
           "uploads90d": 10,
@@ -117,7 +117,7 @@
           "channelViewCount": 98,
           "videoCount": 6,
           "lastPublishedAt": "2026-09-23T12:30:27Z",
-          "daysSinceUpload": 2.9,
+          "daysSinceUpload": 3.0,
           "uploads7d": 5,
           "uploads30d": 7,
           "uploads90d": 7,
@@ -134,12 +134,12 @@
           "customUrl": "@lorafinancialworld",
           "channelUrl": "https://www.youtube.com/channel/UCsXJXZI4J_N9r8H9TsORmlA",
           "thumbnail": "https://yt3.ggpht.com/f8Upq2a2CtKPaGkcJDG609eXDHKSvG6cl218-v1CFEcEaAgzFA7PdxyiGZvWQqb_jRJtrS6_lg=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 79,
+          "subscriberCount": 84,
           "hiddenSubscriberCount": false,
           "channelViewCount": 5338,
           "videoCount": 7,
           "lastPublishedAt": "2026-09-26T06:01:27Z",
-          "daysSinceUpload": 0.2,
+          "daysSinceUpload": 0.3,
           "uploads7d": 6,
           "uploads30d": 7,
           "uploads90d": 7,
@@ -161,7 +161,7 @@
           "channelViewCount": 8518,
           "videoCount": 4,
           "lastPublishedAt": "2026-09-24T05:47:51Z",
-          "daysSinceUpload": 2.2,
+          "daysSinceUpload": 2.3,
           "uploads7d": 3,
           "uploads30d": 4,
           "uploads90d": 4,
@@ -183,7 +183,7 @@
           "channelViewCount": 26,
           "videoCount": 4,
           "lastPublishedAt": "2026-09-26T05:25:33Z",
-          "daysSinceUpload": 0.2,
+          "daysSinceUpload": 0.3,
           "uploads7d": 4,
           "uploads30d": 4,
           "uploads90d": 4,
@@ -205,7 +205,7 @@
           "channelViewCount": 804,
           "videoCount": 9,
           "lastPublishedAt": "2026-09-24T20:30:08Z",
-          "daysSinceUpload": 1.6,
+          "daysSinceUpload": 1.7,
           "uploads7d": 8,
           "uploads30d": 9,
           "uploads90d": 9,
@@ -227,7 +227,7 @@
           "channelViewCount": 1157,
           "videoCount": 2,
           "lastPublishedAt": "2026-09-24T21:30:28Z",
-          "daysSinceUpload": 1.5,
+          "daysSinceUpload": 1.6,
           "uploads7d": 5,
           "uploads30d": 5,
           "uploads90d": 5,
@@ -249,7 +249,7 @@
           "channelViewCount": 766,
           "videoCount": 4,
           "lastPublishedAt": "2026-09-26T01:30:23Z",
-          "daysSinceUpload": 0.4,
+          "daysSinceUpload": 0.5,
           "uploads7d": 3,
           "uploads30d": 4,
           "uploads90d": 4,
@@ -271,7 +271,7 @@
           "channelViewCount": 61057,
           "videoCount": 42,
           "lastPublishedAt": "2026-09-17T12:26:39Z",
-          "daysSinceUpload": 8.9,
+          "daysSinceUpload": 9.0,
           "uploads7d": 0,
           "uploads30d": 7,
           "uploads90d": 21,
@@ -288,7 +288,7 @@
           "customUrl": "@easywealth-g3h",
           "channelUrl": "https://www.youtube.com/channel/UC8RxFK0DNEz8Ad2DPIt3Bog",
           "thumbnail": "https://yt3.ggpht.com/8f9wuq5-nQl0AKiwojnbKd7IQBL1tuvZQ3OPfcQcOkjqxoQsutIsT9sHF2hpEYKHRqzK8239iA=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 162,
+          "subscriberCount": 163,
           "hiddenSubscriberCount": false,
           "channelViewCount": 48960,
           "videoCount": 56,
@@ -307,7 +307,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-09-26T10:39:06+00:00",
+        "retrievedAt": "2026-09-26T12:20:10+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -2464,7 +2464,7 @@
           "date": "2026-09-26",
           "channelId": "UC8RxFK0DNEz8Ad2DPIt3Bog",
           "channel": "熱股追蹤",
-          "subscriberCount": 162,
+          "subscriberCount": 163,
           "channelViewCount": 48960,
           "videoCount": 56
         },
@@ -2527,7 +2527,7 @@
           "date": "2026-09-26",
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "财经小鹿 Finance Deer",
-          "subscriberCount": 250,
+          "subscriberCount": 253,
           "channelViewCount": 22773,
           "videoCount": 9
         },
@@ -2536,9 +2536,9 @@
           "date": "2026-09-26",
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大镜",
-          "subscriberCount": 327,
+          "subscriberCount": 339,
           "channelViewCount": 10622,
-          "videoCount": 6
+          "videoCount": 7
         },
         {
           "observedAt": "2026-09-26T10:00:00Z",
@@ -2563,7 +2563,7 @@
           "date": "2026-09-26",
           "channelId": "UCsXJXZI4J_N9r8H9TsORmlA",
           "channel": "羅拉财富观",
-          "subscriberCount": 79,
+          "subscriberCount": 84,
           "channelViewCount": 5338,
           "videoCount": 7
         }
@@ -2571,7 +2571,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-09-26T10:39:06+00:00",
+        "retrievedAt": "2026-09-26T12:20:10+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -2594,6 +2594,16 @@
     },
     "video_catalog": {
       "rows": [
+        {
+          "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
+          "channel": "Amber放大镜",
+          "videoId": "P7oUKn_cm1o",
+          "title": "大模型跌成白菜價，蘋果一款折疊屏收割？AI低谷，蘋果開始吃紅利！淘金熱最後誰賺了大錢... #AI #蘋果 #折疊屏 #美股 #投資 #財經 ",
+          "publishedAt": "2026-09-26T12:00:16Z",
+          "publishedDate": "2026-09-26",
+          "thumbnail": "https://i.ytimg.com/vi/P7oUKn_cm1o/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=P7oUKn_cm1o"
+        },
         {
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大镜",
@@ -5678,7 +5688,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-09-26T10:39:06+00:00",
+        "retrievedAt": "2026-09-26T12:20:10+00:00",
         "metricDefinitions": []
       }
     },
@@ -27844,6 +27854,24 @@
         },
         {
           "observedAt": "2026-09-26T10:00:00Z",
+          "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
+          "channel": "Amber放大镜",
+          "videoId": "P7oUKn_cm1o",
+          "title": "大模型跌成白菜價，蘋果一款折疊屏收割？AI低谷，蘋果開始吃紅利！淘金熱最後誰賺了大錢... #AI #蘋果 #折疊屏 #美股 #投資 #財經 ",
+          "publishedAt": "2026-09-26T12:00:16Z",
+          "publishedDate": "2026-09-26",
+          "viewCount": 8,
+          "likeCount": 1,
+          "commentCount": 0,
+          "durationSeconds": 830,
+          "formatHint": "长视频/直播候选",
+          "thumbnail": "https://i.ytimg.com/vi/P7oUKn_cm1o/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=P7oUKn_cm1o",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "observedAt": "2026-09-26T10:00:00Z",
           "channelId": "UC8RxFK0DNEz8Ad2DPIt3Bog",
           "channel": "熱股追蹤",
           "videoId": "QP3jO_OmPsQ",
@@ -28404,7 +28432,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-09-26T10:39:06+00:00",
+        "retrievedAt": "2026-09-26T12:20:10+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -28961,6 +28989,24 @@
           "likeCount": 300,
           "commentCount": 62,
           "durationSeconds": 642,
+          "formatHint": "长视频/直播候选",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
+          "channel": "Amber放大镜",
+          "videoId": "P7oUKn_cm1o",
+          "title": "大模型跌成白菜價，蘋果一款折疊屏收割？AI低谷，蘋果開始吃紅利！淘金熱最後誰賺了大錢... #AI #蘋果 #折疊屏 #美股 #投資 #財經 ",
+          "publishedAt": "2026-09-26T12:00:16Z",
+          "publishedDate": "2026-09-26",
+          "thumbnail": "https://i.ytimg.com/vi/P7oUKn_cm1o/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=P7oUKn_cm1o",
+          "observedAt": "2026-09-26T10:00:00Z",
+          "viewCount": 8,
+          "likeCount": 1,
+          "commentCount": 0,
+          "durationSeconds": 830,
           "formatHint": "长视频/直播候选",
           "isLive": false,
           "concurrentViewers": null
@@ -31597,7 +31643,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-09-26T10:39:06+00:00",
+        "retrievedAt": "2026-09-26T12:20:10+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -31671,7 +31717,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-09-26T10:39:06+00:00",
+        "retrievedAt": "2026-09-26T12:20:10+00:00",
         "metricDefinitions": []
       }
     },
@@ -31681,9 +31727,9 @@
           "observedAt": "2026-09-26T10:00:00Z",
           "channelsExpected": 13,
           "channelsCollected": 13,
-          "videoCatalogCount": 308,
-          "videosRefreshed": 0,
-          "videosDisplayed": 176,
+          "videoCatalogCount": 309,
+          "videosRefreshed": 1,
+          "videosDisplayed": 177,
           "fullInventoryScan": false,
           "failureCount": 0,
           "failures": []
@@ -31692,7 +31738,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-09-26T10:39:06+00:00",
+        "retrievedAt": "2026-09-26T12:20:10+00:00",
         "metricDefinitions": []
       }
     }
