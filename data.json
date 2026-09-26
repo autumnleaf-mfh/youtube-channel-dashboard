@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-09-26T05:30:04Z",
+  "generatedAt": "2026-09-26T06:10:04Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-09-24T08:35:04Z",
     "videoSamplingPolicy": {
@@ -46,12 +46,12 @@
           "customUrl": "@amberwithfinance",
           "channelUrl": "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA",
           "thumbnail": "https://yt3.ggpht.com/czuSSl1-7trtlN5BP5n7hPS_Pm7cKTX_chp1lqgVggP5apIJkB1CsmVXt0F7WpD4mGg4PIdj=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 266,
+          "subscriberCount": 275,
           "hiddenSubscriberCount": false,
           "channelViewCount": 10622,
           "videoCount": 5,
           "lastPublishedAt": "2026-09-25T12:00:30Z",
-          "daysSinceUpload": 0.7,
+          "daysSinceUpload": 0.8,
           "uploads7d": 4,
           "uploads30d": 5,
           "uploads90d": 5,
@@ -90,7 +90,7 @@
           "customUrl": "@財經小鹿financedeer",
           "channelUrl": "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ",
           "thumbnail": "https://yt3.ggpht.com/b0OPo5YQsfzCR6jLZTs6H-4EO-EFrqvFHMANy587DDAJGZ6wK_jwjnCr8Es9Z-6E7J01GRtg=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 232,
+          "subscriberCount": 234,
           "hiddenSubscriberCount": false,
           "channelViewCount": 22773,
           "videoCount": 9,
@@ -134,20 +134,20 @@
           "customUrl": "@lorafinancialworld",
           "channelUrl": "https://www.youtube.com/channel/UCsXJXZI4J_N9r8H9TsORmlA",
           "thumbnail": "https://yt3.ggpht.com/f8Upq2a2CtKPaGkcJDG609eXDHKSvG6cl218-v1CFEcEaAgzFA7PdxyiGZvWQqb_jRJtrS6_lg=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 72,
+          "subscriberCount": 74,
           "hiddenSubscriberCount": false,
           "channelViewCount": 5338,
-          "videoCount": 6,
-          "lastPublishedAt": "2026-09-25T12:00:07Z",
-          "daysSinceUpload": 0.7,
-          "uploads7d": 5,
-          "uploads30d": 6,
-          "uploads90d": 6,
-          "averageUploadGapDays": 1.4,
-          "recent5AverageViews": 1100,
-          "recent5MedianViews": 769,
-          "recent5AverageLikes": 24,
-          "recent5EngagementRate": 0.022723
+          "videoCount": 7,
+          "lastPublishedAt": "2026-09-26T06:01:27Z",
+          "daysSinceUpload": 0.0,
+          "uploads7d": 6,
+          "uploads30d": 7,
+          "uploads90d": 7,
+          "averageUploadGapDays": 1.3,
+          "recent5AverageViews": 830,
+          "recent5MedianViews": 235,
+          "recent5AverageLikes": 19,
+          "recent5EngagementRate": 0.02385
         },
         {
           "channelId": "UC9veOeKEZhexYxmMXF_RwCQ",
@@ -158,7 +158,7 @@
           "thumbnail": "https://yt3.ggpht.com/HAtJKK6ZdY-kbTEirRIWFH7zUD70XxHLWRTxRrTamwk-fNTVS1dR2A0_bSN3xYFNh6wz2obK=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 43,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 8174,
+          "channelViewCount": 8518,
           "videoCount": 4,
           "lastPublishedAt": "2026-09-24T05:47:51Z",
           "daysSinceUpload": 2.0,
@@ -222,12 +222,12 @@
           "customUrl": "@喬安說財經",
           "channelUrl": "https://www.youtube.com/channel/UCQAo0ws95p-uN7gr0OOHoXg",
           "thumbnail": "https://yt3.ggpht.com/oWevvT9BSKRYqGAkafvq4fUMKeEwmzqtFJqTWsE4Hc93JAyB3WEB9Mn5NlVhAXpvOuWMnD950A=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 8,
+          "subscriberCount": 9,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 706,
+          "channelViewCount": 1157,
           "videoCount": 5,
           "lastPublishedAt": "2026-09-24T21:30:28Z",
-          "daysSinceUpload": 1.3,
+          "daysSinceUpload": 1.4,
           "uploads7d": 5,
           "uploads30d": 5,
           "uploads90d": 5,
@@ -244,9 +244,9 @@
           "customUrl": "@maple-moneyforest",
           "channelUrl": "https://www.youtube.com/channel/UC5lCKye2u8Q0BoE5ggY9myw",
           "thumbnail": "https://yt3.ggpht.com/pMWF2QNsoxnImQg07Dt2tQUMVnZxgPE793m7fi2VrhNdvJoWlsq_tOBMTXPszPInKhtLr1YpYao=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 10,
+          "subscriberCount": 11,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 732,
+          "channelViewCount": 766,
           "videoCount": 4,
           "lastPublishedAt": "2026-09-26T01:30:23Z",
           "daysSinceUpload": 0.2,
@@ -307,7 +307,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-09-26T05:30:13+00:00",
+        "retrievedAt": "2026-09-26T06:10:11+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -2221,8 +2221,8 @@
           "date": "2026-09-26",
           "channelId": "UC5lCKye2u8Q0BoE5ggY9myw",
           "channel": "Maple的理财森林",
-          "subscriberCount": 10,
-          "channelViewCount": 732,
+          "subscriberCount": 11,
+          "channelViewCount": 766,
           "videoCount": 4
         },
         {
@@ -2240,7 +2240,7 @@
           "channelId": "UC9veOeKEZhexYxmMXF_RwCQ",
           "channel": "艾莉说",
           "subscriberCount": 43,
-          "channelViewCount": 8174,
+          "channelViewCount": 8518,
           "videoCount": 4
         },
         {
@@ -2275,8 +2275,8 @@
           "date": "2026-09-26",
           "channelId": "UCQAo0ws95p-uN7gr0OOHoXg",
           "channel": "财经有一套",
-          "subscriberCount": 8,
-          "channelViewCount": 706,
+          "subscriberCount": 9,
+          "channelViewCount": 1157,
           "videoCount": 5
         },
         {
@@ -2293,7 +2293,7 @@
           "date": "2026-09-26",
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "财经小鹿 Finance Deer",
-          "subscriberCount": 232,
+          "subscriberCount": 234,
           "channelViewCount": 22773,
           "videoCount": 9
         },
@@ -2302,7 +2302,7 @@
           "date": "2026-09-26",
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大镜",
-          "subscriberCount": 266,
+          "subscriberCount": 275,
           "channelViewCount": 10622,
           "videoCount": 5
         },
@@ -2329,15 +2329,15 @@
           "date": "2026-09-26",
           "channelId": "UCsXJXZI4J_N9r8H9TsORmlA",
           "channel": "羅拉财富观",
-          "subscriberCount": 72,
+          "subscriberCount": 74,
           "channelViewCount": 5338,
-          "videoCount": 6
+          "videoCount": 7
         }
       ],
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-09-26T05:30:13+00:00",
+        "retrievedAt": "2026-09-26T06:10:11+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -2360,6 +2360,16 @@
     },
     "video_catalog": {
       "rows": [
+        {
+          "channelId": "UCsXJXZI4J_N9r8H9TsORmlA",
+          "channel": "羅拉财富观",
+          "videoId": "bQXdIuwNI_Q",
+          "title": "AI造AI！人類淪為AI打工仔？7成程式員失業！基層飯碗遭血洗，全球算力荒大爆，中美算力差距拉大17倍？財富格局大變，三招教你守住資產！",
+          "publishedAt": "2026-09-26T06:01:27Z",
+          "publishedDate": "2026-09-26",
+          "thumbnail": "https://i.ytimg.com/vi/bQXdIuwNI_Q/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=bQXdIuwNI_Q"
+        },
         {
           "channelId": "UCmhqWEDoPgrg9J129nGuQkQ",
           "channel": "文叔聊财",
@@ -5424,7 +5434,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-09-26T05:30:13+00:00",
+        "retrievedAt": "2026-09-26T06:10:11+00:00",
         "metricDefinitions": []
       }
     },
@@ -25898,6 +25908,24 @@
         },
         {
           "observedAt": "2026-09-26T04:00:00Z",
+          "channelId": "UCsXJXZI4J_N9r8H9TsORmlA",
+          "channel": "羅拉财富观",
+          "videoId": "bQXdIuwNI_Q",
+          "title": "AI造AI！人類淪為AI打工仔？7成程式員失業！基層飯碗遭血洗，全球算力荒大爆，中美算力差距拉大17倍？財富格局大變，三招教你守住資產！",
+          "publishedAt": "2026-09-26T06:01:27Z",
+          "publishedDate": "2026-09-26",
+          "viewCount": 6,
+          "likeCount": 2,
+          "commentCount": 0,
+          "durationSeconds": 649,
+          "formatHint": "长视频/直播候选",
+          "thumbnail": "https://i.ytimg.com/vi/bQXdIuwNI_Q/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=bQXdIuwNI_Q",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "observedAt": "2026-09-26T04:00:00Z",
           "channelId": "UC5lCKye2u8Q0BoE5ggY9myw",
           "channel": "Maple的理财森林",
           "videoId": "cme1luk-CPw",
@@ -26242,7 +26270,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-09-26T05:30:13+00:00",
+        "retrievedAt": "2026-09-26T06:10:11+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -27736,6 +27764,24 @@
           "commentCount": 0,
           "durationSeconds": 173,
           "formatHint": "短视频候选",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "channelId": "UCsXJXZI4J_N9r8H9TsORmlA",
+          "channel": "羅拉财富观",
+          "videoId": "bQXdIuwNI_Q",
+          "title": "AI造AI！人類淪為AI打工仔？7成程式員失業！基層飯碗遭血洗，全球算力荒大爆，中美算力差距拉大17倍？財富格局大變，三招教你守住資產！",
+          "publishedAt": "2026-09-26T06:01:27Z",
+          "publishedDate": "2026-09-26",
+          "thumbnail": "https://i.ytimg.com/vi/bQXdIuwNI_Q/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=bQXdIuwNI_Q",
+          "observedAt": "2026-09-26T04:00:00Z",
+          "viewCount": 6,
+          "likeCount": 2,
+          "commentCount": 0,
+          "durationSeconds": 649,
+          "formatHint": "长视频/直播候选",
           "isLive": false,
           "concurrentViewers": null
         },
@@ -29399,7 +29445,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-09-26T05:30:13+00:00",
+        "retrievedAt": "2026-09-26T06:10:11+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -29473,7 +29519,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-09-26T05:30:13+00:00",
+        "retrievedAt": "2026-09-26T06:10:11+00:00",
         "metricDefinitions": []
       }
     },
@@ -29483,9 +29529,9 @@
           "observedAt": "2026-09-26T04:00:00Z",
           "channelsExpected": 13,
           "channelsCollected": 13,
-          "videoCatalogCount": 306,
+          "videoCatalogCount": 307,
           "videosRefreshed": 1,
-          "videosDisplayed": 174,
+          "videosDisplayed": 175,
           "fullInventoryScan": false,
           "failureCount": 0,
           "failures": []
@@ -29494,7 +29540,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-09-26T05:30:13+00:00",
+        "retrievedAt": "2026-09-26T06:10:11+00:00",
         "metricDefinitions": []
       }
     }
