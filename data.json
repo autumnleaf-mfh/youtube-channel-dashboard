@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-09-27T01:39:00Z",
+  "generatedAt": "2026-09-27T02:10:04Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-09-24T08:35:04Z",
     "videoSamplingPolicy": {
@@ -46,7 +46,7 @@
           "customUrl": "@amberwithfinance",
           "channelUrl": "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA",
           "thumbnail": "https://yt3.ggpht.com/czuSSl1-7trtlN5BP5n7hPS_Pm7cKTX_chp1lqgVggP5apIJkB1CsmVXt0F7WpD4mGg4PIdj=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 412,
+          "subscriberCount": 413,
           "hiddenSubscriberCount": false,
           "channelViewCount": 22116,
           "videoCount": 7,
@@ -90,20 +90,20 @@
           "customUrl": "@財經小鹿financedeer",
           "channelUrl": "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ",
           "thumbnail": "https://yt3.ggpht.com/b0OPo5YQsfzCR6jLZTs6H-4EO-EFrqvFHMANy587DDAJGZ6wK_jwjnCr8Es9Z-6E7J01GRtg=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 300,
+          "subscriberCount": 306,
           "hiddenSubscriberCount": false,
           "channelViewCount": 26295,
-          "videoCount": 10,
-          "lastPublishedAt": "2026-09-27T01:00:33Z",
+          "videoCount": 11,
+          "lastPublishedAt": "2026-09-27T02:00:33Z",
           "daysSinceUpload": 0.0,
           "uploads7d": 9,
-          "uploads30d": 11,
-          "uploads90d": 11,
-          "averageUploadGapDays": 0.8,
-          "recent5AverageViews": 3835,
-          "recent5MedianViews": 1214,
-          "recent5AverageLikes": 65,
-          "recent5EngagementRate": 0.017785
+          "uploads30d": 12,
+          "uploads90d": 12,
+          "averageUploadGapDays": 0.7,
+          "recent5AverageViews": 3586,
+          "recent5MedianViews": 10,
+          "recent5AverageLikes": 61,
+          "recent5EngagementRate": 0.017903
         },
         {
           "channelId": "UCNX9-jzOH4KMbIeuWK8LZaw",
@@ -117,7 +117,7 @@
           "channelViewCount": 98,
           "videoCount": 6,
           "lastPublishedAt": "2026-09-23T12:30:27Z",
-          "daysSinceUpload": 3.5,
+          "daysSinceUpload": 3.6,
           "uploads7d": 5,
           "uploads30d": 7,
           "uploads90d": 7,
@@ -183,7 +183,7 @@
           "channelViewCount": 27,
           "videoCount": 4,
           "lastPublishedAt": "2026-09-26T05:25:33Z",
-          "daysSinceUpload": 0.8,
+          "daysSinceUpload": 0.9,
           "uploads7d": 4,
           "uploads30d": 4,
           "uploads90d": 4,
@@ -307,7 +307,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-09-27T01:39:06+00:00",
+        "retrievedAt": "2026-09-27T02:10:11+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -3112,16 +3112,16 @@
           "date": "2026-09-27",
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "财经小鹿 Finance Deer",
-          "subscriberCount": 300,
+          "subscriberCount": 306,
           "channelViewCount": 26295,
-          "videoCount": 10
+          "videoCount": 11
         },
         {
           "observedAt": "2026-09-27T01:00:00Z",
           "date": "2026-09-27",
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大镜",
-          "subscriberCount": 412,
+          "subscriberCount": 413,
           "channelViewCount": 22116,
           "videoCount": 7
         },
@@ -3156,7 +3156,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-09-27T01:39:06+00:00",
+        "retrievedAt": "2026-09-27T02:10:11+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -3180,6 +3180,16 @@
     "video_catalog": {
       "rows": [
         {
+          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
+          "channel": "财经小鹿 Finance Deer",
+          "videoId": "knThJAsA_74",
+          "title": "從大英帝國到全民囤糧！英國最致命的弱點藏不住了 #財經",
+          "publishedAt": "2026-09-27T02:00:33Z",
+          "publishedDate": "2026-09-27",
+          "thumbnail": "https://i.ytimg.com/vi/knThJAsA_74/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=knThJAsA_74"
+        },
+        {
           "channelId": "UC5lCKye2u8Q0BoE5ggY9myw",
           "channel": "Maple的理财森林",
           "videoId": "G-pEZBox2uw",
@@ -3193,7 +3203,7 @@
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "财经小鹿 Finance Deer",
           "videoId": "8SC-fo0wT-I",
-          "title": "美聯儲全票加息！科技股還能拿嗎？蘋果殺入AI伺服器、英偉達迎新對手，標普500卻被華爾街看到9000點#股票 #stockmarket",
+          "title": "美聯儲加息，誰先撐不住？真正的風險才剛開始#股票 #stockmarket",
           "publishedAt": "2026-09-27T01:00:33Z",
           "publishedDate": "2026-09-27",
           "thumbnail": "https://i.ytimg.com/vi/8SC-fo0wT-I/mqdefault.jpg",
@@ -6303,7 +6313,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-09-27T01:39:06+00:00",
+        "retrievedAt": "2026-09-27T02:10:11+00:00",
         "metricDefinitions": []
       }
     },
@@ -34501,6 +34511,24 @@
           "observedAt": "2026-09-27T01:00:00Z",
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "财经小鹿 Finance Deer",
+          "videoId": "knThJAsA_74",
+          "title": "從大英帝國到全民囤糧！英國最致命的弱點藏不住了 #財經",
+          "publishedAt": "2026-09-27T02:00:33Z",
+          "publishedDate": "2026-09-27",
+          "viewCount": 9,
+          "likeCount": 0,
+          "commentCount": 0,
+          "durationSeconds": 145,
+          "formatHint": "短视频候选",
+          "thumbnail": "https://i.ytimg.com/vi/knThJAsA_74/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=knThJAsA_74",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "observedAt": "2026-09-27T01:00:00Z",
+          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
+          "channel": "财经小鹿 Finance Deer",
           "videoId": "ljjKmWoffYA",
           "title": "Jeremy Grantham三次躲過全球泡沫：這一次，他又看到什麼？ #財經 #美債 #黃金",
           "publishedAt": "2026-09-26T01:00:02Z",
@@ -34735,7 +34763,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-09-27T01:39:06+00:00",
+        "retrievedAt": "2026-09-27T02:10:11+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -35958,6 +35986,24 @@
           "likeCount": 34,
           "commentCount": 1,
           "durationSeconds": 135,
+          "formatHint": "短视频候选",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
+          "channel": "财经小鹿 Finance Deer",
+          "videoId": "knThJAsA_74",
+          "title": "從大英帝國到全民囤糧！英國最致命的弱點藏不住了 #財經",
+          "publishedAt": "2026-09-27T02:00:33Z",
+          "publishedDate": "2026-09-27",
+          "thumbnail": "https://i.ytimg.com/vi/knThJAsA_74/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=knThJAsA_74",
+          "observedAt": "2026-09-27T01:00:00Z",
+          "viewCount": 9,
+          "likeCount": 0,
+          "commentCount": 0,
+          "durationSeconds": 145,
           "formatHint": "短视频候选",
           "isLive": false,
           "concurrentViewers": null
@@ -37982,7 +38028,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-09-27T01:39:06+00:00",
+        "retrievedAt": "2026-09-27T02:10:11+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -38056,7 +38102,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-09-27T01:39:06+00:00",
+        "retrievedAt": "2026-09-27T02:10:11+00:00",
         "metricDefinitions": []
       }
     },
@@ -38066,9 +38112,9 @@
           "observedAt": "2026-09-27T01:00:00Z",
           "channelsExpected": 13,
           "channelsCollected": 13,
-          "videoCatalogCount": 312,
-          "videosRefreshed": 0,
-          "videosDisplayed": 179,
+          "videoCatalogCount": 313,
+          "videosRefreshed": 1,
+          "videosDisplayed": 180,
           "fullInventoryScan": false,
           "failureCount": 0,
           "failures": []
@@ -38077,7 +38123,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-09-27T01:39:06+00:00",
+        "retrievedAt": "2026-09-27T02:10:11+00:00",
         "metricDefinitions": []
       }
     }
