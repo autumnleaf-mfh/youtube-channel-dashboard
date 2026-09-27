@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-09-27T01:20:02Z",
+  "generatedAt": "2026-09-27T01:30:03Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-09-24T08:35:04Z",
     "videoSamplingPolicy": {
@@ -90,7 +90,7 @@
           "customUrl": "@財經小鹿financedeer",
           "channelUrl": "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ",
           "thumbnail": "https://yt3.ggpht.com/b0OPo5YQsfzCR6jLZTs6H-4EO-EFrqvFHMANy587DDAJGZ6wK_jwjnCr8Es9Z-6E7J01GRtg=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 300,
+          "subscriberCount": 301,
           "hiddenSubscriberCount": false,
           "channelViewCount": 26295,
           "videoCount": 10,
@@ -247,16 +247,16 @@
           "subscriberCount": 13,
           "hiddenSubscriberCount": false,
           "channelViewCount": 824,
-          "videoCount": 4,
-          "lastPublishedAt": "2026-09-26T01:30:23Z",
-          "daysSinceUpload": 1.0,
-          "uploads7d": 3,
-          "uploads30d": 4,
-          "uploads90d": 4,
-          "averageUploadGapDays": 2.3,
-          "recent5AverageViews": 253,
-          "recent5MedianViews": 167,
-          "recent5AverageLikes": 2,
+          "videoCount": 5,
+          "lastPublishedAt": "2026-09-27T01:30:00Z",
+          "daysSinceUpload": 0.0,
+          "uploads7d": 4,
+          "uploads30d": 5,
+          "uploads90d": 5,
+          "averageUploadGapDays": 2.0,
+          "recent5AverageViews": 202,
+          "recent5MedianViews": 142,
+          "recent5AverageLikes": 1,
           "recent5EngagementRate": 0.012859
         },
         {
@@ -296,7 +296,7 @@
           "daysSinceUpload": 2.7,
           "uploads7d": 4,
           "uploads30d": 8,
-          "uploads90d": 25,
+          "uploads90d": 24,
           "averageUploadGapDays": 4.2,
           "recent5AverageViews": 291,
           "recent5MedianViews": 92,
@@ -307,7 +307,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-09-27T01:20:09+00:00",
+        "retrievedAt": "2026-09-27T01:30:09+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -3042,7 +3042,7 @@
           "channel": "Maple的理财森林",
           "subscriberCount": 13,
           "channelViewCount": 824,
-          "videoCount": 4
+          "videoCount": 5
         },
         {
           "observedAt": "2026-09-27T01:00:00Z",
@@ -3112,7 +3112,7 @@
           "date": "2026-09-27",
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "财经小鹿 Finance Deer",
-          "subscriberCount": 300,
+          "subscriberCount": 301,
           "channelViewCount": 26295,
           "videoCount": 10
         },
@@ -3156,7 +3156,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-09-27T01:20:09+00:00",
+        "retrievedAt": "2026-09-27T01:30:09+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -3180,10 +3180,20 @@
     "video_catalog": {
       "rows": [
         {
+          "channelId": "UC5lCKye2u8Q0BoE5ggY9myw",
+          "channel": "Maple的理财森林",
+          "videoId": "G-pEZBox2uw",
+          "title": "【提早退休】買1萬股 QQQI 真係可以劈炮？每月 $5萬現金流！14%高分派背後有咩代價？⚠️｜香港人稅務重點",
+          "publishedAt": "2026-09-27T01:30:00Z",
+          "publishedDate": "2026-09-27",
+          "thumbnail": "https://i.ytimg.com/vi/G-pEZBox2uw/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=G-pEZBox2uw"
+        },
+        {
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "财经小鹿 Finance Deer",
           "videoId": "8SC-fo0wT-I",
-          "title": "美聯儲全票加息！科技股還能拿嗎？蘋果殺入AI伺服器、英偉達迎新對手，標普500卻被華爾街看到9000點#股票 #stockmarket ",
+          "title": "美聯儲全票加息！科技股還能拿嗎？蘋果殺入AI伺服器、英偉達迎新對手，標普500卻被華爾街看到9000點#股票 #stockmarket",
           "publishedAt": "2026-09-27T01:00:33Z",
           "publishedDate": "2026-09-27",
           "thumbnail": "https://i.ytimg.com/vi/8SC-fo0wT-I/mqdefault.jpg",
@@ -3203,7 +3213,7 @@
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大镜",
           "videoId": "P7oUKn_cm1o",
-          "title": "大模型跌成白菜價，蘋果一款折疊屏收割？AI低谷，蘋果開始吃紅利！淘金熱最後誰賺了大錢... #AI #蘋果 #折疊屏 #美股 #投資 #財經 ",
+          "title": "大模型跌成白菜價，蘋果一款折疊屏收割？AI低谷，蘋果開始吃紅利！淘金熱最後誰賺了大錢... #AI #蘋果 #折疊屏 #美股 #投資 #財經",
           "publishedAt": "2026-09-26T12:00:16Z",
           "publishedDate": "2026-09-26",
           "thumbnail": "https://i.ytimg.com/vi/P7oUKn_cm1o/mqdefault.jpg",
@@ -3303,7 +3313,7 @@
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "财经小鹿 Finance Deer",
           "videoId": "ZwtMr5Qtv_8",
-          "title": "泰國突然封殺黃金？泰銖被金價綁架，1997危機會重演嗎？黃金正在拖垮泰國？#gold #stock #股票 ",
+          "title": "泰國突然封殺黃金？泰銖被金價綁架，1997危機會重演嗎？黃金正在拖垮泰國？#gold #stock #股票",
           "publishedAt": "2026-09-25T01:00:10Z",
           "publishedDate": "2026-09-25",
           "thumbnail": "https://i.ytimg.com/vi/ZwtMr5Qtv_8/mqdefault.jpg",
@@ -6293,7 +6303,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-09-27T01:20:09+00:00",
+        "retrievedAt": "2026-09-27T01:30:09+00:00",
         "metricDefinitions": []
       }
     },
@@ -34003,6 +34013,24 @@
         },
         {
           "observedAt": "2026-09-27T01:00:00Z",
+          "channelId": "UC5lCKye2u8Q0BoE5ggY9myw",
+          "channel": "Maple的理财森林",
+          "videoId": "G-pEZBox2uw",
+          "title": "【提早退休】買1萬股 QQQI 真係可以劈炮？每月 $5萬現金流！14%高分派背後有咩代價？⚠️｜香港人稅務重點",
+          "publishedAt": "2026-09-27T01:30:00Z",
+          "publishedDate": "2026-09-27",
+          "viewCount": 0,
+          "likeCount": 0,
+          "commentCount": 0,
+          "durationSeconds": 987,
+          "formatHint": "长视频/直播候选",
+          "thumbnail": "https://i.ytimg.com/vi/G-pEZBox2uw/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=G-pEZBox2uw",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "observedAt": "2026-09-27T01:00:00Z",
           "channelId": "UCmhqWEDoPgrg9J129nGuQkQ",
           "channel": "文叔聊财",
           "videoId": "H4Wtkaggbbg",
@@ -34707,7 +34735,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-09-27T01:20:09+00:00",
+        "retrievedAt": "2026-09-27T01:30:09+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -36783,6 +36811,24 @@
         {
           "channelId": "UC5lCKye2u8Q0BoE5ggY9myw",
           "channel": "Maple的理财森林",
+          "videoId": "G-pEZBox2uw",
+          "title": "【提早退休】買1萬股 QQQI 真係可以劈炮？每月 $5萬現金流！14%高分派背後有咩代價？⚠️｜香港人稅務重點",
+          "publishedAt": "2026-09-27T01:30:00Z",
+          "publishedDate": "2026-09-27",
+          "thumbnail": "https://i.ytimg.com/vi/G-pEZBox2uw/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=G-pEZBox2uw",
+          "observedAt": "2026-09-27T01:00:00Z",
+          "viewCount": 0,
+          "likeCount": 0,
+          "commentCount": 0,
+          "durationSeconds": 987,
+          "formatHint": "长视频/直播候选",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "channelId": "UC5lCKye2u8Q0BoE5ggY9myw",
+          "channel": "Maple的理财森林",
           "videoId": "cme1luk-CPw",
           "title": "高達16厘息係咪伏？8種收息工具大拆解！定期/債券/高息ETF/Covered Call點樣揀？｜理財新手必睇｜廣東話",
           "publishedAt": "2026-09-26T01:30:23Z",
@@ -37936,7 +37982,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-09-27T01:20:09+00:00",
+        "retrievedAt": "2026-09-27T01:30:09+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -38010,7 +38056,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-09-27T01:20:09+00:00",
+        "retrievedAt": "2026-09-27T01:30:09+00:00",
         "metricDefinitions": []
       }
     },
@@ -38020,9 +38066,9 @@
           "observedAt": "2026-09-27T01:00:00Z",
           "channelsExpected": 13,
           "channelsCollected": 13,
-          "videoCatalogCount": 311,
-          "videosRefreshed": 55,
-          "videosDisplayed": 178,
+          "videoCatalogCount": 312,
+          "videosRefreshed": 1,
+          "videosDisplayed": 179,
           "fullInventoryScan": false,
           "failureCount": 0,
           "failures": []
@@ -38031,7 +38077,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-09-27T01:20:09+00:00",
+        "retrievedAt": "2026-09-27T01:30:09+00:00",
         "metricDefinitions": []
       }
     }
