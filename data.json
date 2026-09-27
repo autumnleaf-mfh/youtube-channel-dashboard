@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-09-27T01:30:03Z",
+  "generatedAt": "2026-09-27T01:39:00Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-09-24T08:35:04Z",
     "videoSamplingPolicy": {
@@ -90,7 +90,7 @@
           "customUrl": "@財經小鹿financedeer",
           "channelUrl": "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ",
           "thumbnail": "https://yt3.ggpht.com/b0OPo5YQsfzCR6jLZTs6H-4EO-EFrqvFHMANy587DDAJGZ6wK_jwjnCr8Es9Z-6E7J01GRtg=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 301,
+          "subscriberCount": 300,
           "hiddenSubscriberCount": false,
           "channelViewCount": 26295,
           "videoCount": 10,
@@ -271,7 +271,7 @@
           "channelViewCount": 61061,
           "videoCount": 42,
           "lastPublishedAt": "2026-09-17T12:26:39Z",
-          "daysSinceUpload": 9.5,
+          "daysSinceUpload": 9.6,
           "uploads7d": 0,
           "uploads30d": 7,
           "uploads90d": 20,
@@ -307,7 +307,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-09-27T01:30:09+00:00",
+        "retrievedAt": "2026-09-27T01:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -3112,7 +3112,7 @@
           "date": "2026-09-27",
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "财经小鹿 Finance Deer",
-          "subscriberCount": 301,
+          "subscriberCount": 300,
           "channelViewCount": 26295,
           "videoCount": 10
         },
@@ -3156,7 +3156,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-09-27T01:30:09+00:00",
+        "retrievedAt": "2026-09-27T01:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -6303,7 +6303,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-09-27T01:30:09+00:00",
+        "retrievedAt": "2026-09-27T01:39:06+00:00",
         "metricDefinitions": []
       }
     },
@@ -34735,7 +34735,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-09-27T01:30:09+00:00",
+        "retrievedAt": "2026-09-27T01:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -37982,7 +37982,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-09-27T01:30:09+00:00",
+        "retrievedAt": "2026-09-27T01:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -38056,7 +38056,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-09-27T01:30:09+00:00",
+        "retrievedAt": "2026-09-27T01:39:06+00:00",
         "metricDefinitions": []
       }
     },
@@ -38067,7 +38067,7 @@
           "channelsExpected": 13,
           "channelsCollected": 13,
           "videoCatalogCount": 312,
-          "videosRefreshed": 1,
+          "videosRefreshed": 0,
           "videosDisplayed": 179,
           "fullInventoryScan": false,
           "failureCount": 0,
@@ -38077,7 +38077,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-09-27T01:30:09+00:00",
+        "retrievedAt": "2026-09-27T01:39:06+00:00",
         "metricDefinitions": []
       }
     }
