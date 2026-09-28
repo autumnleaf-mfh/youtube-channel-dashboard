@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-09-28T08:09:00Z",
+  "generatedAt": "2026-09-28T08:30:04Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-09-24T08:35:04Z",
     "videoSamplingPolicy": {
@@ -46,12 +46,12 @@
           "customUrl": "@amberwithfinance",
           "channelUrl": "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA",
           "thumbnail": "https://yt3.ggpht.com/czuSSl1-7trtlN5BP5n7hPS_Pm7cKTX_chp1lqgVggP5apIJkB1CsmVXt0F7WpD4mGg4PIdj=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 518,
+          "subscriberCount": 520,
           "hiddenSubscriberCount": false,
           "channelViewCount": 38419,
           "videoCount": 7,
           "lastPublishedAt": "2026-09-26T12:00:16Z",
-          "daysSinceUpload": 1.8,
+          "daysSinceUpload": 1.9,
           "uploads7d": 5,
           "uploads30d": 7,
           "uploads90d": 7,
@@ -90,7 +90,7 @@
           "customUrl": "@財經小鹿financedeer",
           "channelUrl": "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ",
           "thumbnail": "https://yt3.ggpht.com/b0OPo5YQsfzCR6jLZTs6H-4EO-EFrqvFHMANy587DDAJGZ6wK_jwjnCr8Es9Z-6E7J01GRtg=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 450,
+          "subscriberCount": 458,
           "hiddenSubscriberCount": false,
           "channelViewCount": 34553,
           "videoCount": 12,
@@ -159,17 +159,17 @@
           "subscriberCount": 46,
           "hiddenSubscriberCount": false,
           "channelViewCount": 8673,
-          "videoCount": 4,
-          "lastPublishedAt": "2026-09-24T05:47:51Z",
-          "daysSinceUpload": 4.1,
-          "uploads7d": 2,
-          "uploads30d": 4,
-          "uploads90d": 4,
-          "averageUploadGapDays": 2.0,
-          "recent5AverageViews": 2183,
-          "recent5MedianViews": 120,
-          "recent5AverageLikes": 23,
-          "recent5EngagementRate": 0.011797
+          "videoCount": 5,
+          "lastPublishedAt": "2026-09-28T08:16:11Z",
+          "daysSinceUpload": 0.0,
+          "uploads7d": 3,
+          "uploads30d": 5,
+          "uploads90d": 5,
+          "averageUploadGapDays": 2.5,
+          "recent5AverageViews": 1747,
+          "recent5MedianViews": 64,
+          "recent5AverageLikes": 18,
+          "recent5EngagementRate": 0.011793
         },
         {
           "channelId": "UCmhqWEDoPgrg9J129nGuQkQ",
@@ -205,7 +205,7 @@
           "channelViewCount": 830,
           "videoCount": 10,
           "lastPublishedAt": "2026-09-27T09:37:15Z",
-          "daysSinceUpload": 0.9,
+          "daysSinceUpload": 1.0,
           "uploads7d": 7,
           "uploads30d": 10,
           "uploads90d": 10,
@@ -227,7 +227,7 @@
           "channelViewCount": 1782,
           "videoCount": 2,
           "lastPublishedAt": "2026-09-24T21:30:28Z",
-          "daysSinceUpload": 3.4,
+          "daysSinceUpload": 3.5,
           "uploads7d": 4,
           "uploads30d": 5,
           "uploads90d": 5,
@@ -307,7 +307,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-09-28T08:09:10+00:00",
+        "retrievedAt": "2026-09-28T08:30:11+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -4230,7 +4230,7 @@
           "channel": "艾莉说",
           "subscriberCount": 46,
           "channelViewCount": 8673,
-          "videoCount": 4
+          "videoCount": 5
         },
         {
           "observedAt": "2026-09-28T07:00:00Z",
@@ -4282,7 +4282,7 @@
           "date": "2026-09-28",
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "财经小鹿 Finance Deer",
-          "subscriberCount": 450,
+          "subscriberCount": 458,
           "channelViewCount": 34553,
           "videoCount": 12
         },
@@ -4291,7 +4291,7 @@
           "date": "2026-09-28",
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大镜",
-          "subscriberCount": 518,
+          "subscriberCount": 520,
           "channelViewCount": 38419,
           "videoCount": 7
         },
@@ -4326,7 +4326,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-09-28T08:09:10+00:00",
+        "retrievedAt": "2026-09-28T08:30:11+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -4349,6 +4349,16 @@
     },
     "video_catalog": {
       "rows": [
+        {
+          "channelId": "UC9veOeKEZhexYxmMXF_RwCQ",
+          "channel": "艾莉说",
+          "videoId": "AemKf5n_sVY",
+          "title": "俄羅斯死局已定？失業率新低，实际無人可用？砲彈也算GDP？85個聯邦主體56個赤字，停戰數百萬失業，不停戰耗光家底！俄羅斯還能撐多久？#俄羅斯#金融危機#盧布#匯率#財經#黃金",
+          "publishedAt": "2026-09-28T08:16:11Z",
+          "publishedDate": "2026-09-28",
+          "thumbnail": "https://i.ytimg.com/vi/AemKf5n_sVY/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=AemKf5n_sVY"
+        },
         {
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "财经小鹿 Finance Deer",
@@ -7503,7 +7513,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-09-28T08:09:10+00:00",
+        "retrievedAt": "2026-09-28T08:30:11+00:00",
         "metricDefinitions": []
       }
     },
@@ -49073,6 +49083,24 @@
         },
         {
           "observedAt": "2026-09-28T07:00:00Z",
+          "channelId": "UC9veOeKEZhexYxmMXF_RwCQ",
+          "channel": "艾莉说",
+          "videoId": "AemKf5n_sVY",
+          "title": "俄羅斯死局已定？失業率新低，实际無人可用？砲彈也算GDP？85個聯邦主體56個赤字，停戰數百萬失業，不停戰耗光家底！俄羅斯還能撐多久？#俄羅斯#金融危機#盧布#匯率#財經#黃金",
+          "publishedAt": "2026-09-28T08:16:11Z",
+          "publishedDate": "2026-09-28",
+          "viewCount": 3,
+          "likeCount": 0,
+          "commentCount": 0,
+          "durationSeconds": 619,
+          "formatHint": "长视频/直播候选",
+          "thumbnail": "https://i.ytimg.com/vi/AemKf5n_sVY/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=AemKf5n_sVY",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "observedAt": "2026-09-28T07:00:00Z",
           "channelId": "UCsXJXZI4J_N9r8H9TsORmlA",
           "channel": "羅拉财富观",
           "videoId": "ArbD4sVQoZw",
@@ -49813,7 +49841,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-09-28T08:09:10+00:00",
+        "retrievedAt": "2026-09-28T08:30:11+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -51529,6 +51557,24 @@
         {
           "channelId": "UC9veOeKEZhexYxmMXF_RwCQ",
           "channel": "艾莉说",
+          "videoId": "AemKf5n_sVY",
+          "title": "俄羅斯死局已定？失業率新低，实际無人可用？砲彈也算GDP？85個聯邦主體56個赤字，停戰數百萬失業，不停戰耗光家底！俄羅斯還能撐多久？#俄羅斯#金融危機#盧布#匯率#財經#黃金",
+          "publishedAt": "2026-09-28T08:16:11Z",
+          "publishedDate": "2026-09-28",
+          "thumbnail": "https://i.ytimg.com/vi/AemKf5n_sVY/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=AemKf5n_sVY",
+          "observedAt": "2026-09-28T07:00:00Z",
+          "viewCount": 3,
+          "likeCount": 0,
+          "commentCount": 0,
+          "durationSeconds": 619,
+          "formatHint": "长视频/直播候选",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "channelId": "UC9veOeKEZhexYxmMXF_RwCQ",
+          "channel": "艾莉说",
           "videoId": "idofW1UqFsQ",
           "title": "新美元暗戰！ 21家銀行秘密聯手，黃金被搬空！歐洲2.3兆基金撤資！ 800億美債瘋狂拋售！貨幣重置已開始！誰在掌握新的定價權？黃金先暴衝？",
           "publishedAt": "2026-09-24T05:47:51Z",
@@ -53114,7 +53160,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-09-28T08:09:10+00:00",
+        "retrievedAt": "2026-09-28T08:30:11+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -53188,7 +53234,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-09-28T08:09:10+00:00",
+        "retrievedAt": "2026-09-28T08:30:11+00:00",
         "metricDefinitions": []
       }
     },
@@ -53198,9 +53244,9 @@
           "observedAt": "2026-09-28T07:00:00Z",
           "channelsExpected": 13,
           "channelsCollected": 13,
-          "videoCatalogCount": 315,
-          "videosRefreshed": 0,
-          "videosDisplayed": 182,
+          "videoCatalogCount": 316,
+          "videosRefreshed": 1,
+          "videosDisplayed": 183,
           "fullInventoryScan": false,
           "failureCount": 0,
           "failures": []
@@ -53209,7 +53255,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-09-28T08:09:10+00:00",
+        "retrievedAt": "2026-09-28T08:30:11+00:00",
         "metricDefinitions": []
       }
     }
