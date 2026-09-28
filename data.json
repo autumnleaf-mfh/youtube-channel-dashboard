@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-09-28T02:09:00Z",
+  "generatedAt": "2026-09-28T02:10:29Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-09-24T08:35:04Z",
     "videoSamplingPolicy": {
@@ -46,7 +46,7 @@
           "customUrl": "@amberwithfinance",
           "channelUrl": "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA",
           "thumbnail": "https://yt3.ggpht.com/czuSSl1-7trtlN5BP5n7hPS_Pm7cKTX_chp1lqgVggP5apIJkB1CsmVXt0F7WpD4mGg4PIdj=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 501,
+          "subscriberCount": 502,
           "hiddenSubscriberCount": false,
           "channelViewCount": 38419,
           "videoCount": 7,
@@ -307,7 +307,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-09-28T02:09:07+00:00",
+        "retrievedAt": "2026-09-28T02:10:36+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -4057,7 +4057,7 @@
           "date": "2026-09-28",
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大镜",
-          "subscriberCount": 501,
+          "subscriberCount": 502,
           "channelViewCount": 38419,
           "videoCount": 7
         },
@@ -4092,7 +4092,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-09-28T02:09:07+00:00",
+        "retrievedAt": "2026-09-28T02:10:36+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -4119,7 +4119,7 @@
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "财经小鹿 Finance Deer",
           "videoId": "9Mr-ce2n8GU",
-          "title": "日本30年「全球提款機」正式關門！847萬億海外資金開始回流，美債美股恐迎流動性巨震，黃金真正大行情要來了？#股票 ",
+          "title": "日本30年「全球提款機」正式關門！847萬億海外資金開始回流，美債美股恐迎流動性巨震，黃金真正大行情要來了？#股票",
           "publishedAt": "2026-09-28T02:07:18Z",
           "publishedDate": "2026-09-28",
           "thumbnail": "https://i.ytimg.com/vi/9Mr-ce2n8GU/mqdefault.jpg",
@@ -7269,7 +7269,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-09-28T02:09:07+00:00",
+        "retrievedAt": "2026-09-28T02:10:36+00:00",
         "metricDefinitions": []
       }
     },
@@ -47869,7 +47869,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-09-28T02:09:07+00:00",
+        "retrievedAt": "2026-09-28T02:10:36+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -51170,7 +51170,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-09-28T02:09:07+00:00",
+        "retrievedAt": "2026-09-28T02:10:36+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -51244,7 +51244,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-09-28T02:09:07+00:00",
+        "retrievedAt": "2026-09-28T02:10:36+00:00",
         "metricDefinitions": []
       }
     },
@@ -51255,7 +51255,7 @@
           "channelsExpected": 13,
           "channelsCollected": 13,
           "videoCatalogCount": 315,
-          "videosRefreshed": 1,
+          "videosRefreshed": 0,
           "videosDisplayed": 182,
           "fullInventoryScan": false,
           "failureCount": 0,
@@ -51265,7 +51265,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-09-28T02:09:07+00:00",
+        "retrievedAt": "2026-09-28T02:10:36+00:00",
         "metricDefinitions": []
       }
     }
