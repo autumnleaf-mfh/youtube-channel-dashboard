@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-09-28T12:20:06Z",
+  "generatedAt": "2026-09-28T12:39:00Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-09-24T08:35:04Z",
     "videoSamplingPolicy": {
@@ -31,7 +31,7 @@
           "lastPublishedAt": "2026-09-26T13:00:07Z",
           "daysSinceUpload": 2.0,
           "uploads7d": 2,
-          "uploads30d": 12,
+          "uploads30d": 11,
           "uploads90d": 64,
           "averageUploadGapDays": 1.8,
           "recent5AverageViews": 4357,
@@ -46,7 +46,7 @@
           "customUrl": "@amberwithfinance",
           "channelUrl": "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA",
           "thumbnail": "https://yt3.ggpht.com/czuSSl1-7trtlN5BP5n7hPS_Pm7cKTX_chp1lqgVggP5apIJkB1CsmVXt0F7WpD4mGg4PIdj=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 537,
+          "subscriberCount": 536,
           "hiddenSubscriberCount": false,
           "channelViewCount": 38419,
           "videoCount": 8,
@@ -90,7 +90,7 @@
           "customUrl": "@財經小鹿financedeer",
           "channelUrl": "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ",
           "thumbnail": "https://yt3.ggpht.com/b0OPo5YQsfzCR6jLZTs6H-4EO-EFrqvFHMANy587DDAJGZ6wK_jwjnCr8Es9Z-6E7J01GRtg=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 523,
+          "subscriberCount": 525,
           "hiddenSubscriberCount": false,
           "channelViewCount": 34553,
           "videoCount": 12,
@@ -134,7 +134,7 @@
           "customUrl": "@lorafinancialworld",
           "channelUrl": "https://www.youtube.com/channel/UCsXJXZI4J_N9r8H9TsORmlA",
           "thumbnail": "https://yt3.ggpht.com/f8Upq2a2CtKPaGkcJDG609eXDHKSvG6cl218-v1CFEcEaAgzFA7PdxyiGZvWQqb_jRJtrS6_lg=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 135,
+          "subscriberCount": 136,
           "hiddenSubscriberCount": false,
           "channelViewCount": 13050,
           "videoCount": 7,
@@ -293,7 +293,7 @@
           "channelViewCount": 49017,
           "videoCount": 56,
           "lastPublishedAt": "2026-09-24T09:00:26Z",
-          "daysSinceUpload": 4.1,
+          "daysSinceUpload": 4.2,
           "uploads7d": 2,
           "uploads30d": 8,
           "uploads90d": 21,
@@ -307,7 +307,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-09-28T12:20:19+00:00",
+        "retrievedAt": "2026-09-28T12:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -4399,7 +4399,7 @@
           "date": "2026-09-28",
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "财经小鹿 Finance Deer",
-          "subscriberCount": 523,
+          "subscriberCount": 525,
           "channelViewCount": 34553,
           "videoCount": 12
         },
@@ -4408,7 +4408,7 @@
           "date": "2026-09-28",
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大镜",
-          "subscriberCount": 537,
+          "subscriberCount": 536,
           "channelViewCount": 38419,
           "videoCount": 8
         },
@@ -4435,7 +4435,7 @@
           "date": "2026-09-28",
           "channelId": "UCsXJXZI4J_N9r8H9TsORmlA",
           "channel": "羅拉财富观",
-          "subscriberCount": 135,
+          "subscriberCount": 136,
           "channelViewCount": 13050,
           "videoCount": 7
         }
@@ -4443,7 +4443,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-09-28T12:20:19+00:00",
+        "retrievedAt": "2026-09-28T12:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -4470,7 +4470,7 @@
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大镜",
           "videoId": "Ju9tSfnclYc",
-          "title": "預估值2萬億衝刺IPO，CEO卻喊AI慢下來？Anthropic一邊拚上市、一邊踩煞車，投資者該注意什麼？ #Claude #AI #ipo  #OpenAI #美股 #科技股 #投資",
+          "title": "預估值2萬億衝刺IPO，CEO卻喊AI慢下來？Anthropic一邊拚上市、一邊踩煞車？ #Claude #AI #ipo  #OpenAI #美股 #科技股 #投資",
           "publishedAt": "2026-09-28T12:00:19Z",
           "publishedDate": "2026-09-28",
           "thumbnail": "https://i.ytimg.com/vi/Ju9tSfnclYc/mqdefault.jpg",
@@ -7680,7 +7680,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-09-28T12:20:19+00:00",
+        "retrievedAt": "2026-09-28T12:39:06+00:00",
         "metricDefinitions": []
       }
     },
@@ -50998,7 +50998,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-09-28T12:20:19+00:00",
+        "retrievedAt": "2026-09-28T12:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -54407,7 +54407,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-09-28T12:20:19+00:00",
+        "retrievedAt": "2026-09-28T12:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -54481,7 +54481,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-09-28T12:20:19+00:00",
+        "retrievedAt": "2026-09-28T12:39:06+00:00",
         "metricDefinitions": []
       }
     },
@@ -54502,7 +54502,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-09-28T12:20:19+00:00",
+        "retrievedAt": "2026-09-28T12:39:06+00:00",
         "metricDefinitions": []
       }
     }
