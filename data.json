@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-09-28T11:39:00Z",
+  "generatedAt": "2026-09-28T12:00:12Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-09-24T08:35:04Z",
     "videoSamplingPolicy": {
@@ -29,7 +29,7 @@
           "channelViewCount": 1412089,
           "videoCount": 85,
           "lastPublishedAt": "2026-09-26T13:00:07Z",
-          "daysSinceUpload": 1.9,
+          "daysSinceUpload": 2.0,
           "uploads7d": 2,
           "uploads30d": 12,
           "uploads90d": 64,
@@ -46,13 +46,13 @@
           "customUrl": "@amberwithfinance",
           "channelUrl": "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA",
           "thumbnail": "https://yt3.ggpht.com/czuSSl1-7trtlN5BP5n7hPS_Pm7cKTX_chp1lqgVggP5apIJkB1CsmVXt0F7WpD4mGg4PIdj=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 531,
+          "subscriberCount": 534,
           "hiddenSubscriberCount": false,
           "channelViewCount": 38419,
           "videoCount": 7,
           "lastPublishedAt": "2026-09-26T12:00:16Z",
           "daysSinceUpload": 2.0,
-          "uploads7d": 5,
+          "uploads7d": 4,
           "uploads30d": 7,
           "uploads90d": 7,
           "averageUploadGapDays": 1.3,
@@ -73,7 +73,7 @@
           "channelViewCount": 646198,
           "videoCount": 71,
           "lastPublishedAt": "2026-09-26T01:00:01Z",
-          "daysSinceUpload": 2.4,
+          "daysSinceUpload": 2.5,
           "uploads7d": 2,
           "uploads30d": 10,
           "uploads90d": 50,
@@ -90,7 +90,7 @@
           "customUrl": "@財經小鹿financedeer",
           "channelUrl": "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ",
           "thumbnail": "https://yt3.ggpht.com/b0OPo5YQsfzCR6jLZTs6H-4EO-EFrqvFHMANy587DDAJGZ6wK_jwjnCr8Es9Z-6E7J01GRtg=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 513,
+          "subscriberCount": 518,
           "hiddenSubscriberCount": false,
           "channelViewCount": 34553,
           "videoCount": 12,
@@ -161,7 +161,7 @@
           "channelViewCount": 8673,
           "videoCount": 5,
           "lastPublishedAt": "2026-09-28T08:16:11Z",
-          "daysSinceUpload": 0.1,
+          "daysSinceUpload": 0.2,
           "uploads7d": 3,
           "uploads30d": 5,
           "uploads90d": 5,
@@ -181,15 +181,15 @@
           "subscriberCount": 5,
           "hiddenSubscriberCount": false,
           "channelViewCount": 35,
-          "videoCount": 4,
-          "lastPublishedAt": "2026-09-26T05:25:33Z",
-          "daysSinceUpload": 2.3,
-          "uploads7d": 3,
-          "uploads30d": 4,
-          "uploads90d": 4,
-          "averageUploadGapDays": 1.7,
-          "recent5AverageViews": 10,
-          "recent5MedianViews": 10,
+          "videoCount": 5,
+          "lastPublishedAt": "2026-09-28T11:52:05Z",
+          "daysSinceUpload": 0.0,
+          "uploads7d": 4,
+          "uploads30d": 5,
+          "uploads90d": 5,
+          "averageUploadGapDays": 1.9,
+          "recent5AverageViews": 8,
+          "recent5MedianViews": 9,
           "recent5AverageLikes": 0,
           "recent5EngagementRate": 0.026316
         },
@@ -203,17 +203,17 @@
           "subscriberCount": 8,
           "hiddenSubscriberCount": false,
           "channelViewCount": 830,
-          "videoCount": 11,
-          "lastPublishedAt": "2026-09-28T08:34:45Z",
-          "daysSinceUpload": 0.1,
-          "uploads7d": 8,
-          "uploads30d": 11,
-          "uploads90d": 11,
-          "averageUploadGapDays": 1.1,
-          "recent5AverageViews": 51,
-          "recent5MedianViews": 10,
+          "videoCount": 12,
+          "lastPublishedAt": "2026-09-28T11:43:50Z",
+          "daysSinceUpload": 0.0,
+          "uploads7d": 9,
+          "uploads30d": 12,
+          "uploads90d": 12,
+          "averageUploadGapDays": 1.0,
+          "recent5AverageViews": 35,
+          "recent5MedianViews": 4,
           "recent5AverageLikes": 0,
-          "recent5EngagementRate": 0.011858
+          "recent5EngagementRate": 0.017143
         },
         {
           "channelId": "UCQAo0ws95p-uN7gr0OOHoXg",
@@ -307,7 +307,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-09-28T11:39:07+00:00",
+        "retrievedAt": "2026-09-28T12:00:20+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -4392,14 +4392,14 @@
           "channel": "阿诚聊焦点",
           "subscriberCount": 8,
           "channelViewCount": 830,
-          "videoCount": 11
+          "videoCount": 12
         },
         {
           "observedAt": "2026-09-28T10:00:00Z",
           "date": "2026-09-28",
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "财经小鹿 Finance Deer",
-          "subscriberCount": 513,
+          "subscriberCount": 518,
           "channelViewCount": 34553,
           "videoCount": 12
         },
@@ -4408,7 +4408,7 @@
           "date": "2026-09-28",
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大镜",
-          "subscriberCount": 531,
+          "subscriberCount": 534,
           "channelViewCount": 38419,
           "videoCount": 7
         },
@@ -4419,7 +4419,7 @@
           "channel": "文叔聊财",
           "subscriberCount": 5,
           "channelViewCount": 35,
-          "videoCount": 4
+          "videoCount": 5
         },
         {
           "observedAt": "2026-09-28T10:00:00Z",
@@ -4443,7 +4443,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-09-28T11:39:07+00:00",
+        "retrievedAt": "2026-09-28T12:00:20+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -4466,6 +4466,26 @@
     },
     "video_catalog": {
       "rows": [
+        {
+          "channelId": "UCmhqWEDoPgrg9J129nGuQkQ",
+          "channel": "文叔聊财",
+          "videoId": "9AX2SrL8rWQ",
+          "title": "美債破 5.2% 只是煙霧彈！美國真正引爆的財政核彈：每年 1.2 萬億美元利息，正在吞噬美元體系？#美債 #債務危機",
+          "publishedAt": "2026-09-28T11:52:05Z",
+          "publishedDate": "2026-09-28",
+          "thumbnail": "https://i.ytimg.com/vi/9AX2SrL8rWQ/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=9AX2SrL8rWQ"
+        },
+        {
+          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA",
+          "channel": "阿诚聊焦点",
+          "videoId": "KxPDt_p5w3k",
+          "title": "雷曼式爆雷？這次是慢刀子#港股 #台股 #美股 #恒指 #美債#30期國債#利率#財政赤字#美國利息支出#金融危機, 科技股#資產配置#宏觀經濟#阿誠聊焦點 #輝達  #交易心理學 #ai資本開支",
+          "publishedAt": "2026-09-28T11:43:50Z",
+          "publishedDate": "2026-09-28",
+          "thumbnail": "https://i.ytimg.com/vi/KxPDt_p5w3k/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=KxPDt_p5w3k"
+        },
         {
           "channelId": "UCQAo0ws95p-uN7gr0OOHoXg",
           "channel": "财经有一套",
@@ -7650,7 +7670,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-09-28T11:39:07+00:00",
+        "retrievedAt": "2026-09-28T12:00:20+00:00",
         "metricDefinitions": []
       }
     },
@@ -50102,6 +50122,24 @@
         },
         {
           "observedAt": "2026-09-28T10:00:00Z",
+          "channelId": "UCmhqWEDoPgrg9J129nGuQkQ",
+          "channel": "文叔聊财",
+          "videoId": "9AX2SrL8rWQ",
+          "title": "美債破 5.2% 只是煙霧彈！美國真正引爆的財政核彈：每年 1.2 萬億美元利息，正在吞噬美元體系？#美債 #債務危機",
+          "publishedAt": "2026-09-28T11:52:05Z",
+          "publishedDate": "2026-09-28",
+          "viewCount": 0,
+          "likeCount": 0,
+          "commentCount": 0,
+          "durationSeconds": 732,
+          "formatHint": "长视频/直播候选",
+          "thumbnail": "https://i.ytimg.com/vi/9AX2SrL8rWQ/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=9AX2SrL8rWQ",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "observedAt": "2026-09-28T10:00:00Z",
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "财经小鹿 Finance Deer",
           "videoId": "9Mr-ce2n8GU",
@@ -50277,6 +50315,24 @@
           "formatHint": "短视频候选",
           "thumbnail": "https://i.ytimg.com/vi/IU-D3KFogR0/mqdefault.jpg",
           "url": "https://www.youtube.com/watch?v=IU-D3KFogR0",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "observedAt": "2026-09-28T10:00:00Z",
+          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA",
+          "channel": "阿诚聊焦点",
+          "videoId": "KxPDt_p5w3k",
+          "title": "雷曼式爆雷？這次是慢刀子#港股 #台股 #美股 #恒指 #美債#30期國債#利率#財政赤字#美國利息支出#金融危機, 科技股#資產配置#宏觀經濟#阿誠聊焦點 #輝達  #交易心理學 #ai資本開支",
+          "publishedAt": "2026-09-28T11:43:50Z",
+          "publishedDate": "2026-09-28",
+          "viewCount": 0,
+          "likeCount": 0,
+          "commentCount": 0,
+          "durationSeconds": 74,
+          "formatHint": "短视频候选",
+          "thumbnail": "https://i.ytimg.com/vi/KxPDt_p5w3k/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=KxPDt_p5w3k",
           "isLive": false,
           "concurrentViewers": null
         },
@@ -50914,7 +50970,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-09-28T11:39:07+00:00",
+        "retrievedAt": "2026-09-28T12:00:20+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -52720,6 +52776,24 @@
         {
           "channelId": "UCmhqWEDoPgrg9J129nGuQkQ",
           "channel": "文叔聊财",
+          "videoId": "9AX2SrL8rWQ",
+          "title": "美債破 5.2% 只是煙霧彈！美國真正引爆的財政核彈：每年 1.2 萬億美元利息，正在吞噬美元體系？#美債 #債務危機",
+          "publishedAt": "2026-09-28T11:52:05Z",
+          "publishedDate": "2026-09-28",
+          "thumbnail": "https://i.ytimg.com/vi/9AX2SrL8rWQ/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=9AX2SrL8rWQ",
+          "observedAt": "2026-09-28T10:00:00Z",
+          "viewCount": 0,
+          "likeCount": 0,
+          "commentCount": 0,
+          "durationSeconds": 732,
+          "formatHint": "长视频/直播候选",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "channelId": "UCmhqWEDoPgrg9J129nGuQkQ",
+          "channel": "文叔聊财",
           "videoId": "H4Wtkaggbbg",
           "title": "加息不一定跌！黃金歷史六次暴跌，真正致命的是這五個警報 #加息 #黄金",
           "publishedAt": "2026-09-26T05:25:33Z",
@@ -52786,6 +52860,24 @@
           "commentCount": 0,
           "durationSeconds": 514,
           "formatHint": "长视频/直播候选",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA",
+          "channel": "阿诚聊焦点",
+          "videoId": "KxPDt_p5w3k",
+          "title": "雷曼式爆雷？這次是慢刀子#港股 #台股 #美股 #恒指 #美債#30期國債#利率#財政赤字#美國利息支出#金融危機, 科技股#資產配置#宏觀經濟#阿誠聊焦點 #輝達  #交易心理學 #ai資本開支",
+          "publishedAt": "2026-09-28T11:43:50Z",
+          "publishedDate": "2026-09-28",
+          "thumbnail": "https://i.ytimg.com/vi/KxPDt_p5w3k/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=KxPDt_p5w3k",
+          "observedAt": "2026-09-28T10:00:00Z",
+          "viewCount": 0,
+          "likeCount": 0,
+          "commentCount": 0,
+          "durationSeconds": 74,
+          "formatHint": "短视频候选",
           "isLive": false,
           "concurrentViewers": null
         },
@@ -54269,7 +54361,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-09-28T11:39:07+00:00",
+        "retrievedAt": "2026-09-28T12:00:20+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -54343,7 +54435,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-09-28T11:39:07+00:00",
+        "retrievedAt": "2026-09-28T12:00:20+00:00",
         "metricDefinitions": []
       }
     },
@@ -54353,9 +54445,9 @@
           "observedAt": "2026-09-28T10:00:00Z",
           "channelsExpected": 13,
           "channelsCollected": 13,
-          "videoCatalogCount": 318,
-          "videosRefreshed": 0,
-          "videosDisplayed": 185,
+          "videoCatalogCount": 320,
+          "videosRefreshed": 2,
+          "videosDisplayed": 187,
           "fullInventoryScan": false,
           "failureCount": 0,
           "failures": []
@@ -54364,7 +54456,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-09-28T11:39:07+00:00",
+        "retrievedAt": "2026-09-28T12:00:20+00:00",
         "metricDefinitions": []
       }
     }
