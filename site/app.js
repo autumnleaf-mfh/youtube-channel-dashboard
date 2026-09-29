@@ -525,7 +525,7 @@ function renderTimeSeries(candidates, periodLabel, targetId, legendId, emptyMess
     const svgRect = svg.getBoundingClientRect();
     const svgX = Math.min(width - right, Math.max(left, (event.clientX - svgRect.left) / svgRect.width * width));
     const targetTime = xMin + (svgX - left) / plotWidth * xRange;
-    const nearest = nearestRows(targetTime);
+    const nearest = sortTooltipEntries(nearestRows(targetTime));
     crosshair.hidden = false;
     crosshair.setAttribute("x1", svgX);
     crosshair.setAttribute("x2", svgX);
@@ -559,6 +559,15 @@ function renderTimeSeries(candidates, periodLabel, targetId, legendId, emptyMess
     tooltipMotion.side = null;
     crosshair.hidden = true;
     pointNodes.forEach((point) => point.classList.remove("is-nearest"));
+  });
+}
+
+function sortTooltipEntries(entries) {
+  const value = ({ item, row }) => row[item.metric] != null && Number.isFinite(Number(row[item.metric])) ? Number(row[item.metric]) : null;
+  return [...entries].sort((a, b) => {
+    const first = value(a), second = value(b);
+    if (first == null || second == null) return (first == null) - (second == null);
+    return second - first || a.seriesIndex - b.seriesIndex;
   });
 }
 
