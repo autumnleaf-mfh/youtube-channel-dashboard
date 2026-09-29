@@ -8,6 +8,8 @@ import math
 import os
 import statistics
 import sys
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from datetime import datetime, timedelta, timezone
@@ -24,19 +26,18 @@ DAILY_VIDEO_AGE = timedelta(days=30)
 FULL_INVENTORY_INTERVAL = timedelta(days=7)
 
 CHANNELS = [
-    ("Amber聊财", "UCMM38YQdOaUiXMFlWzbRlXw"),
-    ("Amber放大镜", "UCZNlDT4tKgZS8R6sDuJWwMA"),
-    ("小鹿财经 Deer Finance", "UCsWtmTG0UkpuGeeAno4jiGQ"),
-    ("财经小鹿 Finance Deer", "UCTueeHImxv4uLBQKsDEMqjQ"),
-    ("Leo财经", "UCNX9-jzOH4KMbIeuWK8LZaw"),
-    ("羅拉财富观", "UCsXJXZI4J_N9r8H9TsORmlA"),
-    ("艾莉说", "UC9veOeKEZhexYxmMXF_RwCQ"),
-    ("文叔聊财", "UCmhqWEDoPgrg9J129nGuQkQ"),
-    ("阿诚聊焦点", "UCS1ZlOZTJhOxvWXr3b1v9GA"),
-    ("财经有一套", "UCQAo0ws95p-uN7gr0OOHoXg"),
-    ("Maple的理财森林", "UC5lCKye2u8Q0BoE5ggY9myw"),
-    ("Alec財有意思", "UCIj1v-XeGVGaR8rOkipW4gQ"),
-    ("熱股追蹤", "UC8RxFK0DNEz8Ad2DPIt3Bog"),
+    ("Amber聊財", "UCMM38YQdOaUiXMFlWzbRlXw"),
+    ("Amber放大鏡", "UCZNlDT4tKgZS8R6sDuJWwMA"),
+    ("小鹿財經 Deer Finance", "UCsWtmTG0UkpuGeeAno4jiGQ"),
+    ("小Lu財經說", "UCTueeHImxv4uLBQKsDEMqjQ"),
+    ("Leo財經", "UCNX9-jzOH4KMbIeuWK8LZaw"),
+    ("羅拉財富觀", "UCsXJXZI4J_N9r8H9TsORmlA"),
+    ("艾莉說", "UC9veOeKEZhexYxmMXF_RwCQ"),
+    ("文叔聊財", "UCmhqWEDoPgrg9J129nGuQkQ"),
+    ("阿誠聊焦點", "UCS1ZlOZTJhOxvWXr3b1v9GA"),
+    ("喬安說財經", "UCQAo0ws95p-uN7gr0OOHoXg"),
+    ("Maple的理財森林", "UC5lCKye2u8Q0BoE5ggY9myw"),
+    ("Leo財經觀察", "UCtkUpmfJckdTZyNvyWBl_rg"),
 ]
 
 
@@ -44,8 +45,17 @@ def api_get(resource: str, **params):
     params["key"] = os.environ["YOUTUBE_API_KEY"]
     url = f"{API_BASE}/{resource}?{urllib.parse.urlencode(params)}"
     request = urllib.request.Request(url, headers={"User-Agent": "faatchoi-youtube-dashboard/1.0"})
-    with urllib.request.urlopen(request, timeout=40) as response:
-        return json.load(response)
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(request, timeout=40) as response:
+                return json.load(response)
+        except urllib.error.HTTPError as error:
+            if error.code not in (429, 500, 502, 503, 504) or attempt == 2:
+                raise
+        except (urllib.error.URLError, TimeoutError, ConnectionError):
+            if attempt == 2:
+                raise
+        time.sleep(attempt + 1)
 
 
 def chunks(values, size):
@@ -242,6 +252,9 @@ def main():
             full_inventory_scan = now - parse_time(inventory_scanned_at) >= FULL_INVENTORY_INTERVAL
         except ValueError:
             full_inventory_scan = True
+    previous_ids = {row.get("channelId") for row in previous_queries.get("channel_current", {}).get("rows", [])}
+    if set(channel_ids) - previous_ids or os.environ.get("DASHBOARD_FULL_INVENTORY") == "1":
+        full_inventory_scan = True
 
     channel_payload = api_get(
         "channels",
@@ -250,6 +263,11 @@ def main():
         maxResults=50,
     )
     channel_map = {item["id"]: item for item in channel_payload.get("items", [])}
+    previous_titles = {row["channelId"]: row.get("youtubeTitle") or row.get("channel") for row in previous_queries.get("channel_current", {}).get("rows", [])}
+    aliases = {
+        channel_id: channel_map.get(channel_id, {}).get("snippet", {}).get("title") or previous_titles.get(channel_id) or fallback
+        for channel_id, fallback in aliases.items()
+    }
 
     catalog_by_video = {
         row["videoId"]: row for row in previous_catalog
@@ -267,6 +285,7 @@ def main():
             continue
         try:
             page_token = None
+            fetched_catalog = {}
             while True:
                 params = {
                     "part": "snippet,contentDetails",
@@ -279,10 +298,15 @@ def main():
                 for item_row in payload.get("items", []):
                     row = playlist_record(channel_id, aliases[channel_id], item_row)
                     if row:
-                        catalog_by_video[row["videoId"]] = row
+                        fetched_catalog[row["videoId"]] = row
                 page_token = payload.get("nextPageToken")
                 if not full_inventory_scan or not page_token:
                     break
+            if full_inventory_scan:
+                # Only replace a channel's inventory after every page succeeded.
+                # Retain historical metrics, but don't list removed/private uploads.
+                catalog_by_video = {video_id: row for video_id, row in catalog_by_video.items() if row["channelId"] != channel_id}
+            catalog_by_video.update(fetched_catalog)
         except Exception as exc:  # retain other channels when one playlist fails
             failures.append({"channelId": channel_id, "error": type(exc).__name__})
 
@@ -354,9 +378,9 @@ def main():
         published = [parse_time(row["publishedAt"]) for row in all_channel_videos if row.get("publishedAt")]
         gaps = [(published[index] - published[index + 1]).total_seconds() / 86400 for index in range(len(published) - 1)]
         recent5 = videos[:5]
-        views5 = [row["viewCount"] for row in recent5 if row["viewCount"] is not None]
-        likes5 = [row["likeCount"] for row in recent5 if row["likeCount"] is not None]
-        comments5 = [row["commentCount"] for row in recent5 if row["commentCount"] is not None]
+        views5 = [row["viewCount"] for row in recent5 if row.get("viewCount") is not None]
+        likes5 = [row["likeCount"] for row in recent5 if row.get("likeCount") is not None]
+        comments5 = [row["commentCount"] for row in recent5 if row.get("commentCount") is not None]
         total_recent_views = sum(views5)
         total_recent_engagement = sum(likes5) + sum(comments5)
         last_published = published[0] if published else None
@@ -399,11 +423,15 @@ def main():
         "videoCount": row["videoCount"],
     } for row in current_rows)
     history = compact_history(history, ("channelId",), now)
+    # Display current channel titles consistently, including stored video snapshots.
+    for collection in (current_rows, history, catalog_rows, video_history, recent_rows):
+        for row in collection:
+            row["channel"] = aliases[row["channelId"]]
 
     definitions = [
         {"label": "订阅数", "definition": "频道公开订阅数；YouTube 会把公开值按三位有效数字取整，隐藏订阅数时为空。", "componentIds": ["channel-table", "subscriber-trend"]},
         {"label": "频道总播放", "definition": "频道 statistics.viewCount；口径由 YouTube 定义，包含适用格式的公开观看。", "componentIds": ["channel-table", "view-trend"]},
-        {"label": "更新频率", "definition": "最近 30 个上传条目计算的 7/30/90 日发布数与相邻发布时间平均间隔。", "componentIds": ["channel-table", "cadence-ranking"]},
+        {"label": "更新频率", "definition": "完整已采集上传目录计算 7/30/90 日发布数，公开视频按 videoId 去重。", "componentIds": ["channel-table", "cadence-ranking"]},
         {"label": "近 5 条平均播放", "definition": "每个频道最新 5 个公开视频的公开 viewCount 算术平均。", "componentIds": ["channel-table", "recent-performance"]},
         {"label": "互动率", "definition": "最新 5 条视频的 (点赞数 + 评论数) / 播放量；并非 YouTube Studio 互动率。", "componentIds": ["channel-table"]},
     ]

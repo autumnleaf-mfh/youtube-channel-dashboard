@@ -402,14 +402,56 @@ function renderTrend(videos, catalog, channels, generatedAt) {
   });
 }
 
+function renderUploadBars(videos, channels, generatedAt, period) {
+  const end = toTime(generatedAt);
+  const start = period === "all" ? -Infinity : end - Number(period) * 86400000;
+  const counts = new Map(channels.map((channel) => [channel.channelId, 0]));
+  videos.forEach((video) => {
+    const published = toTime(video.publishedAt);
+    if (published >= start && published <= end && counts.has(video.channelId)) counts.set(video.channelId, counts.get(video.channelId) + 1);
+  });
+  const rows = channels.map((channel) => ({ ...channel, count: counts.get(channel.channelId) }))
+    .sort((a, b) => b.count - a.count || a.channel.localeCompare(b.channel, "zh-HK"));
+  const maximum = Math.max(1, ...rows.map((row) => row.count));
+  const total = rows.reduce((sum, row) => sum + row.count, 0);
+  $("uploadBarsNote").textContent = `${period === "all" ? "全部已采集公开视频" : `近 ${period} 天发布`} · ${channels.length} 个频道 · 共 ${exact(total)} 条`;
+  $("uploadBars").innerHTML = rows.map((row) => `<div class="upload-bar-row" data-channel-id="${esc(row.channelId)}" data-count="${row.count}" role="img" aria-label="${esc(row.channel)}：${row.count} 条更新"><a class="upload-bar-channel" href="${esc(row.channelUrl)}" target="_blank" rel="noopener noreferrer"><img src="${esc(row.thumbnail)}" alt="" loading="lazy"><span>${esc(row.channel)}</span></a><div class="upload-bar-track" title="${esc(row.channel)}：${row.count} 条"><span style="width:${row.count / maximum * 100}%"></span></div><b>${exact(row.count)}<small> 条</small></b></div>`).join("");
+}
+
+function renderAllVideos(videos) {
+  const channelId = $("videoChannel").value;
+  const direction = $("videoSort").value === "asc" ? 1 : -1;
+  const hasViews = (video) => video.viewCount != null && Number.isFinite(Number(video.viewCount));
+  const filtered = videos.filter((video) => !channelId || video.channelId === channelId).sort((a, b) => {
+    if (hasViews(a) !== hasViews(b)) return hasViews(a) ? -1 : 1;
+    return (hasViews(a) ? direction * (Number(a.viewCount) - Number(b.viewCount)) : 0)
+      || toTime(b.publishedAt) - toTime(a.publishedAt) || a.videoId.localeCompare(b.videoId);
+  });
+  $("allVideosCount").textContent = `${channelId ? $("videoChannel").selectedOptions[0].textContent : "全部频道"} · ${exact(filtered.length)} 条视频`;
+  $("allVideosList").innerHTML = filtered.length ? filtered.map((video) => `<li data-video-id="${esc(video.videoId)}" data-channel-id="${esc(video.channelId)}" data-views="${hasViews(video) ? Number(video.viewCount) : ""}"><a class="all-video-link" href="${esc(video.url)}" target="_blank" rel="noopener noreferrer"><img src="${esc(video.thumbnail)}" alt="" loading="lazy"><span class="all-video-copy"><strong>${esc(video.title)}</strong><span><b>${esc(video.channel)}</b><time datetime="${esc(video.publishedAt)}">${ymdh(video.publishedAt)}</time></span></span><span class="all-video-views"><b>${hasViews(video) ? exact(video.viewCount) : "—"}</b><small>次播放</small></span></a></li>`).join("") : `<li class="empty">该频道暂无已采集视频</li>`;
+  $("allVideosList").scrollTop = 0;
+}
+
 async function init() {
   try {
     const response = await fetch("data.json", { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = await response.json();
     const current = data.queries.channel_current.rows;
+    const titles = new Map(current.map((row) => [row.channelId, row.youtubeTitle || row.channel]));
+    Object.values(data.queries).forEach((query) => query.rows?.forEach((row) => {
+      if (titles.has(row.channelId)) row.channel = titles.get(row.channelId);
+    }));
     const history = data.queries.channel_history.rows;
     const rows = current;
+    const catalog = [...new Map((data.queries.video_catalog?.rows ?? data.queries.recent_videos.rows)
+      .filter((video) => titles.has(video.channelId)).map((video) => [video.videoId, video])).values()];
+    const latestVideoById = new Map();
+    (data.queries.video_history?.rows ?? data.queries.recent_videos.rows)
+      .slice()
+      .sort((a, b) => toTime(a.observedAt ?? 0) - toTime(b.observedAt ?? 0))
+      .forEach((video) => latestVideoById.set(video.videoId, video));
+    const catalogWithMetrics = catalog.map((video) => ({ ...(latestVideoById.get(video.videoId) ?? {}), ...video }));
     const periodLabels = { "7": "近 7 日", "30": "近 30 日", all: "全部记录" };
     const rowsForPeriod = (period, field) => rows.map((row) => ({
       ...row,
@@ -458,7 +500,7 @@ async function init() {
       }
       const cutoff = toTime(data.generatedAt) - Number(period) * 24 * 60 * 60 * 1000;
       const grouped = new Map();
-      data.queries.recent_videos.rows.filter((video) => toTime(video.publishedAt) >= cutoff).forEach((video) => {
+      catalogWithMetrics.filter((video) => toTime(video.publishedAt) >= cutoff && toTime(video.publishedAt) <= toTime(data.generatedAt)).forEach((video) => {
         const currentValue = grouped.get(video.channelId) ?? { views: 0, count: 0 };
         currentValue.views += Number(video.viewCount) || 0;
         currentValue.count += 1;
@@ -472,17 +514,16 @@ async function init() {
     bindPeriodSwitch("viewsPeriod", renderViews);
     renderSubscribers(defaultSubscriberPeriod);
     renderViews("7");
-    renderUpdates(data.queries.recent_videos.rows, data.generatedAt);
+    renderUpdates(catalogWithMetrics, data.generatedAt);
     const channelChoices = rows.map((row) => ({ value: row.channelId, label: row.channel, avatar: row.thumbnail }));
     setChoiceButtons("primaryChannel", channelChoices, rows[0]?.channelId ?? "");
     setChoiceButtons("comparisonChannel", [{ value: "", label: "不对比" }, ...channelChoices.map(({ value, label }) => ({ value, label }))], "");
-    const catalog = data.queries.video_catalog?.rows ?? data.queries.recent_videos.rows;
-    const latestVideoById = new Map();
-    (data.queries.video_history?.rows ?? data.queries.recent_videos.rows)
-      .slice()
-      .sort((a, b) => toTime(a.observedAt ?? 0) - toTime(b.observedAt ?? 0))
-      .forEach((video) => latestVideoById.set(video.videoId, video));
-    const catalogWithMetrics = catalog.map((video) => ({ ...video, ...(latestVideoById.get(video.videoId) ?? {}) }));
+    bindPeriodSwitch("uploadBarsPeriod", (period) => renderUploadBars(catalogWithMetrics, rows, data.generatedAt, period));
+    renderUploadBars(catalogWithMetrics, rows, data.generatedAt, "7");
+    $("videoChannel").innerHTML = `<option value="">全部频道</option>${rows.map((row) => `<option value="${esc(row.channelId)}">${esc(row.channel)}</option>`).join("")}`;
+    $("videoChannel").addEventListener("change", () => renderAllVideos(catalogWithMetrics));
+    $("videoSort").addEventListener("change", () => renderAllVideos(catalogWithMetrics));
+    renderAllVideos(catalogWithMetrics);
     const trendVideos = catalogWithMetrics
       .filter((video) => video.viewCount != null || video.durationSeconds != null || video.likeCount != null || video.commentCount != null);
     const updateTrend = () => renderTrend(trendVideos, catalogWithMetrics, rows, data.generatedAt);

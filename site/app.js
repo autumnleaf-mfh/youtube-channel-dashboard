@@ -1,115 +1,542 @@
-const state = { data: null, channelRows: [], visibleVideos: 24 };
 const compact = new Intl.NumberFormat("zh-HK", { notation: "compact", maximumFractionDigits: 1 });
 const integer = new Intl.NumberFormat("zh-HK", { maximumFractionDigits: 0 });
-const dt = new Intl.DateTimeFormat("zh-HK", { timeZone: "Asia/Hong_Kong", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hour12: false });
+const dateOnly = new Intl.DateTimeFormat("en-CA", {
+  timeZone: "Asia/Hong_Kong",
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+});
+const dateHour = new Intl.DateTimeFormat("en-CA", {
+  timeZone: "Asia/Hong_Kong",
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+  hour: "2-digit",
+  hour12: false,
+  hourCycle: "h23",
+});
+const colors = ["#e5bd57", "#4ed5a0", "#65a8ff", "#f17f7f", "#a78bfa", "#ff9f43", "#43c6db", "#f36eb5", "#97c95c", "#8e9aad", "#f4d35e", "#5dc0a6", "#c884ff"];
 
 const $ = (id) => document.getElementById(id);
 const esc = (value) => String(value ?? "").replace(/[&<>'"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[char]);
-const num = (value, formatter = integer) => value == null || !Number.isFinite(Number(value)) ? "—" : formatter.format(Number(value));
-const signed = (value) => value == null ? `<span class="pending">等待基线</span>` : `<span class="delta ${value < 0 ? "negative" : "positive"}">${value > 0 ? "+" : ""}${integer.format(value)}</span>`;
-const hours = (value) => new Date(value).getTime();
+const toTime = (value) => new Date(value).getTime();
+const exact = (value) => Number.isFinite(Number(value)) ? integer.format(Number(value)) : "—";
+const ymd = (value) => {
+  const parts = Object.fromEntries(dateOnly.formatToParts(new Date(value)).map((part) => [part.type, part.value]));
+  return `${parts.year}-${parts.month}-${parts.day}`;
+};
+const ymdh = (value) => {
+  const parts = Object.fromEntries(dateHour.formatToParts(new Date(value)).map((part) => [part.type, part.value]));
+  return `${parts.year}-${parts.month}-${parts.day} ${parts.hour}:00`;
+};
 
-function previous(history, id, generatedAt, backHours) {
-  const cutoff = hours(generatedAt) - backHours * 3600000;
-  return history.filter((row) => row.channelId === id && hours(row.observedAt) <= cutoff).sort((a, b) => b.observedAt.localeCompare(a.observedAt))[0];
+function completeWindowSnapshot(history, channelId, generatedAt, period) {
+  const channelHistory = history.filter((row) => row.channelId === channelId);
+  if (period === "all") {
+    return channelHistory.sort((a, b) => toTime(a.observedAt) - toTime(b.observedAt))[0];
+  }
+  const cutoff = toTime(generatedAt) - Number(period) * 24 * 60 * 60 * 1000;
+  return channelHistory
+    .filter((row) => toTime(row.observedAt) <= cutoff)
+    .sort((a, b) => toTime(b.observedAt) - toTime(a.observedAt))[0];
 }
 
-function addChanges(current, history, generatedAt) {
-  return current.map((row) => {
-    const day = previous(history, row.channelId, generatedAt, 24);
-    const week = previous(history, row.channelId, generatedAt, 168);
-    const diff = (field, baseline) => baseline?.[field] == null || row[field] == null ? null : row[field] - baseline[field];
-    return { ...row, subscribers24h: diff("subscriberCount", day), subscribers7d: diff("subscriberCount", week), views24h: diff("channelViewCount", day), views7d: diff("channelViewCount", week) };
+function previousSnapshot(history, channelId, generatedAt, period) {
+  const complete = completeWindowSnapshot(history, channelId, generatedAt, period);
+  if (complete) return complete;
+  return history
+    .filter((row) => row.channelId === channelId)
+    .sort((a, b) => toTime(a.observedAt) - toTime(b.observedAt))[0];
+}
+
+function growthRate(current, baseline, field) {
+  const now = Number(current?.[field]);
+  const before = Number(baseline?.[field]);
+  if (!Number.isFinite(now) || !Number.isFinite(before) || before <= 0) return null;
+  return (now - before) / before;
+}
+
+function growthText(value, periodLabel) {
+  if (value == null) return periodLabel === "全部记录" ? "等待历史基线" : `等待${periodLabel.replace("近", "")}基线`;
+  const sign = value > 0 ? "+" : "";
+  return `${sign}${(value * 100).toFixed(2)}%`;
+}
+
+function durationText(value) {
+  const seconds = Math.max(0, Math.round(Number(value) || 0));
+  const minutes = Math.floor(seconds / 60);
+  const remainder = String(seconds % 60).padStart(2, "0");
+  return `${minutes}:${remainder}`;
+}
+
+function elapsedText(startTime, endTime) {
+  const elapsedHours = Math.max(0, Math.floor((endTime - startTime) / (60 * 60 * 1000)));
+  if (!elapsedHours) return "不足 1 小时";
+  const days = Math.floor(elapsedHours / 24);
+  const hours = elapsedHours % 24;
+  return [days ? `${days} 天` : "", hours ? `${hours} 小时` : ""].filter(Boolean).join(" ");
+}
+
+function countdownText(targetTime, coverageStart, generatedAt) {
+  const remainingHours = Math.max(0, Math.ceil((targetTime - Date.now()) / (60 * 60 * 1000)));
+  const covered = elapsedText(coverageStart, toTime(generatedAt));
+  if (!remainingHours) return `当前先显示已积累 ${covered} 的数据；预计 ${ymdh(targetTime)}（香港时间）完整，等待下一次整点采集`;
+  const days = Math.floor(remainingHours / 24);
+  const hours = remainingHours % 24;
+  const remaining = [days ? `${days} 天` : "", hours ? `${hours} 小时` : ""].filter(Boolean).join(" ");
+  return `当前先显示已积累 ${covered} 的数据；完整窗口预计 ${ymdh(targetTime)}（香港时间），还需 ${remaining}`;
+}
+
+function renderDonut(targetId, rows, field, label, periodLabel, options = {}) {
+  const target = $(targetId);
+  const values = rows
+    .filter((row) => Number.isFinite(Number(row[field])))
+    .map((row, index) => ({ ...row, value: Number(row[field]), chartValue: Math.max(0, Number(row[field])), color: colors[index % colors.length] }))
+    .sort((a, b) => b.value - a.value || a.channel.localeCompare(b.channel, "zh-HK"));
+  const total = values.reduce((sum, row) => sum + row.value, 0);
+  const pieTotal = values.reduce((sum, row) => sum + row.chartValue, 0);
+  const radius = 86;
+  const circumference = 2 * Math.PI * radius;
+  let used = 0;
+
+  const segments = values.map((row) => {
+    const length = pieTotal > 0 ? row.chartValue / pieTotal * circumference : 0;
+    const dashOffset = -used;
+    used += length;
+    const detail = options.detailMode === "windowViews" ? `，发布视频 ${exact(row.windowVideoCount)} 条` : options.detailMode === "allViews" ? "，频道公开累计值" : `，${periodLabel}增长率 ${growthText(row.periodGrowth, periodLabel)}`;
+    return `<circle class="donut-segment" cx="120" cy="120" r="${radius}" fill="none" stroke="${row.color}" stroke-width="28" stroke-dasharray="${length} ${circumference - length}" stroke-dashoffset="${dashOffset}" data-channel="${esc(row.channel)}" data-value="${row.value}" tabindex="0" role="img" aria-label="${esc(row.channel)}，${label} ${exact(row.value)}${detail}"></circle>`;
+  }).join("");
+
+  target.innerHTML = `
+    <div class="donut-wrap">
+      <svg viewBox="0 0 240 240" aria-label="${label}频道占比图">
+        <circle class="donut-track" cx="120" cy="120" r="${radius}" fill="none" stroke-width="28"></circle>
+        <g transform="rotate(-90 120 120)">${segments}</g>
+      </svg>
+      <div class="donut-total"><strong>${compact.format(total)}</strong><span>${label} · ${periodLabel}</span></div>
+      <div class="tooltip" role="status" hidden></div>
+    </div>
+    <div class="legend">${values.map((row) => `<button type="button" class="legend-item" data-channel="${esc(row.channel)}"><i style="background:${row.color}"></i><span>${esc(row.channel)}</span><b>${compact.format(row.value)}</b></button>`).join("")}</div>`;
+
+  const tooltip = target.querySelector(".tooltip");
+  const wrap = target.querySelector(".donut-wrap");
+  const show = (channel, x, y) => {
+    const row = values.find((item) => item.channel === channel);
+    if (!row) return;
+    const detail = options.detailMode === "windowViews"
+      ? `<span>${periodLabel}发布视频：${exact(row.windowVideoCount)} 条</span>`
+      : options.detailMode === "allViews"
+        ? `<span>统计口径：频道公开累计值</span>`
+        : `<span>${periodLabel}增长率：${growthText(row.periodGrowth, periodLabel)}</span>`;
+    tooltip.innerHTML = `<strong>${esc(row.channel)}</strong><span>${label}：${exact(row.value)}</span>${detail}`;
+    tooltip.hidden = false;
+    tooltip.style.left = `${Math.min(Math.max(12, x), wrap.clientWidth - 210)}px`;
+    tooltip.style.top = `${Math.min(Math.max(12, y), wrap.clientHeight - 96)}px`;
+  };
+  const hide = () => { tooltip.hidden = true; };
+
+  const segmentNodes = [...target.querySelectorAll(".donut-segment")];
+  const activate = (channel) => {
+    target.classList.add("has-active");
+    segmentNodes.forEach((segment) => segment.classList.toggle("is-active", segment.dataset.channel === channel));
+  };
+  const deactivate = () => {
+    target.classList.remove("has-active");
+    segmentNodes.forEach((segment) => segment.classList.remove("is-active"));
+    hide();
+  };
+
+  segmentNodes.forEach((segment) => {
+    segment.addEventListener("mouseenter", (event) => {
+      const rect = wrap.getBoundingClientRect();
+      activate(segment.dataset.channel);
+      show(segment.dataset.channel, event.clientX - rect.left + 12, event.clientY - rect.top + 12);
+    });
+    segment.addEventListener("mousemove", (event) => {
+      const rect = wrap.getBoundingClientRect();
+      show(segment.dataset.channel, event.clientX - rect.left + 12, event.clientY - rect.top + 12);
+    });
+    segment.addEventListener("mouseleave", deactivate);
+    segment.addEventListener("focus", () => { activate(segment.dataset.channel); show(segment.dataset.channel, wrap.clientWidth / 2 + 32, wrap.clientHeight / 2 - 48); });
+    segment.addEventListener("blur", deactivate);
+  });
+
+  target.querySelectorAll(".legend-item").forEach((item) => {
+    item.addEventListener("mouseenter", () => { activate(item.dataset.channel); show(item.dataset.channel, wrap.clientWidth / 2 + 32, wrap.clientHeight / 2 - 48); });
+    item.addEventListener("mouseleave", deactivate);
+    item.addEventListener("focus", () => { activate(item.dataset.channel); show(item.dataset.channel, wrap.clientWidth / 2 + 32, wrap.clientHeight / 2 - 48); });
+    item.addEventListener("blur", deactivate);
   });
 }
 
-function renderKpis(rows, health) {
-  const items = [
-    ["追踪频道", `${rows.length} / 13`, health?.failureCount ? `${health.failureCount} 个采集异常` : "本轮全部采集成功"],
-    ["公开订阅合计", num(rows.reduce((sum, row) => sum + (row.subscriberCount ?? 0), 0), compact), "隐藏订阅不计入"],
-    ["频道总播放合计", num(rows.reduce((sum, row) => sum + (row.channelViewCount ?? 0), 0), compact), "13 个频道当前公开值"],
-    ["近 7 日更新", num(rows.reduce((sum, row) => sum + (row.uploads7d ?? 0), 0)), `${rows.filter((row) => (row.daysSinceUpload ?? Infinity) <= 7).length} 个频道有更新`],
-  ];
-  $("kpis").innerHTML = items.map(([label, value, note]) => `<article class="kpi"><span>${label}</span><strong>${value}</strong><small>${note}</small></article>`).join("");
+function bindPeriodSwitch(targetId, render) {
+  const target = $(targetId);
+  target.querySelectorAll("button").forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.getAttribute("aria-disabled") === "true") return;
+      target.querySelectorAll("button").forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+      render(button.dataset.period);
+    });
+  });
 }
 
-function renderDecisions(rows) {
-  const efficient = [...rows].sort((a, b) => (b.recent5AverageViews ?? -1) - (a.recent5AverageViews ?? -1))[0];
-  const frequent = [...rows].sort((a, b) => (b.uploads30d ?? -1) - (a.uploads30d ?? -1))[0];
-  const stale = rows.filter((row) => (row.daysSinceUpload ?? 0) > 7).sort((a, b) => b.daysSinceUpload - a.daysSinceUpload);
-  $("decisions").innerHTML = [
-    ["近期效率领先", efficient?.channel ?? "—", `近 5 条平均 ${num(efficient?.recent5AverageViews, compact)} 播放`, "accent"],
-    ["更新最密集", frequent?.channel ?? "—", `30 日发布 ${num(frequent?.uploads30d)} 条`, ""],
-    ["需要关注", stale.length ? `${stale.length} 个频道停更 > 7 日` : "暂无停更提醒", stale[0] ? `${stale[0].channel} · ${Math.floor(stale[0].daysSinceUpload)} 日` : "最近更新状态正常", ""],
-  ].map(([label, value, note, cls]) => `<article class="decision ${cls}"><span>${esc(label)}</span><strong>${esc(value)}</strong><small>${esc(note)}</small></article>`).join("");
-  $("alerts").innerHTML = stale.slice(0, 8).map((row) => `<span>${esc(row.channel)} 已 ${Math.floor(row.daysSinceUpload)} 天未更新</span>`).join("");
+function renderUpdates(videos, generatedAt) {
+  const cutoff = toTime(generatedAt) - 7 * 24 * 60 * 60 * 1000;
+  const rows = videos
+    .filter((row) => Number.isFinite(toTime(row.publishedAt)) && toTime(row.publishedAt) >= cutoff)
+    .sort((a, b) => toTime(b.publishedAt) - toTime(a.publishedAt));
+
+  $("updateCount").textContent = `${rows.length} 条 · 最近更新优先`;
+  $("updatesList").innerHTML = rows.length ? rows.map((row) => `
+    <li>
+      <a class="update-link" href="${esc(row.url)}" target="_blank" rel="noreferrer">
+        <img src="${esc(row.thumbnail)}" alt="" loading="lazy">
+        <span class="update-body">
+          <strong>${esc(row.title)}</strong>
+          <span class="update-meta"><b>${esc(row.channel)}</b><time datetime="${esc(row.publishedAt)}">${ymdh(row.publishedAt)}</time><span>${exact(row.viewCount)} 次播放</span></span>
+        </span>
+        <span class="open-mark" aria-hidden="true">↗</span>
+      </a>
+  </li>`).join("") : `<li class="empty">近 7 日暂无更新</li>`;
 }
 
-function renderBars(target, rows, field, formatter) {
-  const values = [...rows].filter((row) => row[field] != null).sort((a, b) => b[field] - a[field]);
-  const max = Math.max(1, ...values.map((row) => row[field]));
-  $(target).innerHTML = values.map((row, index) => `<div class="bar-row"><span class="rank">${String(index + 1).padStart(2, "0")}</span><span class="bar-name" title="${esc(row.channel)}">${esc(row.channel)}</span><span class="track"><i style="width:${Math.max(2, row[field] / max * 100)}%"></i></span><strong>${formatter(row[field])}</strong></div>`).join("");
+function selectedChoice(targetId) {
+  return $(targetId).querySelector('[aria-pressed="true"]')?.dataset.value ?? "";
 }
 
-function renderChannelTable(rows) {
-  const query = $("channelSearch").value.trim().toLowerCase();
-  const filtered = rows.filter((row) => `${row.channel} ${row.youtubeTitle}`.toLowerCase().includes(query));
-  $("channelRows").innerHTML = filtered.map((row) => `<tr><td><a class="channel" href="${esc(row.channelUrl)}" target="_blank" rel="noreferrer"><img src="${esc(row.thumbnail)}" alt=""><span><strong>${esc(row.channel)}</strong>${row.youtubeTitle !== row.channel ? `<small>${esc(row.youtubeTitle)}</small>` : ""}</span></a></td><td>${row.hiddenSubscriberCount ? "已隐藏" : num(row.subscriberCount, compact)}</td><td>${signed(row.subscribers24h)}</td><td>${num(row.channelViewCount, compact)}</td><td>${signed(row.views24h)}</td><td>${num(row.uploads30d)}</td><td>${row.averageUploadGapDays == null ? "—" : `${row.averageUploadGapDays} 天`}</td><td>${num(row.recent5AverageViews, compact)}</td><td>${num(row.recent5AverageLikes, compact)}</td><td>${row.daysSinceUpload == null ? "—" : row.daysSinceUpload < 1 ? "今天" : `${Math.floor(row.daysSinceUpload)} 天`}</td></tr>`).join("");
+function setChoiceButtons(targetId, choices, selectedValue) {
+  $(targetId).innerHTML = choices.map((choice) => `<button type="button" data-value="${esc(choice.value)}" aria-pressed="${choice.value === selectedValue}">${choice.avatar ? `<img src="${esc(choice.avatar)}" alt="" loading="lazy">` : ""}<span>${esc(choice.label)}</span></button>`).join("");
 }
 
-function renderTrend() {
-  const id = $("channelSelect").value;
-  const field = $("metricSelect").value;
-  const label = { subscriberCount: "订阅数", channelViewCount: "频道总播放", videoCount: "公开视频数" }[field];
-  const rows = state.data.queries.channel_history.rows.filter((row) => row.channelId === id && row[field] != null).sort((a, b) => a.observedAt.localeCompare(b.observedAt));
-  const channel = state.channelRows.find((row) => row.channelId === id);
-  const values = rows.map((row) => Number(row[field]));
-  const first = values[0], last = values.at(-1), change = first == null || last == null ? null : last - first;
-  $("trendSummary").innerHTML = `<div><span>${esc(channel?.channel ?? "频道")} · ${label}</span><strong>${num(last, compact)}</strong></div><div><span>已记录变化</span><strong>${change == null || rows.length < 2 ? "等待更多快照" : `${change > 0 ? "+" : ""}${integer.format(change)}`}</strong></div><div><span>观测点</span><strong>${rows.length}</strong></div>`;
-  if (rows.length < 2) { $("trendChart").innerHTML = `<div class="empty-chart"><span>历史基线正在累积</span><small>下一次每小时采集后会出现趋势线</small></div>`; return; }
-  const width = 1000, height = 260, pad = 30, min = Math.min(...values), max = Math.max(...values), range = Math.max(1, max - min);
-  const points = values.map((value, index) => `${pad + index / (values.length - 1) * (width - pad * 2)},${height - pad - (value - min) / range * (height - pad * 2)}`).join(" ");
-  const area = `${pad},${height - pad} ${points} ${width - pad},${height - pad}`;
-  $("trendChart").innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${esc(channel?.channel)} ${label}趋势"><defs><linearGradient id="areaFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--accent)" stop-opacity=".34"/><stop offset="1" stop-color="var(--accent)" stop-opacity="0"/></linearGradient></defs><line x1="${pad}" y1="${pad}" x2="${pad}" y2="${height-pad}"/><line x1="${pad}" y1="${height-pad}" x2="${width-pad}" y2="${height-pad}"/><polygon points="${area}" fill="url(#areaFill)"/><polyline points="${points}" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="${points.split(" ").at(-1).split(",")[0]}" cy="${points.split(" ").at(-1).split(",")[1]}" r="7" fill="var(--accent)"/></svg><div class="axis-labels"><span>${dt.format(new Date(rows[0].observedAt))}</span><span>${dt.format(new Date(rows.at(-1).observedAt))}</span></div>`;
+function bindChoiceButtons(targetId, render) {
+  $(targetId).addEventListener("click", (event) => {
+    const button = event.target.closest("button[data-value]");
+    if (!button) return;
+    $(targetId).querySelectorAll("button").forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+    render();
+  });
 }
 
-function renderVideos() {
-  const videos = [...state.data.queries.recent_videos.rows].sort((a, b) => String(b.publishedAt).localeCompare(String(a.publishedAt)));
-  const shown = videos.slice(0, state.visibleVideos);
-  $("videoCountLabel").textContent = `显示 ${shown.length} / ${videos.length}`;
-  $("videoRows").innerHTML = shown.map((row) => `<tr><td><a class="video" href="${esc(row.url)}" target="_blank" rel="noreferrer"><img src="${esc(row.thumbnail)}" alt=""><span>${esc(row.title)}</span></a></td><td>${esc(row.channel)}</td><td>${row.publishedAt ? dt.format(new Date(row.publishedAt)) : "—"}</td><td>${num(row.viewCount, compact)}</td><td>${num(row.likeCount, compact)}</td><td>${num(row.commentCount, compact)}</td><td><span class="tag">${esc(row.formatHint)}</span></td></tr>`).join("");
-  $("moreVideos").hidden = shown.length >= videos.length;
+function selectChoice(targetId, value) {
+  $(targetId).querySelectorAll("button[data-value]").forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.value === value)));
 }
 
-function renderCapabilities(rows) {
-  $("capabilityCards").innerHTML = rows.map((row) => `<article class="capability"><div><span>${esc(row.scope)}</span><b>${esc(row.availability)}</b></div><h3>${esc(row.metric)}</h3><p>${esc(row.note)}</p></article>`).join("");
+function bindComparisonButtons(render) {
+  $("comparisonChannel").addEventListener("click", (event) => {
+    const button = event.target.closest("button[data-value]");
+    if (!button) return;
+    const hadComparison = Boolean(selectedChoice("comparisonChannel"));
+    $("comparisonChannel").querySelectorAll("button").forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+    const hasComparison = Boolean(button.dataset.value);
+    $("comparisonMetricRow").hidden = !hasComparison;
+    if (hasComparison && !hadComparison) selectChoice("comparisonMetric", selectedChoice("trendMetric"));
+    render();
+  });
+}
+
+function hongKongDayTimestamp(value) {
+  const parts = Object.fromEntries(dateOnly.formatToParts(new Date(value)).map((part) => [part.type, part.value]));
+  return Date.parse(`${parts.year}-${parts.month}-${parts.day}T00:00:00+08:00`);
+}
+
+function dailyUploadRows(catalog, channel, start, end) {
+  const dayMs = 24 * 60 * 60 * 1000;
+  const videosByDay = new Map();
+  catalog
+    .filter((row) => row.channelId === channel.channelId && Number.isFinite(toTime(row.publishedAt)))
+    .forEach((row) => {
+      const day = hongKongDayTimestamp(row.publishedAt);
+      if (day < start || day > end) return;
+      const rows = videosByDay.get(day) ?? [];
+      rows.push(row);
+      videosByDay.set(day, rows);
+    });
+  const rows = [];
+  for (let day = start; day <= end; day += dayMs) {
+    const updates = (videosByDay.get(day) ?? []).sort((a, b) => toTime(b.publishedAt) - toTime(a.publishedAt));
+    rows.push({
+      channelId: channel.channelId,
+      channel: channel.channel,
+      publishedAt: new Date(day).toISOString(),
+      uploadCount: updates.length,
+      updates,
+      thumbnail: updates[0]?.thumbnail || channel.thumbnail,
+      title: updates.length ? `${updates.length} 条更新${updates[0]?.title ? ` · ${updates[0].title}` : ""}` : "当日无更新",
+    });
+  }
+  return rows;
+}
+
+function renderTrend(videos, catalog, channels, generatedAt) {
+  const primaryId = selectedChoice("primaryChannel");
+  const comparisonId = selectedChoice("comparisonChannel");
+  const primaryMetric = selectedChoice("trendMetric");
+  const comparisonMetric = comparisonId ? selectedChoice("comparisonMetric") || primaryMetric : primaryMetric;
+  const period = selectedChoice("trendPeriod");
+  const periodLabels = { "7": "近 7 日", "30": "近 30 日", "90": "近 90 日", all: "全部记录" };
+  const periodDays = { "7": 7, "30": 30, "90": 90 };
+  const metricDefinitions = {
+    viewCount: { label: "播放量", format: exact, tick: (value) => compact.format(value) },
+    durationSeconds: { label: "播放时长", format: durationText, tick: (value) => `${Math.round(value / 60)} 分` },
+    likeCount: { label: "点赞数量", format: exact, tick: (value) => compact.format(value) },
+    commentCount: { label: "评论数量", format: exact, tick: (value) => compact.format(value) },
+    uploadCount: { label: "更新数量", format: (value) => `${exact(value)} 条`, tick: (value) => exact(Math.round(value)) },
+  };
+  const primaryMetricInfo = metricDefinitions[primaryMetric];
+  const comparisonMetricInfo = metricDefinitions[comparisonMetric];
+  const ids = [primaryId, comparisonId].filter((id, index, list) => id && list.indexOf(id) === index);
+  const dayMs = 24 * 60 * 60 * 1000;
+  const endDay = hongKongDayTimestamp(generatedAt);
+  const selectedCatalog = catalog.filter((row) => ids.includes(row.channelId) && Number.isFinite(toTime(row.publishedAt)));
+  const finiteStart = period === "all" ? null : endDay - (periodDays[period] - 1) * dayMs;
+  const allStart = selectedCatalog.length ? Math.min(...selectedCatalog.map((row) => hongKongDayTimestamp(row.publishedAt))) : endDay;
+  const startDay = finiteStart ?? allStart;
+  const cutoff = period === "all" ? -Infinity : toTime(generatedAt) - periodDays[period] * dayMs;
+  const selectedMetrics = [...new Set([primaryMetric, ...(comparisonId ? [comparisonMetric] : [])])];
+  $("trendDescription").textContent = comparisonId && comparisonMetric !== primaryMetric
+    ? `${periodLabels[period]}；主频道${primaryMetricInfo.label}，对比频道${comparisonMetricInfo.label}。累计型指标取最近一次公开值，更新数量按香港日期统计。`
+    : selectedMetrics[0] === "uploadCount"
+      ? `${periodLabels[period]}按香港日期统计发布数量。`
+      : `${periodLabels[period]}发布视频；${primaryMetricInfo.label}为最近一次采集的公开累计值。`;
+  const series = ids.map((id, index) => {
+    const channel = channels.find((row) => row.channelId === id);
+    const metric = index === 0 ? primaryMetric : comparisonMetric;
+    const metricInfo = metricDefinitions[metric];
+    const rows = metric === "uploadCount"
+      ? dailyUploadRows(catalog, channel, startDay, endDay)
+      : videos
+        .filter((row) => row.channelId === id && toTime(row.publishedAt) >= cutoff && row[metric] != null && Number.isFinite(Number(row[metric])))
+        .sort((a, b) => toTime(a.publishedAt) - toTime(b.publishedAt));
+    return { id, color: index === 0 ? "#e5bd57" : "#65a8ff", metric, metricInfo, rows };
+  }).filter((item) => item.rows.length);
+
+  if (!series.length) {
+    $("trendLegend").innerHTML = "";
+    $("trendChart").innerHTML = `<div class="trend-empty">所选频道暂无可用数据</div>`;
+    return;
+  }
+
+  const allRows = series.flatMap((item) => item.rows);
+  const xValues = allRows.map((row) => toTime(row.publishedAt));
+  const xMin = Math.min(...xValues);
+  const xMax = Math.max(...xValues);
+  const xRange = Math.max(1, xMax - xMin);
+  const hasDualAxis = series.length > 1 && series[0].metric !== series[1].metric;
+  const maxForSeries = (item) => item.metric === "uploadCount" ? Math.max(4, ...item.rows.map((row) => Number(row[item.metric]))) : Math.max(1, ...item.rows.map((row) => Number(row[item.metric])));
+  const sharedYMax = hasDualAxis ? null : series[0].metric === "uploadCount" ? Math.max(4, ...allRows.map((row) => Number(row[series[0].metric]))) : Math.max(1, ...allRows.map((row) => Number(row[series[0].metric])));
+  series.forEach((item) => { item.yMax = hasDualAxis ? maxForSeries(item) : sharedYMax; });
+  const width = 1000;
+  const height = 390;
+  const left = 72;
+  const right = hasDualAxis ? 72 : 24;
+  const top = 22;
+  const bottom = 48;
+  const plotWidth = width - left - right;
+  const plotHeight = height - top - bottom;
+  const x = (row) => left + (toTime(row.publishedAt) - xMin) / xRange * plotWidth;
+  const y = (item, row) => top + plotHeight - Number(row[item.metric]) / item.yMax * plotHeight;
+  const grid = [0, .25, .5, .75, 1].map((ratio) => {
+    const yPos = top + plotHeight * (1 - ratio);
+    const secondaryTick = hasDualAxis ? `<text class="axis-secondary" x="${width - right + 12}" y="${yPos + 4}">${esc(series[1].metricInfo.tick(series[1].yMax * ratio))}</text>` : "";
+    return `<line x1="${left}" y1="${yPos}" x2="${width - right}" y2="${yPos}"></line><text class="${hasDualAxis ? "axis-primary" : ""}" x="${left - 12}" y="${yPos + 4}" text-anchor="end">${esc(series[0].metricInfo.tick(series[0].yMax * ratio))}</text>${secondaryTick}`;
+  }).join("");
+  const lines = series.map((item, seriesIndex) => {
+    const channel = item.rows[0].channel;
+    const points = item.rows.map((row) => `${x(row)},${y(item, row)}`).join(" ");
+    const circles = item.rows.map((row, rowIndex) => `<circle class="trend-point" cx="${x(row)}" cy="${y(item, row)}" r="5" fill="${item.color}" data-series="${seriesIndex}" data-row="${rowIndex}" tabindex="0" role="img" aria-label="${esc(channel)}，${ymdh(row.publishedAt)}，${item.metricInfo.label} ${item.metricInfo.format(row[item.metric])}"></circle>`).join("");
+    return `<polyline points="${points}" fill="none" stroke="${item.color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></polyline>${circles}`;
+  }).join("");
+
+  $("trendLegend").innerHTML = series.map((item) => {
+    const detail = item.metric === "uploadCount" ? `${item.rows.reduce((sum, row) => sum + row.uploadCount, 0)} 条更新 · ${periodLabels[period]}` : `${item.rows.length} 条视频 · ${periodLabels[period]}`;
+    return `<span><i style="background:${item.color}"></i>${esc(item.rows[0].channel)}<b>${item.metricInfo.label} · ${detail}</b></span>`;
+  }).join("");
+  const ariaMetrics = series.map((item) => `${item.rows[0].channel}${item.metricInfo.label}`).join("与");
+  $("trendChart").innerHTML = `<div class="trend-canvas"><svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${periodLabels[period]}${esc(ariaMetrics)}趋势对比"><g class="trend-grid">${grid}</g>${lines}<line class="trend-crosshair" x1="${left}" y1="${top}" x2="${left}" y2="${top + plotHeight}" hidden></line><rect class="trend-hitbox" x="${left}" y="${top}" width="${plotWidth}" height="${plotHeight}"></rect><text class="axis-date" x="${left}" y="${height - 10}">${ymd(xMin)}</text><text class="axis-date" x="${width - right}" y="${height - 10}" text-anchor="end">${ymd(xMax)}</text></svg><div class="trend-tooltip" role="status" hidden></div></div>`;
+
+  const chart = $("trendChart");
+  const canvas = chart.querySelector(".trend-canvas");
+  const svg = chart.querySelector("svg");
+  const tooltip = chart.querySelector(".trend-tooltip");
+  const crosshair = chart.querySelector(".trend-crosshair");
+  const pointNodes = [...chart.querySelectorAll(".trend-point")];
+  const nearestRows = (targetTime) => series.map((item, seriesIndex) => {
+    let rowIndex = 0;
+    for (let index = 1; index < item.rows.length; index += 1) {
+      if (Math.abs(toTime(item.rows[index].publishedAt) - targetTime) < Math.abs(toTime(item.rows[rowIndex].publishedAt) - targetTime)) rowIndex = index;
+    }
+    return { item, seriesIndex, rowIndex, row: item.rows[rowIndex] };
+  });
+  const showNearest = (event) => {
+    const rect = canvas.getBoundingClientRect();
+    const svgRect = svg.getBoundingClientRect();
+    const svgX = Math.min(width - right, Math.max(left, (event.clientX - svgRect.left) / svgRect.width * width));
+    const targetTime = xMin + (svgX - left) / plotWidth * xRange;
+    const nearest = nearestRows(targetTime);
+    crosshair.hidden = false;
+    crosshair.setAttribute("x1", svgX);
+    crosshair.setAttribute("x2", svgX);
+    pointNodes.forEach((point) => point.classList.remove("is-nearest"));
+    nearest.forEach(({ seriesIndex, rowIndex }) => chart.querySelector(`.trend-point[data-series="${seriesIndex}"][data-row="${rowIndex}"]`)?.classList.add("is-nearest"));
+    tooltip.classList.toggle("is-upload-detail", nearest.some(({ item }) => item.metric === "uploadCount"));
+    const tooltipLabel = hasDualAxis ? `${series[0].metricInfo.label} / ${series[1].metricInfo.label}` : series[0].metricInfo.label;
+    tooltip.innerHTML = `<strong>${tooltipLabel}</strong>${nearest.map(({ item, row }) => item.metric === "uploadCount"
+      ? `<section class="upload-day-series" data-update-count="${row.uploadCount}"><div class="upload-day-header"><span><i style="background:${item.color}"></i>${esc(row.channel)}</span><b>${item.metricInfo.label} ${item.metricInfo.format(row.uploadCount)}</b><small>${ymd(row.publishedAt)}</small></div>${row.updates.length ? `<div class="upload-video-list">${row.updates.map((video) => `<div class="upload-video-item"><img src="${esc(video.thumbnail)}" alt="" loading="lazy"><span class="upload-video-copy"><strong>${esc(video.title)}</strong><span class="upload-video-stats"><span>播放 ${video.viewCount == null ? "—" : exact(video.viewCount)}</span><span>点赞 ${video.likeCount == null ? "—" : exact(video.likeCount)}</span><span>评论 ${video.commentCount == null ? "—" : exact(video.commentCount)}</span></span></span></div>`).join("")}</div>` : `<div class="upload-zero">当日无更新</div>`}</section>`
+      : `<div class="nearest-series"><img src="${esc(row.thumbnail)}" alt=""><div><span><i style="background:${item.color}"></i>${esc(row.channel)}</span><b>${item.metricInfo.label} ${item.metricInfo.format(row[item.metric])}</b><small>${ymdh(row.publishedAt)}</small><em>${esc(row.title)}</em></div></div>`).join("")}`;
+    tooltip.hidden = false;
+    const localX = event.clientX - rect.left;
+    const localY = event.clientY - rect.top;
+    const tooltipWidth = tooltip.offsetWidth;
+    const tooltipHeight = tooltip.offsetHeight;
+    const maxLeft = Math.max(12, canvas.clientWidth - tooltipWidth - 12);
+    const maxTop = Math.max(12, canvas.clientHeight - tooltipHeight - 12);
+    const preferredTop = localY - tooltipHeight - 14;
+    tooltip.style.left = `${Math.max(12, Math.min(localX + 14, maxLeft))}px`;
+    tooltip.style.top = `${Math.max(12, Math.min(preferredTop >= 12 ? preferredTop : localY + 14, maxTop))}px`;
+  };
+  canvas.addEventListener("pointermove", showNearest);
+  canvas.addEventListener("pointerleave", () => {
+    tooltip.hidden = true;
+    crosshair.hidden = true;
+    pointNodes.forEach((point) => point.classList.remove("is-nearest"));
+  });
+}
+
+function renderUploadBars(videos, channels, generatedAt, period) {
+  const end = toTime(generatedAt);
+  const start = period === "all" ? -Infinity : end - Number(period) * 86400000;
+  const counts = new Map(channels.map((channel) => [channel.channelId, 0]));
+  videos.forEach((video) => {
+    const published = toTime(video.publishedAt);
+    if (published >= start && published <= end && counts.has(video.channelId)) counts.set(video.channelId, counts.get(video.channelId) + 1);
+  });
+  const rows = channels.map((channel) => ({ ...channel, count: counts.get(channel.channelId) }))
+    .sort((a, b) => b.count - a.count || a.channel.localeCompare(b.channel, "zh-HK"));
+  const maximum = Math.max(1, ...rows.map((row) => row.count));
+  const total = rows.reduce((sum, row) => sum + row.count, 0);
+  $("uploadBarsNote").textContent = `${period === "all" ? "全部已采集公开视频" : `近 ${period} 天发布`} · ${channels.length} 个频道 · 共 ${exact(total)} 条`;
+  $("uploadBars").innerHTML = rows.map((row) => `<div class="upload-bar-row" data-channel-id="${esc(row.channelId)}" data-count="${row.count}" role="img" aria-label="${esc(row.channel)}：${row.count} 条更新"><a class="upload-bar-channel" href="${esc(row.channelUrl)}" target="_blank" rel="noopener noreferrer"><img src="${esc(row.thumbnail)}" alt="" loading="lazy"><span>${esc(row.channel)}</span></a><div class="upload-bar-track" title="${esc(row.channel)}：${row.count} 条"><span style="width:${row.count / maximum * 100}%"></span></div><b>${exact(row.count)}<small> 条</small></b></div>`).join("");
+}
+
+function renderAllVideos(videos) {
+  const channelId = $("videoChannel").value;
+  const direction = $("videoSort").value === "asc" ? 1 : -1;
+  const hasViews = (video) => video.viewCount != null && Number.isFinite(Number(video.viewCount));
+  const filtered = videos.filter((video) => !channelId || video.channelId === channelId).sort((a, b) => {
+    if (hasViews(a) !== hasViews(b)) return hasViews(a) ? -1 : 1;
+    return (hasViews(a) ? direction * (Number(a.viewCount) - Number(b.viewCount)) : 0)
+      || toTime(b.publishedAt) - toTime(a.publishedAt) || a.videoId.localeCompare(b.videoId);
+  });
+  $("allVideosCount").textContent = `${channelId ? $("videoChannel").selectedOptions[0].textContent : "全部频道"} · ${exact(filtered.length)} 条视频`;
+  $("allVideosList").innerHTML = filtered.length ? filtered.map((video) => `<li data-video-id="${esc(video.videoId)}" data-channel-id="${esc(video.channelId)}" data-views="${hasViews(video) ? Number(video.viewCount) : ""}"><a class="all-video-link" href="${esc(video.url)}" target="_blank" rel="noopener noreferrer"><img src="${esc(video.thumbnail)}" alt="" loading="lazy"><span class="all-video-copy"><strong>${esc(video.title)}</strong><span><b>${esc(video.channel)}</b><time datetime="${esc(video.publishedAt)}">${ymdh(video.publishedAt)}</time></span></span><span class="all-video-views"><b>${hasViews(video) ? exact(video.viewCount) : "—"}</b><small>次播放</small></span></a></li>`).join("") : `<li class="empty">该频道暂无已采集视频</li>`;
+  $("allVideosList").scrollTop = 0;
 }
 
 async function init() {
   try {
     const response = await fetch("data.json", { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    state.data = await response.json();
-    const current = state.data.queries.channel_current.rows;
-    const history = state.data.queries.channel_history.rows;
-    state.channelRows = addChanges(current, history, state.data.generatedAt);
-    const health = state.data.queries.collection_health.rows[0];
-    $("health").innerHTML = `<span class="pulse ${health.failureCount ? "warn" : ""}"></span><div><strong>${health.failureCount ? "部分采集异常" : "采集正常"}</strong><small>香港时间 ${dt.format(new Date(state.data.generatedAt))}</small></div>`;
-    renderKpis(state.channelRows, health); renderDecisions(state.channelRows);
-    renderBars("viewsRanking", state.channelRows, "recent5AverageViews", (value) => num(value, compact));
-    renderBars("cadenceRanking", state.channelRows, "uploads30d", (value) => `${num(value)} 条`);
-    renderChannelTable(state.channelRows); renderVideos(); renderCapabilities(state.data.queries.capability_matrix.rows);
-    $("channelSelect").innerHTML = state.channelRows.map((row) => `<option value="${esc(row.channelId)}">${esc(row.channel)}</option>`).join("");
-    renderTrend();
+    const data = await response.json();
+    const current = data.queries.channel_current.rows;
+    const titles = new Map(current.map((row) => [row.channelId, row.youtubeTitle || row.channel]));
+    Object.values(data.queries).forEach((query) => query.rows?.forEach((row) => {
+      if (titles.has(row.channelId)) row.channel = titles.get(row.channelId);
+    }));
+    const history = data.queries.channel_history.rows;
+    const rows = current;
+    const catalog = [...new Map((data.queries.video_catalog?.rows ?? data.queries.recent_videos.rows)
+      .filter((video) => titles.has(video.channelId)).map((video) => [video.videoId, video])).values()];
+    const latestVideoById = new Map();
+    (data.queries.video_history?.rows ?? data.queries.recent_videos.rows)
+      .slice()
+      .sort((a, b) => toTime(a.observedAt ?? 0) - toTime(b.observedAt ?? 0))
+      .forEach((video) => latestVideoById.set(video.videoId, video));
+    const catalogWithMetrics = catalog.map((video) => ({ ...(latestVideoById.get(video.videoId) ?? {}), ...video }));
+    const periodLabels = { "7": "近 7 日", "30": "近 30 日", all: "全部记录" };
+    const rowsForPeriod = (period, field) => rows.map((row) => ({
+      ...row,
+      periodGrowth: growthRate(row, previousSnapshot(history, row.channelId, data.generatedAt, period), field),
+      periodBaseline: previousSnapshot(history, row.channelId, data.generatedAt, period),
+    }));
+    const hiddenCount = rows.filter((row) => row.hiddenSubscriberCount).length;
+    const publicSubscriberRows = rows.filter((row) => !row.hiddenSubscriberCount && row.subscriberCount != null);
+    const subscriberAvailable = (period) => publicSubscriberRows.every((row) => completeWindowSnapshot(history, row.channelId, data.generatedAt, period));
+    const availability = { "7": subscriberAvailable("7"), "30": subscriberAvailable("30"), all: true };
+    const coverageStart = Math.max(...publicSubscriberRows.map((row) => {
+      const channelTimes = history.filter((item) => item.channelId === row.channelId).map((item) => toTime(item.observedAt)).filter(Number.isFinite);
+      return channelTimes.length ? Math.min(...channelTimes) : toTime(data.generatedAt);
+    }));
+    $("subscriberPeriod").querySelectorAll("button").forEach((button) => {
+      const incomplete = !availability[button.dataset.period];
+      button.setAttribute("aria-disabled", "false");
+      if (incomplete) {
+        const targetTime = coverageStart + Number(button.dataset.period) * 24 * 60 * 60 * 1000;
+        const message = countdownText(targetTime, coverageStart, data.generatedAt);
+        button.dataset.countdown = message;
+        button.title = message;
+      } else {
+        delete button.dataset.countdown;
+        button.removeAttribute("title");
+      }
+    });
+    const defaultSubscriberPeriod = "7";
+    $("subscriberPeriod").querySelectorAll("button").forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.period === defaultSubscriberPeriod)));
+
+    const subscriberBaseNote = hiddenCount ? `${hiddenCount} 个隐藏订阅频道未计入` : `${rows.length} 个频道公开值`;
+    const renderSubscribers = (period) => {
+      const periodRows = rowsForPeriod(period, "subscriberCount").filter((row) => !row.hiddenSubscriberCount && row.subscriberCount != null);
+      const isAll = period === "all";
+      const displayRows = isAll ? periodRows : periodRows.map((row) => ({ ...row, subscriberDelta: row.subscriberCount - row.periodBaseline.subscriberCount }));
+      $("subscriberNote").textContent = !isAll && !availability[period]
+        ? `${subscriberBaseNote} · 部分数据 ${elapsedText(coverageStart, toTime(data.generatedAt))}`
+        : subscriberBaseNote;
+      renderDonut("subscriberChart", displayRows, isAll ? "subscriberCount" : "subscriberDelta", isAll ? "公开订阅" : "订阅净增长", periodLabels[period]);
+    };
+    const renderViews = (period) => {
+      if (period === "all") {
+        $("viewsNote").textContent = "频道公开累计值";
+        renderDonut("viewsChart", rows.filter((row) => row.channelViewCount != null), "channelViewCount", "频道总播放", periodLabels[period], { detailMode: "allViews" });
+        return;
+      }
+      const cutoff = toTime(data.generatedAt) - Number(period) * 24 * 60 * 60 * 1000;
+      const grouped = new Map();
+      catalogWithMetrics.filter((video) => toTime(video.publishedAt) >= cutoff && toTime(video.publishedAt) <= toTime(data.generatedAt)).forEach((video) => {
+        const currentValue = grouped.get(video.channelId) ?? { views: 0, count: 0 };
+        currentValue.views += Number(video.viewCount) || 0;
+        currentValue.count += 1;
+        grouped.set(video.channelId, currentValue);
+      });
+      const displayRows = rows.map((row) => ({ ...row, windowViewCount: grouped.get(row.channelId)?.views ?? 0, windowVideoCount: grouped.get(row.channelId)?.count ?? 0 }));
+      $("viewsNote").textContent = `${periodLabels[period]}发布视频当前播放`;
+      renderDonut("viewsChart", displayRows, "windowViewCount", "视频播放", periodLabels[period], { detailMode: "windowViews" });
+    };
+    bindPeriodSwitch("subscriberPeriod", renderSubscribers);
+    bindPeriodSwitch("viewsPeriod", renderViews);
+    renderSubscribers(defaultSubscriberPeriod);
+    renderViews("7");
+    renderUpdates(catalogWithMetrics, data.generatedAt);
+    const channelChoices = rows.map((row) => ({ value: row.channelId, label: row.channel, avatar: row.thumbnail }));
+    setChoiceButtons("primaryChannel", channelChoices, rows[0]?.channelId ?? "");
+    setChoiceButtons("comparisonChannel", [{ value: "", label: "不对比" }, ...channelChoices.map(({ value, label }) => ({ value, label }))], "");
+    bindPeriodSwitch("uploadBarsPeriod", (period) => renderUploadBars(catalogWithMetrics, rows, data.generatedAt, period));
+    renderUploadBars(catalogWithMetrics, rows, data.generatedAt, "7");
+    $("videoChannel").innerHTML = `<option value="">全部频道</option>${rows.map((row) => `<option value="${esc(row.channelId)}">${esc(row.channel)}</option>`).join("")}`;
+    $("videoChannel").addEventListener("change", () => renderAllVideos(catalogWithMetrics));
+    $("videoSort").addEventListener("change", () => renderAllVideos(catalogWithMetrics));
+    renderAllVideos(catalogWithMetrics);
+    const trendVideos = catalogWithMetrics
+      .filter((video) => video.viewCount != null || video.durationSeconds != null || video.likeCount != null || video.commentCount != null);
+    const updateTrend = () => renderTrend(trendVideos, catalogWithMetrics, rows, data.generatedAt);
+    bindChoiceButtons("primaryChannel", updateTrend);
+    bindComparisonButtons(updateTrend);
+    bindChoiceButtons("trendMetric", updateTrend);
+    bindChoiceButtons("comparisonMetric", updateTrend);
+    bindChoiceButtons("trendPeriod", updateTrend);
+    updateTrend();
   } catch (error) {
-    $("health").innerHTML = `<span class="pulse warn"></span><div><strong>数据加载失败</strong><small>${esc(error.message)}</small></div>`;
+    $("loadError").hidden = false;
+    $("loadError").textContent = `数据加载失败：${error.message}`;
   }
 }
 
-$("channelSearch").addEventListener("input", () => renderChannelTable(state.channelRows));
-$("channelSelect").addEventListener("change", renderTrend);
-$("metricSelect").addEventListener("change", renderTrend);
-$("moreVideos").addEventListener("click", () => { state.visibleVideos += 24; renderVideos(); });
-$("themeToggle").addEventListener("click", () => { document.documentElement.classList.toggle("light"); localStorage.setItem("theme", document.documentElement.classList.contains("light") ? "light" : "dark"); });
-if (localStorage.getItem("theme") === "light") document.documentElement.classList.add("light");
 init();

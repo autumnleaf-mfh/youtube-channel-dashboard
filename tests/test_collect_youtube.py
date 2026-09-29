@@ -1,7 +1,13 @@
 import importlib.util
+import contextlib
+import io
+import json
+import os
+import tempfile
 import unittest
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from unittest.mock import patch
 
 
 MODULE_PATH = Path(__file__).resolve().parents[1] / "scripts" / "collect_youtube.py"
@@ -47,6 +53,59 @@ class SamplingPolicyTests(unittest.TestCase):
         compacted = collector.compact_history(rows, ("channelId",), self.now)
         self.assertEqual(len(compacted), 4)
         self.assertEqual([row["value"] for row in compacted if row["value"] > 100], [193])
+
+
+class InventoryTests(unittest.TestCase):
+    def run_inventory(self, fail_second_page=False):
+        stamp = collector.utc_iso(datetime.now(timezone.utc) - timedelta(hours=1))
+        old = {"channelId": "a", "channel": "Old handle", "videoId": "removed", "publishedAt": stamp}
+        previous = {"collectorState": {"inventoryFullScanAt": stamp}, "queries": {
+            "channel_current": {"rows": [{"channelId": "a", "channel": "Old handle"}]},
+            "video_catalog": {"rows": [old, {**old, "channelId": "deleted-channel", "videoId": "deleted-video"}]},
+            "video_history": {"rows": [{**old, "observedAt": stamp, "viewCount": 123}]},
+        }}
+        calls = []
+
+        def api(resource, **params):
+            calls.append((resource, params))
+            if resource == "channels":
+                return {"items": [{"id": key, "snippet": {"title": title}, "statistics": {"videoCount": "2", "subscriberCount": "5", "viewCount": "123"}, "contentDetails": {"relatedPlaylists": {"uploads": key}}} for key, title in [("a", "新频道名"), ("b", "新增频道")]]}
+            if resource == "playlistItems":
+                channel = params["playlistId"]
+                second = bool(params.get("pageToken"))
+                if channel == "a" and second and fail_second_page:
+                    raise TimeoutError("fixture")
+                video_id = channel + ("2" if second else "1")
+                payload = {"items": [{"snippet": {"title": video_id}, "contentDetails": {"videoId": video_id, "videoPublishedAt": stamp}}]}
+                if channel == "a" and not second:
+                    payload["nextPageToken"] = "second"
+                return payload
+            if resource == "videos":
+                return {"items": [{"id": video_id, "statistics": {"viewCount": "10"}} for video_id in params["id"].split(",")]}
+            raise AssertionError(resource)
+
+        with tempfile.TemporaryDirectory() as directory:
+            snapshot = Path(directory) / "data.json"
+            snapshot.write_text(json.dumps(previous), encoding="utf-8")
+            with patch.object(collector, "DATA_PATH", snapshot), patch.object(collector, "CHANNELS", [("Alias a", "a"), ("Alias b", "b")]), patch.object(collector, "api_get", api), patch.dict(os.environ, {"YOUTUBE_API_KEY": "fixture"}), contextlib.redirect_stdout(io.StringIO()):
+                collector.main()
+            return json.loads(snapshot.read_text(encoding="utf-8")), calls
+
+    def test_added_channel_forces_full_inventory_and_current_titles(self):
+        data, calls = self.run_inventory()
+        self.assertTrue(data["queries"]["collection_health"]["rows"][0]["fullInventoryScan"])
+        self.assertEqual({row["videoId"] for row in data["queries"]["video_catalog"]["rows"]}, {"a1", "a2", "b1"})
+        self.assertTrue(any(params.get("pageToken") == "second" for _, params in calls))
+        for key in ("channel_current", "channel_history", "video_catalog", "video_history", "recent_videos"):
+            for row in data["queries"][key]["rows"]:
+                self.assertIn(row["channelId"], ("a", "b"))
+                self.assertEqual(row["channel"], {"a": "新频道名", "b": "新增频道"}[row["channelId"]])
+        self.assertIn("removed", {row["videoId"] for row in data["queries"]["video_history"]["rows"]})
+
+    def test_failed_playlist_preserves_previous_inventory(self):
+        data, _ = self.run_inventory(fail_second_page=True)
+        self.assertEqual({row["videoId"] for row in data["queries"]["video_catalog"]["rows"]}, {"removed", "b1"})
+        self.assertEqual(data["queries"]["collection_health"]["rows"][0]["failureCount"], 1)
 
 
 if __name__ == "__main__":
