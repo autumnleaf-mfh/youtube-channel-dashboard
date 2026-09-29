@@ -178,8 +178,14 @@ button, a { font: inherit; }
 .upload-bar-row small { font-weight: 400; color: var(--muted); font-size: 11px; }
 .video-filters { display: grid; gap: 12px; margin-top: 20px; min-width: 0; }
 .video-filters .choice-buttons { flex-wrap: wrap; overflow: visible; }
-#videoChannel button:not([data-value=""])::before { content: ""; width: 10px; height: 10px; flex-shrink: 0; border: 1px solid currentColor; border-radius: 3px; }
-#videoChannel button:not([data-value=""])[aria-pressed="true"]::before { content: "✓"; display: grid; place-items: center; font-size: 10px; line-height: 1; }
+#videoChannel { display: grid; grid-template-columns: 100px repeat(6, minmax(120px, 1fr)); grid-template-rows: repeat(2, minmax(38px, auto)); gap: 6px; overflow-x: auto; }
+#videoChannel button { min-width: 0; white-space: normal; text-align: left; }
+#videoChannel button[data-value=""] { grid-column: 1; grid-row: 1; justify-content: center; }
+#videoChannel button[data-action="select-all"] { grid-column: 1; grid-row: 2; justify-content: center; }
+#videoChannel button img { flex-shrink: 0; }
+#videoChannel button span { overflow-wrap: anywhere; }
+#videoChannel button[data-value]:not([data-value=""])::before { content: ""; width: 10px; height: 10px; flex-shrink: 0; border: 1px solid currentColor; border-radius: 3px; }
+#videoChannel button[data-value]:not([data-value=""])[aria-pressed="true"]::before { content: "✓"; display: grid; place-items: center; font-size: 10px; line-height: 1; }
 #primaryChannel { display: grid; grid-template-columns: 100px repeat(6, minmax(120px, 1fr)); grid-template-rows: repeat(2, minmax(38px, auto)); gap: 6px; overflow-x: auto; }
 #primaryChannel button { min-width: 0; white-space: normal; text-align: left; }
 #primaryChannel button[data-value="all"] { grid-column: 1; grid-row: 1; justify-content: center; }

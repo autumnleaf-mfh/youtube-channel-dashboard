@@ -85,4 +85,32 @@ assert.equal(selectAllButton.pressed,'false');
 press(1);press(1);
 assert.deepEqual(selected(),['all'],'empty selection restores aggregate');
 console.log('PASS: select-all individual channels differs from aggregate, manual select-all, deselection and reset');
+// Video inventory also supports explicit Select all without counting the action as a channel.
+buttons[0].dataset.value='';
+buttons.forEach((b,i)=>{b.pressed=i===0?'true':'false';});
+elements.videoChannel = {
+  contains:b=>trendButtons.includes(b),
+  addEventListener:(type,fn)=>{click=fn;},
+  querySelectorAll:s=>s==='button' ? trendButtons : s.includes('aria-pressed') ? buttons.filter(b=>b.pressed==='true') : buttons,
+};
+choices.videoPeriod='all';choices.videoSort='desc';
+ctx.bindMultiChannelButtons('videoChannel',render);
+click({target:{closest:()=>selectAllButton}});
+assert.deepEqual(selected(),channels.map(c=>c.channelId));
+assert.equal(ids().length,videos.length);
+assert(elements.allVideosCount.textContent.includes(`已选 ${channels.length} 个频道`));
+press(1);
+assert.equal(selected().length,channels.length-1);
+assert.equal(ids().length,videos.filter(v=>v.channelId!==channels[0].channelId).length);
+assert.equal(selectAllButton.pressed,'false');
+press(1);
+assert.equal(selected().length,channels.length);
+assert.equal(selectAllButton.pressed,'true');
+press(0);
+assert.deepEqual(selected(),['']);
+assert.equal(ids().length,videos.length);
+assert.equal(selectAllButton.pressed,'false');
+assert.match(read('site/styles.css'),/#videoChannel \{[^}]*grid-template-rows: repeat\(2,/);
+assert.match(read('site/styles.css'),/#videoChannel button\[data-action="select-all"\] \{[^}]*grid-row: 2/);
+console.log('PASS: video inventory Select all, deselect one, reselect, reset, two-row layout');
 console.log(`PASS: multi-select toggles, restore all, ${checks} channel-pair/window/sort combinations; ${renders} renders`);

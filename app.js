@@ -635,7 +635,7 @@ function renderChannelBreakdown(series, periodLabel) {
 }
 
 function renderAllVideos(videos, generatedAt) {
-  const selectedChannels = [...$("videoChannel").querySelectorAll('[aria-pressed="true"]')];
+  const selectedChannels = [...$("videoChannel").querySelectorAll('button[data-value][aria-pressed="true"]')];
   const channelIds = new Set(selectedChannels.map((button) => button.dataset.value).filter(Boolean));
   const period = selectedChoice("videoPeriod");
   const end = toTime(generatedAt);
@@ -750,7 +750,7 @@ async function init() {
     renderUpdates(catalogWithMetrics, data.generatedAt);
     const channelChoices = rows.map((row) => ({ value: row.channelId, label: row.channel, avatar: row.thumbnail }));
     setChoiceButtons("primaryChannel", [{ value: "all", label: "全部频道", title: "汇总全部频道，显示一条总和折线" }, { action: "select-all", label: "全选", title: "分别选中全部频道，每个频道显示自己的折线" }, ...channelChoices], "all");
-    setChoiceButtons("videoChannel", [{ value: "", label: "全部频道" }, ...channelChoices], "");
+    setChoiceButtons("videoChannel", [{ value: "", label: "全部频道", title: "不限制频道，显示全部视频" }, { action: "select-all", label: "全选", title: "勾选全部频道，可继续单独取消某个频道" }, ...channelChoices], "");
     const updateVideoList = () => renderAllVideos(catalogWithMetrics, data.generatedAt);
     bindMultiChannelButtons("videoChannel", updateVideoList);
     bindChoiceButtons("videoSort", updateVideoList);
