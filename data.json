@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-09-29T13:38:59Z",
+  "generatedAt": "2026-09-29T14:08:59Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-09-29T02:55:50Z",
     "formatClassification": {
@@ -2975,7 +2975,7 @@
           "customUrl": "@amberwithfinance",
           "channelUrl": "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA",
           "thumbnail": "https://yt3.ggpht.com/czuSSl1-7trtlN5BP5n7hPS_Pm7cKTX_chp1lqgVggP5apIJkB1CsmVXt0F7WpD4mGg4PIdj=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 612,
+          "subscriberCount": 611,
           "hiddenSubscriberCount": false,
           "channelViewCount": 51418,
           "videoCount": 9,
@@ -3023,7 +3023,7 @@
           "customUrl": "@財經小鹿financedeer",
           "channelUrl": "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ",
           "thumbnail": "https://yt3.ggpht.com/b0OPo5YQsfzCR6jLZTs6H-4EO-EFrqvFHMANy587DDAJGZ6wK_jwjnCr8Es9Z-6E7J01GRtg=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 693,
+          "subscriberCount": 699,
           "hiddenSubscriberCount": false,
           "channelViewCount": 63303,
           "videoCount": 13,
@@ -3052,7 +3052,7 @@
           "channelViewCount": 101,
           "videoCount": 6,
           "lastPublishedAt": "2026-09-23T12:30:27Z",
-          "daysSinceUpload": 6.0,
+          "daysSinceUpload": 6.1,
           "uploads7d": 1,
           "uploads30d": 7,
           "uploads90d": 7,
@@ -3100,7 +3100,7 @@
           "channelViewCount": 8835,
           "videoCount": 6,
           "lastPublishedAt": "2026-09-29T00:30:33Z",
-          "daysSinceUpload": 0.5,
+          "daysSinceUpload": 0.6,
           "uploads7d": 4,
           "uploads30d": 6,
           "uploads90d": 6,
@@ -3196,7 +3196,7 @@
           "channelViewCount": 2549,
           "videoCount": 6,
           "lastPublishedAt": "2026-09-29T12:30:12Z",
-          "daysSinceUpload": 0.0,
+          "daysSinceUpload": 0.1,
           "uploads7d": 4,
           "uploads30d": 6,
           "uploads90d": 6,
@@ -3220,7 +3220,7 @@
           "channelViewCount": 352,
           "videoCount": 5,
           "lastPublishedAt": "2026-09-29T12:30:26Z",
-          "daysSinceUpload": 0.0,
+          "daysSinceUpload": 0.1,
           "uploads7d": 5,
           "uploads30d": 5,
           "uploads90d": 5,
@@ -3236,7 +3236,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-09-29T13:39:10+00:00",
+        "retrievedAt": "2026-09-29T14:09:08+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -7625,7 +7625,7 @@
           "date": "2026-09-29",
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "小Lu財經說",
-          "subscriberCount": 693,
+          "subscriberCount": 699,
           "channelViewCount": 63303,
           "videoCount": 13
         },
@@ -7634,7 +7634,7 @@
           "date": "2026-09-29",
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大鏡",
-          "subscriberCount": 612,
+          "subscriberCount": 611,
           "channelViewCount": 51418,
           "videoCount": 9
         },
@@ -7678,7 +7678,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-09-29T13:39:10+00:00",
+        "retrievedAt": "2026-09-29T14:09:08+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -10025,7 +10025,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-09-29T13:39:10+00:00",
+        "retrievedAt": "2026-09-29T14:09:08+00:00",
         "metricDefinitions": []
       }
     },
@@ -55971,7 +55971,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-09-29T13:39:10+00:00",
+        "retrievedAt": "2026-09-29T14:09:08+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -58462,7 +58462,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-09-29T13:39:10+00:00",
+        "retrievedAt": "2026-09-29T14:09:08+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -58536,7 +58536,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-09-29T13:39:10+00:00",
+        "retrievedAt": "2026-09-29T14:09:08+00:00",
         "metricDefinitions": []
       }
     },
@@ -58557,7 +58557,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-09-29T13:39:10+00:00",
+        "retrievedAt": "2026-09-29T14:09:08+00:00",
         "metricDefinitions": []
       }
     }
