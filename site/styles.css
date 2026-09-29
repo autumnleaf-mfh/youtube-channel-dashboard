@@ -170,6 +170,8 @@ button, a { font: inherit; }
 .upload-bar-row small { font-weight: 400; color: var(--muted); font-size: 11px; }
 .video-filters { display: grid; gap: 12px; margin-top: 20px; min-width: 0; }
 .video-filters .choice-buttons { flex-wrap: wrap; overflow: visible; }
+#videoChannel button:not([data-value=""])::before { content: ""; width: 10px; height: 10px; flex-shrink: 0; border: 1px solid currentColor; border-radius: 3px; }
+#videoChannel button:not([data-value=""])[aria-pressed="true"]::before { content: "✓"; display: grid; place-items: center; font-size: 10px; line-height: 1; }
 #videoPeriod { flex: 0 0 auto; }
 .all-videos-list { margin: 16px 0 0; padding: 0 8px 0 0; max-height: 640px; overflow-y: auto; overscroll-behavior: contain; list-style: none; scrollbar-color: var(--line) transparent; }
 .all-videos-list li { border-top: 1px solid var(--line); }

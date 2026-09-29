@@ -210,6 +210,28 @@ function bindChoiceButtons(targetId, render) {
   });
 }
 
+function bindMultiChannelButtons(targetId, render) {
+  const group = $(targetId);
+  group.addEventListener("click", (event) => {
+    const button = event.target.closest("button[data-value]");
+    if (!button || !group.contains(button)) return;
+    const buttons = [...group.querySelectorAll("button[data-value]")];
+    const channels = buttons.filter((item) => item.dataset.value);
+    if (!button.dataset.value) {
+      buttons.forEach((item) => item.setAttribute("aria-pressed", String(!item.dataset.value)));
+    } else {
+      button.setAttribute("aria-pressed", String(button.getAttribute("aria-pressed") !== "true"));
+      const count = channels.filter((item) => item.getAttribute("aria-pressed") === "true").length;
+      const all = count === 0 || count === channels.length;
+      buttons.forEach((item) => {
+        if (!item.dataset.value) item.setAttribute("aria-pressed", String(all));
+        else if (all) item.setAttribute("aria-pressed", "false");
+      });
+    }
+    render();
+  });
+}
+
 function selectChoice(targetId, value) {
   $(targetId).querySelectorAll("button[data-value]").forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.value === value)));
 }
@@ -534,21 +556,22 @@ function renderChannelBreakdown(series, periodLabel) {
 }
 
 function renderAllVideos(videos, generatedAt) {
-  const channelId = selectedChoice("videoChannel");
+  const selectedChannels = [...$("videoChannel").querySelectorAll('[aria-pressed="true"]')];
+  const channelIds = new Set(selectedChannels.map((button) => button.dataset.value).filter(Boolean));
   const period = selectedChoice("videoPeriod");
   const end = toTime(generatedAt);
   const start = period === "all" ? -Infinity : end - Number(period) * 86400000;
   const direction = selectedChoice("videoSort") === "asc" ? 1 : -1;
   const hasViews = (video) => video.viewCount != null && Number.isFinite(Number(video.viewCount));
-  const filtered = videos.filter((video) => (!channelId || video.channelId === channelId)
+  const filtered = videos.filter((video) => (!channelIds.size || channelIds.has(video.channelId))
     && toTime(video.publishedAt) >= start && toTime(video.publishedAt) <= end).sort((a, b) => {
     if (hasViews(a) !== hasViews(b)) return hasViews(a) ? -1 : 1;
     return (hasViews(a) ? direction * (Number(a.viewCount) - Number(b.viewCount)) : 0)
       || toTime(b.publishedAt) - toTime(a.publishedAt) || a.videoId.localeCompare(b.videoId);
   });
-  const channelLabel = $("videoChannel").querySelector('[aria-pressed="true"]')?.textContent ?? "全部频道";
+  const channelLabel = channelIds.size ? `已选 ${channelIds.size} 个频道：${selectedChannels.filter((button) => button.dataset.value).map((button) => button.textContent.trim()).join("、")}` : "全部频道";
   $("allVideosCount").textContent = `${channelLabel} · ${period === "all" ? "全部时间" : `近 ${period} 天发布`} · ${exact(filtered.length)} 条视频`;
-  $("allVideosList").innerHTML = filtered.length ? filtered.map((video) => `<li data-video-id="${esc(video.videoId)}" data-channel-id="${esc(video.channelId)}" data-views="${hasViews(video) ? Number(video.viewCount) : ""}"><a class="all-video-link" href="${esc(video.url)}" target="_blank" rel="noopener noreferrer"><img src="${esc(video.thumbnail)}" alt="" loading="lazy"><span class="all-video-copy"><strong>${esc(video.title)}</strong><span><b>${esc(video.channel)}</b><time datetime="${esc(video.publishedAt)}">${ymdh(video.publishedAt)}</time></span></span><span class="all-video-views"><b>${hasViews(video) ? exact(video.viewCount) : "—"}</b><small>次播放</small></span></a></li>`).join("") : `<li class="empty">该频道暂无已采集视频</li>`;
+  $("allVideosList").innerHTML = filtered.length ? filtered.map((video) => `<li data-video-id="${esc(video.videoId)}" data-channel-id="${esc(video.channelId)}" data-views="${hasViews(video) ? Number(video.viewCount) : ""}"><a class="all-video-link" href="${esc(video.url)}" target="_blank" rel="noopener noreferrer"><img src="${esc(video.thumbnail)}" alt="" loading="lazy"><span class="all-video-copy"><strong>${esc(video.title)}</strong><span><b>${esc(video.channel)}</b><time datetime="${esc(video.publishedAt)}">${ymdh(video.publishedAt)}</time></span></span><span class="all-video-views"><b>${hasViews(video) ? exact(video.viewCount) : "—"}</b><small>次播放</small></span></a></li>`).join("") : `<li class="empty">所选频道在该时间窗口内暂无已采集视频</li>`;
   $("allVideosList").scrollTop = 0;
 }
 
@@ -640,7 +663,7 @@ async function init() {
     setChoiceButtons("comparisonChannel", [{ value: "", label: "不对比" }, ...channelChoices.map(({ value, label }) => ({ value, label }))], "");
     setChoiceButtons("videoChannel", [{ value: "", label: "全部频道" }, ...channelChoices], "");
     const updateVideoList = () => renderAllVideos(catalogWithMetrics, data.generatedAt);
-    bindChoiceButtons("videoChannel", updateVideoList);
+    bindMultiChannelButtons("videoChannel", updateVideoList);
     bindChoiceButtons("videoSort", updateVideoList);
     bindChoiceButtons("videoPeriod", updateVideoList);
     updateVideoList();
