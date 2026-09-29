@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-09-29T01:00:05Z",
+  "generatedAt": "2026-09-29T01:09:00Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-09-24T08:35:04Z",
     "videoSamplingPolicy": {
@@ -93,17 +93,17 @@
           "subscriberCount": 610,
           "hiddenSubscriberCount": false,
           "channelViewCount": 34553,
-          "videoCount": 12,
-          "lastPublishedAt": "2026-09-28T02:07:18Z",
-          "daysSinceUpload": 1.0,
+          "videoCount": 13,
+          "lastPublishedAt": "2026-09-29T01:00:07Z",
+          "daysSinceUpload": 0.0,
           "uploads7d": 8,
-          "uploads30d": 13,
-          "uploads90d": 13,
+          "uploads30d": 14,
+          "uploads90d": 14,
           "averageUploadGapDays": 0.8,
           "recent5AverageViews": 4471,
           "recent5MedianViews": 2936,
           "recent5AverageLikes": 72,
-          "recent5EngagementRate": 0.016639
+          "recent5EngagementRate": 0.016597
         },
         {
           "channelId": "UCNX9-jzOH4KMbIeuWK8LZaw",
@@ -183,7 +183,7 @@
           "channelViewCount": 35,
           "videoCount": 5,
           "lastPublishedAt": "2026-09-28T11:52:05Z",
-          "daysSinceUpload": 0.5,
+          "daysSinceUpload": 0.6,
           "uploads7d": 4,
           "uploads30d": 5,
           "uploads90d": 5,
@@ -227,7 +227,7 @@
           "channelViewCount": 1782,
           "videoCount": 6,
           "lastPublishedAt": "2026-09-28T09:30:02Z",
-          "daysSinceUpload": 0.6,
+          "daysSinceUpload": 0.7,
           "uploads7d": 5,
           "uploads30d": 6,
           "uploads90d": 6,
@@ -244,7 +244,7 @@
           "customUrl": "@maple-moneyforest",
           "channelUrl": "https://www.youtube.com/channel/UC5lCKye2u8Q0BoE5ggY9myw",
           "thumbnail": "https://yt3.ggpht.com/pMWF2QNsoxnImQg07Dt2tQUMVnZxgPE793m7fi2VrhNdvJoWlsq_tOBMTXPszPInKhtLr1YpYao=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 44,
+          "subscriberCount": 49,
           "hiddenSubscriberCount": false,
           "channelViewCount": 1092,
           "videoCount": 5,
@@ -307,7 +307,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-09-29T01:00:12+00:00",
+        "retrievedAt": "2026-09-29T01:09:06+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -4912,7 +4912,7 @@
           "date": "2026-09-29",
           "channelId": "UC5lCKye2u8Q0BoE5ggY9myw",
           "channel": "Maple的理财森林",
-          "subscriberCount": 44,
+          "subscriberCount": 49,
           "channelViewCount": 1092,
           "videoCount": 5
         },
@@ -4986,7 +4986,7 @@
           "channel": "财经小鹿 Finance Deer",
           "subscriberCount": 610,
           "channelViewCount": 34553,
-          "videoCount": 12
+          "videoCount": 13
         },
         {
           "observedAt": "2026-09-29T01:00:00Z",
@@ -5028,7 +5028,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-09-29T01:00:12+00:00",
+        "retrievedAt": "2026-09-29T01:09:06+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -5051,6 +5051,16 @@
     },
     "video_catalog": {
       "rows": [
+        {
+          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
+          "channel": "财经小鹿 Finance Deer",
+          "videoId": "NfMhtLMYCBU",
+          "title": "日本央行犯下40年大錯！如今加息、不加息都是死局 #財經 #投資",
+          "publishedAt": "2026-09-29T01:00:07Z",
+          "publishedDate": "2026-09-29",
+          "thumbnail": "https://i.ytimg.com/vi/NfMhtLMYCBU/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=NfMhtLMYCBU"
+        },
         {
           "channelId": "UC9veOeKEZhexYxmMXF_RwCQ",
           "channel": "艾莉说",
@@ -5135,7 +5145,7 @@
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "财经小鹿 Finance Deer",
           "videoId": "9Mr-ce2n8GU",
-          "title": "日本30年「全球提款機」正式關門！847萬億海外資金開始回流，美債美股恐迎流動性巨震，黃金真正大行情要來了？#股票 ",
+          "title": "日本30年「全球提款機」正式關門！847萬億海外資金開始回流，美債美股恐迎流動性巨震，黃金真正大行情要來了？#股票",
           "publishedAt": "2026-09-28T02:07:18Z",
           "publishedDate": "2026-09-28",
           "thumbnail": "https://i.ytimg.com/vi/9Mr-ce2n8GU/mqdefault.jpg",
@@ -5175,7 +5185,7 @@
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "财经小鹿 Finance Deer",
           "videoId": "8SC-fo0wT-I",
-          "title": "美聯儲加息落地！科技股誰先撐不住？蘋果殺入AI伺服器、英特爾牽手海力士，杰富瑞卻喊9000點！#股票 #stockmarket ",
+          "title": "美聯儲加息落地！科技股誰先撐不住？蘋果殺入AI伺服器、英特爾牽手海力士，杰富瑞卻喊9000點！#股票 #stockmarket",
           "publishedAt": "2026-09-27T01:00:33Z",
           "publishedDate": "2026-09-27",
           "thumbnail": "https://i.ytimg.com/vi/8SC-fo0wT-I/mqdefault.jpg",
@@ -5195,7 +5205,7 @@
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大镜",
           "videoId": "P7oUKn_cm1o",
-          "title": "大模型跌成白菜價，蘋果一款折疊屏收割？AI低谷，蘋果開始吃紅利！淘金熱最後誰賺了大錢... #AI #蘋果 #折疊屏 #美股 #投資 #財經 ",
+          "title": "大模型跌成白菜價，蘋果一款折疊屏收割？AI低谷，蘋果開始吃紅利！淘金熱最後誰賺了大錢... #AI #蘋果 #折疊屏 #美股 #投資 #財經",
           "publishedAt": "2026-09-26T12:00:16Z",
           "publishedDate": "2026-09-26",
           "thumbnail": "https://i.ytimg.com/vi/P7oUKn_cm1o/mqdefault.jpg",
@@ -5295,7 +5305,7 @@
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "财经小鹿 Finance Deer",
           "videoId": "ZwtMr5Qtv_8",
-          "title": "泰國突然封殺黃金？泰銖被金價綁架，1997危機會重演嗎？黃金正在拖垮泰國？#gold #stock #股票 ",
+          "title": "泰國突然封殺黃金？泰銖被金價綁架，1997危機會重演嗎？黃金正在拖垮泰國？#gold #stock #股票",
           "publishedAt": "2026-09-25T01:00:10Z",
           "publishedDate": "2026-09-25",
           "thumbnail": "https://i.ytimg.com/vi/ZwtMr5Qtv_8/mqdefault.jpg",
@@ -8285,7 +8295,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-09-29T01:00:12+00:00",
+        "retrievedAt": "2026-09-29T01:09:06+00:00",
         "metricDefinitions": []
       }
     },
@@ -56533,6 +56543,24 @@
         },
         {
           "observedAt": "2026-09-29T01:00:00Z",
+          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
+          "channel": "财经小鹿 Finance Deer",
+          "videoId": "NfMhtLMYCBU",
+          "title": "日本央行犯下40年大錯！如今加息、不加息都是死局 #財經 #投資",
+          "publishedAt": "2026-09-29T01:00:07Z",
+          "publishedDate": "2026-09-29",
+          "viewCount": 7,
+          "likeCount": 0,
+          "commentCount": 0,
+          "durationSeconds": 156,
+          "formatHint": "短视频候选",
+          "thumbnail": "https://i.ytimg.com/vi/NfMhtLMYCBU/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=NfMhtLMYCBU",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "observedAt": "2026-09-29T01:00:00Z",
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大镜",
           "videoId": "P0uadN55Xl0",
@@ -57057,7 +57085,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-09-29T01:00:12+00:00",
+        "retrievedAt": "2026-09-29T01:09:06+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -58298,6 +58326,24 @@
           "likeCount": 34,
           "commentCount": 1,
           "durationSeconds": 135,
+          "formatHint": "短视频候选",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
+          "channel": "财经小鹿 Finance Deer",
+          "videoId": "NfMhtLMYCBU",
+          "title": "日本央行犯下40年大錯！如今加息、不加息都是死局 #財經 #投資",
+          "publishedAt": "2026-09-29T01:00:07Z",
+          "publishedDate": "2026-09-29",
+          "thumbnail": "https://i.ytimg.com/vi/NfMhtLMYCBU/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=NfMhtLMYCBU",
+          "observedAt": "2026-09-29T01:00:00Z",
+          "viewCount": 7,
+          "likeCount": 0,
+          "commentCount": 0,
+          "durationSeconds": 156,
           "formatHint": "短视频候选",
           "isLive": false,
           "concurrentViewers": null
@@ -60502,7 +60548,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-09-29T01:00:12+00:00",
+        "retrievedAt": "2026-09-29T01:09:06+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -60576,7 +60622,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-09-29T01:00:12+00:00",
+        "retrievedAt": "2026-09-29T01:09:06+00:00",
         "metricDefinitions": []
       }
     },
@@ -60586,9 +60632,9 @@
           "observedAt": "2026-09-29T01:00:00Z",
           "channelsExpected": 13,
           "channelsCollected": 13,
-          "videoCatalogCount": 323,
-          "videosRefreshed": 51,
-          "videosDisplayed": 190,
+          "videoCatalogCount": 324,
+          "videosRefreshed": 1,
+          "videosDisplayed": 191,
           "fullInventoryScan": false,
           "failureCount": 0,
           "failures": []
@@ -60597,7 +60643,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-09-29T01:00:12+00:00",
+        "retrievedAt": "2026-09-29T01:09:06+00:00",
         "metricDefinitions": []
       }
     }
