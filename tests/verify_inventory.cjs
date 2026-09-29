@@ -57,7 +57,7 @@ const path = require('node:path');
     const latest = new Map();
     data.queries.video_history.rows.slice().sort((a,b) => Date.parse(a.observedAt) - Date.parse(b.observedAt)).forEach(row => latest.set(row.videoId, row));
     for (const sort of ['desc', 'asc']) {
-      await page.selectOption('#videoSort', sort);
+      await page.locator(`#videoSort [data-value="${sort}"]`).click();
       const displayed = await listRows();
       assert.equal(displayed.length, catalog.length);
       let missing = false, previous;
@@ -73,13 +73,13 @@ const path = require('node:path');
       }
     }
     for (const channel of channels) {
-      await page.selectOption('#videoChannel', channel.channelId);
+      await page.locator(`#videoChannel [data-value="${channel.channelId}"]`).click();
       const displayed = await listRows();
       assert.equal(displayed.length, catalog.filter(v => v.channelId === channel.channelId).length);
       assert(displayed.every(row => row.channel === channel.channelId));
     }
-    await page.selectOption('#videoChannel', '');
-    await page.selectOption('#videoSort', 'desc');
+    await page.locator('#videoChannel [data-value=""]').click();
+    await page.locator('#videoSort [data-value="desc"]').click();
     assert.equal((await listRows()).length, catalog.length);
     const scrollable = await page.locator('#allVideosList').evaluate(node => node.scrollHeight > node.clientHeight && getComputedStyle(node).overflowY === 'auto');
     assert(scrollable);

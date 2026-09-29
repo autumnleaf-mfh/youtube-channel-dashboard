@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#07100d">
   <meta name="description" content="财经 YouTube 频道的订阅、播放、更新数量与全部视频数据">
   <title>YouTube 频道数据</title>
-  <link rel="stylesheet" href="styles.css?v=19">
+  <link rel="stylesheet" href="styles.css?v=20">
 </head>
 <body>
   <main class="dashboard">
@@ -100,17 +100,22 @@
     </section>
     <section class="panel inventory-panel" aria-labelledby="allVideosTitle">
       <header class="trend-title-row">
-        <div><p class="eyebrow">ALL VIDEOS</p><h2 id="allVideosTitle">全部视频播放量</h2><p class="inventory-note">播放量为最近一次采集的公开累计值；暂未取得的数据以 — 显示。</p></div>
-        <div class="video-filters">
-          <label>频道<select id="videoChannel" aria-label="筛选视频频道"></select></label>
-          <label>播放量排序<select id="videoSort" aria-label="播放量排序"><option value="desc">从高到低</option><option value="asc">从低到高</option></select></label>
+        <div><p class="eyebrow">ALL VIDEOS</p><h2 id="allVideosTitle">全部视频播放量</h2><p class="inventory-note">按视频发布时间筛选；播放量为最近一次采集的公开累计值，并非窗口内新增播放。缺失数据以 — 显示。</p></div>
+        <div id="videoPeriod" class="period-switch" role="group" aria-label="视频发布时间窗口">
+          <button type="button" data-value="7" aria-pressed="false">7D</button>
+          <button type="button" data-value="30" aria-pressed="false">30D</button>
+          <button type="button" data-value="all" aria-pressed="true">ALL</button>
         </div>
       </header>
+      <div class="video-filters">
+        <div class="selector-row"><span>频道</span><div id="videoChannel" class="choice-buttons" role="group" aria-label="筛选视频频道"></div></div>
+        <div class="selector-row"><span>播放排序</span><div id="videoSort" class="choice-buttons" role="group" aria-label="播放量排序"><button type="button" data-value="desc" aria-pressed="true">↓ 从高到低</button><button type="button" data-value="asc" aria-pressed="false">↑ 从低到高</button></div></div>
+      </div>
       <p id="allVideosCount" class="inventory-note" aria-live="polite"></p>
       <ol id="allVideosList" class="all-videos-list" tabindex="0" aria-label="全部视频滚动列表"></ol>
     </section>
     <div id="loadError" class="load-error" hidden></div>
   </main>
-  <script src="app.js?v=19" defer></script>
+  <script src="app.js?v=20" defer></script>
 </body>
 </html>

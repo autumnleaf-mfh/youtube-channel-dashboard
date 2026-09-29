@@ -140,9 +140,9 @@ button, a { font: inherit; }
 .upload-bar-track > span { display: block; height: 100%; border-radius: inherit; background: var(--accent); }
 .upload-bar-row > b { text-align: right; font-size: 14px; font-variant-numeric: tabular-nums; }
 .upload-bar-row small { font-weight: 400; color: var(--muted); font-size: 11px; }
-.video-filters { display: flex; flex-wrap: wrap; gap: 12px; }
-.video-filters label { display: grid; gap: 6px; color: var(--muted); font-size: 11px; }
-.video-filters select { max-width: 250px; height: 36px; padding: 0 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--text); font: inherit; font-size: 12px; }
+.video-filters { display: grid; gap: 12px; margin-top: 20px; min-width: 0; }
+.video-filters .choice-buttons { flex-wrap: wrap; overflow: visible; }
+#videoPeriod { flex: 0 0 auto; }
 .all-videos-list { margin: 16px 0 0; padding: 0 8px 0 0; max-height: 640px; overflow-y: auto; overscroll-behavior: contain; list-style: none; scrollbar-color: var(--line) transparent; }
 .all-videos-list li { border-top: 1px solid var(--line); }
 .all-video-link { display: grid; grid-template-columns: 144px minmax(0, 1fr) 100px; gap: 18px; align-items: center; padding: 14px 6px; color: var(--text); text-decoration: none; }
@@ -192,8 +192,6 @@ button, a { font: inherit; }
   .upload-bar-channel { gap: 6px; font-size: 11px; }
   .upload-bar-channel img { width: 20px; height: 20px; }
   .video-filters { width: 100%; }
-  .video-filters label { min-width: 0; flex: 1; }
-  .video-filters select { width: 100%; }
   .all-video-link { grid-template-columns: 84px minmax(0, 1fr); gap: 10px; }
   .all-video-copy > strong { font-size: 12px; }
   .all-video-copy > span { font-size: 10px; }
