@@ -352,6 +352,53 @@ function renderTrend(videos, catalog, channels, generatedAt, channelHistory = []
   renderChannelBreakdown(breakdown, periodLabels[period]);
 }
 
+function positionTrendTooltip(tooltip, canvas, event, motion) {
+  const rect = canvas.getBoundingClientRect();
+  const x = event.clientX - rect.left;
+  const y = event.clientY - rect.top;
+  const padding = 12;
+  const gap = 18;
+  if (motion.anchorX == null) {
+    motion.anchorX = x;
+    motion.side = x >= canvas.clientWidth / 2 ? "left" : "right";
+  }
+  const deltaX = x - motion.anchorX;
+  // Ignore tiny hand jitter but accumulate slow movement until it is meaningful.
+  if (Math.abs(deltaX) >= 4) {
+    motion.side = deltaX > 0 ? "left" : "right";
+    motion.anchorX = x;
+  }
+  tooltip.style.maxWidth = `${Math.max(1, canvas.clientWidth - padding * 2)}px`;
+  tooltip.style.maxHeight = `${Math.max(1, canvas.clientHeight - padding * 2)}px`;
+  const tooltipWidth = tooltip.offsetWidth;
+  let tooltipHeight = tooltip.offsetHeight;
+  const roomLeft = x - gap - padding;
+  const roomRight = canvas.clientWidth - x - gap - padding;
+  const clamp = (value, low, high) => Math.max(low, Math.min(value, Math.max(low, high)));
+  let tooltipLeft;
+  let tooltipTop;
+  let placement = motion.side;
+  if ((motion.side === "left" ? roomLeft : roomRight) >= tooltipWidth) {
+    tooltipLeft = motion.side === "left" ? x - gap - tooltipWidth : x + gap;
+    tooltipTop = clamp(y - tooltipHeight / 2, padding, canvas.clientHeight - tooltipHeight - padding);
+  } else {
+    // Do not flip into the direction of travel at an edge. Move above/below
+    // instead, shrinking the scroll area so the cursor itself stays uncovered.
+    const roomAbove = y - gap - padding;
+    const roomBelow = canvas.clientHeight - y - gap - padding;
+    placement = roomAbove >= roomBelow ? "above" : "below";
+    const verticalRoom = Math.max(1, placement === "above" ? roomAbove : roomBelow);
+    tooltip.style.maxHeight = `${verticalRoom}px`;
+    tooltipHeight = tooltip.offsetHeight;
+    tooltipLeft = clamp(x - tooltipWidth / 2, padding, canvas.clientWidth - tooltipWidth - padding);
+    tooltipTop = placement === "above" ? y - gap - tooltipHeight : y + gap;
+  }
+  tooltip.dataset.placement = placement;
+  tooltip.dataset.directionSide = motion.side;
+  tooltip.style.left = `${tooltipLeft}px`;
+  tooltip.style.top = `${tooltipTop}px`;
+}
+
 function renderTimeSeries(candidates, periodLabel, targetId, legendId, emptyMessage = "暂无可用数据") {
   const series = candidates.map((item) => ({ ...item, timeline: item.rows, rows: item.rows.filter((row) => row[item.metric] != null && Number.isFinite(Number(row[item.metric]))) })).filter((item) => item.rows.length);
 
@@ -415,6 +462,7 @@ function renderTimeSeries(candidates, periodLabel, targetId, legendId, emptyMess
   const tooltip = chart.querySelector(".trend-tooltip");
   const crosshair = chart.querySelector(".trend-crosshair");
   const pointNodes = [...chart.querySelectorAll(".trend-point")];
+  const tooltipMotion = { anchorX: null, side: null };
   const nearestRows = (targetTime) => series.map((item, seriesIndex) => {
     let rowIndex = 0;
     for (let index = 1; index < item.rows.length; index += 1) {
@@ -423,8 +471,6 @@ function renderTimeSeries(candidates, periodLabel, targetId, legendId, emptyMess
     return { item, seriesIndex, rowIndex, row: item.rows[rowIndex] };
   });
   const showNearest = (event) => {
-    if (event.target?.closest?.(".trend-tooltip")) return;
-    const rect = canvas.getBoundingClientRect();
     const svgRect = svg.getBoundingClientRect();
     const svgX = Math.min(width - right, Math.max(left, (event.clientX - svgRect.left) / svgRect.width * width));
     const targetTime = xMin + (svgX - left) / plotWidth * xRange;
@@ -441,19 +487,25 @@ function renderTimeSeries(candidates, periodLabel, targetId, legendId, emptyMess
       ? `<section class="upload-day-series" data-update-count="${row.uploadCount}"><div class="upload-day-header"><span><i style="background:${item.color}"></i>${esc(row.channel)}</span><b>${item.metricInfo.label} ${item.metricInfo.format(row.uploadCount)}</b><small>${ymd(row.publishedAt)}</small></div>${row.updates.length ? `<div class="upload-video-list">${row.updates.map((video) => `<div class="upload-video-item"><img src="${esc(video.thumbnail)}" alt="" loading="lazy"><span class="upload-video-copy"><strong>${esc(video.title)}</strong><span class="upload-video-stats"><span>播放 ${video.viewCount == null ? "—" : exact(video.viewCount)}</span><span>点赞 ${video.likeCount == null ? "—" : exact(video.likeCount)}</span><span>评论 ${video.commentCount == null ? "—" : exact(video.commentCount)}</span></span></span></div>`).join("")}</div>` : `<div class="upload-zero">当日无更新</div>`}</section>`
       : `<div class="nearest-series">${row.isAggregate ? '<div class="aggregate-thumb" aria-hidden="true">Σ</div>' : `<img src="${esc(row.thumbnail)}" alt="">`}<div><span><i style="background:${item.color}"></i>${esc(row.channel)}${item.comparison ? "（对比）" : ""}</span><b>${item.metricInfo.label} ${item.metricInfo.format(row[item.metric])}</b><small>${ymdh(row.publishedAt)}</small><em>${esc(row.title)}</em></div></div>`).join("")}`;
     tooltip.hidden = false;
-    const localX = event.clientX - rect.left;
-    const localY = event.clientY - rect.top;
-    const tooltipWidth = tooltip.offsetWidth;
-    const tooltipHeight = tooltip.offsetHeight;
-    const maxLeft = Math.max(12, canvas.clientWidth - tooltipWidth - 12);
-    const maxTop = Math.max(12, canvas.clientHeight - tooltipHeight - 12);
-    const preferredTop = localY - tooltipHeight - 14;
-    tooltip.style.left = `${Math.max(12, Math.min(localX + 14, maxLeft))}px`;
-    tooltip.style.top = `${Math.max(12, Math.min(preferredTop >= 12 ? preferredTop : localY + 14, maxTop))}px`;
+    positionTrendTooltip(tooltip, canvas, event, tooltipMotion);
   };
   canvas.addEventListener("pointermove", showNearest);
+  // Keep long detail lists scrollable without letting the floating box capture
+  // pointer motion or freeze the nearest-node calculation underneath it.
+  canvas.addEventListener("wheel", (event) => {
+    if (tooltip.hidden || event.ctrlKey || event.metaKey || Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+    const maximum = tooltip.scrollHeight - tooltip.clientHeight;
+    if (maximum <= 0) return;
+    const delta = event.deltaY * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? tooltip.clientHeight : 1);
+    const next = Math.max(0, Math.min(maximum, tooltip.scrollTop + delta));
+    if (next === tooltip.scrollTop) return;
+    event.preventDefault();
+    tooltip.scrollTop = next;
+  }, { passive: false });
   canvas.addEventListener("pointerleave", () => {
     tooltip.hidden = true;
+    tooltipMotion.anchorX = null;
+    tooltipMotion.side = null;
     crosshair.hidden = true;
     pointNodes.forEach((point) => point.classList.remove("is-nearest"));
   });
