@@ -4,14 +4,9 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-09-29T05:09:00Z",
+  "generatedAt": "2026-09-29T05:39:00Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-09-29T02:55:50Z",
-    "videoSamplingPolicy": {
-      "within7Days": "3h",
-      "within30Days": "daily",
-      "olderThan30Days": "weekly"
-    },
     "formatClassification": {
       "UCTueeHImxv4uLBQKsDEMqjQ": {
         "checkedAt": "2026-09-29T05:27:52Z",
@@ -362,10 +357,2543 @@
         }
       }
     },
-    "formatClassificationErrors": []
+    "formatClassificationErrors": [],
+    "videoSamplingPolicy": {
+      "within7Days": "3h",
+      "within30Days": "daily",
+      "olderThan30Days": "weekly"
+    }
   },
   "filters": [],
   "queries": {
+    "video_formats": {
+      "rows": [
+        {
+          "videoId": "NfMhtLMYCBU",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ"
+        },
+        {
+          "videoId": "dUKxKW_AZB0",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UC9veOeKEZhexYxmMXF_RwCQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UC9veOeKEZhexYxmMXF_RwCQ"
+        },
+        {
+          "videoId": "1KSZ7W9_J3Q",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCS1ZlOZTJhOxvWXr3b1v9GA/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA"
+        },
+        {
+          "videoId": "u_B5XVzQvjY",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCtkUpmfJckdTZyNvyWBl_rg/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCtkUpmfJckdTZyNvyWBl_rg"
+        },
+        {
+          "videoId": "Ju9tSfnclYc",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA"
+        },
+        {
+          "videoId": "9AX2SrL8rWQ",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCmhqWEDoPgrg9J129nGuQkQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCmhqWEDoPgrg9J129nGuQkQ"
+        },
+        {
+          "videoId": "KxPDt_p5w3k",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCS1ZlOZTJhOxvWXr3b1v9GA/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA"
+        },
+        {
+          "videoId": "aMnvYEZXKNM",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCQAo0ws95p-uN7gr0OOHoXg/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCQAo0ws95p-uN7gr0OOHoXg"
+        },
+        {
+          "videoId": "9YpZGI1__Rk",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCS1ZlOZTJhOxvWXr3b1v9GA/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA"
+        },
+        {
+          "videoId": "AemKf5n_sVY",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UC9veOeKEZhexYxmMXF_RwCQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UC9veOeKEZhexYxmMXF_RwCQ"
+        },
+        {
+          "videoId": "9Mr-ce2n8GU",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ"
+        },
+        {
+          "videoId": "fIB5gBx6TQY",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCS1ZlOZTJhOxvWXr3b1v9GA/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA"
+        },
+        {
+          "videoId": "knThJAsA_74",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ"
+        },
+        {
+          "videoId": "G-pEZBox2uw",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UC5lCKye2u8Q0BoE5ggY9myw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UC5lCKye2u8Q0BoE5ggY9myw"
+        },
+        {
+          "videoId": "8SC-fo0wT-I",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ"
+        },
+        {
+          "videoId": "FRHWXAsGzew",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "P7oUKn_cm1o",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA"
+        },
+        {
+          "videoId": "d8JsDYTyO7c",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA"
+        },
+        {
+          "videoId": "bQXdIuwNI_Q",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsXJXZI4J_N9r8H9TsORmlA/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsXJXZI4J_N9r8H9TsORmlA"
+        },
+        {
+          "videoId": "H4Wtkaggbbg",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCmhqWEDoPgrg9J129nGuQkQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCmhqWEDoPgrg9J129nGuQkQ"
+        },
+        {
+          "videoId": "cme1luk-CPw",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UC5lCKye2u8Q0BoE5ggY9myw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UC5lCKye2u8Q0BoE5ggY9myw"
+        },
+        {
+          "videoId": "bcZ-Ii79PKY",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCtkUpmfJckdTZyNvyWBl_rg/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCtkUpmfJckdTZyNvyWBl_rg"
+        },
+        {
+          "videoId": "ljjKmWoffYA",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ"
+        },
+        {
+          "videoId": "Lw_5KVPXw9s",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "P0uadN55Xl0",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA"
+        },
+        {
+          "videoId": "L284RJeXjvY",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsXJXZI4J_N9r8H9TsORmlA/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsXJXZI4J_N9r8H9TsORmlA"
+        },
+        {
+          "videoId": "ZwtMr5Qtv_8",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ"
+        },
+        {
+          "videoId": "xZmZX3PJqVc",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "s0eFljKXQRM",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCQAo0ws95p-uN7gr0OOHoXg/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCQAo0ws95p-uN7gr0OOHoXg"
+        },
+        {
+          "videoId": "vznpH0ROLwA",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCS1ZlOZTJhOxvWXr3b1v9GA/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA"
+        },
+        {
+          "videoId": "TxKQteZ_tMg",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCS1ZlOZTJhOxvWXr3b1v9GA/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA"
+        },
+        {
+          "videoId": "ArbD4sVQoZw",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsXJXZI4J_N9r8H9TsORmlA/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsXJXZI4J_N9r8H9TsORmlA"
+        },
+        {
+          "videoId": "hZITRcnMZ1k",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UC5lCKye2u8Q0BoE5ggY9myw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UC5lCKye2u8Q0BoE5ggY9myw"
+        },
+        {
+          "videoId": "3pbe4T1JKxM",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCtkUpmfJckdTZyNvyWBl_rg/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCtkUpmfJckdTZyNvyWBl_rg"
+        },
+        {
+          "videoId": "0O6WjcqsZB8",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCQAo0ws95p-uN7gr0OOHoXg/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCQAo0ws95p-uN7gr0OOHoXg"
+        },
+        {
+          "videoId": "idofW1UqFsQ",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UC9veOeKEZhexYxmMXF_RwCQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UC9veOeKEZhexYxmMXF_RwCQ"
+        },
+        {
+          "videoId": "IU-D3KFogR0",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCNX9-jzOH4KMbIeuWK8LZaw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCNX9-jzOH4KMbIeuWK8LZaw"
+        },
+        {
+          "videoId": "SiIxAb9gpAw",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA"
+        },
+        {
+          "videoId": "LfjUJxK_Vm4",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "yj_xOmVjxgQ",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCmhqWEDoPgrg9J129nGuQkQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCmhqWEDoPgrg9J129nGuQkQ"
+        },
+        {
+          "videoId": "CTGvRsBFdpE",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCQAo0ws95p-uN7gr0OOHoXg/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCQAo0ws95p-uN7gr0OOHoXg"
+        },
+        {
+          "videoId": "8FEOLZ664ro",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCS1ZlOZTJhOxvWXr3b1v9GA/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA"
+        },
+        {
+          "videoId": "qm-B25pGNSQ",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCS1ZlOZTJhOxvWXr3b1v9GA/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA"
+        },
+        {
+          "videoId": "XFrVxNaXCig",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ"
+        },
+        {
+          "videoId": "DnNfoVHAyAk",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UC9veOeKEZhexYxmMXF_RwCQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UC9veOeKEZhexYxmMXF_RwCQ"
+        },
+        {
+          "videoId": "3zzlwzZkCmA",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsXJXZI4J_N9r8H9TsORmlA/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsXJXZI4J_N9r8H9TsORmlA"
+        },
+        {
+          "videoId": "prA2mNugHZs",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UC5lCKye2u8Q0BoE5ggY9myw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UC5lCKye2u8Q0BoE5ggY9myw"
+        },
+        {
+          "videoId": "-xX_n4kjg7g",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCQAo0ws95p-uN7gr0OOHoXg/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCQAo0ws95p-uN7gr0OOHoXg"
+        },
+        {
+          "videoId": "xsyI2nxWUII",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCS1ZlOZTJhOxvWXr3b1v9GA/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA"
+        },
+        {
+          "videoId": "xL7HQOXc-R0",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCNX9-jzOH4KMbIeuWK8LZaw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCNX9-jzOH4KMbIeuWK8LZaw"
+        },
+        {
+          "videoId": "fGzUs32mjmo",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCmhqWEDoPgrg9J129nGuQkQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCmhqWEDoPgrg9J129nGuQkQ"
+        },
+        {
+          "videoId": "gfDxV5Fh4jc",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCS1ZlOZTJhOxvWXr3b1v9GA/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA"
+        },
+        {
+          "videoId": "Vhsgl6rSTuE",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ"
+        },
+        {
+          "videoId": "XaQrpxDHS9s",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsXJXZI4J_N9r8H9TsORmlA/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsXJXZI4J_N9r8H9TsORmlA"
+        },
+        {
+          "videoId": "yZgO2P3IWQM",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCNX9-jzOH4KMbIeuWK8LZaw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCNX9-jzOH4KMbIeuWK8LZaw"
+        },
+        {
+          "videoId": "xqxO7oysX3Q",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA"
+        },
+        {
+          "videoId": "Mg3Ca9agmZs",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCNX9-jzOH4KMbIeuWK8LZaw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCNX9-jzOH4KMbIeuWK8LZaw"
+        },
+        {
+          "videoId": "2j5gpU3cFFk",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCQAo0ws95p-uN7gr0OOHoXg/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCQAo0ws95p-uN7gr0OOHoXg"
+        },
+        {
+          "videoId": "8DfTXWvQYws",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCmhqWEDoPgrg9J129nGuQkQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCmhqWEDoPgrg9J129nGuQkQ"
+        },
+        {
+          "videoId": "BoHkiOfLRro",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ"
+        },
+        {
+          "videoId": "AjWHdU4rcZY",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UC9veOeKEZhexYxmMXF_RwCQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UC9veOeKEZhexYxmMXF_RwCQ"
+        },
+        {
+          "videoId": "xEzMeo1Enec",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCS1ZlOZTJhOxvWXr3b1v9GA/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA"
+        },
+        {
+          "videoId": "7a6EUwFq0hE",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsXJXZI4J_N9r8H9TsORmlA/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsXJXZI4J_N9r8H9TsORmlA"
+        },
+        {
+          "videoId": "unYL1_NTQXw",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCS1ZlOZTJhOxvWXr3b1v9GA/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA"
+        },
+        {
+          "videoId": "3tUB9tmJOtg",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCNX9-jzOH4KMbIeuWK8LZaw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCNX9-jzOH4KMbIeuWK8LZaw"
+        },
+        {
+          "videoId": "O6-wglDeKo0",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ"
+        },
+        {
+          "videoId": "QsYZbJjYpF8",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ"
+        },
+        {
+          "videoId": "aR-hxqNfDvw",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA"
+        },
+        {
+          "videoId": "NQOCcq-3Yug",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ"
+        },
+        {
+          "videoId": "UbZuyfp_QtE",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UC5lCKye2u8Q0BoE5ggY9myw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UC5lCKye2u8Q0BoE5ggY9myw"
+        },
+        {
+          "videoId": "QbW23txjo9s",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ"
+        },
+        {
+          "videoId": "JDycQBrAkKQ",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCNX9-jzOH4KMbIeuWK8LZaw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCNX9-jzOH4KMbIeuWK8LZaw"
+        },
+        {
+          "videoId": "wd6zbALaQyY",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsXJXZI4J_N9r8H9TsORmlA/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsXJXZI4J_N9r8H9TsORmlA"
+        },
+        {
+          "videoId": "_lTVcdfA37w",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "woM5Vxx1ieY",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA"
+        },
+        {
+          "videoId": "VsWReCff3Ok",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCNX9-jzOH4KMbIeuWK8LZaw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCNX9-jzOH4KMbIeuWK8LZaw"
+        },
+        {
+          "videoId": "t22DOaxlELU",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UC9veOeKEZhexYxmMXF_RwCQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UC9veOeKEZhexYxmMXF_RwCQ"
+        },
+        {
+          "videoId": "Mdl-xHbNDEs",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCS1ZlOZTJhOxvWXr3b1v9GA/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA"
+        },
+        {
+          "videoId": "PTqEvYdHxVE",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "pzu0jONf2C0",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "wvmK7XfJiJk",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "xmc8O8X3hdU",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "tdLT_wX9YIo",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "aNBHNVGA79M",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "Js459KFQe9A",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "H7rc1mnZk-U",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "DMUs4RhBJZ4",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "hpc2ANBqqGk",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "9ik5hYql17M",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "-ZwXgi7zUbI",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "cBAcjbyJO48",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "oWE-PsIjDOw",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "0-J-1FMeU9A",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "wtaQxL5B_m0",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "IFQr5yNDnxY",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "thQsMOKApmk",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "hTKb8bpcNho",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "28EUHO_rNkU",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "9KWCFyvIEh8",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "pDgdvk-ZWm4",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "-o0Ri__1Lh4",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "pFjQZ0uC1a4",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "6bU1IIlbIPE",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "bvWwlckaXtM",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "N53tEPTrds0",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "BRTjN8j6XQw",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "Iz1g4tgGXCU",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "en7sPx_bKVE",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "wiBzIlH3DrM",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "O7vMqutsSUk",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "wtU-Hc6BmWs",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "KN312o9CnwA",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "RbAuhAoiOQI",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "bdWYmGmvPCw",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "taHT-oRLaHE",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "sMMdWcmeG7U",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "gFyZUK7n2nI",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "Hd6ygS1q7GI",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "rS112nQ_Rts",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "A3GCoIfT9zs",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "IwY9EFhwJ-Y",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "2OronVJ0PVQ",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "g8xSjEmhk6M",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "n4IKFGX2o28",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "Fjxw_yszNfg",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "kRGbg93WVeU",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "MsFZw5iEMVA",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "XtHGU0Fp2BY",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "G2HnXw9f0Fw",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "1flmtUm0yqM",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "AuJdnj5kiH0",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "wpr1grQpN-Y",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "GnJs8x6UGr4",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "Wc_xZ9RQOEw",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "4Rv8PBjAKqk",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "lomhK-_aiDs",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "7Py4XU-L_zI",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "kGcOl8vfyAM",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "4Wsr8WeTVi8",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "wFgVzAgi8w8",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "NWKLuE7Nkkw",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "L4-W1gUdafY",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "8i01PIwTVBU",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "evM0iR5-BmU",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "gwB0gG0A6n8",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "TV12Zdr5KjQ",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "6gcaKuWXdIY",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "GoUVcGHPHYc",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "lrT8R3iy0-U",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "F5SBV2SQEVs",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "ZRE1jIoyLr4",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "EQny9wSti1k",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "S7F8z9ldwYI",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "Hn0ODjLVgog",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "-3vjrVD8Syw",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "ySPGLMYvGl4",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "_9vlW3e_icA",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "fj3waa3pLxU",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "_wgMtQPRnFA",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "Eg-S9mPh_Ng",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "buJY2gcC-gc",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "tJgioa-E5V4",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "GtIk6tMPYzM",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "KZX5Ws4ihNM",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "55SiuFEOF9Q",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "efIOo06Boto",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "272_krqVK58",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "jBbrYqMiym4",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "bARB5bE2DgA",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "0jctFcp8w6c",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "FXM3SSbS-2Y",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "btAUTcy_NUw",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "XQQXUpIePZo",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "A4hUHFc5u3Y",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "7SIfu1RGvC0",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "x8xu6GFG6bk",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "9GBMh3c48RY",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "v7Mj9w1GCaA",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "-JCBGk1TsbQ",
+          "format": "long",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "q4sxqeNr0qk",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "Q1SQkqJW8kE",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "uNKIFxDIjy0",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "V40hWyGBemQ",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "cTPMhN43NuY",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "Kf4Kn0dX3Hs",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "oXc3I2AA9IA",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "dtH317ITN6o",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "xLlqwZcvL6c",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "E7ah5tJETnk",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "O_XQhdTasDg",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "e0WJ6qwDwjA",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "pwkHudiruVE",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "hFh7F9ikLqU",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "Ru8svoRljqQ",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "cA2op-mXeqg",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "jnbred-tMeI",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "O-a95-EERAo",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "yleLrd3HcYM",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "OBXQc5Fz3kQ",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "ESMz5DRhBhg",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "yjFWWXOcVuM",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "7YepyHFg-IE",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "7O1mOmBQlqI",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "ZfWrVyP6YEc",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "9Uo_sb82T1I",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "ywH6cJvAq5I",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "dfhvKXvjPwc",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "8CaxHFgHEAA",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "n47ZlCfwoTQ",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "D6Jw1ho_CY8",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "l4Vmo7qLmIo",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "eroQYQuz7pI",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "mv87ZSA1fHQ",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "c6YO_Vm9ez4",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "sThuI4-H3go",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "qAItE5ROuEQ",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "imE3dLKOdDs",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "M8W1VtqBqWE",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "H2spZXFmSdw",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "An1WVwBvyVQ",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "Toih74-Gv6c",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "lRABtyT-JbE",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "vVqIlIacCHg",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "7V4n3JurVD8",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "RNwf_nvDBFE",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
+        },
+        {
+          "videoId": "_cB5JrqeEug",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "HaW63Wx15GY",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        },
+        {
+          "videoId": "dVhNx77gJ0Y",
+          "format": "short",
+          "checkedAt": "2026-09-29T05:27:52Z",
+          "sourceUrls": [
+            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
+          ],
+          "classificationMethod": "youtube_channel_tab_membership",
+          "status": "confirmed",
+          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
+        }
+      ],
+      "source": {
+        "title": "YouTube public channel tab membership",
+        "classificationMethod": "youtube_channel_tab_membership",
+        "metricDefinitions": [
+          {
+            "label": "YouTube 视频类型",
+            "definition": "Shorts 标签下的视频为短视频；Videos 标签为普通视频；Live 标签为直播/回放。仅正向确认成员关系，不按时长推断；未获取或冲突的分类为待确认。"
+          }
+        ],
+        "evidenceFlow": [
+          {
+            "title": "YouTube 频道分类",
+            "detail": "读取各频道 /shorts、/videos、/streams 的已选标签内容及分页；每条分类保存 sourceUrls 与 checkedAt。分类失败保留历史已确认结果，新视频不推断。"
+          }
+        ]
+      }
+    },
     "channel_current": {
       "rows": [
         {
@@ -397,7 +2925,7 @@
           "customUrl": "@amberwithfinance",
           "channelUrl": "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA",
           "thumbnail": "https://yt3.ggpht.com/czuSSl1-7trtlN5BP5n7hPS_Pm7cKTX_chp1lqgVggP5apIJkB1CsmVXt0F7WpD4mGg4PIdj=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 594,
+          "subscriberCount": 595,
           "hiddenSubscriberCount": false,
           "channelViewCount": 51418,
           "videoCount": 8,
@@ -441,7 +2969,7 @@
           "customUrl": "@財經小鹿financedeer",
           "channelUrl": "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ",
           "thumbnail": "https://yt3.ggpht.com/b0OPo5YQsfzCR6jLZTs6H-4EO-EFrqvFHMANy587DDAJGZ6wK_jwjnCr8Es9Z-6E7J01GRtg=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 636,
+          "subscriberCount": 638,
           "hiddenSubscriberCount": false,
           "channelViewCount": 34553,
           "videoCount": 13,
@@ -465,7 +2993,7 @@
           "thumbnail": "https://yt3.ggpht.com/ib4UkQkrIbXN1imfrmBZmnno5_4fVaynGTu9YdHBvzigcpsq5ePtSNzKyZaZS2gj-n07C3SCRA=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 10,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 98,
+          "channelViewCount": 101,
           "videoCount": 6,
           "lastPublishedAt": "2026-09-23T12:30:27Z",
           "daysSinceUpload": 5.7,
@@ -487,7 +3015,7 @@
           "thumbnail": "https://yt3.ggpht.com/f8Upq2a2CtKPaGkcJDG609eXDHKSvG6cl218-v1CFEcEaAgzFA7PdxyiGZvWQqb_jRJtrS6_lg=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 145,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 13050,
+          "channelViewCount": 16405,
           "videoCount": 7,
           "lastPublishedAt": "2026-09-26T06:01:27Z",
           "daysSinceUpload": 3.0,
@@ -509,7 +3037,7 @@
           "thumbnail": "https://yt3.ggpht.com/HAtJKK6ZdY-kbTEirRIWFH7zUD70XxHLWRTxRrTamwk-fNTVS1dR2A0_bSN3xYFNh6wz2obK=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 48,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 8673,
+          "channelViewCount": 8835,
           "videoCount": 6,
           "lastPublishedAt": "2026-09-29T00:30:33Z",
           "daysSinceUpload": 0.2,
@@ -531,7 +3059,7 @@
           "thumbnail": "https://yt3.ggpht.com/WQBN9NFS6FNVYm4_bQtAfL-o5FXZgh3RYK3uVDe8d7WjW95CsE4_iYvxVK8sZ3W0jBCmdfIM=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 5,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 35,
+          "channelViewCount": 41,
           "videoCount": 5,
           "lastPublishedAt": "2026-09-28T11:52:05Z",
           "daysSinceUpload": 0.7,
@@ -556,7 +3084,7 @@
           "channelViewCount": 830,
           "videoCount": 13,
           "lastPublishedAt": "2026-09-28T20:45:28Z",
-          "daysSinceUpload": 0.3,
+          "daysSinceUpload": 0.4,
           "uploads7d": 9,
           "uploads30d": 13,
           "uploads90d": 13,
@@ -595,7 +3123,7 @@
           "customUrl": "@maple-moneyforest",
           "channelUrl": "https://www.youtube.com/channel/UC5lCKye2u8Q0BoE5ggY9myw",
           "thumbnail": "https://yt3.ggpht.com/pMWF2QNsoxnImQg07Dt2tQUMVnZxgPE793m7fi2VrhNdvJoWlsq_tOBMTXPszPInKhtLr1YpYao=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 90,
+          "subscriberCount": 91,
           "hiddenSubscriberCount": false,
           "channelViewCount": 1092,
           "videoCount": 5,
@@ -619,7 +3147,7 @@
           "thumbnail": "https://yt3.ggpht.com/UTE35AJU84PBzZPJC2rQD6tnSIFP-s07pa8hBKAjqifdvP9bCbQFXs3xApPp1c3SyBpayvUUDTo=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 6,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 305,
+          "channelViewCount": 352,
           "videoCount": 3,
           "lastPublishedAt": "2026-09-28T12:30:38Z",
           "daysSinceUpload": 0.7,
@@ -636,7 +3164,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-09-29T05:09:06+00:00",
+        "retrievedAt": "2026-09-29T05:39:12+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -4647,7 +7175,7 @@
           "date": "2026-09-29",
           "channelId": "UC5lCKye2u8Q0BoE5ggY9myw",
           "channel": "Maple的理財森林",
-          "subscriberCount": 90,
+          "subscriberCount": 91,
           "channelViewCount": 1092,
           "videoCount": 5
         },
@@ -4657,7 +7185,7 @@
           "channelId": "UC9veOeKEZhexYxmMXF_RwCQ",
           "channel": "艾莉說",
           "subscriberCount": 48,
-          "channelViewCount": 8673,
+          "channelViewCount": 8835,
           "videoCount": 6
         },
         {
@@ -4675,7 +7203,7 @@
           "channelId": "UCNX9-jzOH4KMbIeuWK8LZaw",
           "channel": "Leo財經",
           "subscriberCount": 10,
-          "channelViewCount": 98,
+          "channelViewCount": 101,
           "videoCount": 6
         },
         {
@@ -4701,7 +7229,7 @@
           "date": "2026-09-29",
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "小Lu財經說",
-          "subscriberCount": 636,
+          "subscriberCount": 638,
           "channelViewCount": 34553,
           "videoCount": 13
         },
@@ -4710,7 +7238,7 @@
           "date": "2026-09-29",
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大鏡",
-          "subscriberCount": 594,
+          "subscriberCount": 595,
           "channelViewCount": 51418,
           "videoCount": 8
         },
@@ -4720,7 +7248,7 @@
           "channelId": "UCmhqWEDoPgrg9J129nGuQkQ",
           "channel": "文叔聊財",
           "subscriberCount": 5,
-          "channelViewCount": 35,
+          "channelViewCount": 41,
           "videoCount": 5
         },
         {
@@ -4738,7 +7266,7 @@
           "channelId": "UCsXJXZI4J_N9r8H9TsORmlA",
           "channel": "羅拉財富觀",
           "subscriberCount": 145,
-          "channelViewCount": 13050,
+          "channelViewCount": 16405,
           "videoCount": 7
         },
         {
@@ -4747,14 +7275,14 @@
           "channelId": "UCtkUpmfJckdTZyNvyWBl_rg",
           "channel": "Leo財經觀察",
           "subscriberCount": 6,
-          "channelViewCount": 305,
+          "channelViewCount": 352,
           "videoCount": 3
         }
       ],
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-09-29T05:09:06+00:00",
+        "retrievedAt": "2026-09-29T05:39:12+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -7061,7 +9589,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-09-29T05:09:06+00:00",
+        "retrievedAt": "2026-09-29T05:39:12+00:00",
         "metricDefinitions": []
       }
     },
@@ -50307,7 +52835,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-09-29T05:09:06+00:00",
+        "retrievedAt": "2026-09-29T05:39:12+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -52726,7 +55254,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-09-29T05:09:06+00:00",
+        "retrievedAt": "2026-09-29T05:39:12+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -52800,7 +55328,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-09-29T05:09:06+00:00",
+        "retrievedAt": "2026-09-29T05:39:12+00:00",
         "metricDefinitions": []
       }
     },
@@ -52821,2536 +55349,8 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-09-29T05:09:06+00:00",
+        "retrievedAt": "2026-09-29T05:39:12+00:00",
         "metricDefinitions": []
-      }
-    },
-    "video_formats": {
-      "rows": [
-        {
-          "videoId": "NfMhtLMYCBU",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ"
-        },
-        {
-          "videoId": "dUKxKW_AZB0",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UC9veOeKEZhexYxmMXF_RwCQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UC9veOeKEZhexYxmMXF_RwCQ"
-        },
-        {
-          "videoId": "1KSZ7W9_J3Q",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCS1ZlOZTJhOxvWXr3b1v9GA/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA"
-        },
-        {
-          "videoId": "u_B5XVzQvjY",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCtkUpmfJckdTZyNvyWBl_rg/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCtkUpmfJckdTZyNvyWBl_rg"
-        },
-        {
-          "videoId": "Ju9tSfnclYc",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA"
-        },
-        {
-          "videoId": "9AX2SrL8rWQ",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCmhqWEDoPgrg9J129nGuQkQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCmhqWEDoPgrg9J129nGuQkQ"
-        },
-        {
-          "videoId": "KxPDt_p5w3k",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCS1ZlOZTJhOxvWXr3b1v9GA/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA"
-        },
-        {
-          "videoId": "aMnvYEZXKNM",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCQAo0ws95p-uN7gr0OOHoXg/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCQAo0ws95p-uN7gr0OOHoXg"
-        },
-        {
-          "videoId": "9YpZGI1__Rk",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCS1ZlOZTJhOxvWXr3b1v9GA/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA"
-        },
-        {
-          "videoId": "AemKf5n_sVY",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UC9veOeKEZhexYxmMXF_RwCQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UC9veOeKEZhexYxmMXF_RwCQ"
-        },
-        {
-          "videoId": "9Mr-ce2n8GU",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ"
-        },
-        {
-          "videoId": "fIB5gBx6TQY",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCS1ZlOZTJhOxvWXr3b1v9GA/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA"
-        },
-        {
-          "videoId": "knThJAsA_74",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ"
-        },
-        {
-          "videoId": "G-pEZBox2uw",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UC5lCKye2u8Q0BoE5ggY9myw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UC5lCKye2u8Q0BoE5ggY9myw"
-        },
-        {
-          "videoId": "8SC-fo0wT-I",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ"
-        },
-        {
-          "videoId": "FRHWXAsGzew",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "P7oUKn_cm1o",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA"
-        },
-        {
-          "videoId": "d8JsDYTyO7c",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA"
-        },
-        {
-          "videoId": "bQXdIuwNI_Q",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsXJXZI4J_N9r8H9TsORmlA/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsXJXZI4J_N9r8H9TsORmlA"
-        },
-        {
-          "videoId": "H4Wtkaggbbg",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCmhqWEDoPgrg9J129nGuQkQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCmhqWEDoPgrg9J129nGuQkQ"
-        },
-        {
-          "videoId": "cme1luk-CPw",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UC5lCKye2u8Q0BoE5ggY9myw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UC5lCKye2u8Q0BoE5ggY9myw"
-        },
-        {
-          "videoId": "bcZ-Ii79PKY",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCtkUpmfJckdTZyNvyWBl_rg/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCtkUpmfJckdTZyNvyWBl_rg"
-        },
-        {
-          "videoId": "ljjKmWoffYA",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ"
-        },
-        {
-          "videoId": "Lw_5KVPXw9s",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "P0uadN55Xl0",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA"
-        },
-        {
-          "videoId": "L284RJeXjvY",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsXJXZI4J_N9r8H9TsORmlA/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsXJXZI4J_N9r8H9TsORmlA"
-        },
-        {
-          "videoId": "ZwtMr5Qtv_8",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ"
-        },
-        {
-          "videoId": "xZmZX3PJqVc",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "s0eFljKXQRM",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCQAo0ws95p-uN7gr0OOHoXg/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCQAo0ws95p-uN7gr0OOHoXg"
-        },
-        {
-          "videoId": "vznpH0ROLwA",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCS1ZlOZTJhOxvWXr3b1v9GA/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA"
-        },
-        {
-          "videoId": "TxKQteZ_tMg",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCS1ZlOZTJhOxvWXr3b1v9GA/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA"
-        },
-        {
-          "videoId": "ArbD4sVQoZw",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsXJXZI4J_N9r8H9TsORmlA/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsXJXZI4J_N9r8H9TsORmlA"
-        },
-        {
-          "videoId": "hZITRcnMZ1k",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UC5lCKye2u8Q0BoE5ggY9myw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UC5lCKye2u8Q0BoE5ggY9myw"
-        },
-        {
-          "videoId": "3pbe4T1JKxM",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCtkUpmfJckdTZyNvyWBl_rg/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCtkUpmfJckdTZyNvyWBl_rg"
-        },
-        {
-          "videoId": "0O6WjcqsZB8",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCQAo0ws95p-uN7gr0OOHoXg/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCQAo0ws95p-uN7gr0OOHoXg"
-        },
-        {
-          "videoId": "idofW1UqFsQ",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UC9veOeKEZhexYxmMXF_RwCQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UC9veOeKEZhexYxmMXF_RwCQ"
-        },
-        {
-          "videoId": "IU-D3KFogR0",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCNX9-jzOH4KMbIeuWK8LZaw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCNX9-jzOH4KMbIeuWK8LZaw"
-        },
-        {
-          "videoId": "SiIxAb9gpAw",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA"
-        },
-        {
-          "videoId": "LfjUJxK_Vm4",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "yj_xOmVjxgQ",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCmhqWEDoPgrg9J129nGuQkQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCmhqWEDoPgrg9J129nGuQkQ"
-        },
-        {
-          "videoId": "CTGvRsBFdpE",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCQAo0ws95p-uN7gr0OOHoXg/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCQAo0ws95p-uN7gr0OOHoXg"
-        },
-        {
-          "videoId": "8FEOLZ664ro",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCS1ZlOZTJhOxvWXr3b1v9GA/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA"
-        },
-        {
-          "videoId": "qm-B25pGNSQ",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCS1ZlOZTJhOxvWXr3b1v9GA/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA"
-        },
-        {
-          "videoId": "XFrVxNaXCig",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ"
-        },
-        {
-          "videoId": "DnNfoVHAyAk",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UC9veOeKEZhexYxmMXF_RwCQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UC9veOeKEZhexYxmMXF_RwCQ"
-        },
-        {
-          "videoId": "3zzlwzZkCmA",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsXJXZI4J_N9r8H9TsORmlA/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsXJXZI4J_N9r8H9TsORmlA"
-        },
-        {
-          "videoId": "prA2mNugHZs",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UC5lCKye2u8Q0BoE5ggY9myw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UC5lCKye2u8Q0BoE5ggY9myw"
-        },
-        {
-          "videoId": "-xX_n4kjg7g",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCQAo0ws95p-uN7gr0OOHoXg/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCQAo0ws95p-uN7gr0OOHoXg"
-        },
-        {
-          "videoId": "xsyI2nxWUII",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCS1ZlOZTJhOxvWXr3b1v9GA/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA"
-        },
-        {
-          "videoId": "xL7HQOXc-R0",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCNX9-jzOH4KMbIeuWK8LZaw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCNX9-jzOH4KMbIeuWK8LZaw"
-        },
-        {
-          "videoId": "fGzUs32mjmo",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCmhqWEDoPgrg9J129nGuQkQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCmhqWEDoPgrg9J129nGuQkQ"
-        },
-        {
-          "videoId": "gfDxV5Fh4jc",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCS1ZlOZTJhOxvWXr3b1v9GA/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA"
-        },
-        {
-          "videoId": "Vhsgl6rSTuE",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ"
-        },
-        {
-          "videoId": "XaQrpxDHS9s",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsXJXZI4J_N9r8H9TsORmlA/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsXJXZI4J_N9r8H9TsORmlA"
-        },
-        {
-          "videoId": "yZgO2P3IWQM",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCNX9-jzOH4KMbIeuWK8LZaw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCNX9-jzOH4KMbIeuWK8LZaw"
-        },
-        {
-          "videoId": "xqxO7oysX3Q",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA"
-        },
-        {
-          "videoId": "Mg3Ca9agmZs",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCNX9-jzOH4KMbIeuWK8LZaw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCNX9-jzOH4KMbIeuWK8LZaw"
-        },
-        {
-          "videoId": "2j5gpU3cFFk",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCQAo0ws95p-uN7gr0OOHoXg/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCQAo0ws95p-uN7gr0OOHoXg"
-        },
-        {
-          "videoId": "8DfTXWvQYws",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCmhqWEDoPgrg9J129nGuQkQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCmhqWEDoPgrg9J129nGuQkQ"
-        },
-        {
-          "videoId": "BoHkiOfLRro",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ"
-        },
-        {
-          "videoId": "AjWHdU4rcZY",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UC9veOeKEZhexYxmMXF_RwCQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UC9veOeKEZhexYxmMXF_RwCQ"
-        },
-        {
-          "videoId": "xEzMeo1Enec",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCS1ZlOZTJhOxvWXr3b1v9GA/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA"
-        },
-        {
-          "videoId": "7a6EUwFq0hE",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsXJXZI4J_N9r8H9TsORmlA/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsXJXZI4J_N9r8H9TsORmlA"
-        },
-        {
-          "videoId": "unYL1_NTQXw",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCS1ZlOZTJhOxvWXr3b1v9GA/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA"
-        },
-        {
-          "videoId": "3tUB9tmJOtg",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCNX9-jzOH4KMbIeuWK8LZaw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCNX9-jzOH4KMbIeuWK8LZaw"
-        },
-        {
-          "videoId": "O6-wglDeKo0",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ"
-        },
-        {
-          "videoId": "QsYZbJjYpF8",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ"
-        },
-        {
-          "videoId": "aR-hxqNfDvw",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA"
-        },
-        {
-          "videoId": "NQOCcq-3Yug",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ"
-        },
-        {
-          "videoId": "UbZuyfp_QtE",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UC5lCKye2u8Q0BoE5ggY9myw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UC5lCKye2u8Q0BoE5ggY9myw"
-        },
-        {
-          "videoId": "QbW23txjo9s",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCTueeHImxv4uLBQKsDEMqjQ"
-        },
-        {
-          "videoId": "JDycQBrAkKQ",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCNX9-jzOH4KMbIeuWK8LZaw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCNX9-jzOH4KMbIeuWK8LZaw"
-        },
-        {
-          "videoId": "wd6zbALaQyY",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsXJXZI4J_N9r8H9TsORmlA/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsXJXZI4J_N9r8H9TsORmlA"
-        },
-        {
-          "videoId": "_lTVcdfA37w",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "woM5Vxx1ieY",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA"
-        },
-        {
-          "videoId": "VsWReCff3Ok",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCNX9-jzOH4KMbIeuWK8LZaw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCNX9-jzOH4KMbIeuWK8LZaw"
-        },
-        {
-          "videoId": "t22DOaxlELU",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UC9veOeKEZhexYxmMXF_RwCQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UC9veOeKEZhexYxmMXF_RwCQ"
-        },
-        {
-          "videoId": "Mdl-xHbNDEs",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCS1ZlOZTJhOxvWXr3b1v9GA/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA"
-        },
-        {
-          "videoId": "PTqEvYdHxVE",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "pzu0jONf2C0",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "wvmK7XfJiJk",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "xmc8O8X3hdU",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "tdLT_wX9YIo",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "aNBHNVGA79M",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "Js459KFQe9A",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "H7rc1mnZk-U",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "DMUs4RhBJZ4",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "hpc2ANBqqGk",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "9ik5hYql17M",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "-ZwXgi7zUbI",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "cBAcjbyJO48",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "oWE-PsIjDOw",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "0-J-1FMeU9A",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "wtaQxL5B_m0",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "IFQr5yNDnxY",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "thQsMOKApmk",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "hTKb8bpcNho",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "28EUHO_rNkU",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "9KWCFyvIEh8",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "pDgdvk-ZWm4",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "-o0Ri__1Lh4",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "pFjQZ0uC1a4",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "6bU1IIlbIPE",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "bvWwlckaXtM",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "N53tEPTrds0",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "BRTjN8j6XQw",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "Iz1g4tgGXCU",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "en7sPx_bKVE",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "wiBzIlH3DrM",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "O7vMqutsSUk",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "wtU-Hc6BmWs",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "KN312o9CnwA",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "RbAuhAoiOQI",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "bdWYmGmvPCw",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "taHT-oRLaHE",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "sMMdWcmeG7U",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "gFyZUK7n2nI",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "Hd6ygS1q7GI",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "rS112nQ_Rts",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "A3GCoIfT9zs",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "IwY9EFhwJ-Y",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "2OronVJ0PVQ",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "g8xSjEmhk6M",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "n4IKFGX2o28",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "Fjxw_yszNfg",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "kRGbg93WVeU",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "MsFZw5iEMVA",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "XtHGU0Fp2BY",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "G2HnXw9f0Fw",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "1flmtUm0yqM",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "AuJdnj5kiH0",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "wpr1grQpN-Y",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "GnJs8x6UGr4",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "Wc_xZ9RQOEw",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "4Rv8PBjAKqk",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "lomhK-_aiDs",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "7Py4XU-L_zI",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "kGcOl8vfyAM",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "4Wsr8WeTVi8",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "wFgVzAgi8w8",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "NWKLuE7Nkkw",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "L4-W1gUdafY",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "8i01PIwTVBU",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "evM0iR5-BmU",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "gwB0gG0A6n8",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "TV12Zdr5KjQ",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "6gcaKuWXdIY",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "GoUVcGHPHYc",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "lrT8R3iy0-U",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "F5SBV2SQEVs",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "ZRE1jIoyLr4",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "EQny9wSti1k",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "S7F8z9ldwYI",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "Hn0ODjLVgog",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "-3vjrVD8Syw",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "ySPGLMYvGl4",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "_9vlW3e_icA",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "fj3waa3pLxU",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "_wgMtQPRnFA",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "Eg-S9mPh_Ng",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "buJY2gcC-gc",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "tJgioa-E5V4",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "GtIk6tMPYzM",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "KZX5Ws4ihNM",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "55SiuFEOF9Q",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "efIOo06Boto",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "272_krqVK58",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "jBbrYqMiym4",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "bARB5bE2DgA",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "0jctFcp8w6c",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "FXM3SSbS-2Y",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "btAUTcy_NUw",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "XQQXUpIePZo",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "A4hUHFc5u3Y",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "7SIfu1RGvC0",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "x8xu6GFG6bk",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "9GBMh3c48RY",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "v7Mj9w1GCaA",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "-JCBGk1TsbQ",
-          "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/videos"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "q4sxqeNr0qk",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "Q1SQkqJW8kE",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "uNKIFxDIjy0",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "V40hWyGBemQ",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "cTPMhN43NuY",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "Kf4Kn0dX3Hs",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "oXc3I2AA9IA",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "dtH317ITN6o",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "xLlqwZcvL6c",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "E7ah5tJETnk",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "O_XQhdTasDg",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "e0WJ6qwDwjA",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "pwkHudiruVE",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "hFh7F9ikLqU",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "Ru8svoRljqQ",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "cA2op-mXeqg",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "jnbred-tMeI",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "O-a95-EERAo",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "yleLrd3HcYM",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "OBXQc5Fz3kQ",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "ESMz5DRhBhg",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "yjFWWXOcVuM",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "7YepyHFg-IE",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "7O1mOmBQlqI",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "ZfWrVyP6YEc",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "9Uo_sb82T1I",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "ywH6cJvAq5I",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "dfhvKXvjPwc",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "8CaxHFgHEAA",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "n47ZlCfwoTQ",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "D6Jw1ho_CY8",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "l4Vmo7qLmIo",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "eroQYQuz7pI",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "mv87ZSA1fHQ",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "c6YO_Vm9ez4",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "sThuI4-H3go",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "qAItE5ROuEQ",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "imE3dLKOdDs",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "M8W1VtqBqWE",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "H2spZXFmSdw",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "An1WVwBvyVQ",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "Toih74-Gv6c",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "lRABtyT-JbE",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "vVqIlIacCHg",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "7V4n3JurVD8",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "RNwf_nvDBFE",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCMM38YQdOaUiXMFlWzbRlXw/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCMM38YQdOaUiXMFlWzbRlXw"
-        },
-        {
-          "videoId": "_cB5JrqeEug",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "HaW63Wx15GY",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        },
-        {
-          "videoId": "dVhNx77gJ0Y",
-          "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
-          "sourceUrls": [
-            "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
-          ],
-          "classificationMethod": "youtube_channel_tab_membership",
-          "status": "confirmed",
-          "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ"
-        }
-      ],
-      "source": {
-        "title": "YouTube public channel tab membership",
-        "classificationMethod": "youtube_channel_tab_membership",
-        "metricDefinitions": [
-          {
-            "label": "YouTube 视频类型",
-            "definition": "Shorts 标签下的视频为短视频；Videos 标签为普通视频；Live 标签为直播/回放。仅正向确认成员关系，不按时长推断；未获取或冲突的分类为待确认。"
-          }
-        ],
-        "evidenceFlow": [
-          {
-            "title": "YouTube 频道分类",
-            "detail": "读取各频道 /shorts、/videos、/streams 的已选标签内容及分页；每条分类保存 sourceUrls 与 checkedAt。分类失败保留历史已确认结果，新视频不推断。"
-          }
-        ]
       }
     }
   }
