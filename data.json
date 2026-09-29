@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-09-29T04:09:00Z",
+  "generatedAt": "2026-09-29T04:39:00Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-09-29T02:55:50Z",
     "videoSamplingPolicy": {
@@ -29,7 +29,7 @@
           "channelViewCount": 1412089,
           "videoCount": 85,
           "lastPublishedAt": "2026-09-26T13:00:07Z",
-          "daysSinceUpload": 2.6,
+          "daysSinceUpload": 2.7,
           "uploads7d": 2,
           "uploads30d": 11,
           "uploads90d": 64,
@@ -46,7 +46,7 @@
           "customUrl": "@amberwithfinance",
           "channelUrl": "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA",
           "thumbnail": "https://yt3.ggpht.com/czuSSl1-7trtlN5BP5n7hPS_Pm7cKTX_chp1lqgVggP5apIJkB1CsmVXt0F7WpD4mGg4PIdj=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 592,
+          "subscriberCount": 593,
           "hiddenSubscriberCount": false,
           "channelViewCount": 38419,
           "videoCount": 8,
@@ -73,7 +73,7 @@
           "channelViewCount": 646198,
           "videoCount": 71,
           "lastPublishedAt": "2026-09-26T01:00:01Z",
-          "daysSinceUpload": 3.1,
+          "daysSinceUpload": 3.2,
           "uploads7d": 2,
           "uploads30d": 10,
           "uploads90d": 50,
@@ -90,12 +90,12 @@
           "customUrl": "@財經小鹿financedeer",
           "channelUrl": "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ",
           "thumbnail": "https://yt3.ggpht.com/b0OPo5YQsfzCR6jLZTs6H-4EO-EFrqvFHMANy587DDAJGZ6wK_jwjnCr8Es9Z-6E7J01GRtg=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 628,
+          "subscriberCount": 632,
           "hiddenSubscriberCount": false,
           "channelViewCount": 34553,
           "videoCount": 13,
           "lastPublishedAt": "2026-09-29T01:00:07Z",
-          "daysSinceUpload": 0.1,
+          "daysSinceUpload": 0.2,
           "uploads7d": 7,
           "uploads30d": 13,
           "uploads90d": 13,
@@ -206,7 +206,7 @@
           "videoCount": 13,
           "lastPublishedAt": "2026-09-28T20:45:28Z",
           "daysSinceUpload": 0.3,
-          "uploads7d": 10,
+          "uploads7d": 9,
           "uploads30d": 13,
           "uploads90d": 13,
           "averageUploadGapDays": 1.0,
@@ -244,7 +244,7 @@
           "customUrl": "@maple-moneyforest",
           "channelUrl": "https://www.youtube.com/channel/UC5lCKye2u8Q0BoE5ggY9myw",
           "thumbnail": "https://yt3.ggpht.com/pMWF2QNsoxnImQg07Dt2tQUMVnZxgPE793m7fi2VrhNdvJoWlsq_tOBMTXPszPInKhtLr1YpYao=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 83,
+          "subscriberCount": 87,
           "hiddenSubscriberCount": false,
           "channelViewCount": 1092,
           "videoCount": 5,
@@ -285,7 +285,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-09-29T04:09:07+00:00",
+        "retrievedAt": "2026-09-29T04:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -4296,7 +4296,7 @@
           "date": "2026-09-29",
           "channelId": "UC5lCKye2u8Q0BoE5ggY9myw",
           "channel": "Maple的理財森林",
-          "subscriberCount": 83,
+          "subscriberCount": 87,
           "channelViewCount": 1092,
           "videoCount": 5
         },
@@ -4350,7 +4350,7 @@
           "date": "2026-09-29",
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "小Lu財經說",
-          "subscriberCount": 628,
+          "subscriberCount": 632,
           "channelViewCount": 34553,
           "videoCount": 13
         },
@@ -4359,7 +4359,7 @@
           "date": "2026-09-29",
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大鏡",
-          "subscriberCount": 592,
+          "subscriberCount": 593,
           "channelViewCount": 38419,
           "videoCount": 8
         },
@@ -4403,7 +4403,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-09-29T04:09:07+00:00",
+        "retrievedAt": "2026-09-29T04:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -4530,7 +4530,7 @@
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "小Lu財經說",
           "videoId": "9Mr-ce2n8GU",
-          "title": "日本30年「全球提款機」正式關門！847萬億海外資金開始回流，美債美股恐迎流動性巨震，黃金真正大行情要來了？#股票 ",
+          "title": "日本30年「全球提款機」正式關門！847萬億海外資金開始回流，美債美股恐迎流動性巨震，黃金真正大行情要來了？#股票",
           "publishedAt": "2026-09-28T02:07:18Z",
           "publishedDate": "2026-09-28",
           "thumbnail": "https://i.ytimg.com/vi/9Mr-ce2n8GU/mqdefault.jpg",
@@ -4570,7 +4570,7 @@
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "小Lu財經說",
           "videoId": "8SC-fo0wT-I",
-          "title": "美聯儲加息落地！科技股誰先撐不住？蘋果殺入AI伺服器、英特爾牽手海力士，杰富瑞卻喊9000點！#股票 #stockmarket ",
+          "title": "美聯儲加息落地！科技股誰先撐不住？蘋果殺入AI伺服器、英特爾牽手海力士，杰富瑞卻喊9000點！#股票 #stockmarket",
           "publishedAt": "2026-09-27T01:00:33Z",
           "publishedDate": "2026-09-27",
           "thumbnail": "https://i.ytimg.com/vi/8SC-fo0wT-I/mqdefault.jpg",
@@ -4590,7 +4590,7 @@
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大鏡",
           "videoId": "P7oUKn_cm1o",
-          "title": "大模型跌成白菜價，蘋果一款折疊屏收割？AI低谷，蘋果開始吃紅利！淘金熱最後誰賺了大錢... #AI #蘋果 #折疊屏 #美股 #投資 #財經 ",
+          "title": "大模型跌成白菜價，蘋果一款折疊屏收割？AI低谷，蘋果開始吃紅利！淘金熱最後誰賺了大錢... #AI #蘋果 #折疊屏 #美股 #投資 #財經",
           "publishedAt": "2026-09-26T12:00:16Z",
           "publishedDate": "2026-09-26",
           "thumbnail": "https://i.ytimg.com/vi/P7oUKn_cm1o/mqdefault.jpg",
@@ -4690,7 +4690,7 @@
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "小Lu財經說",
           "videoId": "ZwtMr5Qtv_8",
-          "title": "泰國突然封殺黃金？泰銖被金價綁架，1997危機會重演嗎？黃金正在拖垮泰國？#gold #stock #股票 ",
+          "title": "泰國突然封殺黃金？泰銖被金價綁架，1997危機會重演嗎？黃金正在拖垮泰國？#gold #stock #股票",
           "publishedAt": "2026-09-25T01:00:10Z",
           "publishedDate": "2026-09-25",
           "thumbnail": "https://i.ytimg.com/vi/ZwtMr5Qtv_8/mqdefault.jpg",
@@ -6710,7 +6710,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-09-29T04:09:07+00:00",
+        "retrievedAt": "2026-09-29T04:39:06+00:00",
         "metricDefinitions": []
       }
     },
@@ -49956,7 +49956,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-09-29T04:09:07+00:00",
+        "retrievedAt": "2026-09-29T04:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -52375,7 +52375,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-09-29T04:09:07+00:00",
+        "retrievedAt": "2026-09-29T04:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -52449,7 +52449,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-09-29T04:09:07+00:00",
+        "retrievedAt": "2026-09-29T04:39:06+00:00",
         "metricDefinitions": []
       }
     },
@@ -52460,7 +52460,7 @@
           "channelsExpected": 12,
           "channelsCollected": 12,
           "videoCatalogCount": 228,
-          "videosRefreshed": 52,
+          "videosRefreshed": 0,
           "videosDisplayed": 133,
           "fullInventoryScan": false,
           "failureCount": 0,
@@ -52470,7 +52470,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-09-29T04:09:07+00:00",
+        "retrievedAt": "2026-09-29T04:39:06+00:00",
         "metricDefinitions": []
       }
     }
