@@ -20,6 +20,12 @@ const colors = ["#e5bd57", "#4ed5a0", "#65a8ff", "#f17f7f", "#a78bfa", "#ff9f43"
 const $ = (id) => document.getElementById(id);
 const esc = (value) => String(value ?? "").replace(/[&<>'"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[char]);
 const toTime = (value) => new Date(value).getTime();
+
+function channelAvatar(row) {
+  if (/^data:image\/(?:jpeg|png|webp);base64,[A-Za-z0-9+/]+={0,2}$/.test(row.avatarDataUrl || "")) return row.avatarDataUrl;
+  const initial = esc(Array.from(row.youtubeTitle || row.channel || "頻")[0]);
+  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80"><rect width="80" height="80" rx="40" fill="#163b2b"/><text x="40" y="42" dominant-baseline="middle" text-anchor="middle" fill="#e5bd57" font-family="sans-serif" font-size="34">${initial}</text></svg>`)}`;
+}
 const exact = (value) => Number.isFinite(Number(value)) ? integer.format(Number(value)) : "—";
 const ymd = (value) => {
   const parts = Object.fromEntries(dateOnly.formatToParts(new Date(value)).map((part) => [part.type, part.value]));
@@ -641,6 +647,10 @@ async function init() {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = await response.json();
     const current = data.queries.channel_current.rows;
+    // Serve channel portraits with the snapshot, not through the visitor's YouTube connection.
+    current.forEach((row) => {
+      row.thumbnail = channelAvatar(row);
+    });
     const titles = new Map(current.map((row) => [row.channelId, row.youtubeTitle || row.channel]));
     Object.values(data.queries).forEach((query) => query.rows?.forEach((row) => {
       if (titles.has(row.channelId)) row.channel = titles.get(row.channelId);

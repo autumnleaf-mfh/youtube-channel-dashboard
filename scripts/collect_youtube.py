@@ -15,6 +15,7 @@ import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from youtube_formats import refresh_formats, format_query
+from channel_avatars import cache_avatars
 
 
 API_BASE = "https://www.googleapis.com/youtube/v3"
@@ -410,6 +411,8 @@ def main():
             "recent5AverageLikes": average(likes5),
             "recent5EngagementRate": ratio(total_recent_engagement, total_recent_views),
         })
+
+    cache_avatars(current_rows, previous.get("queries", {}).get("channel_current", {}).get("rows", []))
 
     # Idempotent within a Hong Kong three-hour bucket. Older points are compacted
     # to one daily observation after seven days and one weekly observation after 30 days.
