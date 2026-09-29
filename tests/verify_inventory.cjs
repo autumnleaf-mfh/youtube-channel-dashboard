@@ -84,7 +84,7 @@ const path = require('node:path');
     const scrollable = await page.locator('#allVideosList').evaluate(node => node.scrollHeight > node.clientHeight && getComputedStyle(node).overflowY === 'auto');
     assert(scrollable);
     for (const legend of await page.locator('.legend').all()) assert(await legend.evaluate(node => node.scrollHeight <= node.clientHeight + 1));
-    assert.equal(await page.locator('#primaryChannel button').count(), 12);
+    assert.equal(await page.locator('#primaryChannel button').count(), channels.length + 1);
     await page.locator(`#primaryChannel [data-value="${addedId}"]`).click();
     await page.locator('#comparisonChannel [data-value="UCZNlDT4tKgZS8R6sDuJWwMA"]').click();
     await page.locator('#comparisonMetric [data-value="likeCount"]').click();
