@@ -44,7 +44,7 @@ for (const width of [280, 620, 1350]) {
   get('trendChart').clientWidth = width;
   get('breakdownChart').clientWidth = width;
   for (const period of ['7', '30', '90', 'all']) {
-    for (const metric of ['viewCount', 'subscriberCount', 'likeCount', 'commentCount', 'uploadCount']) {
+    for (const metric of ['viewCount', 'subscriberDelta', 'likeCount', 'commentCount', 'uploadCount']) {
       choices.trendPeriod = period; choices.trendMetric = metric;
       choices.primaryChannel = ['all'];
       choices.breakdownMode = 'bar'; render();
@@ -59,7 +59,7 @@ for (const width of [280, 620, 1350]) {
 }
 for (const count of [1, 2, 5]) {
   choices.primaryChannel = channels.slice(0, count).map(c => c.channelId);
-  for (const metric of ['viewCount', 'subscriberCount', 'likeCount', 'commentCount', 'uploadCount']) {
+  for (const metric of ['viewCount', 'subscriberDelta', 'likeCount', 'commentCount', 'uploadCount']) {
     choices.trendMetric = metric;
     choices.breakdownMode = 'bar'; render();
     assert(!get('trendPanel').classList.contains('is-all-channels'));

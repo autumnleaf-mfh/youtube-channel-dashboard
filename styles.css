@@ -164,6 +164,8 @@ button, a { font: inherit; }
 .upload-bar-channel img { width: 26px; height: 26px; border-radius: 50%; }
 .upload-bar-channel span { overflow-wrap: anywhere; }
 .upload-bar-track { height: 22px; border-radius: 4px; background: var(--surface-2); }
+.upload-bar-track.signed-bar { position: relative; }
+.signed-bar::before { content: ""; position: absolute; left: var(--zero-position); top: -3px; bottom: -3px; border-left: 1px solid var(--muted); z-index: 1; }
 .upload-bar-track > span { display: block; height: 100%; border-radius: inherit; background: var(--accent); }
 .upload-bar-row > b { text-align: right; font-size: 14px; font-variant-numeric: tabular-nums; }
 .upload-bar-row small { font-weight: 400; color: var(--muted); font-size: 11px; }

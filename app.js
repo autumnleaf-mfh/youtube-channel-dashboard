@@ -49,6 +49,33 @@ function previousSnapshot(history, channelId, generatedAt, period) {
     .sort((a, b) => toTime(a.observedAt) - toTime(b.observedAt))[0];
 }
 
+function subscriberWindowBaseline(history, channelId, generatedAt, period) {
+  const valid = history.filter((row) => row.subscriberCount != null && Number.isFinite(Number(row.subscriberCount)) && toTime(row.observedAt) <= toTime(generatedAt));
+  return previousSnapshot(valid, channelId, generatedAt, period);
+}
+
+function subscriberChange(current, baseline) {
+  if (current?.hiddenSubscriberCount || current?.subscriberCount == null || baseline?.subscriberCount == null) return null;
+  const now = Number(current.subscriberCount), before = Number(baseline.subscriberCount);
+  return Number.isFinite(now) && Number.isFinite(before) ? now - before : null;
+}
+
+function subscriberGrowthRows(history, channel, generatedAt, period) {
+  if (channel.hiddenSubscriberCount) return [];
+  const baseline = subscriberWindowBaseline(history, channel.channelId, generatedAt, period);
+  if (!baseline) return [];
+  const end = toTime(generatedAt), cutoff = period === "all" ? -Infinity : end - Number(period) * 86400000;
+  const partial = period !== "all" && toTime(baseline.observedAt) > cutoff;
+  const points = new Map(history.filter((row) => row.channelId === channel.channelId && toTime(row.observedAt) >= cutoff && toTime(row.observedAt) <= end).map((row) => [row.observedAt, row]));
+  // The latest point uses the same current value as the public subscriber donut.
+  points.set(generatedAt, { ...channel, observedAt: generatedAt });
+  return [...points.values()].sort((a, b) => toTime(a.observedAt) - toTime(b.observedAt)).map((row) => ({
+    ...row, channel: channel.channel, publishedAt: row.observedAt, thumbnail: channel.thumbnail,
+    subscriberDelta: subscriberChange(row, baseline), baselineAt: baseline.observedAt, partialWindow: partial,
+    title: `${partial ? "部分历史 · " : ""}自 ${ymdh(baseline.observedAt)} 基线 ${exact(baseline.subscriberCount)} 人起净增；该时点公开订阅 ${row.subscriberCount == null ? "—" : exact(row.subscriberCount)} 人`,
+  }));
+}
+
 function growthRate(current, baseline, field) {
   const now = Number(current?.[field]);
   const before = Number(baseline?.[field]);
@@ -283,15 +310,14 @@ function channelMetricSeries(catalog, channels, history, generatedAt, metric, me
   const startDay = period === "all" ? (selected.length ? Math.min(...selected.map((row) => hongKongDayTimestamp(row.publishedAt))) : endDay) : hongKongDayTimestamp(cutoff);
   const typedUploads = metric === "uploadCount" && uploadType !== "all" ? selected.filter((video) => videoType(video) === uploadType) : selected;
   return channels.map((channel, index) => {
-    const rows = metric === "subscriberCount"
-      ? [...new Map(history.filter((row) => row.channelId === channel.channelId && toTime(row.observedAt) >= cutoff && toTime(row.observedAt) <= end)
-        .map((row) => [row.observedAt, { ...row, channel: channel.channel, publishedAt: row.observedAt, thumbnail: channel.thumbnail, title: "频道公开订阅数量 · 历史采集快照" }])).values()].sort((a, b) => toTime(a.publishedAt) - toTime(b.publishedAt))
+    const rows = metric === "subscriberDelta"
+      ? subscriberGrowthRows(history, channel, generatedAt, period)
       : dailyUploadRows(typedUploads, channel, startDay, endDay).map((row) => ({
         ...row,
         [metric]: metric === "uploadCount" ? row.uploadCount : row.updates.some((video) => video[metric] == null || !Number.isFinite(Number(video[metric]))) ? null : row.updates.reduce((sum, video) => sum + Number(video[metric]), 0),
         title: `${row.uploadCount} 条视频 · 按发布日期汇总最近采集值`,
       }));
-    return { id: channel.channelId, channel, color: colors[index % colors.length], metric, metricInfo, rows, daily: metric !== "subscriberCount" };
+    return { id: channel.channelId, channel, color: colors[index % colors.length], metric, metricInfo, rows, daily: metric !== "subscriberDelta" };
   });
 }
 
@@ -309,10 +335,10 @@ function aggregateChannelSeries(series, metric, metricInfo) {
       channelId: "all", channel: "全部频道总和", publishedAt,
       [metric]: complete ? contributions.reduce((sum, row) => sum + Number(row[metric]), 0) : null,
       contributions, isAggregate: true, updates: contributions.flatMap((row) => row.updates ?? []),
-      title: complete ? `${series.length} 个频道合计${metric === "subscriberCount" ? " · 同一采集时点" : " · 按视频发布日期汇总"}` : "该时点数据不齐全，不计算总和",
+      title: complete ? `${series.length} 个频道合计${metric === "subscriberDelta" ? " · 同一时点相对各自窗口基线的净增；不是累计订阅数" : " · 按视频发布日期汇总"}` : "该时点数据不齐全，不计算总和",
     };
   });
-  return { id: "all", channel: { channel: "全部频道总和" }, color: colors[0], metric, metricInfo, rows, daily: metric !== "subscriberCount" };
+  return { id: "all", channel: { channel: "全部频道总和" }, color: colors[0], metric, metricInfo, rows, daily: metric !== "subscriberDelta" };
 }
 
 function renderTrend(videos, catalog, channels, generatedAt, channelHistory = []) {
@@ -331,7 +357,7 @@ function renderTrend(videos, catalog, channels, generatedAt, channelHistory = []
   const periodDays = { "7": 7, "30": 30, "90": 90 };
   const metricDefinitions = {
     viewCount: { label: "播放量", format: exact, tick: (value) => compact.format(value) },
-    subscriberCount: { label: "订阅数量", format: (value) => `${exact(value)} 人`, tick: (value) => compact.format(value) },
+    subscriberDelta: { label: "新增订阅（净增）", format: (value) => `${Number(value) > 0 ? "+" : ""}${exact(value)} 人`, tick: (value) => compact.format(value) },
     likeCount: { label: "点赞数量", format: exact, tick: (value) => compact.format(value) },
     commentCount: { label: "评论数量", format: exact, tick: (value) => compact.format(value) },
     uploadCount: { label: uploadType === "all" ? "更新数量" : `更新数量 · ${typeLabels[uploadType]}`, format: (value) => `${exact(value)} 条`, tick: (value) => exact(Math.round(value)) },
@@ -347,29 +373,30 @@ function renderTrend(videos, catalog, channels, generatedAt, channelHistory = []
   });
   const selectedMetrics = [primaryMetric];
   const notes = [];
-  if (selectedMetrics.includes("subscriberCount")) notes.push("订阅数量按采集时间显示频道公开订阅快照，仅显示已有记录（公开值可能取整）");
+  if (selectedMetrics.includes("subscriberDelta")) notes.push("当前公开订阅减去窗口基线，为累计净增（含退订），与公开订阅合计的净增长同口径；公开值可能取整");
   if (selectedMetrics.includes("uploadCount")) notes.push("更新数量按香港日期统计发布数");
-  if (selectedMetrics.some((metric) => !["subscriberCount", "uploadCount"].includes(metric))) notes.push("播放、点赞及评论按视频发布时间排列，数值为最近一次采集的累计值");
+  if (selectedMetrics.some((metric) => !["subscriberDelta", "uploadCount"].includes(metric))) notes.push("播放、点赞及评论按视频发布时间排列，数值为最近一次采集的累计值");
   $("trendDescription").textContent = isAll
-    ? `${periodLabels[period]} · 全部频道总和；${primaryMetric === "subscriberCount" ? "按同一采集时点求和，仅绘制各频道数据齐全的时点；缺失不补零" : primaryMetric === "uploadCount" ? "按香港日期合计发布数量" : "按视频发布日期每日求和，采用最近采集的累计值，并非当日新增量"}。`
+    ? `${periodLabels[period]} · 全部频道总和；${primaryMetric === "subscriberDelta" ? "公开订阅相对窗口基线的累计净增（含退订），与上方净增长同口径；缺失不补零" : primaryMetric === "uploadCount" ? "按香港日期合计发布数量" : "按视频发布日期每日求和，采用最近采集的累计值，并非当日新增量"}。`
     : `${periodLabels[period]} · 已选 ${primaryIds.length} 个频道；${notes.join("；")}。`;
-  const breakdown = channelMetricSeries(catalog, channels, channelHistory, generatedAt, primaryMetric, metricDefinitions[primaryMetric], period, uploadType).filter((item) => primaryIds.includes(item.id));
+  const breakdown = channelMetricSeries(catalog, channels, channelHistory, generatedAt, primaryMetric, metricDefinitions[primaryMetric], period, uploadType).filter((item) => primaryIds.includes(item.id) && !(isAll && primaryMetric === "subscriberDelta" && (item.channel.hiddenSubscriberCount || item.channel.subscriberCount == null)));
+  if (primaryMetric === "subscriberDelta") {
+    const starts = breakdown.map((item) => subscriberWindowBaseline(channelHistory, item.id, generatedAt, period)?.observedAt).filter(Boolean).map(toTime);
+    const incomplete = starts.length !== breakdown.length || starts.some((time) => period !== "all" && time > cutoff);
+    $("trendDescription").textContent += starts.length ? ` ${incomplete ? "部分历史：" : "基线覆盖："}${ymdh(Math.min(...starts))} 至 ${ymdh(generatedAt)}；ALL 为自首次记录以来的净增。` : " 尚无可用订阅基线。";
+  }
   const requests = primaryIds.map((id) => ({ id, metric: primaryMetric, comparison: false }));
   const candidates = isAll ? [aggregateChannelSeries(breakdown, primaryMetric, metricDefinitions[primaryMetric])] : requests.map(({ id, metric, comparison }) => {
     const channel = channels.find((row) => row.channelId === id);
     const metricInfo = metricDefinitions[metric];
-    const rows = metric === "uploadCount"
+    const rows = ["uploadCount", "subscriberDelta"].includes(metric)
       ? breakdown.find((item) => item.id === id).rows
-      : metric === "subscriberCount"
-        ? [...new Map(channelHistory.filter((row) => row.channelId === id && row.subscriberCount != null && Number.isFinite(Number(row.subscriberCount)) && toTime(row.observedAt) >= cutoff && toTime(row.observedAt) <= toTime(generatedAt))
-          .map((row) => [row.observedAt, { ...row, channel: channel.channel, publishedAt: row.observedAt, thumbnail: channel.thumbnail, title: "频道公开订阅数量 · 历史采集快照" }])).values()]
-          .sort((a, b) => toTime(a.publishedAt) - toTime(b.publishedAt))
       : videos
         .filter((row) => row.channelId === id && toTime(row.publishedAt) >= cutoff && toTime(row.publishedAt) <= toTime(generatedAt) && row[metric] != null && Number.isFinite(Number(row[metric])))
         .sort((a, b) => toTime(a.publishedAt) - toTime(b.publishedAt));
     return { id, channel, comparison, color: colors[channels.findIndex((row) => row.channelId === id) % colors.length], metric, metricInfo, rows };
   });
-  renderTimeSeries(candidates, periodLabels[period], "trendChart", "trendLegend", isAll && primaryMetric === "subscriberCount" ? "尚无各频道订阅数据齐全的采集时点，暂不计算总和" : "所选频道暂无可用数据");
+  renderTimeSeries(candidates, periodLabels[period], "trendChart", "trendLegend", isAll && primaryMetric === "subscriberDelta" ? "尚无各频道订阅基线齐全的采集时点，暂不计算净增总和" : "所选频道暂无可用数据");
   renderChannelBreakdown(breakdown, periodLabels[period]);
 }
 
@@ -438,7 +465,11 @@ function renderTimeSeries(candidates, periodLabel, targetId, legendId, emptyMess
   const rightSeries = series.find((item) => item.comparison && item.metric !== leftSeries.metric);
   const hasDualAxis = Boolean(rightSeries);
   const maxForSeries = (item) => item.metric === "uploadCount" ? Math.max(4, ...item.rows.map((row) => Number(row[item.metric]))) : Math.max(1, ...item.rows.map((row) => Number(row[item.metric])));
-  series.forEach((item) => { item.yMax = Math.max(...series.filter((other) => other.metric === item.metric).map(maxForSeries)); });
+  series.forEach((item) => {
+    const sameMetric = series.filter((other) => other.metric === item.metric);
+    item.yMax = Math.max(...sameMetric.map(maxForSeries));
+    item.yMin = Math.min(0, ...sameMetric.flatMap((other) => other.rows.map((row) => Number(row[item.metric]))));
+  });
   const width = Math.max(260, $(targetId).clientWidth);
   const height = 300;
   const left = width < 600 ? 54 : 66;
@@ -448,11 +479,11 @@ function renderTimeSeries(candidates, periodLabel, targetId, legendId, emptyMess
   const plotWidth = width - left - right;
   const plotHeight = height - top - bottom;
   const x = (row) => xMax === xMin ? left + plotWidth / 2 : left + (toTime(row.publishedAt) - xMin) / xRange * plotWidth;
-  const y = (item, row) => top + plotHeight - Number(row[item.metric]) / item.yMax * plotHeight;
+  const y = (item, row) => top + plotHeight - (Number(row[item.metric]) - item.yMin) / (item.yMax - item.yMin) * plotHeight;
   const grid = [0, .25, .5, .75, 1].map((ratio) => {
     const yPos = top + plotHeight * (1 - ratio);
-    const secondaryTick = hasDualAxis ? `<text class="axis-secondary" style="fill:${rightSeries.color}" x="${width - right + 12}" y="${yPos + 4}">${esc(rightSeries.metricInfo.tick(rightSeries.yMax * ratio))}</text>` : "";
-    return `<line x1="${left}" y1="${yPos}" x2="${width - right}" y2="${yPos}"></line><text class="${hasDualAxis ? "axis-primary" : ""}" x="${left - 12}" y="${yPos + 4}" text-anchor="end">${esc(leftSeries.metricInfo.tick(leftSeries.yMax * ratio))}</text>${secondaryTick}`;
+    const secondaryTick = hasDualAxis ? `<text class="axis-secondary" style="fill:${rightSeries.color}" x="${width - right + 12}" y="${yPos + 4}">${esc(rightSeries.metricInfo.tick(rightSeries.yMin + (rightSeries.yMax - rightSeries.yMin) * ratio))}</text>` : "";
+    return `<line x1="${left}" y1="${yPos}" x2="${width - right}" y2="${yPos}"></line><text class="${hasDualAxis ? "axis-primary" : ""}" x="${left - 12}" y="${yPos + 4}" text-anchor="end">${esc(leftSeries.metricInfo.tick(leftSeries.yMin + (leftSeries.yMax - leftSeries.yMin) * ratio))}</text>${secondaryTick}`;
   }).join("");
   const lines = series.map((item, seriesIndex) => {
     const channel = item.rows[0].channel;
@@ -471,7 +502,7 @@ function renderTimeSeries(candidates, periodLabel, targetId, legendId, emptyMess
 
   $(legendId).innerHTML = candidates.map((candidate) => {
     const item = series.find((item) => item.id === candidate.id && item.metric === candidate.metric && item.comparison === candidate.comparison) ?? { ...candidate, rows: [] };
-    const detail = !item.rows.length ? "暂无可用数据" : item.metric === "uploadCount" ? `${item.rows.reduce((sum, row) => sum + row.uploadCount, 0)} 条更新` : item.metric === "subscriberCount" ? `${item.metricInfo.format(item.rows.at(-1).subscriberCount)} · ${item.rows.length} 个快照` : item.daily ? `${item.metricInfo.format(item.rows.reduce((sum, row) => sum + row[item.metric], 0))} · 窗口内合计` : `${item.rows.length} 条视频`;
+    const detail = !item.rows.length ? "暂无可用数据" : item.metric === "uploadCount" ? `${item.rows.reduce((sum, row) => sum + row.uploadCount, 0)} 条更新` : item.metric === "subscriberDelta" ? `${item.metricInfo.format(item.rows.at(-1).subscriberDelta)} · 窗口净增` : item.daily ? `${item.metricInfo.format(item.rows.reduce((sum, row) => sum + row[item.metric], 0))} · 窗口内合计` : `${item.rows.length} 条视频`;
     return `<span title="${esc(`${item.channel.channel} · ${item.metricInfo.label} · ${detail}`)}"><i style="background:${item.color}"></i>${esc(item.channel.channel)}${item.comparison ? "（对比·虚线）" : ""}<b>${item.metricInfo.label} · ${detail}</b></span>`;
   }).join("");
   const ariaMetrics = series.map((item) => `${item.rows[0].channel}${item.metricInfo.label}`).join("与");
@@ -533,11 +564,18 @@ function renderTimeSeries(candidates, periodLabel, targetId, legendId, emptyMess
 }
 
 function renderChannelBreakdown(series, periodLabel) {
+  if (!series.length) {
+    $("breakdownTitle").textContent = "各频道数据";
+    $("breakdownNote").textContent = "所选范围暂无可用数据";
+    $("breakdownLegend").innerHTML = "";
+    $("breakdownChart").innerHTML = '<div class="trend-empty">暂无可用数据</div>';
+    return;
+  }
   const metric = series[0]?.metric;
   const info = series[0]?.metricInfo;
   const mode = selectedChoice("breakdownMode");
   $("breakdownTitle").textContent = `各频道数据 · ${info.label}`;
-  $("breakdownNote").textContent = `${periodLabel} · ${series.length} 个频道 · 跟随上方指标与时间窗口；${metric === "subscriberCount" ? "柱状图取窗口内各频道最新订阅快照，折线按采集时间；总和仅使用同一时点齐全的快照" : metric === "uploadCount" ? "柱状图统计窗口内发布总数，折线按香港日期显示每日发布数量" : "柱状图合计窗口内发布视频的最近累计值；折线按发布日期每日求和，并非当日新增量"}。`;
+  $("breakdownNote").textContent = `${periodLabel} · ${series.length} 个频道 · 跟随上方指标与时间窗口；${metric === "subscriberDelta" ? "柱状图为窗口净增，折线为自窗口基线起的累计净增；负数表示净减少，不是累计订阅数" : metric === "uploadCount" ? "柱状图统计窗口内发布总数，折线按香港日期显示每日发布数量" : "柱状图合计窗口内发布视频的最近累计值；折线按发布日期每日求和，并非当日新增量"}。`;
   if (mode === "line") {
     $("breakdownChart").classList.remove("upload-bars");
     renderTimeSeries(series, periodLabel, "breakdownChart", "breakdownLegend");
@@ -545,10 +583,14 @@ function renderChannelBreakdown(series, periodLabel) {
   }
   $("breakdownLegend").innerHTML = "";
   $("breakdownChart").classList.add("upload-bars");
-  const rows = series.map((item) => ({ ...item, value: metric === "subscriberCount" ? item.rows.at(-1)?.[metric] ?? null : item.rows.some((row) => row[metric] == null) ? null : item.rows.reduce((sum, row) => sum + Number(row[metric]), 0) }))
+  const rows = series.map((item) => ({ ...item, value: metric === "subscriberDelta" ? item.rows.at(-1)?.[metric] ?? null : item.rows.some((row) => row[metric] == null) ? null : item.rows.reduce((sum, row) => sum + Number(row[metric]), 0) }))
     .sort((a, b) => (a.value == null) - (b.value == null) || b.value - a.value || a.channel.channel.localeCompare(b.channel.channel, "zh-HK"));
   const maximum = Math.max(1, ...rows.map((row) => row.value ?? 0));
-  $("breakdownChart").innerHTML = rows.map((row) => `<div class="upload-bar-row channel-metric-bar" data-channel-id="${esc(row.id)}" data-value="${row.value ?? ""}" data-metric="${metric}"><a class="upload-bar-channel" href="${esc(row.channel.channelUrl)}" target="_blank" rel="noopener noreferrer"><img src="${esc(row.channel.thumbnail)}" alt="" loading="lazy"><span>${esc(row.channel.channel)}</span></a><div class="upload-bar-track" role="img" aria-label="${esc(row.channel.channel)} ${info.label} ${row.value == null ? "暂无数据" : info.format(row.value)}" title="${esc(row.channel.channel)}：${row.value == null ? "暂无数据" : info.format(row.value)}"><span style="width:${(row.value ?? 0) / maximum * 100}%;background:${row.color}"></span></div><b>${row.value == null ? "—" : info.format(row.value)}</b></div>`).join("");
+  const minimum = metric === "subscriberDelta" ? Math.min(0, ...rows.map((row) => row.value ?? 0)) : 0;
+  const barStyle = (row) => metric === "subscriberDelta"
+    ? `position:absolute;left:${(Math.min(0, row.value ?? 0) - minimum) / (maximum - minimum) * 100}%;width:${Math.abs(row.value ?? 0) / (maximum - minimum) * 100}%;background:${row.color}`
+    : `width:${(row.value ?? 0) / maximum * 100}%;background:${row.color}`;
+  $("breakdownChart").innerHTML = rows.map((row) => `<div class="upload-bar-row channel-metric-bar" data-channel-id="${esc(row.id)}" data-value="${row.value ?? ""}" data-metric="${metric}"><a class="upload-bar-channel" href="${esc(row.channel.channelUrl)}" target="_blank" rel="noopener noreferrer"><img src="${esc(row.channel.thumbnail)}" alt="" loading="lazy"><span>${esc(row.channel.channel)}</span></a><div class="upload-bar-track${metric === "subscriberDelta" ? " signed-bar" : ""}" style="--zero-position:${-minimum / (maximum - minimum) * 100}%" role="img" aria-label="${esc(row.channel.channel)} ${info.label} ${row.value == null ? "暂无数据" : info.format(row.value)}" title="${esc(row.channel.channel)}：${row.value == null ? "暂无数据" : info.format(row.value)}"><span style="${barStyle(row)}"></span></div><b>${row.value == null ? "—" : info.format(row.value)}</b></div>`).join("");
 }
 
 function renderAllVideos(videos, generatedAt) {
@@ -632,7 +674,7 @@ async function init() {
     const renderSubscribers = (period) => {
       const periodRows = rowsForPeriod(period, "subscriberCount").filter((row) => !row.hiddenSubscriberCount && row.subscriberCount != null);
       const isAll = period === "all";
-      const displayRows = isAll ? periodRows : periodRows.map((row) => ({ ...row, subscriberDelta: row.subscriberCount - row.periodBaseline.subscriberCount }));
+      const displayRows = isAll ? periodRows : periodRows.map((row) => ({ ...row, subscriberDelta: subscriberChange(row, subscriberWindowBaseline(history, row.channelId, data.generatedAt, period)) })).filter((row) => row.subscriberDelta != null);
       $("subscriberNote").textContent = !isAll && !availability[period]
         ? `${subscriberBaseNote} · 部分数据 ${elapsedText(coverageStart, toTime(data.generatedAt))}`
         : subscriberBaseNote;
