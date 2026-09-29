@@ -76,8 +76,7 @@ button, a { font: inherit; }
 .trend-header p:not(.eyebrow) { margin: 5px 0 0; color: var(--muted); font-size: 12px; }
 .trend-controls { display: grid; min-width: 0; gap: 6px; }
 .trend-panel .eyebrow { margin-bottom: 4px; }
-.trend-charts { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; margin-top: 12px; }
-.is-all-channels .trend-charts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.trend-charts { display: grid; grid-template-columns: minmax(0, 1.618fr) minmax(0, 1fr); gap: 16px; margin-top: 12px; }
 .trend-figure { min-width: 0; padding-top: 10px; border-top: 1px solid var(--line); }
 .figure-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px 12px; min-height: 34px; margin-bottom: 4px; }
 .figure-heading h3 { margin: 0; font-size: 16px; }
@@ -89,9 +88,9 @@ button, a { font: inherit; }
 .breakdown-figure .trend-legend i { flex-shrink: 0; }
 .trend-figure .inventory-note { margin: 8px 0 0; font-size: 11px; }
 .trend-figure .upload-bars { gap: 4px; margin-top: 4px; }
-.trend-figure .upload-bar-row.channel-metric-bar { grid-template-columns: minmax(110px, 170px) minmax(0, 1fr) 78px; gap: 8px; min-height: 24px; }
-.trend-figure .upload-bar-channel { gap: 5px; font-size: 11px; }
-.trend-figure .upload-bar-channel img { width: 20px; height: 20px; }
+.trend-figure .upload-bar-row.channel-metric-bar { grid-template-columns: minmax(0, 1.15fr) minmax(40px, 1fr) 78px; gap: 8px; min-height: 24px; }
+.trend-figure .upload-bar-channel { min-width: 0; gap: 5px; font-size: 11px; }
+.trend-figure .upload-bar-channel img { width: 20px; height: 20px; flex-shrink: 0; }
 .trend-figure .upload-bar-track { height: 15px; }
 .trend-figure .channel-metric-bar > b { font-size: 12px; }
 .trend-figure .trend-empty { min-height: 300px; }
@@ -171,7 +170,7 @@ button, a { font: inherit; }
 .upload-stack > .upload-stack-segment:last-child { border-radius: 0 4px 4px 0; }
 .upload-stack > .upload-stack-segment:only-child { border-radius: 4px; }
 .upload-stack-segment:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; z-index: 1; }
-.trend-figure .is-upload-stacked .channel-metric-bar { grid-template-columns: minmax(100px, 155px) minmax(0, 1fr) 102px; min-height: 31px; }
+.trend-figure .is-upload-stacked .channel-metric-bar { grid-template-columns: minmax(0, 1.15fr) minmax(40px, 1fr) 96px; min-height: 31px; }
 .upload-stack-values { display: grid; gap: 1px; text-align: right; font-variant-numeric: tabular-nums; }
 .upload-stack-values > b { font-size: 12px; }
 .upload-stack-values > small { color: var(--muted); font-size: 10px; }
@@ -244,7 +243,7 @@ button, a { font: inherit; }
 }
 
 @media (max-width: 900px) {
-  .is-all-channels .trend-charts { grid-template-columns: minmax(0, 1fr); }
+  .trend-charts { grid-template-columns: minmax(0, 1fr); }
 }
 
 @media (max-width: 410px) {

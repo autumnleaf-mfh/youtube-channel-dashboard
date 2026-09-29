@@ -5,6 +5,10 @@ const vm = require('node:vm');
 const root = path.join(__dirname, '..');
 const read = name => fs.readFileSync(path.join(root, name), 'utf8');
 const html = read('site/index.html');
+const css = read('site/styles.css');
+assert.match(css, /\.trend-charts\s*\{[^}]*grid-template-columns:\s*minmax\(0, 1\.618fr\) minmax\(0, 1fr\)/, 'all selection states share the golden-ratio desktop layout');
+assert(!/\.is-all-channels\s+\.trend-charts/.test(css), 'layout must not depend on selecting All');
+assert.match(css, /@media \(max-width: 900px\)\s*\{\s*\.trend-charts\s*\{\s*grid-template-columns: minmax\(0, 1fr\)/, 'all selection states stack on narrow screens');
 // Verify real HTML section ancestry without a browser or a layout emulator.
 const sections = [], ancestry = new Map();
 for (const match of html.matchAll(/<\/?([a-z][\w-]*)\b[^>]*>/gi)) {
@@ -57,6 +61,8 @@ for (const width of [280, 620, 1350]) {
     }
   }
 }
+for (const period of ['7', '30', '90', 'all']) {
+choices.trendPeriod = period;
 for (const count of [1, 2, 5]) {
   choices.primaryChannel = channels.slice(0, count).map(c => c.channelId);
   for (const metric of ['viewCount', 'subscriberDelta', 'likeCount', 'commentCount', 'uploadCount']) {
@@ -69,11 +75,23 @@ for (const count of [1, 2, 5]) {
     assert(chartIds.every(id => choices.primaryChannel.includes(id)));
     const barIds = [...get('breakdownChart').innerHTML.matchAll(/data-channel-id="([^"]+)"/g)].map(m => m[1]);
     assert.deepEqual([...barIds].sort(), [...choices.primaryChannel].sort());
+    // Recompute video-based bar totals independently from the selected catalog.
+    if (metric !== 'subscriberDelta') {
+      const end = Date.parse(data.generatedAt);
+      const start = period === 'all' ? -Infinity : end - Number(period) * 86400000;
+      for (const match of get('breakdownChart').innerHTML.matchAll(/data-channel-id="([^"]+)" data-value="([^"]*)" data-metric="([^"]+)"/g)) {
+        const included = videos.filter(v => v.channelId === match[1] && Date.parse(v.publishedAt) >= start && Date.parse(v.publishedAt) <= end);
+        const expected = metric === 'uploadCount' ? included.length : included.some(v => v[metric] == null) ? null : included.reduce((sum, v) => sum + Number(v[metric]), 0);
+        assert.equal(match[3], metric);
+        assert.equal(match[2], expected == null ? '' : String(expected), `${period}/${metric}/${match[1]} bar total follows selected scope`);
+      }
+    }
     assert(!get('trendChart').innerHTML.includes('stroke-dasharray="7 4"'));
     choices.breakdownMode = 'line'; render();
     const lineIds = [...get('breakdownChart').innerHTML.matchAll(/data-channel-id="([^"]+)"/g)].map(m => m[1]);
     assert(lineIds.every(id => choices.primaryChannel.includes(id)));
   }
+}
 }
 choices.primaryChannel = ['all']; render();
 assert.equal(get('aggregateTitle').textContent, '全部频道总和');
