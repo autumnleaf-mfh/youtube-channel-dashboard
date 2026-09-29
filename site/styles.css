@@ -82,6 +82,12 @@ button, a { font: inherit; }
 .choice-buttons button { display: inline-flex; align-items: center; gap: 6px; min-height: 30px; padding: 5px 10px; border: 1px solid var(--line); border-radius: 9px; background: rgba(4, 11, 8, .38); color: var(--muted); cursor: pointer; font-size: 11px; white-space: nowrap; }
 .choice-buttons button:hover, .choice-buttons button:focus { border-color: rgba(229, 189, 87, .5); color: var(--text); outline: none; }
 .choice-buttons button[aria-pressed="true"] { border-color: var(--accent); background: var(--accent); color: #172017; font-weight: 800; box-shadow: 0 5px 16px rgba(229, 189, 87, .14); }
+.choice-buttons button:disabled { opacity: .35; cursor: not-allowed; box-shadow: none; }
+#comparisonHint { margin: 0; }
+.breakdown-mode { width: auto; flex: 0 0 auto; }
+#breakdownLegend:empty { display: none; }
+.upload-bar-row.channel-metric-bar { grid-template-columns: minmax(150px, 240px) minmax(0, 1fr) 115px; }
+.aggregate-thumb { display: grid; place-items: center; width: 88px; height: 50px; color: var(--accent); font-size: 30px; }
 .choice-buttons button img { width: 20px; height: 20px; border-radius: 50%; object-fit: cover; }
 .compact-choices button i { display: grid; place-items: center; width: 15px; color: currentColor; font-size: 12px; font-style: normal; }
 .compact-choices button { min-width: 82px; }
@@ -91,7 +97,7 @@ button, a { font: inherit; }
 .trend-legend b { color: var(--muted); font-size: 10px; font-weight: 500; }
 .trend-chart { min-height: 390px; }
 .trend-canvas { position: relative; width: 100%; overflow: hidden; }
-.trend-canvas svg { display: block; width: 100%; min-width: 760px; height: auto; }
+.trend-canvas svg { display: block; width: 100%; min-width: 0; height: auto; }
 .trend-grid line { stroke: var(--line); stroke-width: 1; }
 .trend-grid text, .axis-date { fill: var(--muted); font-size: 11px; }
 .trend-grid .axis-primary { fill: #e5bd57; }
@@ -163,6 +169,8 @@ button, a { font: inherit; }
 }
 
 @media (max-width: 620px) {
+  .upload-bar-row.channel-metric-bar { grid-template-columns: minmax(90px, 125px) minmax(0, 1fr) 80px; }
+  .channel-metric-bar > b { font-size: 12px; }
   .dashboard { width: min(100% - 24px, 1180px); padding-top: 14px; }
   .chart-grid { grid-template-columns: 1fr; }
   .chart-panel { height: auto; min-height: 560px; padding: 18px; overflow: visible; border-radius: 18px; }

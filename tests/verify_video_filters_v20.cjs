@@ -51,7 +51,7 @@ const path = require('node:path');
     await choose('videoPeriod', '7');
     await choose('videoSort', 'desc');
     assert.equal(await selected('trendPeriod'), '7');
-    assert.equal(await page.locator('#uploadBarsPeriod [aria-pressed="true"]').getAttribute('data-period'), '7');
+    assert.equal(await page.locator('#uploadBarsPeriod').count(), 0);
     await page.locator('[aria-labelledby="allVideosTitle"]').screenshot({ path: path.resolve('logs/videos-v20-desktop.png') });
     await page.setViewportSize({ width: 390, height: 844 });
     await page.locator('#allVideosTitle').scrollIntoViewIfNeeded();

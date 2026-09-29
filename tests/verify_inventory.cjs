@@ -34,10 +34,11 @@ const path = require('node:path');
     assert.equal(new Set(catalog.map(row => row.videoId)).size, catalog.length);
     const end = Date.parse(data.generatedAt);
     const periodTotals = {};
+    await page.locator('#trendMetric [data-value="uploadCount"]').click();
     for (const period of ['7', '30', 'all']) {
-      await page.locator(`#uploadBarsPeriod [data-period="${period}"]`).click();
+      await page.locator(`#trendPeriod [data-value="${period}"]`).click();
       const bars = await page.locator('.upload-bar-row').evaluateAll(nodes => nodes.map(node => ({
-        id: node.dataset.channelId, count: Number(node.dataset.count), title: node.querySelector('a span').textContent
+        id: node.dataset.channelId, count: Number(node.dataset.value), title: node.querySelector('a span').textContent
       })));
       assert.equal(bars.length, channels.length);
       const start = period === 'all' ? -Infinity : end - Number(period) * 86400000;
@@ -95,8 +96,8 @@ const path = require('node:path');
       node.dispatchEvent(new PointerEvent('pointermove', { bubbles: true, clientX: box.left + box.width / 2, clientY: box.top + box.height / 2 }));
     });
     assert(await page.locator('.trend-tooltip').isVisible());
-    await page.locator('#uploadBarsPeriod [data-period="7"]').click();
-    await page.locator('[aria-labelledby="uploadBarsTitle"]').screenshot({ path: path.resolve('logs/inventory-v18-bars.png') });
+    await page.locator('#trendPeriod [data-value="7"]').click();
+    await page.locator('[aria-labelledby="breakdownTitle"]').screenshot({ path: path.resolve('logs/inventory-v21-bars.png') });
     await page.locator('[aria-labelledby="allVideosTitle"]').screenshot({ path: path.resolve('logs/inventory-v18-videos.png') });
     await page.setViewportSize({ width: 390, height: 844 });
     await page.locator('#allVideosTitle').scrollIntoViewIfNeeded();
