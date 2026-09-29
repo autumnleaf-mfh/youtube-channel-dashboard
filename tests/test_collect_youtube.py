@@ -3,6 +3,7 @@ import contextlib
 import io
 import json
 import os
+import sys
 import tempfile
 import unittest
 from datetime import datetime, timedelta, timezone
@@ -11,6 +12,7 @@ from unittest.mock import patch
 
 
 MODULE_PATH = Path(__file__).resolve().parents[1] / "scripts" / "collect_youtube.py"
+sys.path.insert(0, str(MODULE_PATH.parent))
 SPEC = importlib.util.spec_from_file_location("collect_youtube", MODULE_PATH)
 collector = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(collector)
@@ -87,7 +89,7 @@ class InventoryTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             snapshot = Path(directory) / "data.json"
             snapshot.write_text(json.dumps(previous), encoding="utf-8")
-            with patch.object(collector, "DATA_PATH", snapshot), patch.object(collector, "CHANNELS", [("Alias a", "a"), ("Alias b", "b")]), patch.object(collector, "api_get", api), patch.dict(os.environ, {"YOUTUBE_API_KEY": "fixture"}), contextlib.redirect_stdout(io.StringIO()):
+            with patch.object(collector, "DATA_PATH", snapshot), patch.object(collector, "CHANNELS", [("Alias a", "a"), ("Alias b", "b")]), patch.object(collector, "api_get", api), patch.object(collector, "refresh_formats", return_value=([], {}, [])), patch.dict(os.environ, {"YOUTUBE_API_KEY": "fixture"}), contextlib.redirect_stdout(io.StringIO()):
                 collector.main()
             return json.loads(snapshot.read_text(encoding="utf-8")), calls
 

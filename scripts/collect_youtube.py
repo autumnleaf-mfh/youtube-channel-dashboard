@@ -14,6 +14,7 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from youtube_formats import refresh_formats, format_query
 
 
 API_BASE = "https://www.googleapis.com/youtube/v3"
@@ -357,6 +358,9 @@ def main():
 
     catalog_rows = sorted(catalog_by_video.values(), key=lambda row: (row.get("publishedAt", ""), row["videoId"]), reverse=True)
     recent_rows = []
+    format_rows, format_state, format_errors = refresh_formats(
+        catalog_rows, previous_queries.get("video_formats", {}).get("rows", []),
+        previous.get("collectorState", {}).get("formatClassification", {}), now)
     videos_by_channel = {channel_id: [] for channel_id in channel_ids}
     for channel_id in channel_ids:
         channel_catalog = [row for row in catalog_rows if row["channelId"] == channel_id][:RECENT_VIDEO_LIMIT]
@@ -455,10 +459,13 @@ def main():
         "generatedAt": now.isoformat(timespec="seconds").replace("+00:00", "Z"),
         "collectorState": {
             "inventoryFullScanAt": utc_iso(now) if full_inventory_scan else inventory_scanned_at,
+            "formatClassification": format_state,
+            "formatClassificationErrors": format_errors,
             "videoSamplingPolicy": {"within7Days": "3h", "within30Days": "daily", "olderThan30Days": "weekly"},
         },
         "filters": [],
         "queries": {
+            "video_formats": format_query(format_rows),
             "channel_current": {"rows": current_rows, "source": source("YouTube Data API v3 · channels.list + derived cadence", "channels.list", definitions)},
             "channel_history": {"rows": history, "source": source("Repository snapshots · 3-hour, daily, and weekly retention", "local snapshot history", definitions[:2])},
             "video_catalog": {"rows": catalog_rows, "source": source("YouTube uploads playlists · full weekly inventory plus newest-page discovery", "playlistItems.list", [])},

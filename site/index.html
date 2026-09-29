@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#07100d">
   <meta name="description" content="财经 YouTube 频道的订阅、播放、更新数量与全部视频数据">
   <title>YouTube 频道数据</title>
-  <link rel="stylesheet" href="styles.css?v=25">
+  <link rel="stylesheet" href="styles.css?v=26">
 </head>
 <body>
   <main class="dashboard">
@@ -79,6 +79,8 @@
         <div class="trend-controls">
           <div class="selector-row"><span>频道·多选</span><div id="primaryChannel" class="choice-buttons" role="group" aria-label="选择趋势频道，可多选；全部频道显示总和"></div></div>
           <div class="selector-row"><span>指标</span><div id="trendMetric" class="choice-buttons compact-choices" aria-label="选择趋势指标"><button type="button" data-value="viewCount" aria-pressed="true"><i aria-hidden="true">▶</i>播放量</button><button type="button" data-value="subscriberCount" aria-pressed="false"><i aria-hidden="true">♟</i>订阅数量</button><button type="button" data-value="likeCount" aria-pressed="false"><i aria-hidden="true">♥</i>点赞数量</button><button type="button" data-value="commentCount" aria-pressed="false"><i aria-hidden="true">▰</i>评论数量</button><button type="button" data-value="uploadCount" aria-pressed="false"><i aria-hidden="true">↻</i>更新数量</button></div></div>
+          <div id="uploadTypeRow" class="selector-row" hidden><span>更新类型</span><div id="uploadType" class="choice-buttons compact-choices" role="group" aria-label="按 YouTube 分类筛选更新数量"><button type="button" data-value="all" aria-pressed="true">全部更新</button><button type="button" data-value="long" aria-pressed="false">长视频（普通视频）</button><button type="button" data-value="short" aria-pressed="false">短视频（Shorts）</button><button type="button" data-value="live" aria-pressed="false">直播/回放</button><button type="button" data-value="unknown" aria-pressed="false">待确认类型</button></div></div>
+          <p id="uploadTypeNote" class="inventory-note" hidden></p>
         </div>
       </header>
       <div id="trendCharts" class="trend-charts">
@@ -119,6 +121,6 @@
     </section>
     <div id="loadError" class="load-error" hidden></div>
   </main>
-  <script src="app.js?v=25" defer></script>
+  <script src="app.js?v=26" defer></script>
 </body>
 </html>

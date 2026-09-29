@@ -96,6 +96,8 @@ button, a { font: inherit; }
 .trend-figure .channel-metric-bar > b { font-size: 12px; }
 .trend-figure .trend-empty { min-height: 300px; }
 .selector-row { display: grid; grid-template-columns: 54px minmax(0, 1fr); align-items: start; min-width: 0; gap: 12px; }
+#uploadTypeRow[hidden], #uploadTypeNote[hidden] { display: none; }
+#uploadType { flex-wrap: wrap; overflow: visible; }
 .selector-row > span { padding-top: 7px; color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: .1em; }
 .choice-buttons { display: flex; width: 100%; min-width: 0; flex-wrap: nowrap; gap: 6px; overflow-x: auto; padding-bottom: 3px; scrollbar-color: var(--line) transparent; }
 .choice-buttons button { display: inline-flex; align-items: center; gap: 6px; min-height: 30px; padding: 5px 10px; border: 1px solid var(--line); border-radius: 9px; background: rgba(4, 11, 8, .38); color: var(--muted); cursor: pointer; font-size: 11px; white-space: nowrap; }
