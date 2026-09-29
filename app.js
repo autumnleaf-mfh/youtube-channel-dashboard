@@ -231,7 +231,7 @@ function selectedChoice(targetId) {
 }
 
 function setChoiceButtons(targetId, choices, selectedValue) {
-  $(targetId).innerHTML = choices.map((choice) => `<button type="button" data-value="${esc(choice.value)}" aria-pressed="${choice.value === selectedValue}">${choice.avatar ? `<img src="${esc(choice.avatar)}" alt="" loading="lazy">` : ""}<span>${esc(choice.label)}</span></button>`).join("");
+  $(targetId).innerHTML = choices.map((choice) => `<button type="button" ${choice.action ? `data-action="${esc(choice.action)}"` : `data-value="${esc(choice.value)}"`} ${choice.title ? `title="${esc(choice.title)}"` : ""} aria-pressed="${!choice.action && choice.value === selectedValue}">${choice.avatar ? `<img src="${esc(choice.avatar)}" alt="" loading="lazy">` : ""}<span>${esc(choice.label)}</span></button>`).join("");
 }
 
 function bindChoiceButtons(targetId, render) {
@@ -246,21 +246,25 @@ function bindChoiceButtons(targetId, render) {
 function bindMultiChannelButtons(targetId, render, allValue = "") {
   const group = $(targetId);
   group.addEventListener("click", (event) => {
-    const button = event.target.closest("button[data-value]");
+    const button = event.target.closest("button");
     if (!button || !group.contains(button)) return;
     const buttons = [...group.querySelectorAll("button[data-value]")];
     const channels = buttons.filter((item) => item.dataset.value !== allValue);
-    if (button.dataset.value === allValue) {
+    const selectAll = [...group.querySelectorAll("button")].find((item) => item.dataset.action === "select-all");
+    if (button.dataset.action === "select-all") {
+      buttons.forEach((item) => item.setAttribute("aria-pressed", String(item.dataset.value !== allValue)));
+    } else if (button.dataset.value === allValue) {
       buttons.forEach((item) => item.setAttribute("aria-pressed", String(item.dataset.value === allValue)));
     } else {
       button.setAttribute("aria-pressed", String(button.getAttribute("aria-pressed") !== "true"));
       const count = channels.filter((item) => item.getAttribute("aria-pressed") === "true").length;
-      const all = count === 0 || count === channels.length;
+      const all = count === 0 || (!selectAll && count === channels.length);
       buttons.forEach((item) => {
         if (item.dataset.value === allValue) item.setAttribute("aria-pressed", String(all));
         else if (all) item.setAttribute("aria-pressed", "false");
       });
     }
+    selectAll?.setAttribute("aria-pressed", String(channels.length > 0 && channels.every((item) => item.getAttribute("aria-pressed") === "true")));
     render();
   });
 }
@@ -352,7 +356,7 @@ function aggregateChannelSeries(series, metric, metricInfo) {
 }
 
 function renderTrend(videos, catalog, channels, generatedAt, channelHistory = []) {
-  const selectedIds = [...$("primaryChannel").querySelectorAll('[aria-pressed="true"]')].map((button) => button.dataset.value);
+  const selectedIds = [...$("primaryChannel").querySelectorAll('button[data-value][aria-pressed="true"]')].map((button) => button.dataset.value);
   const isAll = selectedIds.includes("all") || selectedIds.length === 0;
   const primaryIds = isAll ? channels.map((row) => row.channelId) : selectedIds;
   $("trendPanel").classList.toggle("is-all-channels", isAll);
@@ -745,7 +749,7 @@ async function init() {
     renderViews("7");
     renderUpdates(catalogWithMetrics, data.generatedAt);
     const channelChoices = rows.map((row) => ({ value: row.channelId, label: row.channel, avatar: row.thumbnail }));
-    setChoiceButtons("primaryChannel", [{ value: "all", label: "全部频道" }, ...channelChoices], "all");
+    setChoiceButtons("primaryChannel", [{ value: "all", label: "全部频道", title: "汇总全部频道，显示一条总和折线" }, { action: "select-all", label: "全选", title: "分别选中全部频道，每个频道显示自己的折线" }, ...channelChoices], "all");
     setChoiceButtons("videoChannel", [{ value: "", label: "全部频道" }, ...channelChoices], "");
     const updateVideoList = () => renderAllVideos(catalogWithMetrics, data.generatedAt);
     bindMultiChannelButtons("videoChannel", updateVideoList);

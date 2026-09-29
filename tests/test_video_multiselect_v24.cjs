@@ -61,4 +61,28 @@ ctx.bindMultiChannelButtons('videoChannel',()=>{},'all');
 press(1);press(2);assert.deepEqual(selected(),channels.slice(0,2).map(c=>c.channelId));
 press(1);press(2);assert.deepEqual(selected(),['all']);
 press(1);press(0);assert.deepEqual(selected(),['all']);
+// Trend-only Select all must keep individual channels, unlike the aggregate sentinel.
+const selectAllButton = {dataset:{action:'select-all'},pressed:'false',setAttribute:buttons[0].setAttribute,getAttribute:buttons[0].getAttribute};
+const trendButtons = [...buttons,selectAllButton];
+elements.primaryChannel = {
+  contains:b=>trendButtons.includes(b),
+  addEventListener:(type,fn)=>{click=fn;},
+  querySelectorAll:s=>s==='button' ? trendButtons : buttons,
+};
+ctx.bindMultiChannelButtons('primaryChannel',()=>{},'all');
+click({target:{closest:()=>selectAllButton}});
+assert.deepEqual(selected(),channels.map(c=>c.channelId));
+assert.equal(selectAllButton.pressed,'true');
+press(1);
+assert.equal(selected().length,channels.length-1);
+assert.equal(selectAllButton.pressed,'false');
+press(1);
+assert.deepEqual(selected(),channels.map(c=>c.channelId),'manually selecting all stays separate lines');
+assert.equal(selectAllButton.pressed,'true');
+press(0);
+assert.deepEqual(selected(),['all']);
+assert.equal(selectAllButton.pressed,'false');
+press(1);press(1);
+assert.deepEqual(selected(),['all'],'empty selection restores aggregate');
+console.log('PASS: select-all individual channels differs from aggregate, manual select-all, deselection and reset');
 console.log(`PASS: multi-select toggles, restore all, ${checks} channel-pair/window/sort combinations; ${renders} renders`);

@@ -7,7 +7,7 @@ const read = name => fs.readFileSync(path.join(root, name), 'utf8');
 const html = read('site/index.html');
 const css = read('site/styles.css');
 assert.match(css, /#primaryChannel\s*\{[^}]*grid-template-columns: 100px repeat\(6, minmax\(120px, 1fr\)\);[^}]*grid-template-rows: repeat\(2,/);
-assert.match(css, /#primaryChannel button\[data-value="all"\]\s*\{[^}]*grid-row: 1 \/ span 2/);
+assert.match(css, /#primaryChannel button\[data-action="select-all"\]\s*\{[^}]*grid-column: 1; grid-row: 2/);
 assert.match(css, /\.trend-charts\s*\{[^}]*grid-template-columns:\s*minmax\(0, 1\.618fr\) minmax\(0, 1fr\)/, 'all selection states share the golden-ratio desktop layout');
 assert(!/\.is-all-channels\s+\.trend-charts/.test(css), 'layout must not depend on selecting All');
 assert.match(css, /@media \(max-width: 900px\)\s*\{\s*\.trend-charts\s*\{\s*grid-template-columns: minmax\(0, 1fr\)/, 'all selection states stack on narrow screens');
@@ -68,7 +68,7 @@ for (const width of [280, 620, 1350]) {
 }
 for (const period of ['7', '30', '90', 'all']) {
 choices.trendPeriod = period;
-for (const count of [1, 2, 5]) {
+for (const count of [1, 2, 5, channels.length]) {
   choices.primaryChannel = channels.slice(0, count).map(c => c.channelId);
   for (const metric of ['viewCount', 'subscriberDelta', 'likeCount', 'commentCount', 'uploadCount']) {
     choices.trendMetric = metric;

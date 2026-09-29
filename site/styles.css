@@ -182,11 +182,12 @@ button, a { font: inherit; }
 #videoChannel button:not([data-value=""])[aria-pressed="true"]::before { content: "✓"; display: grid; place-items: center; font-size: 10px; line-height: 1; }
 #primaryChannel { display: grid; grid-template-columns: 100px repeat(6, minmax(120px, 1fr)); grid-template-rows: repeat(2, minmax(38px, auto)); gap: 6px; overflow-x: auto; }
 #primaryChannel button { min-width: 0; white-space: normal; text-align: left; }
-#primaryChannel button[data-value="all"] { grid-row: 1 / span 2; justify-content: center; }
+#primaryChannel button[data-value="all"] { grid-column: 1; grid-row: 1; justify-content: center; }
+#primaryChannel button[data-action="select-all"] { grid-column: 1; grid-row: 2; justify-content: center; }
 #primaryChannel button img { flex-shrink: 0; }
 #primaryChannel button span { overflow-wrap: anywhere; }
-#primaryChannel button:not([data-value="all"])::before { content: ""; width: 10px; height: 10px; flex-shrink: 0; border: 1px solid currentColor; border-radius: 3px; }
-#primaryChannel button:not([data-value="all"])[aria-pressed="true"]::before { content: "✓"; display: grid; place-items: center; font-size: 10px; line-height: 1; }
+#primaryChannel button[data-value]:not([data-value="all"])::before { content: ""; width: 10px; height: 10px; flex-shrink: 0; border: 1px solid currentColor; border-radius: 3px; }
+#primaryChannel button[data-value]:not([data-value="all"])[aria-pressed="true"]::before { content: "✓"; display: grid; place-items: center; font-size: 10px; line-height: 1; }
 #videoPeriod { flex: 0 0 auto; }
 .all-videos-list { margin: 16px 0 0; padding: 0 8px 0 0; max-height: 640px; overflow-y: auto; overscroll-behavior: contain; list-style: none; scrollbar-color: var(--line) transparent; }
 .all-videos-list li { border-top: 1px solid var(--line); }
