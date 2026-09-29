@@ -54,4 +54,11 @@ for(let a=1;a<buttons.length;a++) for(let b=a+1;b<buttons.length;b++) {
   }
 }
 assert(!read('site/app.js').includes('bindChoiceButtons("videoChannel"'));
+// The trend filter reuses this handler with a non-empty All sentinel.
+buttons[0].dataset.value='all';
+buttons.forEach((b,i)=>{b.pressed=i===0?'true':'false';});
+ctx.bindMultiChannelButtons('videoChannel',()=>{},'all');
+press(1);press(2);assert.deepEqual(selected(),channels.slice(0,2).map(c=>c.channelId));
+press(1);press(2);assert.deepEqual(selected(),['all']);
+press(1);press(0);assert.deepEqual(selected(),['all']);
 console.log(`PASS: multi-select toggles, restore all, ${checks} channel-pair/window/sort combinations; ${renders} renders`);

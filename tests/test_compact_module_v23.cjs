@@ -26,12 +26,12 @@ function element() {
   };
 }
 const get = id => { if (!nodes.has(id)) nodes.set(id, element()); return nodes.get(id); };
-const choices = { primaryChannel: 'all', comparisonChannel: '', trendMetric: 'viewCount', comparisonMetric: 'viewCount', trendPeriod: '7', breakdownMode: 'bar' };
-const buttons = Array.from({length: 13}, (_, i) => ({ dataset: {value: String(i)}, setAttribute() {} }));
-get('comparisonChannel').querySelectorAll = () => buttons;
+const choices = { primaryChannel: ['all'], trendMetric: 'viewCount', trendPeriod: '7', breakdownMode: 'bar' };
+get('primaryChannel').querySelectorAll = () => choices.primaryChannel.map(value => ({dataset:{value}}));
+assert(!/id="comparison/.test(html), 'comparison controls must be removed');
 const context = vm.createContext({ Intl, document: {getElementById: get}, choices });
 vm.runInContext(read('site/app.js').replace(/init\(\);\s*$/, ''), context);
-vm.runInContext('selectedChoice = id => choices[id]; selectChoice = (id, value) => { choices[id] = value; };', context);
+vm.runInContext('selectedChoice = id => choices[id]', context);
 const data = JSON.parse(read('site/data.json'));
 const channels = data.queries.channel_current.rows;
 const latest = new Map();
@@ -45,12 +45,9 @@ for (const width of [280, 620, 1350]) {
   for (const period of ['7', '30', '90', 'all']) {
     for (const metric of ['viewCount', 'subscriberCount', 'likeCount', 'commentCount', 'uploadCount']) {
       choices.trendPeriod = period; choices.trendMetric = metric;
-      choices.primaryChannel = 'all'; choices.comparisonChannel = channels[0].channelId;
+      choices.primaryChannel = ['all'];
       choices.breakdownMode = 'bar'; render();
       assert(get('trendPanel').classList.contains('is-all-channels'));
-      assert.equal(get('comparisonChannelRow').hidden, true);
-      assert.equal(choices.comparisonChannel, '');
-      assert(buttons.every(b => b.disabled));
       assert.equal((get('breakdownChart').innerHTML.match(/class="upload-bar-row channel-metric-bar"/g) || []).length, channels.length);
       const svg = get('trendChart').innerHTML;
       if (svg.includes('<svg')) assert(svg.includes(`viewBox="0 0 ${width} 300"`));
@@ -59,14 +56,24 @@ for (const width of [280, 620, 1350]) {
     }
   }
 }
-choices.primaryChannel = channels[0].channelId; render();
-assert.equal(get('comparisonChannelRow').hidden, false);
-assert(!get('trendPanel').classList.contains('is-all-channels'));
-assert(buttons.every(b => !b.disabled));
-assert.equal(get('aggregateTitle').textContent, '所选频道趋势');
-choices.comparisonChannel = channels[1].channelId; choices.comparisonMetric = 'viewCount'; render();
-assert(get('trendChart').innerHTML.includes('stroke-dasharray="7 4"'));
-choices.primaryChannel = 'all'; render();
-assert.equal(choices.comparisonChannel, '');
+for (const count of [1, 2, 5]) {
+  choices.primaryChannel = channels.slice(0, count).map(c => c.channelId);
+  for (const metric of ['viewCount', 'subscriberCount', 'likeCount', 'commentCount', 'uploadCount']) {
+    choices.trendMetric = metric;
+    choices.breakdownMode = 'bar'; render();
+    assert(!get('trendPanel').classList.contains('is-all-channels'));
+    assert.equal(get('aggregateTitle').textContent, `所选频道趋势 · ${count} 个频道`);
+    const chartIds = [...get('trendChart').innerHTML.matchAll(/data-channel-id="([^"]+)"/g)].map(m => m[1]);
+    assert(chartIds.length > 0);
+    assert(chartIds.every(id => choices.primaryChannel.includes(id)));
+    const barIds = [...get('breakdownChart').innerHTML.matchAll(/data-channel-id="([^"]+)"/g)].map(m => m[1]);
+    assert.deepEqual([...barIds].sort(), [...choices.primaryChannel].sort());
+    assert(!get('trendChart').innerHTML.includes('stroke-dasharray="7 4"'));
+    choices.breakdownMode = 'line'; render();
+    const lineIds = [...get('breakdownChart').innerHTML.matchAll(/data-channel-id="([^"]+)"/g)].map(m => m[1]);
+    assert(lineIds.every(id => choices.primaryChannel.includes(id)));
+  }
+}
+choices.primaryChannel = ['all']; render();
 assert.equal(get('aggregateTitle').textContent, '全部频道总和');
-console.log('PASS: shared module ancestry, 120 chart renders across widths/metrics/windows, comparison hide/restore, bar/line controls');
+console.log('PASS: shared module ancestry, all-channel windows/metrics/widths, 1/2/5-channel multi-select, filtered bar/line controls, removed comparisons');

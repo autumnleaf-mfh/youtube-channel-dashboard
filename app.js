@@ -210,41 +210,24 @@ function bindChoiceButtons(targetId, render) {
   });
 }
 
-function bindMultiChannelButtons(targetId, render) {
+function bindMultiChannelButtons(targetId, render, allValue = "") {
   const group = $(targetId);
   group.addEventListener("click", (event) => {
     const button = event.target.closest("button[data-value]");
     if (!button || !group.contains(button)) return;
     const buttons = [...group.querySelectorAll("button[data-value]")];
-    const channels = buttons.filter((item) => item.dataset.value);
-    if (!button.dataset.value) {
-      buttons.forEach((item) => item.setAttribute("aria-pressed", String(!item.dataset.value)));
+    const channels = buttons.filter((item) => item.dataset.value !== allValue);
+    if (button.dataset.value === allValue) {
+      buttons.forEach((item) => item.setAttribute("aria-pressed", String(item.dataset.value === allValue)));
     } else {
       button.setAttribute("aria-pressed", String(button.getAttribute("aria-pressed") !== "true"));
       const count = channels.filter((item) => item.getAttribute("aria-pressed") === "true").length;
       const all = count === 0 || count === channels.length;
       buttons.forEach((item) => {
-        if (!item.dataset.value) item.setAttribute("aria-pressed", String(all));
+        if (item.dataset.value === allValue) item.setAttribute("aria-pressed", String(all));
         else if (all) item.setAttribute("aria-pressed", "false");
       });
     }
-    render();
-  });
-}
-
-function selectChoice(targetId, value) {
-  $(targetId).querySelectorAll("button[data-value]").forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.value === value)));
-}
-
-function bindComparisonButtons(render) {
-  $("comparisonChannel").addEventListener("click", (event) => {
-    const button = event.target.closest("button[data-value]");
-    if (!button || button.disabled || selectedChoice("primaryChannel") === "all") return;
-    const hadComparison = Boolean(selectedChoice("comparisonChannel"));
-    $("comparisonChannel").querySelectorAll("button").forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
-    const hasComparison = Boolean(button.dataset.value);
-    $("comparisonMetricRow").hidden = !hasComparison;
-    if (hasComparison && !hadComparison) selectChoice("comparisonMetric", selectedChoice("trendMetric"));
     render();
   });
 }
@@ -322,19 +305,12 @@ function aggregateChannelSeries(series, metric, metricInfo) {
 }
 
 function renderTrend(videos, catalog, channels, generatedAt, channelHistory = []) {
-  const primaryId = selectedChoice("primaryChannel");
-  const isAll = primaryId === "all";
+  const selectedIds = [...$("primaryChannel").querySelectorAll('[aria-pressed="true"]')].map((button) => button.dataset.value);
+  const isAll = selectedIds.includes("all") || selectedIds.length === 0;
+  const primaryIds = isAll ? channels.map((row) => row.channelId) : selectedIds;
   $("trendPanel").classList.toggle("is-all-channels", isAll);
-  $("comparisonChannelRow").hidden = isAll;
-  $("aggregateTitle").textContent = isAll ? "全部频道总和" : "所选频道趋势";
-  if (isAll) selectChoice("comparisonChannel", "");
-  $("comparisonChannel").querySelectorAll("button").forEach((button) => { button.disabled = isAll; });
-  $("comparisonChannel").setAttribute("aria-disabled", String(isAll));
-  $("comparisonHint").hidden = true;
-  if (isAll) $("comparisonMetricRow").hidden = true;
-  const comparisonId = selectedChoice("comparisonChannel");
+  $("aggregateTitle").textContent = isAll ? "全部频道总和" : `所选频道趋势 · ${primaryIds.length} 个频道`;
   const primaryMetric = selectedChoice("trendMetric");
-  const comparisonMetric = comparisonId ? selectedChoice("comparisonMetric") || primaryMetric : primaryMetric;
   const period = selectedChoice("trendPeriod");
   const periodLabels = { "7": "近 7 日", "30": "近 30 日", "90": "近 90 日", all: "全部记录" };
   const periodDays = { "7": 7, "30": 30, "90": 90 };
@@ -345,20 +321,18 @@ function renderTrend(videos, catalog, channels, generatedAt, channelHistory = []
     commentCount: { label: "评论数量", format: exact, tick: (value) => compact.format(value) },
     uploadCount: { label: "更新数量", format: (value) => `${exact(value)} 条`, tick: (value) => exact(Math.round(value)) },
   };
-  const primaryIds = primaryId === "all" ? channels.map((row) => row.channelId) : [primaryId];
   const dayMs = 24 * 60 * 60 * 1000;
   const cutoff = period === "all" ? -Infinity : toTime(generatedAt) - periodDays[period] * dayMs;
-  const selectedMetrics = [...new Set([primaryMetric, ...(comparisonId ? [comparisonMetric] : [])])];
+  const selectedMetrics = [primaryMetric];
   const notes = [];
   if (selectedMetrics.includes("subscriberCount")) notes.push("订阅数量按采集时间显示频道公开订阅快照，仅显示已有记录（公开值可能取整）");
   if (selectedMetrics.includes("uploadCount")) notes.push("更新数量按香港日期统计发布数");
   if (selectedMetrics.some((metric) => !["subscriberCount", "uploadCount"].includes(metric))) notes.push("播放、点赞及评论按视频发布时间排列，数值为最近一次采集的累计值");
   $("trendDescription").textContent = isAll
     ? `${periodLabels[period]} · 全部频道总和；${primaryMetric === "subscriberCount" ? "按同一采集时点求和，仅绘制各频道数据齐全的时点；缺失不补零" : primaryMetric === "uploadCount" ? "按香港日期合计发布数量" : "按视频发布日期每日求和，采用最近采集的累计值，并非当日新增量"}。`
-    : `${periodLabels[period]}；${notes.join("；")}。`;
-  const breakdown = channelMetricSeries(catalog, channels, channelHistory, generatedAt, primaryMetric, metricDefinitions[primaryMetric], period);
+    : `${periodLabels[period]} · 已选 ${primaryIds.length} 个频道；${notes.join("；")}。`;
+  const breakdown = channelMetricSeries(catalog, channels, channelHistory, generatedAt, primaryMetric, metricDefinitions[primaryMetric], period).filter((item) => primaryIds.includes(item.id));
   const requests = primaryIds.map((id) => ({ id, metric: primaryMetric, comparison: false }));
-  if (comparisonId && !(primaryId === comparisonId && primaryMetric === comparisonMetric)) requests.push({ id: comparisonId, metric: comparisonMetric, comparison: true });
   const candidates = isAll ? [aggregateChannelSeries(breakdown, primaryMetric, metricDefinitions[primaryMetric])] : requests.map(({ id, metric, comparison }) => {
     const channel = channels.find((row) => row.channelId === id);
     const metricInfo = metricDefinitions[metric];
@@ -371,7 +345,7 @@ function renderTrend(videos, catalog, channels, generatedAt, channelHistory = []
       : videos
         .filter((row) => row.channelId === id && toTime(row.publishedAt) >= cutoff && toTime(row.publishedAt) <= toTime(generatedAt) && row[metric] != null && Number.isFinite(Number(row[metric])))
         .sort((a, b) => toTime(a.publishedAt) - toTime(b.publishedAt));
-    return { id, channel, comparison, color: comparison ? "#f36eb5" : colors[channels.findIndex((row) => row.channelId === id) % colors.length], metric, metricInfo, rows };
+    return { id, channel, comparison, color: colors[channels.findIndex((row) => row.channelId === id) % colors.length], metric, metricInfo, rows };
   });
   renderTimeSeries(candidates, periodLabels[period], "trendChart", "trendLegend", isAll && primaryMetric === "subscriberCount" ? "尚无各频道订阅数据齐全的采集时点，暂不计算总和" : "所选频道暂无可用数据");
   renderChannelBreakdown(breakdown, periodLabels[period]);
@@ -660,7 +634,6 @@ async function init() {
     renderUpdates(catalogWithMetrics, data.generatedAt);
     const channelChoices = rows.map((row) => ({ value: row.channelId, label: row.channel, avatar: row.thumbnail }));
     setChoiceButtons("primaryChannel", [{ value: "all", label: "全部频道" }, ...channelChoices], "all");
-    setChoiceButtons("comparisonChannel", [{ value: "", label: "不对比" }, ...channelChoices.map(({ value, label }) => ({ value, label }))], "");
     setChoiceButtons("videoChannel", [{ value: "", label: "全部频道" }, ...channelChoices], "");
     const updateVideoList = () => renderAllVideos(catalogWithMetrics, data.generatedAt);
     bindMultiChannelButtons("videoChannel", updateVideoList);
@@ -670,10 +643,8 @@ async function init() {
     const trendVideos = catalogWithMetrics
       .filter((video) => video.viewCount != null || video.durationSeconds != null || video.likeCount != null || video.commentCount != null);
     const updateTrend = () => renderTrend(trendVideos, catalogWithMetrics, rows, data.generatedAt, history);
-    bindChoiceButtons("primaryChannel", updateTrend);
-    bindComparisonButtons(updateTrend);
+    bindMultiChannelButtons("primaryChannel", updateTrend, "all");
     bindChoiceButtons("trendMetric", updateTrend);
-    bindChoiceButtons("comparisonMetric", updateTrend);
     bindChoiceButtons("trendPeriod", updateTrend);
     bindChoiceButtons("breakdownMode", updateTrend);
     let trendResizeFrame;
