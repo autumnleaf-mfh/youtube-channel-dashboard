@@ -302,10 +302,13 @@ function aggregateChannelSeries(series, metric, metricInfo) {
 function renderTrend(videos, catalog, channels, generatedAt, channelHistory = []) {
   const primaryId = selectedChoice("primaryChannel");
   const isAll = primaryId === "all";
+  $("trendPanel").classList.toggle("is-all-channels", isAll);
+  $("comparisonChannelRow").hidden = isAll;
+  $("aggregateTitle").textContent = isAll ? "全部频道总和" : "所选频道趋势";
   if (isAll) selectChoice("comparisonChannel", "");
   $("comparisonChannel").querySelectorAll("button").forEach((button) => { button.disabled = isAll; });
   $("comparisonChannel").setAttribute("aria-disabled", String(isAll));
-  $("comparisonHint").hidden = !isAll;
+  $("comparisonHint").hidden = true;
   if (isAll) $("comparisonMetricRow").hidden = true;
   const comparisonId = selectedChoice("comparisonChannel");
   const primaryMetric = selectedChoice("trendMetric");
@@ -418,10 +421,10 @@ function renderTimeSeries(candidates, periodLabel, targetId, legendId, emptyMess
   const hasDualAxis = Boolean(rightSeries);
   const maxForSeries = (item) => item.metric === "uploadCount" ? Math.max(4, ...item.rows.map((row) => Number(row[item.metric]))) : Math.max(1, ...item.rows.map((row) => Number(row[item.metric])));
   series.forEach((item) => { item.yMax = Math.max(...series.filter((other) => other.metric === item.metric).map(maxForSeries)); });
-  const width = Math.max(320, Math.min(1000, $(targetId).clientWidth));
-  const height = 390;
-  const left = 72;
-  const right = hasDualAxis ? 72 : 24;
+  const width = Math.max(260, $(targetId).clientWidth);
+  const height = 300;
+  const left = width < 600 ? 54 : 66;
+  const right = hasDualAxis ? 66 : 20;
   const top = 22;
   const bottom = 48;
   const plotWidth = width - left - right;
@@ -451,7 +454,7 @@ function renderTimeSeries(candidates, periodLabel, targetId, legendId, emptyMess
   $(legendId).innerHTML = candidates.map((candidate) => {
     const item = series.find((item) => item.id === candidate.id && item.metric === candidate.metric && item.comparison === candidate.comparison) ?? { ...candidate, rows: [] };
     const detail = !item.rows.length ? "暂无可用数据" : item.metric === "uploadCount" ? `${item.rows.reduce((sum, row) => sum + row.uploadCount, 0)} 条更新` : item.metric === "subscriberCount" ? `${item.metricInfo.format(item.rows.at(-1).subscriberCount)} · ${item.rows.length} 个快照` : item.daily ? `${item.metricInfo.format(item.rows.reduce((sum, row) => sum + row[item.metric], 0))} · 窗口内合计` : `${item.rows.length} 条视频`;
-    return `<span><i style="background:${item.color}"></i>${esc(item.channel.channel)}${item.comparison ? "（对比·虚线）" : ""}<b>${item.metricInfo.label} · ${detail}</b></span>`;
+    return `<span title="${esc(`${item.channel.channel} · ${item.metricInfo.label} · ${detail}`)}"><i style="background:${item.color}"></i>${esc(item.channel.channel)}${item.comparison ? "（对比·虚线）" : ""}<b>${item.metricInfo.label} · ${detail}</b></span>`;
   }).join("");
   const ariaMetrics = series.map((item) => `${item.rows[0].channel}${item.metricInfo.label}`).join("与");
   $(targetId).innerHTML = `<div class="trend-canvas"><svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${periodLabel}${esc(ariaMetrics)}趋势对比"><g class="trend-grid">${grid}</g>${lines}<line class="trend-crosshair" x1="${left}" y1="${top}" x2="${left}" y2="${top + plotHeight}" hidden></line><rect class="trend-hitbox" x="${left}" y="${top}" width="${plotWidth}" height="${plotHeight}"></rect><text class="axis-date" x="${left}" y="${height - 10}">${ymd(xMin)}</text><text class="axis-date" x="${width - right}" y="${height - 10}" text-anchor="end">${ymd(xMax)}</text></svg><div class="trend-tooltip" role="status" hidden></div></div>`;
