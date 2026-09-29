@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-09-29T00:09:00Z",
+  "generatedAt": "2026-09-29T00:39:00Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-09-24T08:35:04Z",
     "videoSamplingPolicy": {
@@ -46,7 +46,7 @@
           "customUrl": "@amberwithfinance",
           "channelUrl": "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA",
           "thumbnail": "https://yt3.ggpht.com/czuSSl1-7trtlN5BP5n7hPS_Pm7cKTX_chp1lqgVggP5apIJkB1CsmVXt0F7WpD4mGg4PIdj=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 585,
+          "subscriberCount": 587,
           "hiddenSubscriberCount": false,
           "channelViewCount": 38419,
           "videoCount": 8,
@@ -90,7 +90,7 @@
           "customUrl": "@財經小鹿financedeer",
           "channelUrl": "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ",
           "thumbnail": "https://yt3.ggpht.com/b0OPo5YQsfzCR6jLZTs6H-4EO-EFrqvFHMANy587DDAJGZ6wK_jwjnCr8Es9Z-6E7J01GRtg=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 598,
+          "subscriberCount": 604,
           "hiddenSubscriberCount": false,
           "channelViewCount": 34553,
           "videoCount": 12,
@@ -159,17 +159,17 @@
           "subscriberCount": 47,
           "hiddenSubscriberCount": false,
           "channelViewCount": 8673,
-          "videoCount": 5,
-          "lastPublishedAt": "2026-09-28T08:16:11Z",
-          "daysSinceUpload": 0.7,
-          "uploads7d": 3,
-          "uploads30d": 5,
-          "uploads90d": 5,
-          "averageUploadGapDays": 2.5,
-          "recent5AverageViews": 1767,
-          "recent5MedianViews": 64,
-          "recent5AverageLikes": 19,
-          "recent5EngagementRate": 0.012336
+          "videoCount": 6,
+          "lastPublishedAt": "2026-09-29T00:30:33Z",
+          "daysSinceUpload": 0.0,
+          "uploads7d": 4,
+          "uploads30d": 6,
+          "uploads90d": 6,
+          "averageUploadGapDays": 2.1,
+          "recent5AverageViews": 1731,
+          "recent5MedianViews": 42,
+          "recent5AverageLikes": 18,
+          "recent5EngagementRate": 0.011902
         },
         {
           "channelId": "UCmhqWEDoPgrg9J129nGuQkQ",
@@ -205,7 +205,7 @@
           "channelViewCount": 830,
           "videoCount": 13,
           "lastPublishedAt": "2026-09-28T20:45:28Z",
-          "daysSinceUpload": 0.1,
+          "daysSinceUpload": 0.2,
           "uploads7d": 10,
           "uploads30d": 13,
           "uploads90d": 13,
@@ -244,12 +244,12 @@
           "customUrl": "@maple-moneyforest",
           "channelUrl": "https://www.youtube.com/channel/UC5lCKye2u8Q0BoE5ggY9myw",
           "thumbnail": "https://yt3.ggpht.com/pMWF2QNsoxnImQg07Dt2tQUMVnZxgPE793m7fi2VrhNdvJoWlsq_tOBMTXPszPInKhtLr1YpYao=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 32,
+          "subscriberCount": 36,
           "hiddenSubscriberCount": false,
           "channelViewCount": 1092,
           "videoCount": 5,
           "lastPublishedAt": "2026-09-27T01:30:00Z",
-          "daysSinceUpload": 1.9,
+          "daysSinceUpload": 2.0,
           "uploads7d": 4,
           "uploads30d": 5,
           "uploads90d": 5,
@@ -293,7 +293,7 @@
           "channelViewCount": 49017,
           "videoCount": 56,
           "lastPublishedAt": "2026-09-24T09:00:26Z",
-          "daysSinceUpload": 4.6,
+          "daysSinceUpload": 4.7,
           "uploads7d": 2,
           "uploads30d": 8,
           "uploads90d": 21,
@@ -307,7 +307,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-09-29T00:09:08+00:00",
+        "retrievedAt": "2026-09-29T00:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -4795,7 +4795,7 @@
           "date": "2026-09-28",
           "channelId": "UC5lCKye2u8Q0BoE5ggY9myw",
           "channel": "Maple的理财森林",
-          "subscriberCount": 32,
+          "subscriberCount": 36,
           "channelViewCount": 1092,
           "videoCount": 5
         },
@@ -4815,7 +4815,7 @@
           "channel": "艾莉说",
           "subscriberCount": 47,
           "channelViewCount": 8673,
-          "videoCount": 5
+          "videoCount": 6
         },
         {
           "observedAt": "2026-09-28T22:00:00Z",
@@ -4867,7 +4867,7 @@
           "date": "2026-09-28",
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "财经小鹿 Finance Deer",
-          "subscriberCount": 598,
+          "subscriberCount": 604,
           "channelViewCount": 34553,
           "videoCount": 12
         },
@@ -4876,7 +4876,7 @@
           "date": "2026-09-28",
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大镜",
-          "subscriberCount": 585,
+          "subscriberCount": 587,
           "channelViewCount": 38419,
           "videoCount": 8
         },
@@ -4911,7 +4911,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-09-29T00:09:08+00:00",
+        "retrievedAt": "2026-09-29T00:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -4934,6 +4934,16 @@
     },
     "video_catalog": {
       "rows": [
+        {
+          "channelId": "UC9veOeKEZhexYxmMXF_RwCQ",
+          "channel": "艾莉说",
+          "videoId": "dUKxKW_AZB0",
+          "title": "353兆債務揭秘！美國獨佔40兆！全球GDP被透支3年！官方CPI是假的，真實通膨卻是8%到10%！ Blue Owl關閘、黑石7%上限、霸菱縮量！私募資金警報拉響！全球買單？",
+          "publishedAt": "2026-09-29T00:30:33Z",
+          "publishedDate": "2026-09-29",
+          "thumbnail": "https://i.ytimg.com/vi/dUKxKW_AZB0/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=dUKxKW_AZB0"
+        },
         {
           "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA",
           "channel": "阿诚聊焦点",
@@ -8158,7 +8168,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-09-29T00:09:08+00:00",
+        "retrievedAt": "2026-09-29T00:39:06+00:00",
         "metricDefinitions": []
       }
     },
@@ -55704,6 +55714,24 @@
         },
         {
           "observedAt": "2026-09-28T22:00:00Z",
+          "channelId": "UC9veOeKEZhexYxmMXF_RwCQ",
+          "channel": "艾莉说",
+          "videoId": "dUKxKW_AZB0",
+          "title": "353兆債務揭秘！美國獨佔40兆！全球GDP被透支3年！官方CPI是假的，真實通膨卻是8%到10%！ Blue Owl關閘、黑石7%上限、霸菱縮量！私募資金警報拉響！全球買單？",
+          "publishedAt": "2026-09-29T00:30:33Z",
+          "publishedDate": "2026-09-29",
+          "viewCount": 0,
+          "likeCount": 0,
+          "commentCount": 0,
+          "durationSeconds": 714,
+          "formatHint": "长视频/直播候选",
+          "thumbnail": "https://i.ytimg.com/vi/dUKxKW_AZB0/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=dUKxKW_AZB0",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "observedAt": "2026-09-28T22:00:00Z",
           "channelId": "UCmhqWEDoPgrg9J129nGuQkQ",
           "channel": "文叔聊财",
           "videoId": "fGzUs32mjmo",
@@ -55994,7 +56022,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-09-29T00:09:08+00:00",
+        "retrievedAt": "2026-09-29T00:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -57728,6 +57756,24 @@
         {
           "channelId": "UC9veOeKEZhexYxmMXF_RwCQ",
           "channel": "艾莉说",
+          "videoId": "dUKxKW_AZB0",
+          "title": "353兆債務揭秘！美國獨佔40兆！全球GDP被透支3年！官方CPI是假的，真實通膨卻是8%到10%！ Blue Owl關閘、黑石7%上限、霸菱縮量！私募資金警報拉響！全球買單？",
+          "publishedAt": "2026-09-29T00:30:33Z",
+          "publishedDate": "2026-09-29",
+          "thumbnail": "https://i.ytimg.com/vi/dUKxKW_AZB0/mqdefault.jpg",
+          "url": "https://www.youtube.com/watch?v=dUKxKW_AZB0",
+          "observedAt": "2026-09-28T22:00:00Z",
+          "viewCount": 0,
+          "likeCount": 0,
+          "commentCount": 0,
+          "durationSeconds": 714,
+          "formatHint": "长视频/直播候选",
+          "isLive": false,
+          "concurrentViewers": null
+        },
+        {
+          "channelId": "UC9veOeKEZhexYxmMXF_RwCQ",
+          "channel": "艾莉说",
           "videoId": "AemKf5n_sVY",
           "title": "俄羅斯死局已定？失業率新低，实际無人可用？砲彈也算GDP？85個聯邦主體56個赤字，停戰數百萬失業，不停戰耗光家底！俄羅斯還能撐多久？#俄羅斯#金融危機#盧布#匯率#財經#黃金",
           "publishedAt": "2026-09-28T08:16:11Z",
@@ -59421,7 +59467,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-09-29T00:09:08+00:00",
+        "retrievedAt": "2026-09-29T00:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -59495,7 +59541,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-09-29T00:09:08+00:00",
+        "retrievedAt": "2026-09-29T00:39:06+00:00",
         "metricDefinitions": []
       }
     },
@@ -59505,9 +59551,9 @@
           "observedAt": "2026-09-28T22:00:00Z",
           "channelsExpected": 13,
           "channelsCollected": 13,
-          "videoCatalogCount": 322,
-          "videosRefreshed": 0,
-          "videosDisplayed": 189,
+          "videoCatalogCount": 323,
+          "videosRefreshed": 1,
+          "videosDisplayed": 190,
           "fullInventoryScan": false,
           "failureCount": 0,
           "failures": []
@@ -59516,7 +59562,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-09-29T00:09:08+00:00",
+        "retrievedAt": "2026-09-29T00:39:06+00:00",
         "metricDefinitions": []
       }
     }
