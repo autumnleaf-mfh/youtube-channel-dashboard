@@ -74,10 +74,28 @@ for (const count of [1, 2, 5, channels.length]) {
     choices.trendMetric = metric;
     choices.breakdownMode = 'bar'; render();
     assert(!get('trendPanel').classList.contains('is-all-channels'));
-    assert.equal(get('aggregateTitle').textContent, `所选频道趋势 · ${count} 个频道`);
+    assert.equal(get('aggregateTitle').textContent, `${count > 1 ? '所选频道总和' : '所选频道趋势'} · ${count} 个频道`);
     const chartIds = [...get('trendChart').innerHTML.matchAll(/data-channel-id="([^"]+)"/g)].map(m => m[1]);
     assert(chartIds.length > 0);
-    assert(chartIds.every(id => choices.primaryChannel.includes(id)));
+    assert(chartIds.every(id => count > 1 ? id === 'all' : choices.primaryChannel.includes(id)));
+    if (count > 1) {
+      const points = [...get('trendChart').innerHTML.matchAll(/data-value="([^"]+)" data-time="([^"]+)"/g)];
+      for (const [,value,time] of points) {
+        const end = Date.parse(data.generatedAt), start = period === 'all' ? -Infinity : end - Number(period)*86400000;
+        if (metric !== 'subscriberDelta') {
+          const included = videos.filter(v => choices.primaryChannel.includes(v.channelId) && Date.parse(v.publishedAt) >= start && Date.parse(v.publishedAt) <= end && context.hongKongDayTimestamp(v.publishedAt) === Date.parse(time));
+          assert.equal(Number(value), metric === 'uploadCount' ? included.length : included.reduce((sum,v)=>sum+Number(v[metric]),0), `${period}/${metric}/${count} selected daily total`);
+        } else if (time === data.generatedAt) {
+          const expected = channels.slice(0,count).reduce((sum,c)=>{
+            const rows = history.filter(r=>r.channelId===c.channelId && r.subscriberCount!=null && Date.parse(r.observedAt)<=end).sort((a,b)=>Date.parse(a.observedAt)-Date.parse(b.observedAt));
+            const baseline = period === 'all' ? rows[0] : rows.filter(r=>Date.parse(r.observedAt)<=start).at(-1) || rows[0];
+            return sum + Number(c.subscriberCount) - Number(baseline.subscriberCount);
+          },0);
+          assert.equal(Number(value),expected,'selected subscriber net growth reconciles');
+        }
+      }
+      assert(get('trendLegend').innerHTML.includes('所选频道总和'));
+    }
     const barIds = [...get('breakdownChart').innerHTML.matchAll(/data-channel-id="([^"]+)"/g)].map(m => m[1]);
     assert.deepEqual([...barIds].sort(), [...choices.primaryChannel].sort());
     // Recompute video-based bar totals independently from the selected catalog.

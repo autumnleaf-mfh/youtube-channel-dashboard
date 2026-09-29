@@ -335,7 +335,7 @@ function channelMetricSeries(catalog, channels, history, generatedAt, metric, me
   });
 }
 
-function aggregateChannelSeries(series, metric, metricInfo) {
+function aggregateChannelSeries(series, metric, metricInfo, label = "全部频道总和") {
   const byTime = new Map();
   series.forEach((item) => item.rows.forEach((row) => {
     const contributions = byTime.get(row.publishedAt) ?? new Map();
@@ -346,21 +346,23 @@ function aggregateChannelSeries(series, metric, metricInfo) {
     const contributions = [...values.values()];
     const complete = contributions.length === series.length && contributions.every((row) => row[metric] != null && Number.isFinite(Number(row[metric])));
     return {
-      channelId: "all", channel: "全部频道总和", publishedAt,
+      channelId: "all", channel: label, publishedAt,
       [metric]: complete ? contributions.reduce((sum, row) => sum + Number(row[metric]), 0) : null,
       contributions, isAggregate: true, updates: contributions.flatMap((row) => row.updates ?? []),
       title: complete ? `${series.length} 个频道合计${metric === "subscriberDelta" ? " · 同一时点相对各自窗口基线的净增；不是累计订阅数" : " · 按视频发布日期汇总"}` : "该时点数据不齐全，不计算总和",
     };
   });
-  return { id: "all", channel: { channel: "全部频道总和" }, color: colors[0], metric, metricInfo, rows, daily: metric !== "subscriberDelta" };
+  return { id: "all", channel: { channel: label }, color: colors[0], metric, metricInfo, rows, daily: metric !== "subscriberDelta" };
 }
 
 function renderTrend(videos, catalog, channels, generatedAt, channelHistory = []) {
   const selectedIds = [...$("primaryChannel").querySelectorAll('button[data-value][aria-pressed="true"]')].map((button) => button.dataset.value);
   const isAll = selectedIds.includes("all") || selectedIds.length === 0;
   const primaryIds = isAll ? channels.map((row) => row.channelId) : selectedIds;
+  const showAggregate = isAll || primaryIds.length > 1;
+  const aggregateLabel = isAll ? "全部频道总和" : `所选频道总和 · ${primaryIds.length} 个频道`;
   $("trendPanel").classList.toggle("is-all-channels", isAll);
-  $("aggregateTitle").textContent = isAll ? "全部频道总和" : `所选频道趋势 · ${primaryIds.length} 个频道`;
+  $("aggregateTitle").textContent = showAggregate ? aggregateLabel : `所选频道趋势 · ${primaryIds.length} 个频道`;
   const primaryMetric = selectedChoice("trendMetric");
   const period = selectedChoice("trendPeriod");
   const periodLabels = { "7": "近 7 日", "30": "近 30 日", "90": "近 90 日", all: "全部记录" };
@@ -379,8 +381,8 @@ function renderTrend(videos, catalog, channels, generatedAt, channelHistory = []
   if (selectedMetrics.includes("subscriberDelta")) notes.push("当前公开订阅减去窗口基线，为累计净增（含退订），与公开订阅合计的净增长同口径；公开值可能取整");
   if (selectedMetrics.includes("uploadCount")) notes.push("更新数量按香港日期统计发布数");
   if (selectedMetrics.some((metric) => !["subscriberDelta", "uploadCount"].includes(metric))) notes.push("播放、点赞及评论按视频发布时间排列，数值为最近一次采集的累计值");
-  $("trendDescription").textContent = isAll
-    ? `${periodLabels[period]} · 全部频道总和；${primaryMetric === "subscriberDelta" ? "公开订阅相对窗口基线的累计净增（含退订），与上方净增长同口径；缺失不补零" : primaryMetric === "uploadCount" ? "按香港日期合计发布数量" : "按视频发布日期每日求和，采用最近采集的累计值，并非当日新增量"}。`
+  $("trendDescription").textContent = showAggregate
+    ? `${periodLabels[period]} · ${aggregateLabel}；${primaryMetric === "subscriberDelta" ? "公开订阅相对窗口基线的累计净增（含退订），与上方净增长同口径；缺失不补零" : primaryMetric === "uploadCount" ? "按香港日期合计发布数量" : "按视频发布日期每日求和，采用最近采集的累计值，并非当日新增量"}。`
     : `${periodLabels[period]} · 已选 ${primaryIds.length} 个频道；${notes.join("；")}。`;
   const breakdown = channelMetricSeries(catalog, channels, channelHistory, generatedAt, primaryMetric, metricDefinitions[primaryMetric], period).filter((item) => primaryIds.includes(item.id) && !(isAll && primaryMetric === "subscriberDelta" && (item.channel.hiddenSubscriberCount || item.channel.subscriberCount == null)));
   if (primaryMetric === "subscriberDelta") {
@@ -389,7 +391,7 @@ function renderTrend(videos, catalog, channels, generatedAt, channelHistory = []
     $("trendDescription").textContent += starts.length ? ` ${incomplete ? "部分历史：" : "基线覆盖："}${ymdh(Math.min(...starts))} 至 ${ymdh(generatedAt)}；ALL 为自首次记录以来的净增。` : " 尚无可用订阅基线。";
   }
   const requests = primaryIds.map((id) => ({ id, metric: primaryMetric, comparison: false }));
-  const candidates = isAll ? [aggregateChannelSeries(breakdown, primaryMetric, metricDefinitions[primaryMetric])] : requests.map(({ id, metric, comparison }) => {
+  const candidates = showAggregate ? [aggregateChannelSeries(breakdown, primaryMetric, metricDefinitions[primaryMetric], aggregateLabel)] : requests.map(({ id, metric, comparison }) => {
     const channel = channels.find((row) => row.channelId === id);
     const metricInfo = metricDefinitions[metric];
     const rows = ["uploadCount", "subscriberDelta"].includes(metric)
@@ -399,7 +401,7 @@ function renderTrend(videos, catalog, channels, generatedAt, channelHistory = []
         .sort((a, b) => toTime(a.publishedAt) - toTime(b.publishedAt));
     return { id, channel, comparison, color: colors[channels.findIndex((row) => row.channelId === id) % colors.length], metric, metricInfo, rows };
   });
-  renderTimeSeries(candidates, periodLabels[period], "trendChart", "trendLegend", isAll && primaryMetric === "subscriberDelta" ? "尚无各频道订阅基线齐全的采集时点，暂不计算净增总和" : "所选频道暂无可用数据");
+  renderTimeSeries(candidates, periodLabels[period], "trendChart", "trendLegend", showAggregate && primaryMetric === "subscriberDelta" ? "尚无所选频道订阅基线齐全的采集时点，暂不计算净增总和" : "所选频道暂无可用数据");
   renderChannelBreakdown(breakdown, periodLabels[period]);
 }
 
@@ -749,7 +751,7 @@ async function init() {
     renderViews("7");
     renderUpdates(catalogWithMetrics, data.generatedAt);
     const channelChoices = rows.map((row) => ({ value: row.channelId, label: row.channel, avatar: row.thumbnail }));
-    setChoiceButtons("primaryChannel", [{ value: "all", label: "全部频道", title: "汇总全部频道，显示一条总和折线" }, { action: "select-all", label: "全选", title: "分别选中全部频道，每个频道显示自己的折线" }, ...channelChoices], "all");
+    setChoiceButtons("primaryChannel", [{ value: "all", label: "全部频道", title: "汇总全部频道，显示一条总和折线" }, { action: "select-all", label: "全选", title: "勾选全部频道；左侧显示所选总和，右侧展示各频道，可单独取消" }, ...channelChoices], "all");
     setChoiceButtons("videoChannel", [{ value: "", label: "全部频道", title: "不限制频道，显示全部视频" }, { action: "select-all", label: "全选", title: "勾选全部频道，可继续单独取消某个频道" }, ...channelChoices], "");
     const updateVideoList = () => renderAllVideos(catalogWithMetrics, data.generatedAt);
     bindMultiChannelButtons("videoChannel", updateVideoList);
