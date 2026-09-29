@@ -296,23 +296,27 @@ function videoType(video) {
   return ["long", "short", "live"].includes(video.youtubeFormat) ? video.youtubeFormat : "unknown";
 }
 
-function uploadTypeSummary(updates) {
+function uploadTypeCounts(updates) {
   const counts = { long: 0, short: 0, live: 0, unknown: 0 };
   updates.forEach((video) => { counts[videoType(video)] += 1; });
+  return counts;
+}
+
+function uploadTypeSummary(updates) {
+  const counts = uploadTypeCounts(updates);
   return `长视频 ${counts.long} · Shorts ${counts.short}${counts.live ? ` · 直播/回放 ${counts.live}` : ""}${counts.unknown ? ` · 待确认 ${counts.unknown}` : ""}`;
 }
 
-function channelMetricSeries(catalog, channels, history, generatedAt, metric, metricInfo, period, uploadType = "all") {
+function channelMetricSeries(catalog, channels, history, generatedAt, metric, metricInfo, period) {
   const end = toTime(generatedAt);
   const cutoff = period === "all" ? -Infinity : end - Number(period) * 86400000;
   const selected = catalog.filter((row) => toTime(row.publishedAt) >= cutoff && toTime(row.publishedAt) <= end);
   const endDay = hongKongDayTimestamp(generatedAt);
   const startDay = period === "all" ? (selected.length ? Math.min(...selected.map((row) => hongKongDayTimestamp(row.publishedAt))) : endDay) : hongKongDayTimestamp(cutoff);
-  const typedUploads = metric === "uploadCount" && uploadType !== "all" ? selected.filter((video) => videoType(video) === uploadType) : selected;
   return channels.map((channel, index) => {
     const rows = metric === "subscriberDelta"
       ? subscriberGrowthRows(history, channel, generatedAt, period)
-      : dailyUploadRows(typedUploads, channel, startDay, endDay).map((row) => ({
+      : dailyUploadRows(selected, channel, startDay, endDay).map((row) => ({
         ...row,
         [metric]: metric === "uploadCount" ? row.uploadCount : row.updates.some((video) => video[metric] == null || !Number.isFinite(Number(video[metric]))) ? null : row.updates.reduce((sum, video) => sum + Number(video[metric]), 0),
         title: `${row.uploadCount} 条视频 · 按发布日期汇总最近采集值`,
@@ -348,10 +352,6 @@ function renderTrend(videos, catalog, channels, generatedAt, channelHistory = []
   $("trendPanel").classList.toggle("is-all-channels", isAll);
   $("aggregateTitle").textContent = isAll ? "全部频道总和" : `所选频道趋势 · ${primaryIds.length} 个频道`;
   const primaryMetric = selectedChoice("trendMetric");
-  const uploadType = primaryMetric === "uploadCount" ? selectedChoice("uploadType") || "all" : "all";
-  const typeLabels = { all: "全部更新", long: "长视频（普通视频）", short: "短视频（Shorts）", live: "直播/回放", unknown: "待确认类型" };
-  $("uploadTypeRow").hidden = primaryMetric !== "uploadCount";
-  $("uploadTypeNote").hidden = primaryMetric !== "uploadCount";
   const period = selectedChoice("trendPeriod");
   const periodLabels = { "7": "近 7 日", "30": "近 30 日", "90": "近 90 日", all: "全部记录" };
   const periodDays = { "7": 7, "30": 30, "90": 90 };
@@ -360,17 +360,10 @@ function renderTrend(videos, catalog, channels, generatedAt, channelHistory = []
     subscriberDelta: { label: "新增订阅（净增）", format: (value) => `${Number(value) > 0 ? "+" : ""}${exact(value)} 人`, tick: (value) => compact.format(value) },
     likeCount: { label: "点赞数量", format: exact, tick: (value) => compact.format(value) },
     commentCount: { label: "评论数量", format: exact, tick: (value) => compact.format(value) },
-    uploadCount: { label: uploadType === "all" ? "更新数量" : `更新数量 · ${typeLabels[uploadType]}`, format: (value) => `${exact(value)} 条`, tick: (value) => exact(Math.round(value)) },
+    uploadCount: { label: "更新数量", format: (value) => `${exact(value)} 条`, tick: (value) => exact(Math.round(value)) },
   };
   const dayMs = 24 * 60 * 60 * 1000;
   const cutoff = period === "all" ? -Infinity : toTime(generatedAt) - periodDays[period] * dayMs;
-  const windowUploads = catalog.filter((video) => primaryIds.includes(video.channelId) && toTime(video.publishedAt) >= cutoff && toTime(video.publishedAt) <= toTime(generatedAt));
-  $("uploadTypeNote").textContent = `按 YouTube 频道 Videos / Shorts / Live 标签分类，不按时长推断。所选范围：${uploadTypeSummary(windowUploads)}；待确认不计入长短分类。`;
-  $("uploadType").querySelectorAll("button[data-value]").forEach((button) => {
-    const value = button.dataset.value;
-    const count = value === "all" ? windowUploads.length : windowUploads.filter((video) => videoType(video) === value).length;
-    button.textContent = `${typeLabels[value]} ${count}`;
-  });
   const selectedMetrics = [primaryMetric];
   const notes = [];
   if (selectedMetrics.includes("subscriberDelta")) notes.push("当前公开订阅减去窗口基线，为累计净增（含退订），与公开订阅合计的净增长同口径；公开值可能取整");
@@ -379,7 +372,7 @@ function renderTrend(videos, catalog, channels, generatedAt, channelHistory = []
   $("trendDescription").textContent = isAll
     ? `${periodLabels[period]} · 全部频道总和；${primaryMetric === "subscriberDelta" ? "公开订阅相对窗口基线的累计净增（含退订），与上方净增长同口径；缺失不补零" : primaryMetric === "uploadCount" ? "按香港日期合计发布数量" : "按视频发布日期每日求和，采用最近采集的累计值，并非当日新增量"}。`
     : `${periodLabels[period]} · 已选 ${primaryIds.length} 个频道；${notes.join("；")}。`;
-  const breakdown = channelMetricSeries(catalog, channels, channelHistory, generatedAt, primaryMetric, metricDefinitions[primaryMetric], period, uploadType).filter((item) => primaryIds.includes(item.id) && !(isAll && primaryMetric === "subscriberDelta" && (item.channel.hiddenSubscriberCount || item.channel.subscriberCount == null)));
+  const breakdown = channelMetricSeries(catalog, channels, channelHistory, generatedAt, primaryMetric, metricDefinitions[primaryMetric], period).filter((item) => primaryIds.includes(item.id) && !(isAll && primaryMetric === "subscriberDelta" && (item.channel.hiddenSubscriberCount || item.channel.subscriberCount == null)));
   if (primaryMetric === "subscriberDelta") {
     const starts = breakdown.map((item) => subscriberWindowBaseline(channelHistory, item.id, generatedAt, period)?.observedAt).filter(Boolean).map(toTime);
     const incomplete = starts.length !== breakdown.length || starts.some((time) => period !== "all" && time > cutoff);
@@ -563,7 +556,30 @@ function renderTimeSeries(candidates, periodLabel, targetId, legendId, emptyMess
   });
 }
 
+function renderUploadStackedBars(rows) {
+  const types = [
+    { id: "long", label: "长视频", color: "#e5bd57" },
+    { id: "short", label: "短视频 Shorts", color: "#65a8ff" },
+    { id: "live", label: "直播/回放", color: "#4ed5a0" },
+    { id: "unknown", label: "待确认", color: "#8e9aad" },
+  ];
+  const maximum = Math.max(1, ...rows.map((row) => row.value ?? 0));
+  const decorated = rows.map((row) => ({ ...row, counts: uploadTypeCounts(row.rows.flatMap((point) => point.updates ?? [])) }));
+  $("breakdownLegend").innerHTML = types.filter((type) => ["long", "short"].includes(type.id) || decorated.some((row) => row.counts[type.id] > 0))
+    .map((type) => `<span><i style="background:${type.color}"></i>${type.label}</span>`).join("");
+  $("breakdownChart").innerHTML = decorated.map((row) => {
+    const detail = uploadTypeSummary(row.rows.flatMap((point) => point.updates ?? []));
+    const segments = types.filter((type) => row.counts[type.id] > 0).map((type) => {
+      const count = row.counts[type.id];
+      return `<span class="upload-stack-segment" data-format="${type.id}" data-count="${count}" style="width:${count / maximum * 100}%;background:${type.color}" tabindex="0" role="img" aria-label="${esc(row.channel.channel)} ${type.label} ${count} 条" title="${esc(row.channel.channel)} · ${type.label} ${count} 条"></span>`;
+    }).join("");
+    const other = `${row.counts.live ? ` · 直播 ${row.counts.live}` : ""}${row.counts.unknown ? ` · 待确认 ${row.counts.unknown}` : ""}`;
+    return `<div class="upload-bar-row channel-metric-bar" data-channel-id="${esc(row.id)}" data-value="${row.value}" data-metric="uploadCount"><a class="upload-bar-channel" href="${esc(row.channel.channelUrl)}" target="_blank" rel="noopener noreferrer"><img src="${esc(row.channel.thumbnail)}" alt="" loading="lazy"><span>${esc(row.channel.channel)}</span></a><div class="upload-bar-track upload-stack" role="group" aria-label="${esc(row.channel.channel)}，${detail}，总计 ${row.value} 条" title="${detail} · 总计 ${row.value} 条">${segments}</div><div class="upload-stack-values"><b>${row.value} 条</b><small>长 ${row.counts.long} · 短 ${row.counts.short}${other}</small></div></div>`;
+  }).join("");
+}
+
 function renderChannelBreakdown(series, periodLabel) {
+  $("breakdownChart").classList.remove("is-upload-stacked");
   if (!series.length) {
     $("breakdownTitle").textContent = "各频道数据";
     $("breakdownNote").textContent = "所选范围暂无可用数据";
@@ -585,6 +601,12 @@ function renderChannelBreakdown(series, periodLabel) {
   $("breakdownChart").classList.add("upload-bars");
   const rows = series.map((item) => ({ ...item, value: metric === "subscriberDelta" ? item.rows.at(-1)?.[metric] ?? null : item.rows.some((row) => row[metric] == null) ? null : item.rows.reduce((sum, row) => sum + Number(row[metric]), 0) }))
     .sort((a, b) => (a.value == null) - (b.value == null) || b.value - a.value || a.channel.channel.localeCompare(b.channel.channel, "zh-HK"));
+  if (metric === "uploadCount") {
+    $("breakdownChart").classList.add("is-upload-stacked");
+    $("breakdownNote").textContent = `${periodLabel} · ${series.length} 个频道 · 每条按 YouTube 分类堆叠长视频与 Shorts；直播/回放、待确认单独计入，不按时长推断。`;
+    renderUploadStackedBars(rows);
+    return;
+  }
   const maximum = Math.max(1, ...rows.map((row) => row.value ?? 0));
   const minimum = metric === "subscriberDelta" ? Math.min(0, ...rows.map((row) => row.value ?? 0)) : 0;
   const barStyle = (row) => metric === "subscriberDelta"
@@ -716,7 +738,6 @@ async function init() {
     const updateTrend = () => renderTrend(trendVideos, catalogWithMetrics, rows, data.generatedAt, history);
     bindMultiChannelButtons("primaryChannel", updateTrend, "all");
     bindChoiceButtons("trendMetric", updateTrend);
-    bindChoiceButtons("uploadType", updateTrend);
     bindChoiceButtons("trendPeriod", updateTrend);
     bindChoiceButtons("breakdownMode", updateTrend);
     let trendResizeFrame;

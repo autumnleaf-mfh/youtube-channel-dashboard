@@ -85,26 +85,35 @@ for (const period of ['7', '30', '90', 'all']) {
     choices.primaryChannel = selected;
     const selectedIds = selected.includes('all') ? channels.map(c => c.channelId) : selected;
     const windowVideos = videos.filter(v => selectedIds.includes(v.channelId) && Date.parse(v.publishedAt) >= start && Date.parse(v.publishedAt) <= end);
-    let partitionTotal = 0;
-    for (const type of ['all', 'long', 'short', 'live', 'unknown']) {
-      choices.uploadType = type; choices.breakdownMode = 'bar'; render();
-      const expected = windowVideos.filter(v => type === 'all' || v.youtubeFormat === type);
-      const bars = [...get('breakdownChart').innerHTML.matchAll(/data-value="([\d]+)"/g)].map(m => Number(m[1]));
-      assert.equal(bars.reduce((a,b)=>a+b,0), expected.length, `bar partition ${period}/${type}`);
-      const points = [...get('trendChart').innerHTML.matchAll(/data-value="([\d]+)"/g)].map(m => Number(m[1]));
-      assert.equal(points.reduce((a,b)=>a+b,0), expected.length, `trend partition ${period}/${type}`);
-      assert.equal(get('uploadTypeRow').hidden, false);
-      if (type !== 'all') partitionTotal += expected.length;
-      choices.breakdownMode = 'line'; render();
-      const linePoints = [...get('breakdownChart').innerHTML.matchAll(/data-value="([\d]+)"/g)].map(m => Number(m[1]));
-      assert.equal(linePoints.reduce((a,b)=>a+b,0), expected.length);
+    choices.breakdownMode = 'bar'; render();
+    const bars = [...get('breakdownChart').innerHTML.matchAll(/data-value="([\d]+)"/g)].map(m => Number(m[1]));
+    assert.equal(bars.reduce((a,b)=>a+b,0), windowVideos.length);
+    const points = [...get('trendChart').innerHTML.matchAll(/data-value="([\d]+)"/g)].map(m => Number(m[1]));
+    assert.equal(points.reduce((a,b)=>a+b,0), windowVideos.length);
+    for(const rowHtml of get('breakdownChart').innerHTML.split('<div class="upload-bar-row channel-metric-bar"').slice(1)) {
+      const channelId = rowHtml.match(/data-channel-id="([^"]+)"/)[1];
+      const channelVideos = windowVideos.filter(v=>v.channelId===channelId);
+      const segments = [...rowHtml.matchAll(/data-format="([^"]+)" data-count="(\d+)"/g)];
+      assert.equal(segments.reduce((sum,m)=>sum+Number(m[2]),0),channelVideos.length);
+      for(const type of ['long','short','live','unknown']) {
+        const actual = Number(segments.find(m=>m[1]===type)?.[2]??0);
+        assert.equal(actual,channelVideos.filter(v=>v.youtubeFormat===type).length);
+      }
     }
-    assert.equal(partitionTotal, windowVideos.length);
+    choices.breakdownMode = 'line'; render();
+    const linePoints = [...get('breakdownChart').innerHTML.matchAll(/data-value="([\d]+)"/g)].map(m => Number(m[1]));
+    assert.equal(linePoints.reduce((a,b)=>a+b,0), windowVideos.length);
+    assert(!get('breakdownChart').classList.contains('is-upload-stacked'));
   }
 }
 assert.equal(context.videoType({durationSeconds: 600}), 'unknown', 'no duration inference');
 assert.equal(context.videoType({durationSeconds: 600, youtubeFormat: 'short'}), 'short', 'YouTube category is authoritative');
 choices.trendMetric = 'viewCount';render();
-assert.equal(get('uploadTypeRow').hidden, true);
+assert(!html.includes('id="uploadType'));
+assert(!read('site/app.js').includes('$("uploadType'));
+context.renderUploadStackedBars([{id:'test',channel:{channel:'Test',channelUrl:'#'},value:4,rows:[{updates:[{youtubeFormat:'long'},{youtubeFormat:'short'},{youtubeFormat:'live'},{durationSeconds:10}]}]}]);
+assert.equal((get('breakdownChart').innerHTML.match(/data-count="1"/g)||[]).length,4);
+assert(get('breakdownLegend').innerHTML.includes('待确认'));
+assert(!get('breakdownChart').innerHTML.includes('NaN'));
 console.log('PASS: shared module ancestry, all-channel windows/metrics/widths, 1/2/5-channel multi-select, filtered bar/line controls, removed comparisons');
-console.log('PASS: YouTube types reconcile with all uploads across 4 periods, all/selected channels and 3 chart views; unknown is never inferred from duration');
+console.log('PASS: stacked YouTube types reconcile by channel with all updates across 4 periods and all/selected channels; long/short/live/unknown; type selector removed');

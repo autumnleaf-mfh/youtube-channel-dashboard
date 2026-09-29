@@ -96,8 +96,6 @@ button, a { font: inherit; }
 .trend-figure .channel-metric-bar > b { font-size: 12px; }
 .trend-figure .trend-empty { min-height: 300px; }
 .selector-row { display: grid; grid-template-columns: 54px minmax(0, 1fr); align-items: start; min-width: 0; gap: 12px; }
-#uploadTypeRow[hidden], #uploadTypeNote[hidden] { display: none; }
-#uploadType { flex-wrap: wrap; overflow: visible; }
 .selector-row > span { padding-top: 7px; color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: .1em; }
 .choice-buttons { display: flex; width: 100%; min-width: 0; flex-wrap: nowrap; gap: 6px; overflow-x: auto; padding-bottom: 3px; scrollbar-color: var(--line) transparent; }
 .choice-buttons button { display: inline-flex; align-items: center; gap: 6px; min-height: 30px; padding: 5px 10px; border: 1px solid var(--line); border-radius: 9px; background: rgba(4, 11, 8, .38); color: var(--muted); cursor: pointer; font-size: 11px; white-space: nowrap; }
@@ -167,6 +165,16 @@ button, a { font: inherit; }
 .upload-bar-track.signed-bar { position: relative; }
 .signed-bar::before { content: ""; position: absolute; left: var(--zero-position); top: -3px; bottom: -3px; border-left: 1px solid var(--muted); z-index: 1; }
 .upload-bar-track > span { display: block; height: 100%; border-radius: inherit; background: var(--accent); }
+.upload-bar-track.upload-stack { display: flex; overflow: visible; }
+.upload-stack > .upload-stack-segment { flex-shrink: 0; border-radius: 0; }
+.upload-stack > .upload-stack-segment:first-child { border-radius: 4px 0 0 4px; }
+.upload-stack > .upload-stack-segment:last-child { border-radius: 0 4px 4px 0; }
+.upload-stack > .upload-stack-segment:only-child { border-radius: 4px; }
+.upload-stack-segment:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; z-index: 1; }
+.trend-figure .is-upload-stacked .channel-metric-bar { grid-template-columns: minmax(100px, 155px) minmax(0, 1fr) 102px; min-height: 31px; }
+.upload-stack-values { display: grid; gap: 1px; text-align: right; font-variant-numeric: tabular-nums; }
+.upload-stack-values > b { font-size: 12px; }
+.upload-stack-values > small { color: var(--muted); font-size: 10px; }
 .upload-bar-row > b { text-align: right; font-size: 14px; font-variant-numeric: tabular-nums; }
 .upload-bar-row small { font-weight: 400; color: var(--muted); font-size: 11px; }
 .video-filters { display: grid; gap: 12px; margin-top: 20px; min-width: 0; }
