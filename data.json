@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-09-30T12:09:00Z",
+  "generatedAt": "2026-09-30T12:10:04Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-09-29T02:55:50Z",
     "formatClassification": {
@@ -3308,7 +3308,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-09-30T12:09:08+00:00",
+        "retrievedAt": "2026-09-30T12:10:11+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -8506,7 +8506,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-09-30T12:09:08+00:00",
+        "retrievedAt": "2026-09-30T12:10:11+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -10913,7 +10913,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-09-30T12:09:08+00:00",
+        "retrievedAt": "2026-09-30T12:10:11+00:00",
         "metricDefinitions": []
       }
     },
@@ -64041,7 +64041,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-09-30T12:09:08+00:00",
+        "retrievedAt": "2026-09-30T12:10:11+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -66640,7 +66640,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-09-30T12:09:08+00:00",
+        "retrievedAt": "2026-09-30T12:10:11+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -66714,7 +66714,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-09-30T12:09:08+00:00",
+        "retrievedAt": "2026-09-30T12:10:11+00:00",
         "metricDefinitions": []
       }
     },
@@ -66725,7 +66725,7 @@
           "channelsExpected": 12,
           "channelsCollected": 12,
           "videoCatalogCount": 238,
-          "videosRefreshed": 2,
+          "videosRefreshed": 0,
           "videosDisplayed": 143,
           "fullInventoryScan": false,
           "failureCount": 0,
@@ -66735,7 +66735,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-09-30T12:09:08+00:00",
+        "retrievedAt": "2026-09-30T12:10:11+00:00",
         "metricDefinitions": []
       }
     }
