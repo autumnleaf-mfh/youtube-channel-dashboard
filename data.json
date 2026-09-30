@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-09-30T07:08:59Z",
+  "generatedAt": "2026-09-30T07:39:00Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-09-29T02:55:50Z",
     "formatClassification": {
@@ -3035,7 +3035,7 @@
           "customUrl": "@amberwithfinance",
           "channelUrl": "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA",
           "thumbnail": "https://yt3.ggpht.com/czuSSl1-7trtlN5BP5n7hPS_Pm7cKTX_chp1lqgVggP5apIJkB1CsmVXt0F7WpD4mGg4PIdj=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 668,
+          "subscriberCount": 669,
           "hiddenSubscriberCount": false,
           "channelViewCount": 51418,
           "videoCount": 9,
@@ -3083,7 +3083,7 @@
           "customUrl": "@財經小鹿financedeer",
           "channelUrl": "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ",
           "thumbnail": "https://yt3.ggpht.com/b0OPo5YQsfzCR6jLZTs6H-4EO-EFrqvFHMANy587DDAJGZ6wK_jwjnCr8Es9Z-6E7J01GRtg=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 765,
+          "subscriberCount": 766,
           "hiddenSubscriberCount": false,
           "channelViewCount": 83018,
           "videoCount": 14,
@@ -3136,7 +3136,7 @@
           "channelViewCount": 16405,
           "videoCount": 7,
           "lastPublishedAt": "2026-09-26T06:01:27Z",
-          "daysSinceUpload": 4.0,
+          "daysSinceUpload": 4.1,
           "uploads7d": 3,
           "uploads30d": 7,
           "uploads90d": 7,
@@ -3251,7 +3251,7 @@
           "customUrl": "@maple-moneyforest",
           "channelUrl": "https://www.youtube.com/channel/UC5lCKye2u8Q0BoE5ggY9myw",
           "thumbnail": "https://yt3.ggpht.com/pMWF2QNsoxnImQg07Dt2tQUMVnZxgPE793m7fi2VrhNdvJoWlsq_tOBMTXPszPInKhtLr1YpYao=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 133,
+          "subscriberCount": 134,
           "hiddenSubscriberCount": false,
           "channelViewCount": 2549,
           "videoCount": 6,
@@ -3296,7 +3296,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-09-30T07:09:06+00:00",
+        "retrievedAt": "2026-09-30T07:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -8279,7 +8279,7 @@
           "date": "2026-09-30",
           "channelId": "UC5lCKye2u8Q0BoE5ggY9myw",
           "channel": "Maple的理財森林",
-          "subscriberCount": 133,
+          "subscriberCount": 134,
           "channelViewCount": 2549,
           "videoCount": 6
         },
@@ -8333,7 +8333,7 @@
           "date": "2026-09-30",
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "小Lu財經說",
-          "subscriberCount": 765,
+          "subscriberCount": 766,
           "channelViewCount": 83018,
           "videoCount": 14
         },
@@ -8342,7 +8342,7 @@
           "date": "2026-09-30",
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大鏡",
-          "subscriberCount": 668,
+          "subscriberCount": 669,
           "channelViewCount": 51418,
           "videoCount": 9
         },
@@ -8386,7 +8386,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-09-30T07:09:06+00:00",
+        "retrievedAt": "2026-09-30T07:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -8483,7 +8483,7 @@
           "channelId": "UCtkUpmfJckdTZyNvyWBl_rg",
           "channel": "Leo財經觀察",
           "videoId": "CHhcvhdMEMI",
-          "title": "12天暴漲2000億，轉頭就被封殺！Meta的新AI Muse，到底動了亞馬遜哪塊蛋糕？#meta  #muse #amazon #科技股 #美股投資",
+          "title": "Muse上線12天，Meta暴漲2000億！這個AI為何突然被封殺？你的錢包成了巨頭的新戰場？  #meta  #muse #amazon #科技股 #美股投資",
           "publishedAt": "2026-09-29T10:30:06Z",
           "publishedDate": "2026-09-29",
           "thumbnail": "https://i.ytimg.com/vi/CHhcvhdMEMI/mqdefault.jpg",
@@ -8603,7 +8603,7 @@
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "小Lu財經說",
           "videoId": "9Mr-ce2n8GU",
-          "title": "日本30年「全球提款機」正式關門！847萬億海外資金開始回流，美債美股恐迎流動性巨震，黃金真正大行情要來了？#股票 ",
+          "title": "日本30年「全球提款機」正式關門！847萬億海外資金開始回流，美債美股恐迎流動性巨震，黃金真正大行情要來了？#股票",
           "publishedAt": "2026-09-28T02:07:18Z",
           "publishedDate": "2026-09-28",
           "thumbnail": "https://i.ytimg.com/vi/9Mr-ce2n8GU/mqdefault.jpg",
@@ -8643,7 +8643,7 @@
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "小Lu財經說",
           "videoId": "8SC-fo0wT-I",
-          "title": "美聯儲加息落地！科技股誰先撐不住？蘋果殺入AI伺服器、英特爾牽手海力士，杰富瑞卻喊9000點！#股票 #stockmarket ",
+          "title": "美聯儲加息落地！科技股誰先撐不住？蘋果殺入AI伺服器、英特爾牽手海力士，杰富瑞卻喊9000點！#股票 #stockmarket",
           "publishedAt": "2026-09-27T01:00:33Z",
           "publishedDate": "2026-09-27",
           "thumbnail": "https://i.ytimg.com/vi/8SC-fo0wT-I/mqdefault.jpg",
@@ -8663,7 +8663,7 @@
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大鏡",
           "videoId": "P7oUKn_cm1o",
-          "title": "大模型跌成白菜價，蘋果一款折疊屏收割？AI低谷，蘋果開始吃紅利！淘金熱最後誰賺了大錢... #AI #蘋果 #折疊屏 #美股 #投資 #財經 ",
+          "title": "大模型跌成白菜價，蘋果一款折疊屏收割？AI低谷，蘋果開始吃紅利！淘金熱最後誰賺了大錢... #AI #蘋果 #折疊屏 #美股 #投資 #財經",
           "publishedAt": "2026-09-26T12:00:16Z",
           "publishedDate": "2026-09-26",
           "thumbnail": "https://i.ytimg.com/vi/P7oUKn_cm1o/mqdefault.jpg",
@@ -8763,7 +8763,7 @@
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "小Lu財經說",
           "videoId": "ZwtMr5Qtv_8",
-          "title": "泰國突然封殺黃金？泰銖被金價綁架，1997危機會重演嗎？黃金正在拖垮泰國？#gold #stock #股票 ",
+          "title": "泰國突然封殺黃金？泰銖被金價綁架，1997危機會重演嗎？黃金正在拖垮泰國？#gold #stock #股票",
           "publishedAt": "2026-09-25T01:00:10Z",
           "publishedDate": "2026-09-25",
           "thumbnail": "https://i.ytimg.com/vi/ZwtMr5Qtv_8/mqdefault.jpg",
@@ -10783,7 +10783,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-09-30T07:09:06+00:00",
+        "retrievedAt": "2026-09-30T07:39:06+00:00",
         "metricDefinitions": []
       }
     },
@@ -63029,7 +63029,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-09-30T07:09:06+00:00",
+        "retrievedAt": "2026-09-30T07:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -65610,7 +65610,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-09-30T07:09:06+00:00",
+        "retrievedAt": "2026-09-30T07:39:06+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -65684,7 +65684,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-09-30T07:09:06+00:00",
+        "retrievedAt": "2026-09-30T07:39:06+00:00",
         "metricDefinitions": []
       }
     },
@@ -65695,7 +65695,7 @@
           "channelsExpected": 12,
           "channelsCollected": 12,
           "videoCatalogCount": 237,
-          "videosRefreshed": 50,
+          "videosRefreshed": 0,
           "videosDisplayed": 142,
           "fullInventoryScan": false,
           "failureCount": 0,
@@ -65705,7 +65705,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-09-30T07:09:06+00:00",
+        "retrievedAt": "2026-09-30T07:39:06+00:00",
         "metricDefinitions": []
       }
     }
