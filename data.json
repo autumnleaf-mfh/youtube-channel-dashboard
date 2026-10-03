@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-10-03T13:39:00Z",
+  "generatedAt": "2026-10-03T14:08:59Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-09-29T02:55:50Z",
     "formatClassification": {
@@ -3287,7 +3287,7 @@
           "customUrl": "@amberwithfinance",
           "channelUrl": "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA",
           "thumbnail": "https://yt3.ggpht.com/czuSSl1-7trtlN5BP5n7hPS_Pm7cKTX_chp1lqgVggP5apIJkB1CsmVXt0F7WpD4mGg4PIdj=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 1460,
+          "subscriberCount": 1480,
           "hiddenSubscriberCount": false,
           "channelViewCount": 112135,
           "videoCount": 12,
@@ -3335,7 +3335,7 @@
           "customUrl": "@財經小鹿financedeer",
           "channelUrl": "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ",
           "thumbnail": "https://yt3.ggpht.com/b0OPo5YQsfzCR6jLZTs6H-4EO-EFrqvFHMANy587DDAJGZ6wK_jwjnCr8Es9Z-6E7J01GRtg=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 1280,
+          "subscriberCount": 1290,
           "hiddenSubscriberCount": false,
           "channelViewCount": 114709,
           "videoCount": 20,
@@ -3364,7 +3364,7 @@
           "channelViewCount": 110,
           "videoCount": 7,
           "lastPublishedAt": "2026-09-23T12:30:27Z",
-          "daysSinceUpload": 10.0,
+          "daysSinceUpload": 10.1,
           "uploads7d": 0,
           "uploads30d": 7,
           "uploads90d": 7,
@@ -3383,7 +3383,7 @@
           "customUrl": "@lorafinancialworld",
           "channelUrl": "https://www.youtube.com/channel/UCsXJXZI4J_N9r8H9TsORmlA",
           "thumbnail": "https://yt3.ggpht.com/f8Upq2a2CtKPaGkcJDG609eXDHKSvG6cl218-v1CFEcEaAgzFA7PdxyiGZvWQqb_jRJtrS6_lg=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 218,
+          "subscriberCount": 219,
           "hiddenSubscriberCount": false,
           "channelViewCount": 24116,
           "videoCount": 8,
@@ -3412,7 +3412,7 @@
           "channelViewCount": 9184,
           "videoCount": 8,
           "lastPublishedAt": "2026-10-03T00:30:23Z",
-          "daysSinceUpload": 0.5,
+          "daysSinceUpload": 0.6,
           "uploads7d": 4,
           "uploads30d": 8,
           "uploads90d": 8,
@@ -3436,7 +3436,7 @@
           "channelViewCount": 53,
           "videoCount": 7,
           "lastPublishedAt": "2026-10-01T22:15:41Z",
-          "daysSinceUpload": 1.6,
+          "daysSinceUpload": 1.7,
           "uploads7d": 3,
           "uploads30d": 7,
           "uploads90d": 7,
@@ -3532,7 +3532,7 @@
           "channelViewCount": 2385,
           "videoCount": 8,
           "lastPublishedAt": "2026-10-02T12:30:03Z",
-          "daysSinceUpload": 1.0,
+          "daysSinceUpload": 1.1,
           "uploads7d": 6,
           "uploads30d": 8,
           "uploads90d": 8,
@@ -3548,7 +3548,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-10-03T13:39:09+00:00",
+        "retrievedAt": "2026-10-03T14:09:12+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -9719,7 +9719,7 @@
           "date": "2026-10-03",
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "小Lu財經說",
-          "subscriberCount": 1280,
+          "subscriberCount": 1290,
           "channelViewCount": 114709,
           "videoCount": 20
         },
@@ -9728,7 +9728,7 @@
           "date": "2026-10-03",
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大鏡",
-          "subscriberCount": 1460,
+          "subscriberCount": 1480,
           "channelViewCount": 112135,
           "videoCount": 12
         },
@@ -9755,7 +9755,7 @@
           "date": "2026-10-03",
           "channelId": "UCsXJXZI4J_N9r8H9TsORmlA",
           "channel": "羅拉財富觀",
-          "subscriberCount": 218,
+          "subscriberCount": 219,
           "channelViewCount": 24116,
           "videoCount": 8
         },
@@ -9772,7 +9772,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-10-03T13:39:09+00:00",
+        "retrievedAt": "2026-10-03T14:09:12+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -12379,7 +12379,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-10-03T13:39:09+00:00",
+        "retrievedAt": "2026-10-03T14:09:12+00:00",
         "metricDefinitions": []
       }
     },
@@ -89681,7 +89681,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-10-03T13:39:09+00:00",
+        "retrievedAt": "2026-10-03T14:09:12+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -92604,7 +92604,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-10-03T13:39:09+00:00",
+        "retrievedAt": "2026-10-03T14:09:12+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -92678,7 +92678,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-10-03T13:39:09+00:00",
+        "retrievedAt": "2026-10-03T14:09:12+00:00",
         "metricDefinitions": []
       }
     },
@@ -92699,7 +92699,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-10-03T13:39:09+00:00",
+        "retrievedAt": "2026-10-03T14:09:12+00:00",
         "metricDefinitions": []
       }
     }
