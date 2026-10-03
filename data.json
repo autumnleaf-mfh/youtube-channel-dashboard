@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-10-03T13:09:00Z",
+  "generatedAt": "2026-10-03T13:20:05Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-09-29T02:55:50Z",
     "formatClassification": {
@@ -3292,7 +3292,7 @@
           "channelViewCount": 112135,
           "videoCount": 12,
           "lastPublishedAt": "2026-10-03T12:00:16Z",
-          "daysSinceUpload": 0.0,
+          "daysSinceUpload": 0.1,
           "uploads7d": 5,
           "uploads30d": 12,
           "uploads90d": 12,
@@ -3335,7 +3335,7 @@
           "customUrl": "@財經小鹿financedeer",
           "channelUrl": "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ",
           "thumbnail": "https://yt3.ggpht.com/b0OPo5YQsfzCR6jLZTs6H-4EO-EFrqvFHMANy587DDAJGZ6wK_jwjnCr8Es9Z-6E7J01GRtg=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 1270,
+          "subscriberCount": 1280,
           "hiddenSubscriberCount": false,
           "channelViewCount": 114709,
           "videoCount": 20,
@@ -3383,7 +3383,7 @@
           "customUrl": "@lorafinancialworld",
           "channelUrl": "https://www.youtube.com/channel/UCsXJXZI4J_N9r8H9TsORmlA",
           "thumbnail": "https://yt3.ggpht.com/f8Upq2a2CtKPaGkcJDG609eXDHKSvG6cl218-v1CFEcEaAgzFA7PdxyiGZvWQqb_jRJtrS6_lg=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 217,
+          "subscriberCount": 218,
           "hiddenSubscriberCount": false,
           "channelViewCount": 24116,
           "videoCount": 8,
@@ -3503,7 +3503,7 @@
           "customUrl": "@maple-moneyforest",
           "channelUrl": "https://www.youtube.com/channel/UC5lCKye2u8Q0BoE5ggY9myw",
           "thumbnail": "https://yt3.ggpht.com/pMWF2QNsoxnImQg07Dt2tQUMVnZxgPE793m7fi2VrhNdvJoWlsq_tOBMTXPszPInKhtLr1YpYao=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 421,
+          "subscriberCount": 422,
           "hiddenSubscriberCount": false,
           "channelViewCount": 27924,
           "videoCount": 8,
@@ -3548,7 +3548,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-10-03T13:09:18+00:00",
+        "retrievedAt": "2026-10-03T13:20:16+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -9665,7 +9665,7 @@
           "date": "2026-10-03",
           "channelId": "UC5lCKye2u8Q0BoE5ggY9myw",
           "channel": "Maple的理財森林",
-          "subscriberCount": 421,
+          "subscriberCount": 422,
           "channelViewCount": 27924,
           "videoCount": 8
         },
@@ -9719,7 +9719,7 @@
           "date": "2026-10-03",
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "小Lu財經說",
-          "subscriberCount": 1270,
+          "subscriberCount": 1280,
           "channelViewCount": 114709,
           "videoCount": 20
         },
@@ -9755,7 +9755,7 @@
           "date": "2026-10-03",
           "channelId": "UCsXJXZI4J_N9r8H9TsORmlA",
           "channel": "羅拉財富觀",
-          "subscriberCount": 217,
+          "subscriberCount": 218,
           "channelViewCount": 24116,
           "videoCount": 8
         },
@@ -9772,7 +9772,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-10-03T13:09:18+00:00",
+        "retrievedAt": "2026-10-03T13:20:16+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -9889,7 +9889,7 @@
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大鏡",
           "videoId": "kG19YmDD7rs",
-          "title": "22–25歲就業暴跌近20%！麥肯錫發文拷問：AI時代，誰來訓練下一代專家？美銀、IBM、宜家重建「學徒制」... #AI #就業 #學徒制 #麥肯錫 #職場 #財經 ",
+          "title": "22–25歲就業暴跌近20%！麥肯錫發文拷問：AI時代，誰來訓練下一代專家？美銀、IBM、宜家重建「學徒制」... #AI #就業 #學徒制 #麥肯錫 #職場 #財經",
           "publishedAt": "2026-10-02T12:00:31Z",
           "publishedDate": "2026-10-02",
           "thumbnail": "https://i.ytimg.com/vi/kG19YmDD7rs/mqdefault.jpg",
@@ -10199,7 +10199,7 @@
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "小Lu財經說",
           "videoId": "9Mr-ce2n8GU",
-          "title": "日本30年「全球提款機」正式關門！847萬億海外資金開始回流，美債美股恐迎流動性巨震，黃金真正大行情要來了？#股票 ",
+          "title": "日本30年「全球提款機」正式關門！847萬億海外資金開始回流，美債美股恐迎流動性巨震，黃金真正大行情要來了？#股票",
           "publishedAt": "2026-09-28T02:07:18Z",
           "publishedDate": "2026-09-28",
           "thumbnail": "https://i.ytimg.com/vi/9Mr-ce2n8GU/mqdefault.jpg",
@@ -10239,7 +10239,7 @@
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "小Lu財經說",
           "videoId": "8SC-fo0wT-I",
-          "title": "美聯儲加息落地！科技股誰先撐不住？蘋果殺入AI伺服器、英特爾牽手海力士，杰富瑞卻喊9000點！#股票 #stockmarket ",
+          "title": "美聯儲加息落地！科技股誰先撐不住？蘋果殺入AI伺服器、英特爾牽手海力士，杰富瑞卻喊9000點！#股票 #stockmarket",
           "publishedAt": "2026-09-27T01:00:33Z",
           "publishedDate": "2026-09-27",
           "thumbnail": "https://i.ytimg.com/vi/8SC-fo0wT-I/mqdefault.jpg",
@@ -12379,7 +12379,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-10-03T13:09:18+00:00",
+        "retrievedAt": "2026-10-03T13:20:16+00:00",
         "metricDefinitions": []
       }
     },
@@ -89681,7 +89681,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-10-03T13:09:18+00:00",
+        "retrievedAt": "2026-10-03T13:20:16+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -92604,7 +92604,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-10-03T13:09:18+00:00",
+        "retrievedAt": "2026-10-03T13:20:16+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -92678,7 +92678,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-10-03T13:09:18+00:00",
+        "retrievedAt": "2026-10-03T13:20:16+00:00",
         "metricDefinitions": []
       }
     },
@@ -92689,7 +92689,7 @@
           "channelsExpected": 12,
           "channelsCollected": 12,
           "videoCatalogCount": 258,
-          "videosRefreshed": 45,
+          "videosRefreshed": 0,
           "videosDisplayed": 161,
           "fullInventoryScan": false,
           "failureCount": 0,
@@ -92699,7 +92699,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-10-03T13:09:18+00:00",
+        "retrievedAt": "2026-10-03T13:20:16+00:00",
         "metricDefinitions": []
       }
     }
