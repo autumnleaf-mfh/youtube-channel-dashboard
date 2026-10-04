@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-10-04T15:09:00Z",
+  "generatedAt": "2026-10-04T15:39:00Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-09-29T02:55:50Z",
     "formatClassification": {
@@ -3340,7 +3340,7 @@
           "channelViewCount": 177862,
           "videoCount": 12,
           "lastPublishedAt": "2026-10-03T12:00:16Z",
-          "daysSinceUpload": 1.1,
+          "daysSinceUpload": 1.2,
           "uploads7d": 5,
           "uploads30d": 12,
           "uploads90d": 12,
@@ -3361,7 +3361,7 @@
           "thumbnail": "https://yt3.ggpht.com/8S03I1M5ktZGcabpsOUZfwoVhpcopaNya9sZgOoCak7DZuGnkTFhnBw8B1w4F6W_Sn1etuJkng=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 14200,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 646752,
+          "channelViewCount": 646770,
           "videoCount": 71,
           "lastPublishedAt": "2026-09-26T01:00:01Z",
           "daysSinceUpload": 8.6,
@@ -3388,7 +3388,7 @@
           "channelViewCount": 185256,
           "videoCount": 22,
           "lastPublishedAt": "2026-10-04T02:00:11Z",
-          "daysSinceUpload": 0.5,
+          "daysSinceUpload": 0.6,
           "uploads7d": 11,
           "uploads30d": 22,
           "uploads90d": 22,
@@ -3431,7 +3431,7 @@
           "customUrl": "@lorafinancialworld",
           "channelUrl": "https://www.youtube.com/channel/UCsXJXZI4J_N9r8H9TsORmlA",
           "thumbnail": "https://yt3.ggpht.com/f8Upq2a2CtKPaGkcJDG609eXDHKSvG6cl218-v1CFEcEaAgzFA7PdxyiGZvWQqb_jRJtrS6_lg=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 241,
+          "subscriberCount": 242,
           "hiddenSubscriberCount": false,
           "channelViewCount": 26999,
           "videoCount": 9,
@@ -3505,7 +3505,7 @@
           "thumbnail": "https://yt3.ggpht.com/3QUdBOOdvLiCP7RvqjgAxwW22LXeubkz7hYMAHJXNOVsQ5m0OfjbPJ1ewtnL9AZ3GFoE_f0gXg=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 8,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 1037,
+          "channelViewCount": 1046,
           "videoCount": 15,
           "lastPublishedAt": "2026-10-01T17:00:22Z",
           "daysSinceUpload": 2.9,
@@ -3529,10 +3529,10 @@
           "thumbnail": "https://yt3.ggpht.com/oWevvT9BSKRYqGAkafvq4fUMKeEwmzqtFJqTWsE4Hc93JAyB3WEB9Mn5NlVhAXpvOuWMnD950A=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 25,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 2775,
+          "channelViewCount": 2834,
           "videoCount": 8,
           "lastPublishedAt": "2026-10-03T09:30:12Z",
-          "daysSinceUpload": 1.2,
+          "daysSinceUpload": 1.3,
           "uploads7d": 3,
           "uploads30d": 8,
           "uploads90d": 8,
@@ -3596,7 +3596,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-10-04T15:09:08+00:00",
+        "retrievedAt": "2026-10-04T15:39:07+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -9921,7 +9921,7 @@
           "channelId": "UCQAo0ws95p-uN7gr0OOHoXg",
           "channel": "喬安說財經",
           "subscriberCount": 25,
-          "channelViewCount": 2775,
+          "channelViewCount": 2834,
           "videoCount": 8
         },
         {
@@ -9930,7 +9930,7 @@
           "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA",
           "channel": "阿誠聊焦點",
           "subscriberCount": 8,
-          "channelViewCount": 1037,
+          "channelViewCount": 1046,
           "videoCount": 15
         },
         {
@@ -9966,7 +9966,7 @@
           "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ",
           "channel": "小鹿財經 Deer Finance",
           "subscriberCount": 14200,
-          "channelViewCount": 646752,
+          "channelViewCount": 646770,
           "videoCount": 71
         },
         {
@@ -9974,7 +9974,7 @@
           "date": "2026-10-04",
           "channelId": "UCsXJXZI4J_N9r8H9TsORmlA",
           "channel": "羅拉財富觀",
-          "subscriberCount": 241,
+          "subscriberCount": 242,
           "channelViewCount": 26999,
           "videoCount": 9
         },
@@ -9991,7 +9991,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-10-04T15:09:08+00:00",
+        "retrievedAt": "2026-10-04T15:39:07+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -12638,7 +12638,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-10-04T15:09:08+00:00",
+        "retrievedAt": "2026-10-04T15:39:07+00:00",
         "metricDefinitions": []
       }
     },
@@ -97770,7 +97770,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-10-04T15:09:08+00:00",
+        "retrievedAt": "2026-10-04T15:39:07+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -100765,7 +100765,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-10-04T15:09:08+00:00",
+        "retrievedAt": "2026-10-04T15:39:07+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -100839,7 +100839,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-10-04T15:09:08+00:00",
+        "retrievedAt": "2026-10-04T15:39:07+00:00",
         "metricDefinitions": []
       }
     },
@@ -100860,7 +100860,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-10-04T15:09:08+00:00",
+        "retrievedAt": "2026-10-04T15:39:07+00:00",
         "metricDefinitions": []
       }
     }
