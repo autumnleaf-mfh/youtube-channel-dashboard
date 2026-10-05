@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-10-05T21:08:59Z",
+  "generatedAt": "2026-10-05T21:39:00Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-09-29T02:55:50Z",
     "formatClassification": {
@@ -3376,7 +3376,7 @@
           "channelViewCount": 1421526,
           "videoCount": 85,
           "lastPublishedAt": "2026-10-03T13:00:16Z",
-          "daysSinceUpload": 2.3,
+          "daysSinceUpload": 2.4,
           "uploads7d": 2,
           "uploads30d": 8,
           "uploads90d": 62,
@@ -3424,7 +3424,7 @@
           "channelViewCount": 646828,
           "videoCount": 71,
           "lastPublishedAt": "2026-09-26T01:00:01Z",
-          "daysSinceUpload": 9.8,
+          "daysSinceUpload": 9.9,
           "uploads7d": 0,
           "uploads30d": 5,
           "uploads90d": 48,
@@ -3448,7 +3448,7 @@
           "channelViewCount": 239558,
           "videoCount": 22,
           "lastPublishedAt": "2026-10-05T01:00:11Z",
-          "daysSinceUpload": 0.8,
+          "daysSinceUpload": 0.9,
           "uploads7d": 11,
           "uploads30d": 23,
           "uploads90d": 23,
@@ -3635,7 +3635,7 @@
           "customUrl": "@leo財經觀察",
           "channelUrl": "https://www.youtube.com/channel/UCtkUpmfJckdTZyNvyWBl_rg",
           "thumbnail": "https://yt3.ggpht.com/XbUw0snSlj63ldkf39KhzYdjo3RCu7GQgvBdzhNsG2ZMo0KsMJeTZ3_xh620eQWxjODSLpxqf6I=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 67,
+          "subscriberCount": 68,
           "hiddenSubscriberCount": false,
           "channelViewCount": 10668,
           "videoCount": 9,
@@ -3656,7 +3656,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-10-05T21:09:08+00:00",
+        "retrievedAt": "2026-10-05T21:39:08+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -10331,7 +10331,7 @@
           "date": "2026-10-05",
           "channelId": "UCtkUpmfJckdTZyNvyWBl_rg",
           "channel": "Leo財經觀察",
-          "subscriberCount": 67,
+          "subscriberCount": 68,
           "channelViewCount": 10668,
           "videoCount": 9
         }
@@ -10339,7 +10339,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-10-05T21:09:08+00:00",
+        "retrievedAt": "2026-10-05T21:39:08+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -13036,7 +13036,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-10-05T21:09:08+00:00",
+        "retrievedAt": "2026-10-05T21:39:08+00:00",
         "metricDefinitions": []
       }
     },
@@ -111470,7 +111470,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-10-05T21:09:08+00:00",
+        "retrievedAt": "2026-10-05T21:39:08+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -114555,7 +114555,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-10-05T21:09:08+00:00",
+        "retrievedAt": "2026-10-05T21:39:08+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -114629,7 +114629,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-10-05T21:09:08+00:00",
+        "retrievedAt": "2026-10-05T21:39:08+00:00",
         "metricDefinitions": []
       }
     },
@@ -114650,7 +114650,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-10-05T21:09:08+00:00",
+        "retrievedAt": "2026-10-05T21:39:08+00:00",
         "metricDefinitions": []
       }
     }
