@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-10-06T05:09:00Z",
+  "generatedAt": "2026-10-06T05:39:01Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-10-06T03:09:00Z",
     "formatClassification": {
@@ -301,7 +301,7 @@
         }
       },
       "UCsWtmTG0UkpuGeeAno4jiGQ": {
-        "checkedAt": "2026-09-29T05:27:52Z",
+        "checkedAt": "2026-10-06T05:39:01Z",
         "videoIds": [
           "-3vjrVD8Syw",
           "-ZwXgi7zUbI",
@@ -382,7 +382,7 @@
         }
       },
       "UCNX9-jzOH4KMbIeuWK8LZaw": {
-        "checkedAt": "2026-09-29T05:27:52Z",
+        "checkedAt": "2026-10-06T05:39:01Z",
         "videoIds": [
           "3tUB9tmJOtg",
           "IU-D3KFogR0",
@@ -1128,7 +1128,7 @@
         {
           "videoId": "Lw_5KVPXw9s",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -1172,7 +1172,7 @@
         {
           "videoId": "xZmZX3PJqVc",
           "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
           ],
@@ -1271,7 +1271,7 @@
         {
           "videoId": "IU-D3KFogR0",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCNX9-jzOH4KMbIeuWK8LZaw/shorts"
           ],
@@ -1414,7 +1414,7 @@
         {
           "videoId": "xL7HQOXc-R0",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCNX9-jzOH4KMbIeuWK8LZaw/shorts"
           ],
@@ -1469,7 +1469,7 @@
         {
           "videoId": "yZgO2P3IWQM",
           "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCNX9-jzOH4KMbIeuWK8LZaw/videos"
           ],
@@ -1491,7 +1491,7 @@
         {
           "videoId": "Mg3Ca9agmZs",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCNX9-jzOH4KMbIeuWK8LZaw/shorts"
           ],
@@ -1579,7 +1579,7 @@
         {
           "videoId": "3tUB9tmJOtg",
           "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCNX9-jzOH4KMbIeuWK8LZaw/videos"
           ],
@@ -1656,7 +1656,7 @@
         {
           "videoId": "JDycQBrAkKQ",
           "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCNX9-jzOH4KMbIeuWK8LZaw/videos"
           ],
@@ -1700,7 +1700,7 @@
         {
           "videoId": "VsWReCff3Ok",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCNX9-jzOH4KMbIeuWK8LZaw/shorts"
           ],
@@ -1744,7 +1744,7 @@
         {
           "videoId": "pzu0jONf2C0",
           "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
           ],
@@ -1766,7 +1766,7 @@
         {
           "videoId": "xmc8O8X3hdU",
           "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
           ],
@@ -1788,7 +1788,7 @@
         {
           "videoId": "aNBHNVGA79M",
           "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
           ],
@@ -1810,7 +1810,7 @@
         {
           "videoId": "H7rc1mnZk-U",
           "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
           ],
@@ -1821,7 +1821,7 @@
         {
           "videoId": "DMUs4RhBJZ4",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -1854,7 +1854,7 @@
         {
           "videoId": "-ZwXgi7zUbI",
           "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
           ],
@@ -1865,7 +1865,7 @@
         {
           "videoId": "cBAcjbyJO48",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -1887,7 +1887,7 @@
         {
           "videoId": "0-J-1FMeU9A",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -1931,7 +1931,7 @@
         {
           "videoId": "hTKb8bpcNho",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -1942,7 +1942,7 @@
         {
           "videoId": "28EUHO_rNkU",
           "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
           ],
@@ -1964,7 +1964,7 @@
         {
           "videoId": "pDgdvk-ZWm4",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -1986,7 +1986,7 @@
         {
           "videoId": "pFjQZ0uC1a4",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -2008,7 +2008,7 @@
         {
           "videoId": "bvWwlckaXtM",
           "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
           ],
@@ -2019,7 +2019,7 @@
         {
           "videoId": "N53tEPTrds0",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -2030,7 +2030,7 @@
         {
           "videoId": "BRTjN8j6XQw",
           "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
           ],
@@ -2063,7 +2063,7 @@
         {
           "videoId": "wiBzIlH3DrM",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -2074,7 +2074,7 @@
         {
           "videoId": "O7vMqutsSUk",
           "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
           ],
@@ -2118,7 +2118,7 @@
         {
           "videoId": "bdWYmGmvPCw",
           "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
           ],
@@ -2162,7 +2162,7 @@
         {
           "videoId": "Hd6ygS1q7GI",
           "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
           ],
@@ -2173,7 +2173,7 @@
         {
           "videoId": "rS112nQ_Rts",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -2195,7 +2195,7 @@
         {
           "videoId": "IwY9EFhwJ-Y",
           "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
           ],
@@ -2206,7 +2206,7 @@
         {
           "videoId": "2OronVJ0PVQ",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -2239,7 +2239,7 @@
         {
           "videoId": "Fjxw_yszNfg",
           "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
           ],
@@ -2250,7 +2250,7 @@
         {
           "videoId": "kRGbg93WVeU",
           "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
           ],
@@ -2272,7 +2272,7 @@
         {
           "videoId": "XtHGU0Fp2BY",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -2283,7 +2283,7 @@
         {
           "videoId": "G2HnXw9f0Fw",
           "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
           ],
@@ -2305,7 +2305,7 @@
         {
           "videoId": "AuJdnj5kiH0",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -2338,7 +2338,7 @@
         {
           "videoId": "Wc_xZ9RQOEw",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -2349,7 +2349,7 @@
         {
           "videoId": "4Rv8PBjAKqk",
           "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
           ],
@@ -2371,7 +2371,7 @@
         {
           "videoId": "7Py4XU-L_zI",
           "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
           ],
@@ -2382,7 +2382,7 @@
         {
           "videoId": "kGcOl8vfyAM",
           "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
           ],
@@ -2437,7 +2437,7 @@
         {
           "videoId": "8i01PIwTVBU",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -2481,7 +2481,7 @@
         {
           "videoId": "6gcaKuWXdIY",
           "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
           ],
@@ -2514,7 +2514,7 @@
         {
           "videoId": "F5SBV2SQEVs",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -2558,7 +2558,7 @@
         {
           "videoId": "Hn0ODjLVgog",
           "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
           ],
@@ -2569,7 +2569,7 @@
         {
           "videoId": "-3vjrVD8Syw",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -2580,7 +2580,7 @@
         {
           "videoId": "ySPGLMYvGl4",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -2602,7 +2602,7 @@
         {
           "videoId": "fj3waa3pLxU",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -2613,7 +2613,7 @@
         {
           "videoId": "_wgMtQPRnFA",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -2635,7 +2635,7 @@
         {
           "videoId": "buJY2gcC-gc",
           "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
           ],
@@ -2701,7 +2701,7 @@
         {
           "videoId": "272_krqVK58",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -2734,7 +2734,7 @@
         {
           "videoId": "0jctFcp8w6c",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -2745,7 +2745,7 @@
         {
           "videoId": "FXM3SSbS-2Y",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -2767,7 +2767,7 @@
         {
           "videoId": "XQQXUpIePZo",
           "format": "long",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/videos"
           ],
@@ -2789,7 +2789,7 @@
         {
           "videoId": "7SIfu1RGvC0",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -2811,7 +2811,7 @@
         {
           "videoId": "9GBMh3c48RY",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -2877,7 +2877,7 @@
         {
           "videoId": "V40hWyGBemQ",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -2921,7 +2921,7 @@
         {
           "videoId": "dtH317ITN6o",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -2932,7 +2932,7 @@
         {
           "videoId": "xLlqwZcvL6c",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -2954,7 +2954,7 @@
         {
           "videoId": "O_XQhdTasDg",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -2965,7 +2965,7 @@
         {
           "videoId": "e0WJ6qwDwjA",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -2998,7 +2998,7 @@
         {
           "videoId": "Ru8svoRljqQ",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -3031,7 +3031,7 @@
         {
           "videoId": "O-a95-EERAo",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -3053,7 +3053,7 @@
         {
           "videoId": "OBXQc5Fz3kQ",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -3064,7 +3064,7 @@
         {
           "videoId": "ESMz5DRhBhg",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -3086,7 +3086,7 @@
         {
           "videoId": "7YepyHFg-IE",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -3097,7 +3097,7 @@
         {
           "videoId": "7O1mOmBQlqI",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -3119,7 +3119,7 @@
         {
           "videoId": "9Uo_sb82T1I",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -3141,7 +3141,7 @@
         {
           "videoId": "dfhvKXvjPwc",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -3174,7 +3174,7 @@
         {
           "videoId": "D6Jw1ho_CY8",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -3196,7 +3196,7 @@
         {
           "videoId": "eroQYQuz7pI",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -3207,7 +3207,7 @@
         {
           "videoId": "mv87ZSA1fHQ",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -3240,7 +3240,7 @@
         {
           "videoId": "qAItE5ROuEQ",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -3273,7 +3273,7 @@
         {
           "videoId": "H2spZXFmSdw",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -3306,7 +3306,7 @@
         {
           "videoId": "lRABtyT-JbE",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -3317,7 +3317,7 @@
         {
           "videoId": "vVqIlIacCHg",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -3350,7 +3350,7 @@
         {
           "videoId": "_cB5JrqeEug",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -3361,7 +3361,7 @@
         {
           "videoId": "HaW63Wx15GY",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -3372,7 +3372,7 @@
         {
           "videoId": "dVhNx77gJ0Y",
           "format": "short",
-          "checkedAt": "2026-09-29T05:27:52Z",
+          "checkedAt": "2026-10-06T05:39:01Z",
           "sourceUrls": [
             "https://www.youtube.com/channel/UCsWtmTG0UkpuGeeAno4jiGQ/shorts"
           ],
@@ -3484,7 +3484,7 @@
           "channelViewCount": 243968,
           "videoCount": 25,
           "lastPublishedAt": "2026-10-06T02:00:33Z",
-          "daysSinceUpload": 0.1,
+          "daysSinceUpload": 0.2,
           "uploads7d": 12,
           "uploads30d": 25,
           "uploads90d": 25,
@@ -3532,7 +3532,7 @@
           "channelViewCount": 33725,
           "videoCount": 10,
           "lastPublishedAt": "2026-10-06T04:00:38Z",
-          "daysSinceUpload": 0.0,
+          "daysSinceUpload": 0.1,
           "uploads7d": 3,
           "uploads30d": 10,
           "uploads90d": 10,
@@ -3577,7 +3577,7 @@
           "thumbnail": "https://yt3.ggpht.com/WQBN9NFS6FNVYm4_bQtAfL-o5FXZgh3RYK3uVDe8d7WjW95CsE4_iYvxVK8sZ3W0jBCmdfIM=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 5,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 53,
+          "channelViewCount": 55,
           "videoCount": 7,
           "lastPublishedAt": "2026-10-01T22:15:41Z",
           "daysSinceUpload": 4.3,
@@ -3647,7 +3647,7 @@
           "customUrl": "@maple-moneyforest",
           "channelUrl": "https://www.youtube.com/channel/UC5lCKye2u8Q0BoE5ggY9myw",
           "thumbnail": "https://yt3.ggpht.com/pMWF2QNsoxnImQg07Dt2tQUMVnZxgPE793m7fi2VrhNdvJoWlsq_tOBMTXPszPInKhtLr1YpYao=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 713,
+          "subscriberCount": 714,
           "hiddenSubscriberCount": false,
           "channelViewCount": 50055,
           "videoCount": 9,
@@ -3671,7 +3671,7 @@
           "customUrl": "@leo財經觀察",
           "channelUrl": "https://www.youtube.com/channel/UCtkUpmfJckdTZyNvyWBl_rg",
           "thumbnail": "https://yt3.ggpht.com/XbUw0snSlj63ldkf39KhzYdjo3RCu7GQgvBdzhNsG2ZMo0KsMJeTZ3_xh620eQWxjODSLpxqf6I=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 96,
+          "subscriberCount": 99,
           "hiddenSubscriberCount": false,
           "channelViewCount": 13778,
           "videoCount": 9,
@@ -3692,7 +3692,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-10-06T05:09:07+00:00",
+        "retrievedAt": "2026-10-06T05:39:15+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -10286,7 +10286,7 @@
           "date": "2026-10-06",
           "channelId": "UC5lCKye2u8Q0BoE5ggY9myw",
           "channel": "Maple的理財森林",
-          "subscriberCount": 713,
+          "subscriberCount": 714,
           "channelViewCount": 50055,
           "videoCount": 9
         },
@@ -10359,7 +10359,7 @@
           "channelId": "UCmhqWEDoPgrg9J129nGuQkQ",
           "channel": "文叔聊財",
           "subscriberCount": 5,
-          "channelViewCount": 53,
+          "channelViewCount": 55,
           "videoCount": 7
         },
         {
@@ -10385,7 +10385,7 @@
           "date": "2026-10-06",
           "channelId": "UCtkUpmfJckdTZyNvyWBl_rg",
           "channel": "Leo財經觀察",
-          "subscriberCount": 96,
+          "subscriberCount": 99,
           "channelViewCount": 13778,
           "videoCount": 9
         }
@@ -10393,7 +10393,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-10-06T05:09:07+00:00",
+        "retrievedAt": "2026-10-06T05:39:15+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -13120,7 +13120,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-10-06T05:09:07+00:00",
+        "retrievedAt": "2026-10-06T05:39:15+00:00",
         "metricDefinitions": []
       }
     },
@@ -113786,7 +113786,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-10-06T05:09:07+00:00",
+        "retrievedAt": "2026-10-06T05:39:15+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -116925,7 +116925,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-10-06T05:09:07+00:00",
+        "retrievedAt": "2026-10-06T05:39:15+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -116999,7 +116999,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-10-06T05:09:07+00:00",
+        "retrievedAt": "2026-10-06T05:39:15+00:00",
         "metricDefinitions": []
       }
     },
@@ -117020,7 +117020,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-10-06T05:09:07+00:00",
+        "retrievedAt": "2026-10-06T05:39:15+00:00",
         "metricDefinitions": []
       }
     }
