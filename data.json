@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-10-06T04:09:00Z",
+  "generatedAt": "2026-10-06T04:10:10Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-10-06T03:09:00Z",
     "formatClassification": {
@@ -3409,7 +3409,7 @@
           "thumbnail": "https://yt3.ggpht.com/Pf0tpbeBlBzxfICRtmzwJ4nooiQqnnmM78qfoIPmLNgOq9OvtCrDWRFrVoq7RJtrrwQLQzO1=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 13500,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 1421526,
+          "channelViewCount": 1421665,
           "videoCount": 85,
           "lastPublishedAt": "2026-10-03T13:00:16Z",
           "daysSinceUpload": 2.6,
@@ -3505,7 +3505,7 @@
           "thumbnail": "https://yt3.ggpht.com/u3xPV3YGrqDuUxfu_LKM_vsRDFmpD_PWJUletkv2pZfXnGbD1Tn_F4K7MXwkYh3JoU3qQJ48bQ=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 10,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 111,
+          "channelViewCount": 112,
           "videoCount": 7,
           "lastPublishedAt": "2026-09-23T12:30:27Z",
           "daysSinceUpload": 12.7,
@@ -3553,7 +3553,7 @@
           "thumbnail": "https://yt3.ggpht.com/HAtJKK6ZdY-kbTEirRIWFH7zUD70XxHLWRTxRrTamwk-fNTVS1dR2A0_bSN3xYFNh6wz2obK=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 51,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 9233,
+          "channelViewCount": 9237,
           "videoCount": 7,
           "lastPublishedAt": "2026-10-03T00:30:23Z",
           "daysSinceUpload": 3.2,
@@ -3577,7 +3577,7 @@
           "thumbnail": "https://yt3.ggpht.com/WQBN9NFS6FNVYm4_bQtAfL-o5FXZgh3RYK3uVDe8d7WjW95CsE4_iYvxVK8sZ3W0jBCmdfIM=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 5,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 53,
+          "channelViewCount": 55,
           "videoCount": 7,
           "lastPublishedAt": "2026-10-01T22:15:41Z",
           "daysSinceUpload": 4.2,
@@ -3625,7 +3625,7 @@
           "thumbnail": "https://yt3.ggpht.com/oWevvT9BSKRYqGAkafvq4fUMKeEwmzqtFJqTWsE4Hc93JAyB3WEB9Mn5NlVhAXpvOuWMnD950A=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 28,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 3049,
+          "channelViewCount": 3094,
           "videoCount": 9,
           "lastPublishedAt": "2026-10-05T09:30:30Z",
           "daysSinceUpload": 0.8,
@@ -3692,7 +3692,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-10-06T04:09:12+00:00",
+        "retrievedAt": "2026-10-06T04:10:18+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -10296,7 +10296,7 @@
           "channelId": "UC9veOeKEZhexYxmMXF_RwCQ",
           "channel": "艾莉說",
           "subscriberCount": 51,
-          "channelViewCount": 9233,
+          "channelViewCount": 9237,
           "videoCount": 7
         },
         {
@@ -10305,7 +10305,7 @@
           "channelId": "UCMM38YQdOaUiXMFlWzbRlXw",
           "channel": "Amber聊財",
           "subscriberCount": 13500,
-          "channelViewCount": 1421526,
+          "channelViewCount": 1421665,
           "videoCount": 85
         },
         {
@@ -10314,7 +10314,7 @@
           "channelId": "UCNX9-jzOH4KMbIeuWK8LZaw",
           "channel": "Leo財經",
           "subscriberCount": 10,
-          "channelViewCount": 111,
+          "channelViewCount": 112,
           "videoCount": 7
         },
         {
@@ -10323,7 +10323,7 @@
           "channelId": "UCQAo0ws95p-uN7gr0OOHoXg",
           "channel": "喬安說財經",
           "subscriberCount": 28,
-          "channelViewCount": 3049,
+          "channelViewCount": 3094,
           "videoCount": 9
         },
         {
@@ -10359,7 +10359,7 @@
           "channelId": "UCmhqWEDoPgrg9J129nGuQkQ",
           "channel": "文叔聊財",
           "subscriberCount": 5,
-          "channelViewCount": 53,
+          "channelViewCount": 55,
           "videoCount": 7
         },
         {
@@ -10393,7 +10393,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-10-06T04:09:12+00:00",
+        "retrievedAt": "2026-10-06T04:10:18+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -10630,7 +10630,7 @@
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大鏡",
           "videoId": "kG19YmDD7rs",
-          "title": "22–25歲就業暴跌近20%！麥肯錫發文拷問：AI時代，誰來訓練下一代專家？美銀、IBM、宜家重建「學徒制」... #AI #就業 #學徒制 #麥肯錫 #職場 #財經 ",
+          "title": "22–25歲就業暴跌近20%！麥肯錫發文拷問：AI時代，誰來訓練下一代專家？美銀、IBM、宜家重建「學徒制」... #AI #就業 #學徒制 #麥肯錫 #職場 #財經",
           "publishedAt": "2026-10-02T12:00:31Z",
           "publishedDate": "2026-10-02",
           "thumbnail": "https://i.ytimg.com/vi/kG19YmDD7rs/mqdefault.jpg",
@@ -13120,7 +13120,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-10-06T04:09:12+00:00",
+        "retrievedAt": "2026-10-06T04:10:18+00:00",
         "metricDefinitions": []
       }
     },
@@ -113786,7 +113786,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-10-06T04:09:12+00:00",
+        "retrievedAt": "2026-10-06T04:10:18+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -116925,7 +116925,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-10-06T04:09:12+00:00",
+        "retrievedAt": "2026-10-06T04:10:18+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -116999,7 +116999,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-10-06T04:09:12+00:00",
+        "retrievedAt": "2026-10-06T04:10:18+00:00",
         "metricDefinitions": []
       }
     },
@@ -117010,7 +117010,7 @@
           "channelsExpected": 12,
           "channelsCollected": 12,
           "videoCatalogCount": 270,
-          "videosRefreshed": 42,
+          "videosRefreshed": 0,
           "videosDisplayed": 173,
           "fullInventoryScan": false,
           "failureCount": 0,
@@ -117020,7 +117020,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-10-06T04:09:12+00:00",
+        "retrievedAt": "2026-10-06T04:10:18+00:00",
         "metricDefinitions": []
       }
     }
