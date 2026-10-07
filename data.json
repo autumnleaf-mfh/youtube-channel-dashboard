@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-10-07T04:09:00Z",
+  "generatedAt": "2026-10-07T04:39:00Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-10-06T03:09:00Z",
     "formatClassification": {
@@ -3457,10 +3457,10 @@
           "thumbnail": "https://yt3.ggpht.com/Pf0tpbeBlBzxfICRtmzwJ4nooiQqnnmM78qfoIPmLNgOq9OvtCrDWRFrVoq7RJtrrwQLQzO1=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 13500,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 1422023,
+          "channelViewCount": 1422244,
           "videoCount": 87,
           "lastPublishedAt": "2026-10-03T13:00:16Z",
-          "daysSinceUpload": 3.6,
+          "daysSinceUpload": 3.7,
           "uploads7d": 2,
           "uploads30d": 8,
           "uploads90d": 62,
@@ -3479,7 +3479,7 @@
           "customUrl": "@amberwithfinance",
           "channelUrl": "https://www.youtube.com/channel/UCZNlDT4tKgZS8R6sDuJWwMA",
           "thumbnail": "https://yt3.ggpht.com/czuSSl1-7trtlN5BP5n7hPS_Pm7cKTX_chp1lqgVggP5apIJkB1CsmVXt0F7WpD4mGg4PIdj=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 2180,
+          "subscriberCount": 2190,
           "hiddenSubscriberCount": false,
           "channelViewCount": 224824,
           "videoCount": 14,
@@ -3508,7 +3508,7 @@
           "channelViewCount": 646890,
           "videoCount": 71,
           "lastPublishedAt": "2026-09-26T01:00:01Z",
-          "daysSinceUpload": 11.1,
+          "daysSinceUpload": 11.2,
           "uploads7d": 0,
           "uploads30d": 5,
           "uploads90d": 48,
@@ -3532,7 +3532,7 @@
           "channelViewCount": 289668,
           "videoCount": 26,
           "lastPublishedAt": "2026-10-07T01:00:25Z",
-          "daysSinceUpload": 0.1,
+          "daysSinceUpload": 0.2,
           "uploads7d": 12,
           "uploads30d": 26,
           "uploads90d": 26,
@@ -3604,7 +3604,7 @@
           "channelViewCount": 9245,
           "videoCount": 9,
           "lastPublishedAt": "2026-10-07T00:45:09Z",
-          "daysSinceUpload": 0.1,
+          "daysSinceUpload": 0.2,
           "uploads7d": 3,
           "uploads30d": 9,
           "uploads90d": 9,
@@ -3628,7 +3628,7 @@
           "channelViewCount": 55,
           "videoCount": 7,
           "lastPublishedAt": "2026-10-01T22:15:41Z",
-          "daysSinceUpload": 5.2,
+          "daysSinceUpload": 5.3,
           "uploads7d": 1,
           "uploads30d": 7,
           "uploads90d": 7,
@@ -3649,7 +3649,7 @@
           "thumbnail": "https://yt3.ggpht.com/3QUdBOOdvLiCP7RvqjgAxwW22LXeubkz7hYMAHJXNOVsQ5m0OfjbPJ1ewtnL9AZ3GFoE_f0gXg=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 8,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 1057,
+          "channelViewCount": 1060,
           "videoCount": 16,
           "lastPublishedAt": "2026-10-05T19:00:23Z",
           "daysSinceUpload": 1.4,
@@ -3695,7 +3695,7 @@
           "customUrl": "@maple-moneyforest",
           "channelUrl": "https://www.youtube.com/channel/UC5lCKye2u8Q0BoE5ggY9myw",
           "thumbnail": "https://yt3.ggpht.com/pMWF2QNsoxnImQg07Dt2tQUMVnZxgPE793m7fi2VrhNdvJoWlsq_tOBMTXPszPInKhtLr1YpYao=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 780,
+          "subscriberCount": 782,
           "hiddenSubscriberCount": false,
           "channelViewCount": 54750,
           "videoCount": 10,
@@ -3740,7 +3740,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-10-07T04:09:10+00:00",
+        "retrievedAt": "2026-10-07T04:39:09+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -10442,7 +10442,7 @@
           "date": "2026-10-07",
           "channelId": "UC5lCKye2u8Q0BoE5ggY9myw",
           "channel": "Maple的理財森林",
-          "subscriberCount": 780,
+          "subscriberCount": 782,
           "channelViewCount": 54750,
           "videoCount": 10
         },
@@ -10461,7 +10461,7 @@
           "channelId": "UCMM38YQdOaUiXMFlWzbRlXw",
           "channel": "Amber聊財",
           "subscriberCount": 13500,
-          "channelViewCount": 1422023,
+          "channelViewCount": 1422244,
           "videoCount": 87
         },
         {
@@ -10488,7 +10488,7 @@
           "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA",
           "channel": "阿誠聊焦點",
           "subscriberCount": 8,
-          "channelViewCount": 1057,
+          "channelViewCount": 1060,
           "videoCount": 16
         },
         {
@@ -10505,7 +10505,7 @@
           "date": "2026-10-07",
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大鏡",
-          "subscriberCount": 2180,
+          "subscriberCount": 2190,
           "channelViewCount": 224824,
           "videoCount": 14
         },
@@ -10549,7 +10549,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-10-07T04:09:10+00:00",
+        "retrievedAt": "2026-10-07T04:39:09+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -10826,7 +10826,7 @@
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大鏡",
           "videoId": "kG19YmDD7rs",
-          "title": "22–25歲就業暴跌近20%！麥肯錫發文拷問：AI時代，誰來訓練下一代專家？美銀、IBM、宜家重建「學徒制」... #AI #就業 #學徒制 #麥肯錫 #職場 #財經 ",
+          "title": "22–25歲就業暴跌近20%！麥肯錫發文拷問：AI時代，誰來訓練下一代專家？美銀、IBM、宜家重建「學徒制」... #AI #就業 #學徒制 #麥肯錫 #職場 #財經",
           "publishedAt": "2026-10-02T12:00:31Z",
           "publishedDate": "2026-10-02",
           "thumbnail": "https://i.ytimg.com/vi/kG19YmDD7rs/mqdefault.jpg",
@@ -13316,7 +13316,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-10-07T04:09:10+00:00",
+        "retrievedAt": "2026-10-07T04:39:09+00:00",
         "metricDefinitions": []
       }
     },
@@ -121326,7 +121326,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-10-07T04:09:10+00:00",
+        "retrievedAt": "2026-10-07T04:39:09+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -124537,7 +124537,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-10-07T04:09:10+00:00",
+        "retrievedAt": "2026-10-07T04:39:09+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -124611,7 +124611,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-10-07T04:09:10+00:00",
+        "retrievedAt": "2026-10-07T04:39:09+00:00",
         "metricDefinitions": []
       }
     },
@@ -124622,7 +124622,7 @@
           "channelsExpected": 12,
           "channelsCollected": 12,
           "videoCatalogCount": 274,
-          "videosRefreshed": 38,
+          "videosRefreshed": 0,
           "videosDisplayed": 177,
           "fullInventoryScan": false,
           "failureCount": 0,
@@ -124632,7 +124632,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-10-07T04:09:10+00:00",
+        "retrievedAt": "2026-10-07T04:39:09+00:00",
         "metricDefinitions": []
       }
     }
