@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-10-08T16:08:59Z",
+  "generatedAt": "2026-10-08T16:38:59Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-10-06T03:09:00Z",
     "formatClassification": {
@@ -3508,7 +3508,7 @@
           "channelViewCount": 1423008,
           "videoCount": 87,
           "lastPublishedAt": "2026-10-03T13:00:16Z",
-          "daysSinceUpload": 5.1,
+          "daysSinceUpload": 5.2,
           "uploads7d": 2,
           "uploads30d": 8,
           "uploads90d": 61,
@@ -3529,7 +3529,7 @@
           "thumbnail": "https://yt3.ggpht.com/czuSSl1-7trtlN5BP5n7hPS_Pm7cKTX_chp1lqgVggP5apIJkB1CsmVXt0F7WpD4mGg4PIdj=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 2330,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 240815,
+          "channelViewCount": 255085,
           "videoCount": 15,
           "lastPublishedAt": "2026-10-07T12:00:21Z",
           "daysSinceUpload": 1.2,
@@ -3556,7 +3556,7 @@
           "channelViewCount": 646971,
           "videoCount": 72,
           "lastPublishedAt": "2026-10-08T01:00:09Z",
-          "daysSinceUpload": 0.6,
+          "daysSinceUpload": 0.7,
           "uploads7d": 1,
           "uploads30d": 6,
           "uploads90d": 49,
@@ -3580,7 +3580,7 @@
           "channelViewCount": 343140,
           "videoCount": 27,
           "lastPublishedAt": "2026-10-08T01:00:20Z",
-          "daysSinceUpload": 0.6,
+          "daysSinceUpload": 0.7,
           "uploads7d": 11,
           "uploads30d": 27,
           "uploads90d": 27,
@@ -3625,7 +3625,7 @@
           "thumbnail": "https://yt3.ggpht.com/f8Upq2a2CtKPaGkcJDG609eXDHKSvG6cl218-v1CFEcEaAgzFA7PdxyiGZvWQqb_jRJtrS6_lg=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 303,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 42548,
+          "channelViewCount": 49400,
           "videoCount": 10,
           "lastPublishedAt": "2026-10-06T04:00:38Z",
           "daysSinceUpload": 2.5,
@@ -3652,7 +3652,7 @@
           "channelViewCount": 9285,
           "videoCount": 9,
           "lastPublishedAt": "2026-10-07T00:45:09Z",
-          "daysSinceUpload": 1.6,
+          "daysSinceUpload": 1.7,
           "uploads7d": 2,
           "uploads30d": 9,
           "uploads90d": 9,
@@ -3673,10 +3673,10 @@
           "thumbnail": "https://yt3.ggpht.com/WQBN9NFS6FNVYm4_bQtAfL-o5FXZgh3RYK3uVDe8d7WjW95CsE4_iYvxVK8sZ3W0jBCmdfIM=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 5,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 55,
+          "channelViewCount": 59,
           "videoCount": 7,
           "lastPublishedAt": "2026-10-01T22:15:41Z",
-          "daysSinceUpload": 6.7,
+          "daysSinceUpload": 6.8,
           "uploads7d": 1,
           "uploads30d": 7,
           "uploads90d": 7,
@@ -3721,7 +3721,7 @@
           "thumbnail": "https://yt3.ggpht.com/oWevvT9BSKRYqGAkafvq4fUMKeEwmzqtFJqTWsE4Hc93JAyB3WEB9Mn5NlVhAXpvOuWMnD950A=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 32,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 3397,
+          "channelViewCount": 3513,
           "videoCount": 9,
           "lastPublishedAt": "2026-10-05T09:30:30Z",
           "daysSinceUpload": 3.3,
@@ -3743,7 +3743,7 @@
           "customUrl": "@maple-moneyforest",
           "channelUrl": "https://www.youtube.com/channel/UC5lCKye2u8Q0BoE5ggY9myw",
           "thumbnail": "https://yt3.ggpht.com/pMWF2QNsoxnImQg07Dt2tQUMVnZxgPE793m7fi2VrhNdvJoWlsq_tOBMTXPszPInKhtLr1YpYao=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 825,
+          "subscriberCount": 824,
           "hiddenSubscriberCount": false,
           "channelViewCount": 62242,
           "videoCount": 10,
@@ -3788,7 +3788,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-10-08T16:09:15+00:00",
+        "retrievedAt": "2026-10-08T16:39:12+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -10706,7 +10706,7 @@
           "date": "2026-10-08",
           "channelId": "UC5lCKye2u8Q0BoE5ggY9myw",
           "channel": "Maple的理財森林",
-          "subscriberCount": 825,
+          "subscriberCount": 824,
           "channelViewCount": 62242,
           "videoCount": 10
         },
@@ -10743,7 +10743,7 @@
           "channelId": "UCQAo0ws95p-uN7gr0OOHoXg",
           "channel": "喬安說財經",
           "subscriberCount": 32,
-          "channelViewCount": 3397,
+          "channelViewCount": 3513,
           "videoCount": 9
         },
         {
@@ -10770,7 +10770,7 @@
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大鏡",
           "subscriberCount": 2330,
-          "channelViewCount": 240815,
+          "channelViewCount": 255085,
           "videoCount": 15
         },
         {
@@ -10779,7 +10779,7 @@
           "channelId": "UCmhqWEDoPgrg9J129nGuQkQ",
           "channel": "文叔聊財",
           "subscriberCount": 5,
-          "channelViewCount": 55,
+          "channelViewCount": 59,
           "videoCount": 7
         },
         {
@@ -10797,7 +10797,7 @@
           "channelId": "UCsXJXZI4J_N9r8H9TsORmlA",
           "channel": "羅拉財富觀",
           "subscriberCount": 303,
-          "channelViewCount": 42548,
+          "channelViewCount": 49400,
           "videoCount": 10
         },
         {
@@ -10813,7 +10813,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-10-08T16:09:15+00:00",
+        "retrievedAt": "2026-10-08T16:39:12+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -11130,7 +11130,7 @@
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大鏡",
           "videoId": "kG19YmDD7rs",
-          "title": "22–25歲就業暴跌近20%！麥肯錫發文拷問：AI時代，誰來訓練下一代專家？美銀、IBM、宜家重建「學徒制」... #AI #就業 #學徒制 #麥肯錫 #職場 #財經 ",
+          "title": "22–25歲就業暴跌近20%！麥肯錫發文拷問：AI時代，誰來訓練下一代專家？美銀、IBM、宜家重建「學徒制」... #AI #就業 #學徒制 #麥肯錫 #職場 #財經",
           "publishedAt": "2026-10-02T12:00:31Z",
           "publishedDate": "2026-10-02",
           "thumbnail": "https://i.ytimg.com/vi/kG19YmDD7rs/mqdefault.jpg",
@@ -11440,7 +11440,7 @@
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "小Lu財經說",
           "videoId": "9Mr-ce2n8GU",
-          "title": "日本30年「全球提款機」正式關門！847萬億海外資金開始回流，美債美股恐迎流動性巨震，黃金真正大行情要來了？#股票 ",
+          "title": "日本30年「全球提款機」正式關門！847萬億海外資金開始回流，美債美股恐迎流動性巨震，黃金真正大行情要來了？#股票",
           "publishedAt": "2026-09-28T02:07:18Z",
           "publishedDate": "2026-09-28",
           "thumbnail": "https://i.ytimg.com/vi/9Mr-ce2n8GU/mqdefault.jpg",
@@ -11480,7 +11480,7 @@
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "小Lu財經說",
           "videoId": "8SC-fo0wT-I",
-          "title": "美聯儲加息落地！科技股誰先撐不住？蘋果殺入AI伺服器、英特爾牽手海力士，杰富瑞卻喊9000點！#股票 #stockmarket ",
+          "title": "美聯儲加息落地！科技股誰先撐不住？蘋果殺入AI伺服器、英特爾牽手海力士，杰富瑞卻喊9000點！#股票 #stockmarket",
           "publishedAt": "2026-09-27T01:00:33Z",
           "publishedDate": "2026-09-27",
           "thumbnail": "https://i.ytimg.com/vi/8SC-fo0wT-I/mqdefault.jpg",
@@ -11500,7 +11500,7 @@
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大鏡",
           "videoId": "P7oUKn_cm1o",
-          "title": "大模型跌成白菜價，蘋果一款折疊屏收割？AI低谷，蘋果開始吃紅利！淘金熱最後誰賺了大錢... #AI #蘋果 #折疊屏 #美股 #投資 #財經 ",
+          "title": "大模型跌成白菜價，蘋果一款折疊屏收割？AI低谷，蘋果開始吃紅利！淘金熱最後誰賺了大錢... #AI #蘋果 #折疊屏 #美股 #投資 #財經",
           "publishedAt": "2026-09-26T12:00:16Z",
           "publishedDate": "2026-09-26",
           "thumbnail": "https://i.ytimg.com/vi/P7oUKn_cm1o/mqdefault.jpg",
@@ -11600,7 +11600,7 @@
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "小Lu財經說",
           "videoId": "ZwtMr5Qtv_8",
-          "title": "泰國突然封殺黃金？泰銖被金價綁架，1997危機會重演嗎？黃金正在拖垮泰國？#gold #stock #股票 ",
+          "title": "泰國突然封殺黃金？泰銖被金價綁架，1997危機會重演嗎？黃金正在拖垮泰國？#gold #stock #股票",
           "publishedAt": "2026-09-25T01:00:10Z",
           "publishedDate": "2026-09-25",
           "thumbnail": "https://i.ytimg.com/vi/ZwtMr5Qtv_8/mqdefault.jpg",
@@ -13620,7 +13620,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-10-08T16:09:15+00:00",
+        "retrievedAt": "2026-10-08T16:39:12+00:00",
         "metricDefinitions": []
       }
     },
@@ -132934,7 +132934,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-10-08T16:09:15+00:00",
+        "retrievedAt": "2026-10-08T16:39:12+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -136199,7 +136199,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-10-08T16:09:15+00:00",
+        "retrievedAt": "2026-10-08T16:39:12+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -136273,7 +136273,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-10-08T16:09:15+00:00",
+        "retrievedAt": "2026-10-08T16:39:12+00:00",
         "metricDefinitions": []
       }
     },
@@ -136284,7 +136284,7 @@
           "channelsExpected": 12,
           "channelsCollected": 12,
           "videoCatalogCount": 278,
-          "videosRefreshed": 134,
+          "videosRefreshed": 0,
           "videosDisplayed": 180,
           "fullInventoryScan": false,
           "failureCount": 0,
@@ -136294,7 +136294,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-10-08T16:09:15+00:00",
+        "retrievedAt": "2026-10-08T16:39:12+00:00",
         "metricDefinitions": []
       }
     }
