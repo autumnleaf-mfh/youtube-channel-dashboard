@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-10-08T10:08:59Z",
+  "generatedAt": "2026-10-08T10:38:59Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-10-06T03:09:00Z",
     "formatClassification": {
@@ -3688,7 +3688,7 @@
           "channelViewCount": 1062,
           "videoCount": 15,
           "lastPublishedAt": "2026-10-05T19:00:23Z",
-          "daysSinceUpload": 2.6,
+          "daysSinceUpload": 2.7,
           "uploads7d": 2,
           "uploads30d": 16,
           "uploads90d": 16,
@@ -3731,7 +3731,7 @@
           "customUrl": "@maple-moneyforest",
           "channelUrl": "https://www.youtube.com/channel/UC5lCKye2u8Q0BoE5ggY9myw",
           "thumbnail": "https://yt3.ggpht.com/pMWF2QNsoxnImQg07Dt2tQUMVnZxgPE793m7fi2VrhNdvJoWlsq_tOBMTXPszPInKhtLr1YpYao=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 826,
+          "subscriberCount": 825,
           "hiddenSubscriberCount": false,
           "channelViewCount": 59869,
           "videoCount": 10,
@@ -3776,7 +3776,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-10-08T10:09:13+00:00",
+        "retrievedAt": "2026-10-08T10:39:12+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -10586,7 +10586,7 @@
           "date": "2026-10-08",
           "channelId": "UC5lCKye2u8Q0BoE5ggY9myw",
           "channel": "Maple的理財森林",
-          "subscriberCount": 826,
+          "subscriberCount": 825,
           "channelViewCount": 59869,
           "videoCount": 10
         },
@@ -10693,7 +10693,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-10-08T10:09:13+00:00",
+        "retrievedAt": "2026-10-08T10:39:12+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -11000,7 +11000,7 @@
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大鏡",
           "videoId": "kG19YmDD7rs",
-          "title": "22–25歲就業暴跌近20%！麥肯錫發文拷問：AI時代，誰來訓練下一代專家？美銀、IBM、宜家重建「學徒制」... #AI #就業 #學徒制 #麥肯錫 #職場 #財經 ",
+          "title": "22–25歲就業暴跌近20%！麥肯錫發文拷問：AI時代，誰來訓練下一代專家？美銀、IBM、宜家重建「學徒制」... #AI #就業 #學徒制 #麥肯錫 #職場 #財經",
           "publishedAt": "2026-10-02T12:00:31Z",
           "publishedDate": "2026-10-02",
           "thumbnail": "https://i.ytimg.com/vi/kG19YmDD7rs/mqdefault.jpg",
@@ -13490,7 +13490,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-10-08T10:09:13+00:00",
+        "retrievedAt": "2026-10-08T10:39:12+00:00",
         "metricDefinitions": []
       }
     },
@@ -129744,7 +129744,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-10-08T10:09:13+00:00",
+        "retrievedAt": "2026-10-08T10:39:12+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -132991,7 +132991,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-10-08T10:09:13+00:00",
+        "retrievedAt": "2026-10-08T10:39:12+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -133065,7 +133065,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-10-08T10:09:13+00:00",
+        "retrievedAt": "2026-10-08T10:39:12+00:00",
         "metricDefinitions": []
       }
     },
@@ -133076,7 +133076,7 @@
           "channelsExpected": 12,
           "channelsCollected": 12,
           "videoCatalogCount": 277,
-          "videosRefreshed": 34,
+          "videosRefreshed": 0,
           "videosDisplayed": 179,
           "fullInventoryScan": false,
           "failureCount": 0,
@@ -133086,7 +133086,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-10-08T10:09:13+00:00",
+        "retrievedAt": "2026-10-08T10:39:12+00:00",
         "metricDefinitions": []
       }
     }
