@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-10-08T07:08:59Z",
+  "generatedAt": "2026-10-08T08:08:59Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-10-06T03:09:00Z",
     "formatClassification": {
@@ -3563,7 +3563,7 @@
           "customUrl": "@財經小鹿financedeer",
           "channelUrl": "https://www.youtube.com/channel/UCTueeHImxv4uLBQKsDEMqjQ",
           "thumbnail": "https://yt3.ggpht.com/b0OPo5YQsfzCR6jLZTs6H-4EO-EFrqvFHMANy587DDAJGZ6wK_jwjnCr8Es9Z-6E7J01GRtg=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 2160,
+          "subscriberCount": 2170,
           "hiddenSubscriberCount": false,
           "channelViewCount": 321679,
           "videoCount": 27,
@@ -3616,7 +3616,7 @@
           "channelViewCount": 42548,
           "videoCount": 10,
           "lastPublishedAt": "2026-10-06T04:00:38Z",
-          "daysSinceUpload": 2.1,
+          "daysSinceUpload": 2.2,
           "uploads7d": 2,
           "uploads30d": 10,
           "uploads90d": 10,
@@ -3776,7 +3776,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-10-08T07:09:06+00:00",
+        "retrievedAt": "2026-10-08T08:09:05+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -10640,7 +10640,7 @@
           "date": "2026-10-08",
           "channelId": "UCTueeHImxv4uLBQKsDEMqjQ",
           "channel": "小Lu財經說",
-          "subscriberCount": 2160,
+          "subscriberCount": 2170,
           "channelViewCount": 321679,
           "videoCount": 27
         },
@@ -10693,7 +10693,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-10-08T07:09:06+00:00",
+        "retrievedAt": "2026-10-08T08:09:05+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -10830,7 +10830,7 @@
           "channelId": "UCtkUpmfJckdTZyNvyWBl_rg",
           "channel": "Leo財經觀察",
           "videoId": "oz7VGHh2N_A",
-          "title": "如果有人告訴你，他炒股從不看財報，卻能做到年化收益66.1%！你信嗎？#詹姆斯西蒙斯 #大獎章基金 #量化交易 #華爾街 #投資策略 #投資理財",
+          "title": "有錢也擠不進去！華爾街神秘大獎章基金，30年年化收益66.1%，為何把賺錢祕密鎖在門內？#詹姆斯西蒙斯 #大獎章基金 #量化交易 #華爾街 #投資策略 #投資理財",
           "publishedAt": "2026-10-05T12:00:36Z",
           "publishedDate": "2026-10-05",
           "thumbnail": "https://i.ytimg.com/vi/oz7VGHh2N_A/mqdefault.jpg",
@@ -11000,7 +11000,7 @@
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大鏡",
           "videoId": "kG19YmDD7rs",
-          "title": "22–25歲就業暴跌近20%！麥肯錫發文拷問：AI時代，誰來訓練下一代專家？美銀、IBM、宜家重建「學徒制」... #AI #就業 #學徒制 #麥肯錫 #職場 #財經 ",
+          "title": "22–25歲就業暴跌近20%！麥肯錫發文拷問：AI時代，誰來訓練下一代專家？美銀、IBM、宜家重建「學徒制」... #AI #就業 #學徒制 #麥肯錫 #職場 #財經",
           "publishedAt": "2026-10-02T12:00:31Z",
           "publishedDate": "2026-10-02",
           "thumbnail": "https://i.ytimg.com/vi/kG19YmDD7rs/mqdefault.jpg",
@@ -11160,7 +11160,7 @@
           "channelId": "UCtkUpmfJckdTZyNvyWBl_rg",
           "channel": "Leo財經觀察",
           "videoId": "GTPrPUjfUBY",
-          "title": "人民幣失控了？半年1.4萬億美元緊急鎖匯！700億元匯兌損失創十年紀錄！你的美股為什麼也躲不掉？#人民幣 #匯率 #美股 #關稅 #中國經濟 #全球市場 #投資 #資產配置",
+          "title": "人民幣漲了，歐美卻還嫌不夠！近1.4萬億美元鎖匯背後，企業匯兌損失達700億元，新版「廣場協議」要來了？你手裡的美股將迎什麼變局？ #人民幣 #匯率 #美股 #中國經濟 #全球市場 #投資 #資產配置",
           "publishedAt": "2026-09-29T12:30:26Z",
           "publishedDate": "2026-09-29",
           "thumbnail": "https://i.ytimg.com/vi/GTPrPUjfUBY/mqdefault.jpg",
@@ -13490,7 +13490,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-10-08T07:09:06+00:00",
+        "retrievedAt": "2026-10-08T08:09:05+00:00",
         "metricDefinitions": []
       }
     },
@@ -129132,7 +129132,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-10-08T07:09:06+00:00",
+        "retrievedAt": "2026-10-08T08:09:05+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -132379,7 +132379,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-10-08T07:09:06+00:00",
+        "retrievedAt": "2026-10-08T08:09:05+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -132453,7 +132453,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-10-08T07:09:06+00:00",
+        "retrievedAt": "2026-10-08T08:09:05+00:00",
         "metricDefinitions": []
       }
     },
@@ -132464,7 +132464,7 @@
           "channelsExpected": 12,
           "channelsCollected": 12,
           "videoCatalogCount": 277,
-          "videosRefreshed": 35,
+          "videosRefreshed": 0,
           "videosDisplayed": 179,
           "fullInventoryScan": false,
           "failureCount": 0,
@@ -132474,7 +132474,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-10-08T07:09:06+00:00",
+        "retrievedAt": "2026-10-08T08:09:05+00:00",
         "metricDefinitions": []
       }
     }
