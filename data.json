@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-10-08T02:08:59Z",
+  "generatedAt": "2026-10-08T02:38:59Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-10-06T03:09:00Z",
     "formatClassification": {
@@ -3496,7 +3496,7 @@
           "channelViewCount": 1422549,
           "videoCount": 87,
           "lastPublishedAt": "2026-10-03T13:00:16Z",
-          "daysSinceUpload": 4.5,
+          "daysSinceUpload": 4.6,
           "uploads7d": 2,
           "uploads30d": 8,
           "uploads90d": 61,
@@ -3544,7 +3544,7 @@
           "channelViewCount": 646912,
           "videoCount": 72,
           "lastPublishedAt": "2026-10-08T01:00:09Z",
-          "daysSinceUpload": 0.0,
+          "daysSinceUpload": 0.1,
           "uploads7d": 1,
           "uploads30d": 6,
           "uploads90d": 49,
@@ -3568,7 +3568,7 @@
           "channelViewCount": 314405,
           "videoCount": 27,
           "lastPublishedAt": "2026-10-08T01:00:20Z",
-          "daysSinceUpload": 0.0,
+          "daysSinceUpload": 0.1,
           "uploads7d": 11,
           "uploads30d": 27,
           "uploads90d": 27,
@@ -3755,7 +3755,7 @@
           "customUrl": "@leo財經觀察",
           "channelUrl": "https://www.youtube.com/channel/UCtkUpmfJckdTZyNvyWBl_rg",
           "thumbnail": "https://yt3.ggpht.com/XbUw0snSlj63ldkf39KhzYdjo3RCu7GQgvBdzhNsG2ZMo0KsMJeTZ3_xh620eQWxjODSLpxqf6I=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 170,
+          "subscriberCount": 172,
           "hiddenSubscriberCount": false,
           "channelViewCount": 27098,
           "videoCount": 9,
@@ -3776,7 +3776,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-10-08T02:09:12+00:00",
+        "retrievedAt": "2026-10-08T02:39:10+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -10685,7 +10685,7 @@
           "date": "2026-10-08",
           "channelId": "UCtkUpmfJckdTZyNvyWBl_rg",
           "channel": "Leo財經觀察",
-          "subscriberCount": 170,
+          "subscriberCount": 172,
           "channelViewCount": 27098,
           "videoCount": 9
         }
@@ -10693,7 +10693,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-10-08T02:09:12+00:00",
+        "retrievedAt": "2026-10-08T02:39:10+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -10820,7 +10820,7 @@
           "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA",
           "channel": "阿誠聊焦點",
           "videoId": "CGOGxn_XHUk",
-          "title": "全世界最大爛尾樓！坐擁世界最大油田，沙烏地為什麼淪落到借錢度日？【MBS與The Line的財政死局】【阿誠聊焦點】",
+          "title": "恆大居然不是最大爛尾！坐擁世界最大油田為何借錢度日？沙烏地The Line財政死局：小心你的電費與債券ETF【阿誠聊焦點】",
           "publishedAt": "2026-10-05T19:00:23Z",
           "publishedDate": "2026-10-05",
           "thumbnail": "https://i.ytimg.com/vi/CGOGxn_XHUk/mqdefault.jpg",
@@ -11150,7 +11150,7 @@
           "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA",
           "channel": "阿誠聊焦點",
           "videoId": "zPH3EZTC5Cc",
-          "title": "日元關閉30年免費提款機！美股科技股面臨「慢刀子割肉」，普通人怎麼防？【阿誠聊焦點】",
+          "title": "華爾街不敢說的真相：支撐美股30年的天量熱錢，正在被日本硬生生抽走！【阿誠聊焦點】",
           "publishedAt": "2026-09-29T19:30:37Z",
           "publishedDate": "2026-09-29",
           "thumbnail": "https://i.ytimg.com/vi/zPH3EZTC5Cc/mqdefault.jpg",
@@ -13490,7 +13490,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-10-08T02:09:12+00:00",
+        "retrievedAt": "2026-10-08T02:39:10+00:00",
         "metricDefinitions": []
       }
     },
@@ -127872,7 +127872,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-10-08T02:09:12+00:00",
+        "retrievedAt": "2026-10-08T02:39:10+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -131119,7 +131119,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-10-08T02:09:12+00:00",
+        "retrievedAt": "2026-10-08T02:39:10+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -131193,7 +131193,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-10-08T02:09:12+00:00",
+        "retrievedAt": "2026-10-08T02:39:10+00:00",
         "metricDefinitions": []
       }
     },
@@ -131214,7 +131214,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-10-08T02:09:12+00:00",
+        "retrievedAt": "2026-10-08T02:39:10+00:00",
         "metricDefinitions": []
       }
     }
