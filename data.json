@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-10-08T02:38:59Z",
+  "generatedAt": "2026-10-08T03:08:59Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-10-06T03:09:00Z",
     "formatClassification": {
@@ -3611,12 +3611,12 @@
           "customUrl": "@lorafinancialworld",
           "channelUrl": "https://www.youtube.com/channel/UCsXJXZI4J_N9r8H9TsORmlA",
           "thumbnail": "https://yt3.ggpht.com/f8Upq2a2CtKPaGkcJDG609eXDHKSvG6cl218-v1CFEcEaAgzFA7PdxyiGZvWQqb_jRJtrS6_lg=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 295,
+          "subscriberCount": 296,
           "hiddenSubscriberCount": false,
           "channelViewCount": 39265,
           "videoCount": 10,
           "lastPublishedAt": "2026-10-06T04:00:38Z",
-          "daysSinceUpload": 1.9,
+          "daysSinceUpload": 2.0,
           "uploads7d": 3,
           "uploads30d": 10,
           "uploads90d": 10,
@@ -3755,7 +3755,7 @@
           "customUrl": "@leo財經觀察",
           "channelUrl": "https://www.youtube.com/channel/UCtkUpmfJckdTZyNvyWBl_rg",
           "thumbnail": "https://yt3.ggpht.com/XbUw0snSlj63ldkf39KhzYdjo3RCu7GQgvBdzhNsG2ZMo0KsMJeTZ3_xh620eQWxjODSLpxqf6I=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 172,
+          "subscriberCount": 174,
           "hiddenSubscriberCount": false,
           "channelViewCount": 27098,
           "videoCount": 9,
@@ -3776,7 +3776,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-10-08T02:39:10+00:00",
+        "retrievedAt": "2026-10-08T03:09:09+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -10676,7 +10676,7 @@
           "date": "2026-10-08",
           "channelId": "UCsXJXZI4J_N9r8H9TsORmlA",
           "channel": "羅拉財富觀",
-          "subscriberCount": 295,
+          "subscriberCount": 296,
           "channelViewCount": 39265,
           "videoCount": 10
         },
@@ -10685,7 +10685,7 @@
           "date": "2026-10-08",
           "channelId": "UCtkUpmfJckdTZyNvyWBl_rg",
           "channel": "Leo財經觀察",
-          "subscriberCount": 172,
+          "subscriberCount": 174,
           "channelViewCount": 27098,
           "videoCount": 9
         }
@@ -10693,7 +10693,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-10-08T02:39:10+00:00",
+        "retrievedAt": "2026-10-08T03:09:09+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -11050,7 +11050,7 @@
           "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA",
           "channel": "阿誠聊焦點",
           "videoId": "Ak1P-Iz1Pks",
-          "title": "當年嘲笑NASA要靠彈簧床！馬斯克花了6年，用最狠的技術復仇打臉全世界？【SpaceX傳奇逆襲】【阿誠聊焦點】",
+          "title": "【SpaceX前傳】你可以挑戰馬斯克，但千萬別嘲笑他！10年技術復仇史【阿誠聊焦點】",
           "publishedAt": "2026-10-01T17:00:22Z",
           "publishedDate": "2026-10-01",
           "thumbnail": "https://i.ytimg.com/vi/Ak1P-Iz1Pks/mqdefault.jpg",
@@ -13490,7 +13490,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-10-08T02:39:10+00:00",
+        "retrievedAt": "2026-10-08T03:09:09+00:00",
         "metricDefinitions": []
       }
     },
@@ -127872,7 +127872,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-10-08T02:39:10+00:00",
+        "retrievedAt": "2026-10-08T03:09:09+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -131119,7 +131119,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-10-08T02:39:10+00:00",
+        "retrievedAt": "2026-10-08T03:09:09+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -131193,7 +131193,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-10-08T02:39:10+00:00",
+        "retrievedAt": "2026-10-08T03:09:09+00:00",
         "metricDefinitions": []
       }
     },
@@ -131214,7 +131214,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-10-08T02:39:10+00:00",
+        "retrievedAt": "2026-10-08T03:09:09+00:00",
         "metricDefinitions": []
       }
     }
