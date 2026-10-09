@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-10-09T01:39:00Z",
+  "generatedAt": "2026-10-09T02:09:02Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-10-06T03:09:00Z",
     "formatClassification": {
@@ -3505,7 +3505,7 @@
           "thumbnail": "https://yt3.ggpht.com/Pf0tpbeBlBzxfICRtmzwJ4nooiQqnnmM78qfoIPmLNgOq9OvtCrDWRFrVoq7RJtrrwQLQzO1=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 13500,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 1423008,
+          "channelViewCount": 1423085,
           "videoCount": 87,
           "lastPublishedAt": "2026-10-03T13:00:16Z",
           "daysSinceUpload": 5.5,
@@ -3529,7 +3529,7 @@
           "thumbnail": "https://yt3.ggpht.com/czuSSl1-7trtlN5BP5n7hPS_Pm7cKTX_chp1lqgVggP5apIJkB1CsmVXt0F7WpD4mGg4PIdj=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 2340,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 255085,
+          "channelViewCount": 255933,
           "videoCount": 15,
           "lastPublishedAt": "2026-10-07T12:00:21Z",
           "daysSinceUpload": 1.6,
@@ -3553,7 +3553,7 @@
           "thumbnail": "https://yt3.ggpht.com/8S03I1M5ktZGcabpsOUZfwoVhpcopaNya9sZgOoCak7DZuGnkTFhnBw8B1w4F6W_Sn1etuJkng=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 14200,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 646971,
+          "channelViewCount": 646986,
           "videoCount": 72,
           "lastPublishedAt": "2026-10-08T01:00:09Z",
           "daysSinceUpload": 1.0,
@@ -3599,12 +3599,12 @@
           "customUrl": "@leo財經",
           "channelUrl": "https://www.youtube.com/channel/UCNX9-jzOH4KMbIeuWK8LZaw",
           "thumbnail": "https://yt3.ggpht.com/u3xPV3YGrqDuUxfu_LKM_vsRDFmpD_PWJUletkv2pZfXnGbD1Tn_F4K7MXwkYh3JoU3qQJ48bQ=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 9,
+          "subscriberCount": 8,
           "hiddenSubscriberCount": false,
           "channelViewCount": 114,
           "videoCount": 7,
           "lastPublishedAt": "2026-09-23T12:30:27Z",
-          "daysSinceUpload": 15.5,
+          "daysSinceUpload": 15.6,
           "uploads7d": 0,
           "uploads30d": 7,
           "uploads90d": 7,
@@ -3652,7 +3652,7 @@
           "channelViewCount": 9285,
           "videoCount": 9,
           "lastPublishedAt": "2026-10-07T00:45:09Z",
-          "daysSinceUpload": 2.0,
+          "daysSinceUpload": 2.1,
           "uploads7d": 2,
           "uploads30d": 9,
           "uploads90d": 9,
@@ -3676,7 +3676,7 @@
           "channelViewCount": 59,
           "videoCount": 7,
           "lastPublishedAt": "2026-10-01T22:15:41Z",
-          "daysSinceUpload": 7.1,
+          "daysSinceUpload": 7.2,
           "uploads7d": 0,
           "uploads30d": 7,
           "uploads90d": 7,
@@ -3767,12 +3767,12 @@
           "customUrl": "@leo財經觀察",
           "channelUrl": "https://www.youtube.com/channel/UCtkUpmfJckdTZyNvyWBl_rg",
           "thumbnail": "https://yt3.ggpht.com/XbUw0snSlj63ldkf39KhzYdjo3RCu7GQgvBdzhNsG2ZMo0KsMJeTZ3_xh620eQWxjODSLpxqf6I=s800-c-k-c0x00ffffff-no-rj",
-          "subscriberCount": 202,
+          "subscriberCount": 204,
           "hiddenSubscriberCount": false,
           "channelViewCount": 32277,
           "videoCount": 10,
           "lastPublishedAt": "2026-10-08T12:30:03Z",
-          "daysSinceUpload": 0.5,
+          "daysSinceUpload": 0.6,
           "uploads7d": 4,
           "uploads30d": 10,
           "uploads90d": 10,
@@ -3788,7 +3788,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-10-09T01:39:19+00:00",
+        "retrievedAt": "2026-10-09T02:09:30+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -10725,7 +10725,7 @@
           "channelId": "UCMM38YQdOaUiXMFlWzbRlXw",
           "channel": "Amber聊財",
           "subscriberCount": 13500,
-          "channelViewCount": 1423008,
+          "channelViewCount": 1423085,
           "videoCount": 87
         },
         {
@@ -10733,7 +10733,7 @@
           "date": "2026-10-09",
           "channelId": "UCNX9-jzOH4KMbIeuWK8LZaw",
           "channel": "Leo財經",
-          "subscriberCount": 9,
+          "subscriberCount": 8,
           "channelViewCount": 114,
           "videoCount": 7
         },
@@ -10770,7 +10770,7 @@
           "channelId": "UCZNlDT4tKgZS8R6sDuJWwMA",
           "channel": "Amber放大鏡",
           "subscriberCount": 2340,
-          "channelViewCount": 255085,
+          "channelViewCount": 255933,
           "videoCount": 15
         },
         {
@@ -10788,7 +10788,7 @@
           "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ",
           "channel": "小鹿財經 Deer Finance",
           "subscriberCount": 14200,
-          "channelViewCount": 646971,
+          "channelViewCount": 646986,
           "videoCount": 72
         },
         {
@@ -10805,7 +10805,7 @@
           "date": "2026-10-09",
           "channelId": "UCtkUpmfJckdTZyNvyWBl_rg",
           "channel": "Leo財經觀察",
-          "subscriberCount": 202,
+          "subscriberCount": 204,
           "channelViewCount": 32277,
           "videoCount": 10
         }
@@ -10813,7 +10813,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-10-09T01:39:19+00:00",
+        "retrievedAt": "2026-10-09T02:09:30+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -13620,7 +13620,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-10-09T01:39:19+00:00",
+        "retrievedAt": "2026-10-09T02:09:30+00:00",
         "metricDefinitions": []
       }
     },
@@ -134716,7 +134716,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-10-09T01:39:19+00:00",
+        "retrievedAt": "2026-10-09T02:09:30+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -137981,7 +137981,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-10-09T01:39:19+00:00",
+        "retrievedAt": "2026-10-09T02:09:30+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -138055,7 +138055,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-10-09T01:39:19+00:00",
+        "retrievedAt": "2026-10-09T02:09:30+00:00",
         "metricDefinitions": []
       }
     },
@@ -138076,7 +138076,7 @@
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-10-09T01:39:19+00:00",
+        "retrievedAt": "2026-10-09T02:09:30+00:00",
         "metricDefinitions": []
       }
     }
