@@ -4,7 +4,7 @@
   "surface": "dashboard",
   "id": "dashboard:b83467ee-4db4-420a-b3db-b7e7989515d7",
   "buildStatus": "complete",
-  "generatedAt": "2026-10-12T04:09:00Z",
+  "generatedAt": "2026-10-12T04:39:00Z",
   "collectorState": {
     "inventoryFullScanAt": "2026-10-06T03:09:00Z",
     "formatClassification": {
@@ -3516,7 +3516,7 @@
           "channelViewCount": 1431513,
           "videoCount": 88,
           "lastPublishedAt": "2026-10-10T13:00:14Z",
-          "daysSinceUpload": 1.6,
+          "daysSinceUpload": 1.7,
           "uploads7d": 1,
           "uploads30d": 8,
           "uploads90d": 60,
@@ -3561,10 +3561,10 @@
           "thumbnail": "https://yt3.ggpht.com/8S03I1M5ktZGcabpsOUZfwoVhpcopaNya9sZgOoCak7DZuGnkTFhnBw8B1w4F6W_Sn1etuJkng=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 14200,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 647828,
+          "channelViewCount": 647805,
           "videoCount": 72,
           "lastPublishedAt": "2026-10-08T01:00:09Z",
-          "daysSinceUpload": 4.1,
+          "daysSinceUpload": 4.2,
           "uploads7d": 1,
           "uploads30d": 4,
           "uploads90d": 49,
@@ -3588,7 +3588,7 @@
           "channelViewCount": 372097,
           "videoCount": 27,
           "lastPublishedAt": "2026-10-08T01:00:20Z",
-          "daysSinceUpload": 4.1,
+          "daysSinceUpload": 4.2,
           "uploads7d": 4,
           "uploads30d": 27,
           "uploads90d": 27,
@@ -3660,7 +3660,7 @@
           "channelViewCount": 9350,
           "videoCount": 9,
           "lastPublishedAt": "2026-10-07T00:45:09Z",
-          "daysSinceUpload": 5.1,
+          "daysSinceUpload": 5.2,
           "uploads7d": 1,
           "uploads30d": 9,
           "uploads90d": 9,
@@ -3684,7 +3684,7 @@
           "channelViewCount": 59,
           "videoCount": 7,
           "lastPublishedAt": "2026-10-01T22:15:41Z",
-          "daysSinceUpload": 10.2,
+          "daysSinceUpload": 10.3,
           "uploads7d": 0,
           "uploads30d": 7,
           "uploads90d": 7,
@@ -3705,7 +3705,7 @@
           "thumbnail": "https://yt3.ggpht.com/1dXntnZ0EcUVMRJPjC7EEuU-H5wSUA5mgVyslja0MbjVGhx5kcNmLwh4AGxAxzbhImKz7X_t-w=s800-c-k-c0x00ffffff-no-rj",
           "subscriberCount": 8,
           "hiddenSubscriberCount": false,
-          "channelViewCount": 1070,
+          "channelViewCount": 1071,
           "videoCount": 15,
           "lastPublishedAt": "2026-10-05T19:00:23Z",
           "daysSinceUpload": 6.4,
@@ -3796,7 +3796,7 @@
       "source": {
         "label": "YouTube Data API v3 · channels.list + derived cadence",
         "endpoint": "channels.list",
-        "retrievedAt": "2026-10-12T04:11:13+00:00",
+        "retrievedAt": "2026-10-12T04:39:38+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -8924,7 +8924,7 @@
           "channelId": "UCS1ZlOZTJhOxvWXr3b1v9GA",
           "channel": "阿誠聊焦點",
           "subscriberCount": 8,
-          "channelViewCount": 1070,
+          "channelViewCount": 1071,
           "videoCount": 15
         },
         {
@@ -8960,7 +8960,7 @@
           "channelId": "UCsWtmTG0UkpuGeeAno4jiGQ",
           "channel": "小鹿財經 Deer Finance",
           "subscriberCount": 14200,
-          "channelViewCount": 647828,
+          "channelViewCount": 647805,
           "videoCount": 72
         },
         {
@@ -8985,7 +8985,7 @@
       "source": {
         "label": "Repository snapshots · 3-hour, daily, and weekly retention",
         "endpoint": "local snapshot history",
-        "retrievedAt": "2026-10-12T04:11:13+00:00",
+        "retrievedAt": "2026-10-12T04:39:38+00:00",
         "metricDefinitions": [
           {
             "label": "订阅数",
@@ -11802,7 +11802,7 @@
       "source": {
         "label": "YouTube uploads playlists · full weekly inventory plus newest-page discovery",
         "endpoint": "playlistItems.list",
-        "retrievedAt": "2026-10-12T04:11:13+00:00",
+        "retrievedAt": "2026-10-12T04:39:38+00:00",
         "metricDefinitions": []
       }
     },
@@ -139882,7 +139882,7 @@
       "source": {
         "label": "YouTube Data API v3 · tiered public video observations",
         "endpoint": "videos.list",
-        "retrievedAt": "2026-10-12T04:11:13+00:00",
+        "retrievedAt": "2026-10-12T04:39:38+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放历史",
@@ -143147,7 +143147,7 @@
       "source": {
         "label": "Latest stored observation for each channel's newest 30 uploads",
         "endpoint": "video_catalog + video_history",
-        "retrievedAt": "2026-10-12T04:11:13+00:00",
+        "retrievedAt": "2026-10-12T04:39:38+00:00",
         "metricDefinitions": [
           {
             "label": "视频播放数",
@@ -143221,7 +143221,7 @@
       "source": {
         "label": "YouTube Data API v3 / YouTube Analytics API 官方字段能力说明",
         "endpoint": "official documentation",
-        "retrievedAt": "2026-10-12T04:11:13+00:00",
+        "retrievedAt": "2026-10-12T04:39:38+00:00",
         "metricDefinitions": []
       }
     },
@@ -143232,26 +143232,17 @@
           "channelsExpected": 12,
           "channelsCollected": 12,
           "videoCatalogCount": 279,
-          "videosRefreshed": 16,
+          "videosRefreshed": 0,
           "videosDisplayed": 180,
           "fullInventoryScan": false,
-          "failureCount": 2,
-          "failures": [
-            {
-              "channelId": "UCMM38YQdOaUiXMFlWzbRlXw",
-              "error": "URLError"
-            },
-            {
-              "channelId": "UCsXJXZI4J_N9r8H9TsORmlA",
-              "error": "URLError"
-            }
-          ]
+          "failureCount": 0,
+          "failures": []
         }
       ],
       "source": {
         "label": "Collector runtime",
         "endpoint": "scripts/collect_youtube.py",
-        "retrievedAt": "2026-10-12T04:11:13+00:00",
+        "retrievedAt": "2026-10-12T04:39:38+00:00",
         "metricDefinitions": []
       }
     }
